@@ -24,6 +24,9 @@ public class UserDetailsActivity extends Activity {
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.user_details_activity);
         
+        Object retained = getLastNonConfigurationInstance();
+        
+        
     }
 
 }
