@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <string-array
+    name="startup_tabs_values">
+    <item>Me</item>
+    <item>Friends</item>
+    <item>Products</item>
+  </string-array>
+  
+</resources>
