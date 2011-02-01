@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+package com.liangshan.jianjian.types;
+
+import android.os.Parcelable;
+
+/**
+ * @author jornel
+ *
+ */
+public class User implements Parcelable {
+    
+
+}

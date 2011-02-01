@@ -1,0 +1,276 @@
+what,kind,bundleId,bundleVersion,description,time
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596348777
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596348791
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596348811
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596348824
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596348827
+opened,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596348841
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596348881
+activated,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596348891
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596351937
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596361995
+activated,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596367312
+activated,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596387437
+activated,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596392623
+closed,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596392623
+activated,view,org.eclipse.jdt.ui,3.6.0.v20100602-1600,"org.eclipse.jdt.ui.PackageExplorer",1292596396015
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596396220
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596396233
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596396250
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596396265
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596396269
+opened,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596396281
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596396310
+activated,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596396333
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596400592
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596400702
+activated,view,org.eclipse.jdt.ui,3.6.0.v20100602-1600,"org.eclipse.jdt.ui.PackageExplorer",1292596402558
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596405245
+started,bundle,org.eclipse.jdt.apt.ui,3.3.300.v20100513-0845,"org.eclipse.jdt.apt.ui",1292596415549
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596423559
+executed,command,org.eclipse.ui,3.6.0.I20100603-1100,"org.eclipse.ui.file.properties",1292596423612
+started,bundle,org.eclipse.jdt.junit.core,3.6.0.v20100526-0800,"org.eclipse.jdt.junit.core",1292596426016
+started,bundle,org.eclipse.jdt.debug,3.6.0.v20100526,"org.eclipse.jdt.debug",1292596426157
+started,bundle,org.eclipse.jdt.debug.ui,3.5.0.v20100602-0830,"org.eclipse.jdt.debug.ui",1292596426328
+activated,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596429214
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596429373
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596432705
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596432790
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596432802
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596432818
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596436208
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596438147
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596438160
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596440295
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596443852
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596444098
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596449616
+activated,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596449686
+closed,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596449686
+activated,view,org.eclipse.jdt.ui,3.6.0.v20100602-1600,"org.eclipse.jdt.ui.PackageExplorer",1292596452920
+activated,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596454196
+activated,view,org.eclipse.jdt.ui,3.6.0.v20100602-1600,"org.eclipse.jdt.ui.PackageExplorer",1292596464851
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596465066
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596465079
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596465095
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596465125
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596465128
+opened,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596465140
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596465169
+activated,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596465177
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596468372
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596468471
+activated,view,org.eclipse.jdt.ui,3.6.0.v20100602-1600,"org.eclipse.jdt.ui.PackageExplorer",1292596471501
+activated,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596471667
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596476516
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596478549
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596480447
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596480460
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596491072
+activated,view,org.eclipse.jdt.ui,3.6.0.v20100602-1600,"org.eclipse.jdt.ui.PackageExplorer",1292596497933
+activated,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596509254
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596509263
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596509275
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596511820
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596530461
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596536044
+activated,view,org.eclipse.jdt.ui,3.6.0.v20100602-1600,"org.eclipse.jdt.ui.PackageExplorer",1292596553876
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562598
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596562611
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562628
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562660
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562664
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562667
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562670
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562674
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562677
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562681
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562685
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562690
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562693
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562698
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562702
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562706
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562709
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562715
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562721
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562725
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562730
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562734
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562737
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562740
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562746
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562751
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562758
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562763
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562768
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562772
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562777
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562782
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562787
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562793
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562800
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562805
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562812
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562837
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562840
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562847
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562851
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562856
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562862
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562867
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562871
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562879
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562883
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562890
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562897
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562906
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562914
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562920
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562925
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562931
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562938
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562944
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562948
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562956
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562959
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562964
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562972
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562978
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562987
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596562995
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563002
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563006
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563011
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563014
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563019
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563027
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563031
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563037
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563042
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563045
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563050
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563056
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563063
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563073
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563083
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563099
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563111
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563117
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563126
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563138
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563145
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563153
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563157
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563163
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563174
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563185
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563194
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563204
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563212
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563218
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563225
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563234
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563241
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563252
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563265
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563272
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563279
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563292
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596563295
+opened,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596563313
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596563346
+activated,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596563355
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596565545
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596567031
+executed,command,org.eclipse.ui,3.6.0.I20100603-1100,"org.eclipse.ui.edit.copy",1292596581694
+activated,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596583648
+activated,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596586309
+activated,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596592558
+activated,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596595922
+executed,command,org.eclipse.ui,3.6.0.I20100603-1100,"org.eclipse.ui.file.save",1292596614995
+executed,command,org.eclipse.ui,3.6.0.I20100603-1100,"org.eclipse.ui.file.save",1292596625430
+activated,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596628481
+activated,view,org.eclipse.jdt.ui,3.6.0.v20100602-1600,"org.eclipse.jdt.ui.PackageExplorer",1292596644583
+opened,editor,org.eclipse.jdt.ui,3.6.0.v20100602-1600,"org.eclipse.jdt.ui.CompilationUnitEditor",1292596654424
+activated,editor,org.eclipse.jdt.ui,3.6.0.v20100602-1600,"org.eclipse.jdt.ui.CompilationUnitEditor",1292596654600
+activated,editor,com.android.ide.eclipse.adt,0.9.7.v201005071157-36220,"com.android.ide.eclipse.editors.resources.ResourcesEditor",1292596666372
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596676678
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596676691
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596680920
+executed,command,org.eclipse.ui,3.6.0.I20100603-1100,"org.eclipse.ui.edit.copy",1292596699667
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596759711
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596759727
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596759746
+error,log,,,"assertion failed: ",1292596759753
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596759800
+error,log,,,"An error has occurred. See error log for more details.",1292596759804
+error,log,,,"Error occurred during status handling",1292596759806
+error,log,,,"Unhandled event loop exception",1292596759826
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596759903
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596759916
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596759960
+error,log,,,"An error has occurred. See error log for more details.",1292596759964
+error,log,,,"Error occurred during status handling",1292596759965
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596759966
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596759978
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596760014
+error,log,,,"An error has occurred. See error log for more details.",1292596760018
+error,log,,,"Error occurred during status handling",1292596760018
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.text"".",1292596760022
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596760030
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596760042
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596760078
+error,log,,,"An error has occurred. See error log for more details.",1292596760081
+error,log,,,"Error occurred during status handling",1292596760082
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596760083
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596760098
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596760134
+error,log,,,"An error has occurred. See error log for more details.",1292596760137
+error,log,,,"Error occurred during status handling",1292596760138
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596760139
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596760154
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596760189
+error,log,,,"An error has occurred. See error log for more details.",1292596760196
+error,log,,,"Error occurred during status handling",1292596760197
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596760197
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596760210
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596760245
+error,log,,,"An error has occurred. See error log for more details.",1292596760249
+error,log,,,"Error occurred during status handling",1292596760250
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596760256
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596760271
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596760307
+error,log,,,"An error has occurred. See error log for more details.",1292596760313
+error,log,,,"Error occurred during status handling",1292596760314
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596760315
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596760327
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596760371
+error,log,,,"An error has occurred. See error log for more details.",1292596760375
+error,log,,,"Error occurred during status handling",1292596760376
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596762865
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596762878
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596762909
+error,log,,,"An error has occurred. See error log for more details.",1292596762913
+error,log,,,"Error occurred during status handling",1292596762913
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596762919
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596762931
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596762969
+error,log,,,"An error has occurred. See error log for more details.",1292596762973
+error,log,,,"Error occurred during status handling",1292596762974
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596762979
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596762991
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596763027
+error,log,,,"An error has occurred. See error log for more details.",1292596763031
+error,log,,,"Error occurred during status handling",1292596763032
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596763084
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596763096
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596763127
+error,log,,,"An error has occurred. See error log for more details.",1292596763131
+error,log,,,"Error occurred during status handling",1292596763132
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596763138
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596763150
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1292596763184
+error,log,,,"An error has occurred. See error log for more details.",1292596763188
+error,log,,,"Error occurred during status handling",1292596763189
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.jface"".",1292596763205
