@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="11" version="2.0">
+<workbench progressCount="13" version="2.0">
 <workbenchAdvisor/>
 <window height="697" width="1191" x="27" y="22">
 <fastViewData fastViewLocation="1024"/>
@@ -15,7 +15,7 @@
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="100" y="22"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="62" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="84" y="22"/>
-<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="120" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="54" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
@@ -25,7 +25,7 @@
 <coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.browser.editor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -34,43 +34,10 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
-<part id="4"/>
-<part id="5"/>
-<part id="6"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 </editorArea>
-<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="user_details_activity.xml" partName="user_details_activity.xml" path="/Users/jornel/project/jianjian/jianjian/res/layout/user_details_activity.xml" title="user_details_activity.xml" tooltip="jianjian/res/layout/user_details_activity.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/jianjian/res/layout/user_details_activity.xml"/>
-</editor>
-<editor id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="strings.xml" partName="strings.xml" path="/Users/jornel/project/jianjian/jianjian/res/values/strings.xml" title="strings.xml" tooltip="jianjian/res/values/strings.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/jianjian/res/values/strings.xml"/>
-</editor>
-<editor id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="sytles.xml" partName="sytles.xml" path="/Users/jornel/project/jianjian/jianjian/res/values/sytles.xml" title="sytles.xml" tooltip="jianjian/res/values/sytles.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/jianjian/res/values/sytles.xml"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserDetailsActivity.java" partName="UserDetailsActivity.java" path="/Users/jornel/project/android/foursquare/foursquared/main/src/com/joelapenna/foursquared/UserDetailsActivity.java" title="UserDetailsActivity.java" tooltip="foursquared2/src/com/joelapenna/foursquared/UserDetailsActivity.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/foursquared2/src/com/joelapenna/foursquared/UserDetailsActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="40319" selectionTopPixel="1334"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserDetailsActivity.java" partName="UserDetailsActivity.java" path="/Users/jornel/project/jianjian/jianjian/src/com/liangshan/jianjian/android/UserDetailsActivity.java" title="UserDetailsActivity.java" tooltip="jianjian/src/com/liangshan/jianjian/android/UserDetailsActivity.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/jianjian/src/com/liangshan/jianjian/android/UserDetailsActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="User.java" partName="User.java" path="/Users/jornel/project/android/foursquare/foursquared/main/src/com/joelapenna/foursquare/types/User.java" title="User.java" tooltip="foursquared2/src/com/joelapenna/foursquare/types/User.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/foursquared2/src/com/joelapenna/foursquare/types/User.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3460" selectionTopPixel="13"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="User.java" partName="User.java" path="/Users/jornel/project/jianjian/jianjian/src/com/liangshan/jianjian/types/User.java" title="User.java" tooltip="jianjian/src/com/liangshan/jianjian/types/User.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/jianjian/src/com/liangshan/jianjian/types/User.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="403" selectionTopPixel="0"/>
-</editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.views.PropertySheet" partName="Properties">
@@ -83,8 +50,7 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Warnings (96 items)"/>
+<expanded>&#x0A;<category IMemento.internal.id="Warnings (96 items)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="84" org.eclipse.ui.ide.markerType="114" org.eclipse.ui.ide.pathField="144" org.eclipse.ui.ide.resourceField="114" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -93,6 +59,9 @@
 <visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
 </viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
 </view>
 <view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
 <viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="">
@@ -122,16 +91,13 @@
 </customFilters>
 </viewState>
 </view>
-<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
-<viewState/>
-</view>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
 </view>
 <view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -265,169 +231,12 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory>
-<editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/foursquared2/res/layout/user_details_activity.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared2/src/com/joelapenna/foursquared/widget/PhotoStrip.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared2/src/com/joelapenna/foursquared/UserDetailsActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" path="/foursquared2/res/values/attrs.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared2/src/com/joelapenna/foursquare/types/Group.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared2/src/com/joelapenna/foursquared/util/RemoteResourceManager.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/jianjian/AndroidManifest.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" path="/foursquared2/res/drawable/listview_item_manual.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/jianjian/res/layout/user_details_activity.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/jianjian/src/com/liangshan/jianjian/android/UserDetailsActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared2/src/com/joelapenna/foursquare/types/User.java"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=foursquared2/\/Users\/jornel\/develop\/android-sdk-mac_86\/platforms\/android-8\/android.jar&lt;android.os(Parcelable.class"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared2/src/com/joelapenna/foursquare/types/FoursquareType.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/jianjian/src/com/liangshan/jianjian/types/User.java"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=foursquared2/\/Users\/jornel\/develop\/android-sdk-mac_86\/platforms\/android-8\/android.jar&lt;android.os(Parcelable$Creator.class"/>
-</editors>
-<item historyLabel="user_details_activity.xml" index="0"/>
-<item historyLabel="attrs.xml" index="3"/>
-<item historyLabel="user_details_activity.xml" index="0"/>
-<item historyLabel="PhotoStrip.java" index="1">
-<position info="not_deleted" x="4142" y="0"/>
-</item>
-<item historyLabel="user_details_activity.xml" index="0"/>
-<item historyLabel="PhotoStrip.java" index="1">
-<position info="not_deleted" x="4142" y="0"/>
-</item>
-<item historyLabel="PhotoStrip.java" index="1">
-<position info="not_deleted" x="3433" y="6"/>
-</item>
-<item historyLabel="PhotoStrip.java" index="1">
-<position info="not_deleted" x="4727" y="18"/>
-</item>
-<item historyLabel="PhotoStrip.java" index="1">
-<position info="not_deleted" x="2841" y="0"/>
-</item>
-<item historyLabel="Group.java" index="4">
-<position info="not_deleted" x="414" y="0"/>
-</item>
-<item historyLabel="PhotoStrip.java" index="1">
-<position info="not_deleted" x="1490" y="21"/>
-</item>
-<item historyLabel="RemoteResourceManager.java" index="5">
-<position info="not_deleted" x="386" y="21"/>
-</item>
-<item historyLabel="PhotoStrip.java" index="1">
-<position info="not_deleted" x="1490" y="21"/>
-</item>
-<item historyLabel="user_details_activity.xml" index="0"/>
-<item historyLabel="UserDetailsActivity.java" index="2">
-<position info="not_deleted" x="621" y="44"/>
-</item>
-<item historyLabel="jianjian Manifest" index="6"/>
-<item historyLabel="listview_item_manual.xml" index="7"/>
-<item historyLabel="jianjian Manifest" index="6"/>
-<item historyLabel="user_details_activity.xml" index="8"/>
-<item historyLabel="UserDetailsActivity.java" index="2">
-<position info="not_deleted" x="4" y="0"/>
-</item>
-<item historyLabel="UserDetailsActivity.java" index="9">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="UserDetailsActivity.java" index="2">
-<position info="not_deleted" x="4" y="0"/>
-</item>
-<item historyLabel="UserDetailsActivity.java" index="9">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="UserDetailsActivity.java" index="2">
-<position info="not_deleted" x="4" y="0"/>
-</item>
-<item historyLabel="UserDetailsActivity.java" index="2">
-<position info="not_deleted" x="3136" y="11"/>
-</item>
-<item historyLabel="UserDetailsActivity.java" index="2">
-<position info="not_deleted" x="40319" y="0"/>
-</item>
-<item historyLabel="User.java" index="10">
-<position info="not_deleted" x="411" y="0"/>
-</item>
-<item historyLabel="Parcelable.class" index="11">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="User.java" index="10">
-<position info="not_deleted" x="411" y="0"/>
-</item>
-<item historyLabel="FoursquareType.java" index="12">
-<position info="not_deleted" x="150" y="14"/>
-</item>
-<item historyLabel="User.java" index="10">
-<position info="not_deleted" x="411" y="0"/>
-</item>
-<item historyLabel="User.java" index="13">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="UserDetailsActivity.java" index="2">
-<position info="not_deleted" x="40319" y="0"/>
-</item>
-<item historyLabel="User.java" index="10">
-<position info="not_deleted" x="411" y="0"/>
-</item>
-<item historyLabel="User.java" index="13">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="User.java" index="10">
-<position info="not_deleted" x="456" y="0"/>
-</item>
-<item historyLabel="User.java" index="13">
-<position info="not_deleted" x="222" y="0"/>
-</item>
-<item historyLabel="User.java" index="10">
-<position info="not_deleted" x="456" y="0"/>
-</item>
-<item historyLabel="User.java" index="13">
-<position info="not_deleted" x="517" y="0"/>
-</item>
-<item historyLabel="User.java" index="10">
-<position info="not_deleted" x="456" y="0"/>
-</item>
-<item historyLabel="User.java" index="10">
-<position info="not_deleted" x="3444" y="7"/>
-</item>
-<item historyLabel="User.java" index="10">
-<position info="not_deleted" x="3444" y="7"/>
-</item>
-<item historyLabel="User.java" index="10">
-<position info="not_deleted" x="7626" y="13"/>
-</item>
-<item historyLabel="User.java" index="13">
-<position info="not_deleted" x="517" y="0"/>
-</item>
-<item historyLabel="User.java" index="10">
-<position info="not_deleted" x="3580" y="0"/>
-</item>
-<item historyLabel="User.java" index="13">
-<position info="not_deleted" x="517" y="0"/>
-</item>
-<item historyLabel="User.java" index="10">
-<position info="not_deleted" x="3431" y="0"/>
-</item>
-<item historyLabel="Parcelable$Creator.class" index="14">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="User.java" index="10">
-<position info="not_deleted" x="3460" y="0"/>
-</item>
-<item active="true" historyLabel="User.java" index="13">
-<position info="not_deleted" x="517" y="0"/>
-</item>
-</navigationHistory>
+<navigationHistory/>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="left"/>
-</trimArea>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="bottom"/>
-<trimItem IMemento.internal.id="right"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
