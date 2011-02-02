@@ -22,6 +22,7 @@ public class User implements Parcelable {
     private String mMsisdn;        
     private String mGender;
     private String mPhoto;
+    private String mFriendstatus;
     private RecommendMsg mLastRecMsg;
     private ArrayList<User> mFriendsInCommon;
     
@@ -41,6 +42,7 @@ public class User implements Parcelable {
         mMsisdn = ParcelUtils.readStringFromParcel(in);
         mGender = ParcelUtils.readStringFromParcel(in);
         mPhoto = ParcelUtils.readStringFromParcel(in);
+        mFriendstatus = ParcelUtils.readStringFromParcel(in);
         
         if (in.readInt() == 1) {
             mLastRecMsg = in.readParcelable(RecommendMsg.class.getClassLoader());
@@ -157,6 +159,14 @@ public class User implements Parcelable {
     
     public void setPhoto(String photo) {
         mPhoto = photo;
+    }
+    
+    public String getFriendstatus() {
+        return mFriendstatus;
+    }
+
+    public void setFriendstatus(String friendstatus) {
+        mFriendstatus = friendstatus;
     }
     
     public RecommendMsg getLastRecMsg() {

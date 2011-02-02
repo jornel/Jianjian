@@ -52,28 +52,30 @@ public final class R {
         public static final int friend_button_off=0x7f020007;
         public static final int friend_button_on=0x7f020008;
         public static final int friend_button_selector=0x7f020009;
-        public static final int icon=0x7f02000a;
-        public static final int listview_background=0x7f02000b;
-        public static final int listview_item_manual=0x7f02000c;
-        public static final int photo_background=0x7f02000d;
-        public static final int tab_main_nav_friends_off=0x7f02000e;
-        public static final int tab_main_nav_friends_on=0x7f02000f;
-        public static final int tab_main_nav_friends_selector=0x7f020010;
-        public static final int tab_main_nav_me_boy_off=0x7f020011;
-        public static final int tab_main_nav_me_boy_on=0x7f020012;
-        public static final int tab_main_nav_me_boy_selector=0x7f020013;
-        public static final int tab_main_nav_me_girl_off=0x7f020014;
-        public static final int tab_main_nav_me_girl_on=0x7f020015;
-        public static final int tab_main_nav_me_girl_selector=0x7f020016;
-        public static final int tab_main_nav_nearby_off=0x7f020017;
-        public static final int tab_main_nav_nearby_on=0x7f020018;
-        public static final int tab_main_nav_nearby_selector=0x7f020019;
-        public static final int tab_main_nav_off=0x7f02001a;
-        public static final int tab_main_nav_on=0x7f02001b;
-        public static final int tab_main_nav_selector=0x7f02001c;
-        public static final int tab_main_nav_text_selector=0x7f02001d;
-        public static final int tip=0x7f02001e;
-        public static final int user_details_activity_general_selector=0x7f02001f;
+        public static final int ic_menu_myinfo_boy=0x7f02000a;
+        public static final int ic_menu_myinfo_girl=0x7f02000b;
+        public static final int icon=0x7f02000c;
+        public static final int listview_background=0x7f02000d;
+        public static final int listview_item_manual=0x7f02000e;
+        public static final int photo_background=0x7f02000f;
+        public static final int tab_main_nav_friends_off=0x7f020010;
+        public static final int tab_main_nav_friends_on=0x7f020011;
+        public static final int tab_main_nav_friends_selector=0x7f020012;
+        public static final int tab_main_nav_me_boy_off=0x7f020013;
+        public static final int tab_main_nav_me_boy_on=0x7f020014;
+        public static final int tab_main_nav_me_boy_selector=0x7f020015;
+        public static final int tab_main_nav_me_girl_off=0x7f020016;
+        public static final int tab_main_nav_me_girl_on=0x7f020017;
+        public static final int tab_main_nav_me_girl_selector=0x7f020018;
+        public static final int tab_main_nav_nearby_off=0x7f020019;
+        public static final int tab_main_nav_nearby_on=0x7f02001a;
+        public static final int tab_main_nav_nearby_selector=0x7f02001b;
+        public static final int tab_main_nav_off=0x7f02001c;
+        public static final int tab_main_nav_on=0x7f02001d;
+        public static final int tab_main_nav_selector=0x7f02001e;
+        public static final int tab_main_nav_text_selector=0x7f02001f;
+        public static final int tip=0x7f020020;
+        public static final int user_details_activity_general_selector=0x7f020021;
     }
     public static final class id {
         public static final int emptyProgress=0x7f080000;
@@ -118,7 +120,7 @@ public final class R {
         public static final int friends_activity_label=0x7f060003;
         public static final int hello=0x7f060000;
         public static final int main_name=0x7f060002;
-        public static final int male=0x7f06000d;
+        public static final int male=0x7f06000e;
         public static final int me_activity_label=0x7f060005;
         public static final int products_activity_label=0x7f060004;
         public static final int tab_main_nav_friends=0x7f060006;
@@ -126,8 +128,9 @@ public final class R {
         public static final int tab_main_nav_products=0x7f060007;
         /**  test user string 
          */
-        public static final int testuserid1=0x7f06000c;
+        public static final int testuserid1=0x7f06000d;
         public static final int user_details_activity_add_friends=0x7f06000b;
+        public static final int user_details_activity_friend_confirm=0x7f06000c;
         public static final int user_details_activity_general_badges=0x7f060009;
         public static final int user_details_activity_general_tips=0x7f06000a;
     }
