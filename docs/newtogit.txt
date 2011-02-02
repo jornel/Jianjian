@@ -1,0 +1,27 @@
+generate key
+
+1. 生成密钥对，这样项目可以push到 GitHub上
+#ssh-keygen -t rsa -C "xxx@gmail.com"
+2. 将.ssh/id_rsa.pub拷贝到GitHub网站
+
+
+===============================================
+
+pull the resp
+
+
+1. ssh git@github.com
+
+2. go to ~/jianjian/ ( for the first time, please create the folder /jianjian)
+
+3. git init
+
+4. git add -A
+
+5. git commit -a
+
+6. git remote add origin git@github.com:jornel/Jianjian.git
+
+7. git pull origin master
+
+8. git push origin master
