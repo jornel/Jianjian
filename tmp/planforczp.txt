@@ -1,0 +1,7 @@
+
+
+========2011.02.02===========
+
+1.finish the UserDetailsActivity.java
+
+

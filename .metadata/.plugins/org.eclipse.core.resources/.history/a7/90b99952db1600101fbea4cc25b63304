@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.liangshan.jianjian.types;
+
+/**
+ * @author jornel
+ *
+ */
+public class User {
+
+}
