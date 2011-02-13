@@ -1,0 +1,56 @@
+/**
+ * 
+ */
+package com.liangshan.jianjian.general;
+
+import java.io.IOException;
+import com.liangshan.jianjian.android.error.JianjianError;
+import com.liangshan.jianjian.android.error.JianjianException;
+import com.liangshan.jianjian.types.User;
+
+/**
+ * @author jornel
+ *
+ */
+public class Jianjian {
+    
+    /**
+     * @param string
+     * @param b
+     * @param c
+     * @param d
+     * @param createFoursquareLocation
+     * @return
+     */
+    public User user(String string, boolean b, boolean c, boolean d,
+            Location jianjianlocation) 
+            throws JianjianException, JianjianError, IOException{
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    public static class Location {
+        String geolat = null;
+        String geolong = null;
+        String geohacc = null;
+        String geovacc = null;
+        String geoalt = null;
+
+        public Location() {
+        }
+
+        public Location(final String geolat, final String geolong, final String geohacc,
+                final String geovacc, final String geoalt) {
+            this.geolat = geolat;
+            this.geolong = geolong;
+            this.geohacc = geohacc;
+            this.geovacc = geovacc;
+            this.geoalt = geovacc;
+        }
+
+        public Location(final String geolat, final String geolong) {
+            this(geolat, geolong, null, null, null);
+        }
+    }
+
+}

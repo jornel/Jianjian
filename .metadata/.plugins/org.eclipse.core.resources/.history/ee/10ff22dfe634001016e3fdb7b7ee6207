@@ -1,0 +1,17 @@
+/**
+ * Copyright 2009 Joe LaPenna
+ */
+
+package com.liangshan.jianjian.android.error;
+
+/**
+ * @author Joe LaPenna (joe@joelapenna.com)
+ */
+public class JianjianError extends FoursquareException {
+    private static final long serialVersionUID = 1L;
+
+    public JianjianError(String message) {
+        super(message);
+    }
+
+}

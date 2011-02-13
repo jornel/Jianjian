@@ -2,4 +2,26 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.string"/>
 <fullyQualifiedTypeName name="android.os.Parcelable"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.UserUtils"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.general.Jianjian.Location"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.JavaLoggingHandler"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.JianjianSettings"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.preferences.Preferences"/>
+<fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="android.R.array"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.util.IconUtils"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.general.Jianjian.JLocation"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.location.LocationUtils"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.error.JianjianError"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.error.JianjianException"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.StringFormatters"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.types.User"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.RemoteResourceManager"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.NullDiskCache"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.general.Jianjian"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.http.HttpApi"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.http.HttpApiWithBasicAuth"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.http.AbstractHttpApi"/>
 </qualifiedTypeNameHistroy>

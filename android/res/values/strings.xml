@@ -13,8 +13,8 @@
     <string name="user_details_activity_general_tips">收藏</string>
     <string name="user_details_activity_add_friends">添加好友</string>
     <string name="user_details_activity_friend_confirm">确认加为好友</string>
-    
-    
+    <string name="user_details_activity_friend_add">加为好友</string>
+    <string name="user_details_activity_friends_in_common_text">n个好友</string>
     
     
     

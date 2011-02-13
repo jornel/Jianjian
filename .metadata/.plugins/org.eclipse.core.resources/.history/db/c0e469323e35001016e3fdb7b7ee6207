@@ -1,0 +1,39 @@
+/**
+ * 
+ */
+package com.liangshan.jianjian.android;
+
+import com.liangshan.jianjian.general.Jianjian;
+
+import android.app.Application;
+import android.location.Location;
+
+/**
+ * @author jornel
+ *
+ */
+public class Jianjianroid extends Application {
+    
+    private static final String TAG = "Jianjianroid";
+    private static final boolean DEBUG = JianjianSettings.DEBUG;
+    
+    private Jianjian mJianjian;
+
+    /**
+     * @return
+     */
+    public Jianjian getJianjian() {
+        // TODO Auto-generated method stub
+        return mJianjian;
+    }
+
+    /**
+     * @return
+     */
+    public Location getLastKnownLocation() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+    
+
+}

@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+package com.liangshan.jianjian.general;
+
+import com.liangshan.jianjian.types.User;
+
+/**
+ * @author jornel
+ *
+ */
+public class JianjianHttpApiV1 {
+
+    /**
+     * @param user
+     * @param b
+     * @param c
+     * @param d
+     * @param geolat
+     * @param geolong
+     * @param geohacc
+     * @param geovacc
+     * @param geoalt
+     * @return
+     */
+    public User user(String user, boolean b, boolean c, boolean d, String geolat, String geolong,
+            String geohacc, String geovacc, String geoalt) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}

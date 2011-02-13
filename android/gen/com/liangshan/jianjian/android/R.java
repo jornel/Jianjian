@@ -120,7 +120,7 @@ public final class R {
         public static final int friends_activity_label=0x7f060003;
         public static final int hello=0x7f060000;
         public static final int main_name=0x7f060002;
-        public static final int male=0x7f06000e;
+        public static final int male=0x7f060010;
         public static final int me_activity_label=0x7f060005;
         public static final int products_activity_label=0x7f060004;
         public static final int tab_main_nav_friends=0x7f060006;
@@ -128,9 +128,11 @@ public final class R {
         public static final int tab_main_nav_products=0x7f060007;
         /**  test user string 
          */
-        public static final int testuserid1=0x7f06000d;
+        public static final int testuserid1=0x7f06000f;
         public static final int user_details_activity_add_friends=0x7f06000b;
+        public static final int user_details_activity_friend_add=0x7f06000d;
         public static final int user_details_activity_friend_confirm=0x7f06000c;
+        public static final int user_details_activity_friends_in_common_text=0x7f06000e;
         public static final int user_details_activity_general_badges=0x7f060009;
         public static final int user_details_activity_general_tips=0x7f06000a;
     }

@@ -1,5 +1,23 @@
 
 =======2011.02.02=====
 
-1. the hown town for the user is needed?
+1. the hown town of the user is needed?
 2. replace the original author name in the code
+
+=======2011.02.06=====
+
+1. study the mechanism of image fetch deeply
+
+2. study the internal class 
+
+=======2011.02.08=====
+
+1. all the menu will be developped in the later iterations.
+
+2. content provider in Android
+
+=======2011.02.09=====
+
+1. Jianjianroid.getLastKnownLocation
+
+2. Jianjianroid   setCredentials

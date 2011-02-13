@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.liangshan.jianjian.general;
+
+/**
+ * @author jornel
+ *
+ */
+public @interface V1 {
+
+}

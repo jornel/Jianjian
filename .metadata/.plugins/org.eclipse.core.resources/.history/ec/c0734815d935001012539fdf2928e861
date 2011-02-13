@@ -1,0 +1,28 @@
+/**
+ * 
+ */
+package com.liangshan.jianjian.android.preferences;
+
+import android.content.SharedPreferences;
+import android.content.res.Resources;
+
+import com.liangshan.jianjian.android.JianjianSettings;
+
+/**
+ * @author jornel
+ *
+ */
+public class JPreferences {
+    
+    private static final String TAG = "Preferences";
+    private static final boolean DEBUG = JianjianSettings.DEBUG;
+    /**
+     * @param mPrefs
+     * @param resources
+     */
+    public static void setupDefaults(SharedPreferences mPrefs, Resources resources) {
+        // TODO Auto-generated method stub
+        
+    }
+
+}

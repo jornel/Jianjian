@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+package com.liangshan.jianjian.android;
+
+import android.app.Application;
+
+/**
+ * @author jornel
+ *
+ */
+public class Jianjianroid extends Application {
+    
+
+}

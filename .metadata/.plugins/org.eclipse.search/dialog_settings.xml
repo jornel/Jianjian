@@ -9,8 +9,8 @@
 	<section name="DialogBounds_SearchDialog">
 		<item value="522" key="DIALOG_WIDTH"/>
 		<item value="66" key="DIALOG_Y_ORIGIN"/>
-		<item value="423" key="DIALOG_HEIGHT"/>
 		<item value="334" key="DIALOG_X_ORIGIN"/>
+		<item value="423" key="DIALOG_HEIGHT"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="Search">
@@ -32,33 +32,23 @@
 		<item value="false" key="CASE_SENSITIVE"/>
 		<item value="false" key="REG_EX_SEARCH"/>
 		<item value="false" key="SEARCH_DERIVED"/>
-		<item value="5" key="HISTORY_SIZE"/>
+		<item value="8" key="HISTORY_SIZE"/>
+		<section name="EXTENSIONS">
+			<item value="*" key="1"/>
+			<item value="*.java" key="0"/>
+		</section>
 		<section name="HISTORY2">
 			<item value="false" key="isRegExSearch"/>
-			<item value="userDetailsActivityFriendsFollowers" key="textPattern"/>
+			<item value="ResourceRequestObserver" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
-				<item value="*"/>
+				<item value="*.java"/>
 			</list>
 			<list key="workingSets">
 			</list>
-		</section>
-		<section name="EXTENSIONS">
-			<item value="*" key="0"/>
 		</section>
 		<section name="HISTORY3">
-			<item value="false" key="isRegExSearch"/>
-			<item value="StateHolder" key="textPattern"/>
-			<item value="0" key="scope"/>
-			<item value="true" key="ignoreCase"/>
-			<list key="fileNamePatterns">
-				<item value="*"/>
-			</list>
-			<list key="workingSets">
-			</list>
-		</section>
-		<section name="HISTORY0">
 			<item value="false" key="isRegExSearch"/>
 			<item value="com.joelapenna.foursquared.widget.PhotoStrip" key="textPattern"/>
 			<item value="0" key="scope"/>
@@ -69,9 +59,31 @@
 			<list key="workingSets">
 			</list>
 		</section>
+		<section name="HISTORY0">
+			<item value="false" key="isRegExSearch"/>
+			<item value="FoursquareCredentialsException" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<list key="fileNamePatterns">
+				<item value="*.java"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
 		<section name="HISTORY1">
 			<item value="false" key="isRegExSearch"/>
-			<item value="FriendsFollowers" key="textPattern"/>
+			<item value="Dumpcatcher" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<list key="fileNamePatterns">
+				<item value="*.java"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY5">
+			<item value="false" key="isRegExSearch"/>
+			<item value="userDetailsActivityFriendsFollowers" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
@@ -82,7 +94,29 @@
 		</section>
 		<section name="HISTORY4">
 			<item value="false" key="isRegExSearch"/>
+			<item value="FriendsFollowers" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<list key="fileNamePatterns">
+				<item value="*"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY7">
+			<item value="false" key="isRegExSearch"/>
 			<item value="json" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<list key="fileNamePatterns">
+				<item value="*"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY6">
+			<item value="false" key="isRegExSearch"/>
+			<item value="StateHolder" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">

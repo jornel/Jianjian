@@ -1,0 +1,47 @@
+/**
+ * 
+ */
+package com.liangshan.jianjian.android.preferences;
+
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.content.res.Resources;
+
+import com.joelapenna.foursquared.R;
+import com.liangshan.jianjian.android.JianjianSettings;
+
+/**
+ * @author jornel
+ *
+ */
+public class JPreferences {
+    
+    private static final String TAG = "Preferences";
+    private static final boolean DEBUG = JianjianSettings.DEBUG;
+    /**
+     * @param mPrefs
+     * @param resources
+     */
+    public static void setupDefaults(SharedPreferences preferences, Resources resources) {
+        
+        Editor editor = preferences.edit();
+        if (!preferences.contains(PREFERENCE_STARTUP_TAB)) {
+            String[] startupTabValues = resources.getStringArray(R.array.startup_tabs_values);
+            editor.putString(PREFERENCE_STARTUP_TAB, startupTabValues[0]);
+        }
+        if (!preferences.contains(PREFERENCE_CACHE_GEOLOCATION_FOR_SEARCHES)) {
+            editor.putBoolean(PREFERENCE_CACHE_GEOLOCATION_FOR_SEARCHES, false);
+        }
+        if (!preferences.contains(PREFERENCE_SHOW_PRELAUNCH_ACTIVITY)) {
+            editor.putBoolean(PREFERENCE_SHOW_PRELAUNCH_ACTIVITY, true);
+        }
+        if (!preferences.contains(PREFERENCE_PINGS_INTERVAL)) {
+            editor.putString(PREFERENCE_PINGS_INTERVAL, "30");
+        }
+        if (!preferences.contains(PREFERENCE_NATIVE_IMAGE_VIEWER)) {
+            editor.putBoolean(PREFERENCE_NATIVE_IMAGE_VIEWER, true);
+        }
+        editor.commit();
+    }
+
+}

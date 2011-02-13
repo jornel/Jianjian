@@ -2,25 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="263" key="DIALOG_WIDTH"/>
-		<item value="85" key="DIALOG_Y_ORIGIN"/>
-		<item value="639" key="DIALOG_X_ORIGIN"/>
+		<item value="71" key="DIALOG_Y_ORIGIN"/>
 		<item value="395" key="DIALOG_HEIGHT"/>
+		<item value="1003" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="user_details_activity_add_friends" key="selection"/>
+		<item value="" key="selection"/>
 		<list key="findhistory">
-			<item value="user_details_activity_add_friends"/>
-			<item value="TextViewStyleVenueActivityBold"/>
-			<item value="RelativeLayout"/>
-			<item value="TASK_FRIEND_ADD"/>
-			<item value="retained"/>
-			<item value="instance"/>
+			<item value="release"/>
+			<item value="createFoursquare"/>
+			<item value="mAuthScope"/>
+			<item value="Message"/>
+			<item value="MESSAGE"/>
+			<item value="message"/>
+			<item value="PREFERENCE_ID"/>
+			<item value="handleMessage"/>
 		</list>
 		<list key="replacehistory">
 		</list>
