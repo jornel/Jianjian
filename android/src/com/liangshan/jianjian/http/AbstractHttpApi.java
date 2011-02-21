@@ -5,7 +5,13 @@
 package com.liangshan.jianjian.http;
 
 
+import com.liangshan.jianjian.android.error.JianjianException;
+import com.liangshan.jianjian.android.error.JianjianParseException;
 import com.liangshan.jianjian.general.Jianjian;
+import com.liangshan.jianjian.parsers.json.Parser;
+import com.liangshan.jianjian.types.JianjianType;
+import com.liangshan.jianjian.util.JSONUtils;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.ParseException;
@@ -46,7 +52,7 @@ abstract public class AbstractHttpApi implements HttpApi {
     protected static final Logger LOG = Logger.getLogger(AbstractHttpApi.class.getCanonicalName());
     protected static final boolean DEBUG = Jianjian.DEBUG;
 
-    private static final String DEFAULT_CLIENT_VERSION = "com.joelapenna.foursquare";
+    private static final String DEFAULT_CLIENT_VERSION = "com.liangshan.jianjian";
     private static final String CLIENT_VERSION_HEADER = "User-Agent";
     private static final int TIMEOUT = 60;
 
@@ -85,6 +91,96 @@ abstract public class AbstractHttpApi implements HttpApi {
         final ClientConnectionManager ccm = new ThreadSafeClientConnManager(httpParams,
                 supportedSchemes);
         return new DefaultHttpClient(ccm, httpParams);
+    }
+    
+    public HttpGet createHttpGet(String url, NameValuePair... nameValuePairs) {
+        if (DEBUG) LOG.log(Level.FINE, "creating HttpGet for: " + url);
+        String query = URLEncodedUtils.format(stripNulls(nameValuePairs), HTTP.UTF_8);
+        HttpGet httpGet = new HttpGet(url + "?" + query);
+        httpGet.addHeader(CLIENT_VERSION_HEADER, mClientVersion);
+        if (DEBUG) LOG.log(Level.FINE, "Created: " + httpGet.getURI());
+        return httpGet;
+    }
+    
+    /**
+     * @param httpRequest
+     * @param parser
+     * @return
+     */
+    public JianjianType executeHttpRequest(HttpRequestBase httpRequest,
+            Parser<? extends JianjianType> parser) throws 
+            JianjianParseException, JianjianException, IOException{
+        if (DEBUG) LOG.log(Level.FINE, "doHttpRequest: " + httpRequest.getURI());
+
+        HttpResponse response = executeHttpRequest(httpRequest);
+        if (DEBUG) LOG.log(Level.FINE, "executed HttpRequest for: "
+                + httpRequest.getURI().toString());
+
+        int statusCode = response.getStatusLine().getStatusCode();
+        switch (statusCode) {
+            case 200:
+                String content = EntityUtils.toString(response.getEntity());
+                return JSONUtils.consume(parser, content);
+                
+            case 400:
+                if (DEBUG) LOG.log(Level.FINE, "HTTP Code: 400");
+                throw new JianjianException(
+                        response.getStatusLine().toString(),
+                        EntityUtils.toString(response.getEntity()));
+
+            case 401:
+                response.getEntity().consumeContent();
+                if (DEBUG) LOG.log(Level.FINE, "HTTP Code: 401");
+                throw new JianjianException(response.getStatusLine().toString());
+
+            case 404:
+                response.getEntity().consumeContent();
+                if (DEBUG) LOG.log(Level.FINE, "HTTP Code: 404");
+                throw new JianjianException(response.getStatusLine().toString());
+
+            case 500:
+                response.getEntity().consumeContent();
+                if (DEBUG) LOG.log(Level.FINE, "HTTP Code: 500");
+                throw new JianjianException("Foursquare is down. Try again later.");
+
+            default:
+                if (DEBUG) LOG.log(Level.FINE, "Default case for status code reached: "
+                        + response.getStatusLine().toString());
+                response.getEntity().consumeContent();
+                throw new JianjianException("Error connecting to Foursquare: " + statusCode + ". Try again later.");
+        }
+         
+    }
+    
+    /**
+     * execute() an httpRequest catching exceptions and returning null instead.
+     *
+     * @param httpRequest
+     * @return
+     * @throws IOException
+     */
+    public HttpResponse executeHttpRequest(HttpRequestBase httpRequest) throws IOException {
+        if (DEBUG) LOG.log(Level.FINE, "executing HttpRequest for: "
+                + httpRequest.getURI().toString());
+        try {
+            mHttpClient.getConnectionManager().closeExpiredConnections();
+            return mHttpClient.execute(httpRequest);
+        } catch (IOException e) {
+            httpRequest.abort();
+            throw e;
+        }
+    }
+    
+    private List<NameValuePair> stripNulls(NameValuePair... nameValuePairs) {
+        List<NameValuePair> params = new ArrayList<NameValuePair>();
+        for (int i = 0; i < nameValuePairs.length; i++) {
+            NameValuePair param = nameValuePairs[i];
+            if (param.getValue() != null) {
+                if (DEBUG) LOG.log(Level.FINE, "Param: " + param);
+                params.add(param);
+            }
+        }
+        return params;
     }
     
     /**

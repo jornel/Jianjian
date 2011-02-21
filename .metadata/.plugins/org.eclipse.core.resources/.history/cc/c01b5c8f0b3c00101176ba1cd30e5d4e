@@ -1,0 +1,18 @@
+/**
+ * Copyright 2011
+ */
+
+package com.liangshan.jianjian.http;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.client.methods.HttpGet;
+
+
+/**
+ * @author Joe Chen
+ */
+public interface HttpApi {
+    
+    abstract public HttpGet createHttpGet(String url, NameValuePair... nameValuePairs);
+
+}

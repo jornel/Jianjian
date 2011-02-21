@@ -8,6 +8,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 import com.liangshan.jianjian.android.location.LocationUtils;
+import com.liangshan.jianjian.android.util.NotificationsUtil;
 import com.liangshan.jianjian.android.util.RemoteResourceManager;
 import com.liangshan.jianjian.android.util.StringFormatters;
 import com.liangshan.jianjian.android.util.UserUtils;
@@ -27,6 +28,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * @author ezhuche
@@ -317,8 +319,19 @@ public class UserDetailsActivity extends Activity {
      * @param user
      * @param mReason
      */
-    public void onUserDetailsTaskComplete(User user, Exception mReason) {
-        // TODO Auto-generated method stub
+    public void onUserDetailsTaskComplete(User user, Exception ex) {
+        mStateHolder.setIsRunningUserDetailsTask(false);
+        mStateHolder.setRanOnce(true);
+        if (user != null) {
+            mStateHolder.setUser(user);
+            mStateHolder.setLoadType(LOAD_TYPE_USER_FULL);
+        } else if (ex != null) {
+            NotificationsUtil.ToastReasonForFailure(this, ex);
+        } else {
+            Toast.makeText(this, "A surprising new error has occurred!", Toast.LENGTH_SHORT).show();
+        }
+        
+        ensureUi();
         
     }
     
@@ -448,11 +461,21 @@ public class UserDetailsActivity extends Activity {
             }
         }
         
+        public void setActivityForTasks(UserDetailsActivity activity) {
+            if (mTaskUserDetails != null) {
+                mTaskUserDetails.setActivity(activity);
+            }
+            //if (mTaskFriend != null) {
+            //    mTaskFriend.setActivity(activity);
+            //}
+        }
+        
+        public boolean getIsRunningUserDetailsTask() {
+            return mIsRunningUserDetailsTask;
+        }
+        
         public void setIsRunningUserDetailsTask(boolean isRunning) {
             mIsRunningUserDetailsTask = isRunning;
-        }
-        public boolean getIsTaskRunning() {
-            return mIsRunningUserDetailsTask;
         }
         
         public boolean getIsRunningFriendTask() {
@@ -461,6 +484,22 @@ public class UserDetailsActivity extends Activity {
         
         public void setIsRunningFriendTask(boolean isRunning) {
             mIsRunningFriendTask = isRunning;
+        }
+        
+        public void cancelTasks() {
+            if (mTaskUserDetails != null) {
+                mTaskUserDetails.setActivity(null);
+                mTaskUserDetails.cancel(true);
+            }
+            
+            //if (mTaskFriend != null) {
+            //    mTaskFriend.setActivity(null);
+            //    mTaskFriend.cancel(true);
+            //}
+        }
+        
+        public boolean getIsTaskRunning() {
+            return mIsRunningUserDetailsTask;
         }
         
     }

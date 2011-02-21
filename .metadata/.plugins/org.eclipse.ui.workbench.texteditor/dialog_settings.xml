@@ -13,16 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="" key="selection"/>
+		<item value="FriendTask" key="selection"/>
 		<list key="findhistory">
+			<item value="FriendTask"/>
+			<item value="startTaskFriend"/>
+			<item value="getIsRunningUserDetailsTask"/>
+			<item value="getIsRunningFriendTask"/>
+			<item value="Abstract"/>
+			<item value="abstract"/>
 			<item value="release"/>
 			<item value="createFoursquare"/>
-			<item value="mAuthScope"/>
-			<item value="Message"/>
-			<item value="MESSAGE"/>
-			<item value="message"/>
-			<item value="PREFERENCE_ID"/>
-			<item value="handleMessage"/>
 		</list>
 		<list key="replacehistory">
 		</list>

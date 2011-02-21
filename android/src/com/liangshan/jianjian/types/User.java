@@ -12,7 +12,7 @@ import android.os.Parcelable;
  * @author jornel
  *
  */
-public class User implements Parcelable {
+public class User implements Parcelable, JianjianType {
     
     
     private int mFriendCount;

@@ -9,13 +9,17 @@ import java.util.logging.Logger;
 
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+
 
 import com.liangshan.jianjian.android.error.JianjianError;
 import com.liangshan.jianjian.android.error.JianjianException;
 import com.liangshan.jianjian.http.AbstractHttpApi;
 import com.liangshan.jianjian.http.HttpApi;
 import com.liangshan.jianjian.http.HttpApiWithBasicAuth;
+import com.liangshan.jianjian.parsers.json.UserParser;
 import com.liangshan.jianjian.types.User;
 
 /**
@@ -28,6 +32,11 @@ public class JianjianHttpApiV1 {
     .getLogger(JianjianHttpApiV1.class.getCanonicalName());
     
     private static final boolean DEBUG = Jianjian.DEBUG;
+
+    private static final String URL_API_USER = "/user";
+
+    private static final String DATATYPE = ".json";
+    
     private HttpApi mHttpApi;
     
     private final String mApiBaseUrl;
@@ -61,11 +70,31 @@ public class JianjianHttpApiV1 {
      * @param geoalt
      * @return
      */
-    User user(String user, boolean b, boolean c, boolean d, String geolat, String geolong,
+    User user(String uid, boolean b, boolean c, boolean d, String geolat, String geolong,
             String geohacc, String geovacc, String geoalt)  throws JianjianException,
             JianjianError, IOException{
         
-        return null;
+        HttpGet httpGet = mHttpApi.createHttpGet(fullUrl(URL_API_USER), //
+                new BasicNameValuePair("uid", uid), //
+                new BasicNameValuePair("b", (b) ? "1" : "0"), //
+                new BasicNameValuePair("c", (c) ? "1" : "0"), //
+                new BasicNameValuePair("d", (d) ? "1" : "0"), //
+                new BasicNameValuePair("geolat", geolat), //
+                new BasicNameValuePair("geolong", geolong), //
+                new BasicNameValuePair("geohacc", geohacc), //
+                new BasicNameValuePair("geovacc", geovacc), //
+                new BasicNameValuePair("geoalt", geoalt) //
+                );
+        return (User) mHttpApi.doHttpRequest(httpGet, new UserParser());
+    }
+
+    /**
+     * @param urlApiUser
+     * @return
+     */
+    private String fullUrl(String url) {
+        return mApiBaseUrl + url + DATATYPE;
+
     }
 
     /**

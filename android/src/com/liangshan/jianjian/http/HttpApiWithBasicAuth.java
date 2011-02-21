@@ -18,6 +18,11 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.ExecutionContext;
 import org.apache.http.protocol.HttpContext;
 
+import com.liangshan.jianjian.android.error.JianjianException;
+import com.liangshan.jianjian.android.error.JianjianParseException;
+import com.liangshan.jianjian.parsers.json.Parser;
+import com.liangshan.jianjian.types.JianjianType;
+
 import java.io.IOException;
 
 /**
@@ -55,5 +60,12 @@ public class HttpApiWithBasicAuth extends AbstractHttpApi {
         super(httpClient, clientVersion);
         httpClient.addRequestInterceptor(preemptiveAuth, 0);
     }
+    
+    public JianjianType doHttpRequest(HttpRequestBase httpRequest,
+            Parser<? extends JianjianType> parser) throws 
+            JianjianParseException, JianjianException, IOException {
+        return executeHttpRequest(httpRequest, parser);
+    }
+
 
 }
