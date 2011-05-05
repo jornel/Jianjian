@@ -6,6 +6,7 @@ package com.liangshan.jianjian.general;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import com.liangshan.jianjian.android.error.JianjianError;
 import com.liangshan.jianjian.android.error.JianjianException;
 import com.liangshan.jianjian.types.User;
@@ -19,15 +20,21 @@ public class Jianjian {
     private static final Logger LOG = Logger.getLogger("com.liangshan.jianjian");
     public static final boolean DEBUG = false;
 
-    private static final String JIANJIAN_API_DOMAIN = "api.jianjian.com";
+    private static final String JIANJIAN_API_DOMAIN = "api.jiepang.com";
+    public static final String JIANJIAN_MOBILE_SIGNUP = "http://jiepang.com/m/signup";
     
     private JianjianHttpApiV1 mJianjianV1;
-    private String mPhone;
-    private String mPassword;
+    //private String mPhone;
+    //private String mPassword;
     
     @V1
     public Jianjian(JianjianHttpApiV1 httpApi) {
         mJianjianV1 = httpApi;
+    }
+    
+    @V1
+    public boolean hasLoginAndPassword() {
+        return mJianjianV1.hasCredentials();
     }
     
     /**
@@ -35,8 +42,8 @@ public class Jianjian {
      * @param password
      */
     public void setCredentials(String phone, String password) {
-        mPhone = phone;
-        mPassword = password;
+        //mPhone = phone;
+        //mPassword = password;
         mJianjianV1.setCredentials(phone, password);
         
     }
@@ -49,6 +56,7 @@ public class Jianjian {
      * @param createFoursquareLocation
      * @return
      */
+    @V1
     public User user(String user, boolean b, boolean c, boolean d,
             JLocation location) 
             throws JianjianException, JianjianError, IOException{
@@ -114,7 +122,5 @@ public class Jianjian {
     public @interface V1 {
 
     }
-
-
 
 }

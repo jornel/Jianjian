@@ -33,7 +33,7 @@ public class JianjianHttpApiV1 {
     
     private static final boolean DEBUG = Jianjian.DEBUG;
 
-    private static final String URL_API_USER = "/user";
+    private static final String URL_API_USER = "/account/verify_credentials";
 
     private static final String DATATYPE = ".json";
     
@@ -45,7 +45,7 @@ public class JianjianHttpApiV1 {
     private final DefaultHttpClient mHttpClient = AbstractHttpApi.createHttpClient();
     
     public JianjianHttpApiV1(String domain, String clientVersion, boolean useOAuth) {
-        mApiBaseUrl = "https://" + domain + "/v1";
+        mApiBaseUrl = "http://" + domain + "/v1";
         mAuthScope = new AuthScope(domain, 80);
         
         
@@ -55,6 +55,10 @@ public class JianjianHttpApiV1 {
             mHttpApi = new HttpApiWithBasicAuth(mHttpClient, clientVersion);
         }
         
+    }
+    
+    public boolean hasCredentials() {
+        return mHttpClient.getCredentialsProvider().getCredentials(mAuthScope) != null;
     }
 
     /**
@@ -75,6 +79,8 @@ public class JianjianHttpApiV1 {
             JianjianError, IOException{
         
         HttpGet httpGet = mHttpApi.createHttpGet(fullUrl(URL_API_USER), //
+                new BasicNameValuePair("source", "jianjian"), //
+                new BasicNameValuePair("lang", "CHS"), //
                 new BasicNameValuePair("uid", uid), //
                 new BasicNameValuePair("b", (b) ? "1" : "0"), //
                 new BasicNameValuePair("c", (c) ? "1" : "0"), //
@@ -93,7 +99,7 @@ public class JianjianHttpApiV1 {
      * @return
      */
     private String fullUrl(String url) {
-        return mApiBaseUrl + url + DATATYPE;
+        return mApiBaseUrl + url;
 
     }
 
@@ -112,5 +118,7 @@ public class JianjianHttpApiV1 {
         }
         
     }
+
+
 
 }

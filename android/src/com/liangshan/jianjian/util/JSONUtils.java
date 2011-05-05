@@ -42,6 +42,14 @@ public class JSONUtils {
             // type of API call, the content might be a JSONObject or a JSONArray.
             // Since JSONArray does not derive from JSONObject, we need to check for
             // either of these cases to parse correctly.
+            if(content == null ||content ==""){
+                throw new JianjianException("Error parsing JSON response, object had no single child key.");
+            }
+            if(content.substring(0,1) == "["){
+                JSONArray json = new JSONArray(content);
+                return parser.parse(json);
+            }else {
+        
             JSONObject json = new JSONObject(content);
             Iterator<String> it = (Iterator<String>)json.keys();
             if (it.hasNext()) {
@@ -49,15 +57,18 @@ public class JSONUtils {
                 if (key.equals("error")) {
                     throw new JianjianException(json.getString(key));
                 } else {
-                    Object obj = json.get(key);
+                    return parser.parse(json);
+                    /*Object obj = json.get(key);
                     if (obj instanceof JSONArray) {
                         return parser.parse((JSONArray)obj);
                     } else {
                         return parser.parse((JSONObject)obj);
-                    }
+                    }*/
                 }
             } else {
                 throw new JianjianException("Error parsing JSON response, object had no single child key.");
+            }
+            
             }
             
         } catch (JSONException ex) {

@@ -3,13 +3,20 @@
  */
 package com.liangshan.jianjian.android.preferences;
 
+import java.io.IOException;
+
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.res.Resources;
 import android.util.Log;
+
 import com.liangshan.jianjian.android.JianjianSettings;
 import com.liangshan.jianjian.android.R;
+import com.liangshan.jianjian.android.error.JianjianCredentialsException;
+import com.liangshan.jianjian.android.error.JianjianException;
 import com.liangshan.jianjian.android.util.StringFormatters;
+import com.liangshan.jianjian.general.Jianjian;
+import com.liangshan.jianjian.general.Jianjian.JLocation;
 import com.liangshan.jianjian.types.User;
 
 /**
@@ -72,6 +79,48 @@ public class JPreferences {
         } else {
             if (JPreferences.DEBUG) Log.d(JPreferences.TAG, "Unable to lookup user.");
         }
+    }
+    
+    public static String getUserId(SharedPreferences prefs) {
+        return prefs.getString(PREFERENCE_ID, null);
+    }
+
+    /**
+     * @param jianjian
+     * @param editor
+     */
+    public static boolean logoutUser(Jianjian jianjian, Editor editor) {
+        if (DEBUG) Log.d(JPreferences.TAG, "Trying to log out.");
+        // TODO: If we re-implement oAuth, we'll have to call clearAllCrendentials here.
+        jianjian.setCredentials(null, null);
+        return editor.clear().commit();
+    }
+    
+    public static boolean loginUser(Jianjian jianjian, String login, String password,
+            JLocation location, Editor editor) throws JianjianCredentialsException,
+            JianjianException, IOException {
+        if (DEBUG) Log.d(JPreferences.TAG, "Trying to log in.");
+
+        jianjian.setCredentials(login, password);
+        storeLoginAndPassword(editor, login, password);
+        if (!editor.commit()) {
+            if (DEBUG) Log.d(TAG, "storeLoginAndPassword commit failed");
+            return false;
+        }
+        
+        User user = jianjian.user(null, false, false, false, location);
+        storeUser(editor, user);
+        if (!editor.commit()) {
+            if (DEBUG) Log.d(TAG, "storeUser commit failed");
+            return false;
+        }
+
+        return true;
+    }
+    
+    public static void storeLoginAndPassword(final Editor editor, String login, String password) {
+        editor.putString(PREFERENCE_LOGIN, login);
+        editor.putString(PREFERENCE_PASSWORD, password);
     }
 
 }

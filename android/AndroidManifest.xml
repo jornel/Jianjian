@@ -43,6 +43,10 @@
             </intent-filter>
         </activity>
         
+        <activity android:name=".LoginActivity"
+                  android:launchMode="singleInstance">
+        </activity>
+        
         
         <activity 
                   android:name=".FriendsActivity"

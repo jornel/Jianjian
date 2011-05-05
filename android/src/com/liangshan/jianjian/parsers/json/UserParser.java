@@ -39,14 +39,14 @@ public class UserParser extends AbstractParser<User> {
         if (json.has("gender")) {
             user.setGender(json.getString("gender"));
         }
-        if (json.has("userid")) {
-            user.setUserid(json.getString("userid"));
-        } 
+        if (json.has("id")) {
+            user.setUserid(json.getString("id"));
+        }
         if (json.has("msisdn")) {
             user.setMsisdn(json.getString("msisdn"));
         }
-        if (json.has("photo")) {
-            user.setPhoto(json.getString("photo"));
+        if (json.has("avatar")) {
+            user.setPhoto(json.getString("avatar"));
         }
  
         return user;

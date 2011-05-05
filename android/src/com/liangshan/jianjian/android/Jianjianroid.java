@@ -32,6 +32,7 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 import android.preference.PreferenceManager;
+import android.text.TextUtils;
 import android.util.Log;
 
 /**
@@ -49,6 +50,9 @@ public class Jianjianroid extends Application {
     }
     
     public static final String PACKAGE_NAME = "com.liangshan.jianjian.android";
+    
+    public static final String INTENT_ACTION_LOGGED_OUT = "com.liangshan.jianjianroid.intent.action.LOGGED_OUT";
+    public static final String INTENT_ACTION_LOGGED_IN = "com.liangshan.jianjianroid.intent.action.LOGGED_IN";
     
     private SharedPreferences mPrefs;    
     private RemoteResourceManager mRemoteResourceManager;
@@ -97,25 +101,7 @@ public class Jianjianroid extends Application {
         
     }
 
-    /**
-     * 
-     */
-    private void loadJianjian() {
-       
-        // Try logging in and setting up foursquare oauth, then user
-        // credentials.
-        if (JianjianSettings.USE_DEBUG_SERVER) {
-            mJianjian = new Jianjian(Jianjian.createHttpApi("10.0.2.2:8080", mVersion, false));
-        } else {
-            mJianjian = new Jianjian(Jianjian.createHttpApi(mVersion, false));
-        }
-        
-        if (JianjianSettings.DEBUG) Log.d(TAG, "loadCredentials()");
-        String phoneNumber = mPrefs.getString(JPreferences.PREFERENCE_LOGIN, null);
-        String password = mPrefs.getString(JPreferences.PREFERENCE_PASSWORD, null);
-        mJianjian.setCredentials(phoneNumber, password);
-        
-    }
+
     
     /**
      * Provides static access to a Jianjian instance. This instance is
@@ -125,13 +111,75 @@ public class Jianjianroid extends Application {
      *            instance
      * @return the Jianjian instace
      */
-    public static Jianjian createFoursquare(Context context) {
+    public static Jianjian createJianjian(Context context) {
         String version = getVersionString(context);
         if (JianjianSettings.USE_DEBUG_SERVER) {
             return new Jianjian(Jianjian.createHttpApi("10.0.2.2:8080", version, false));
         } else {
             return new Jianjian(Jianjian.createHttpApi(version, false));
         }
+    }
+    
+    /**
+     * @return
+     */
+    public Jianjian getJianjian() {
+        return mJianjian;
+    }
+
+    /**
+     * @return
+     */
+    public Location getLastKnownLocation() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+    
+    /**
+     * @return
+     */
+    public boolean isReady() {
+        // TODO Auto-generated method stub
+        return getJianjian().hasLoginAndPassword() && !TextUtils.isEmpty(getUserId());
+    }
+    
+    public RemoteResourceManager getRemoteResourceManager() {
+        return mRemoteResourceManager;
+    }
+    
+    public void requestStartService() {
+        mTaskHandler.sendMessage( //
+                mTaskHandler.obtainMessage(TaskHandler.MESSAGE_START_SERVICE));
+    }
+    
+    /**
+     * @return
+     */
+    private String getUserId() {
+        // TODO Auto-generated method stub
+        return JPreferences.getUserId(mPrefs);
+    }
+
+
+
+    /**
+     * 
+     */
+    private void loadJianjian() {
+       
+        // Try logging in and setting up foursquare oauth, then user
+        // credentials.
+        if (JianjianSettings.USE_DEBUG_SERVER) {
+            mJianjian = new Jianjian(Jianjian.createHttpApi("api.jiepang.com", mVersion, false));
+        } else {
+            mJianjian = new Jianjian(Jianjian.createHttpApi(mVersion, false));
+        }
+        
+        if (JianjianSettings.DEBUG) Log.d(TAG, "loadCredentials()");
+        String phoneNumber = mPrefs.getString(JPreferences.PREFERENCE_LOGIN, null);
+        String password = mPrefs.getString(JPreferences.PREFERENCE_PASSWORD, null);
+        mJianjian.setCredentials(phoneNumber, password);
+        
     }
 
     /**
@@ -161,21 +209,7 @@ public class Jianjianroid extends Application {
         }
     }
 
-    /**
-     * @return
-     */
-    public Jianjian getJianjian() {
-        // TODO Auto-generated method stub
-        return mJianjian;
-    }
 
-    /**
-     * @return
-     */
-    public Location getLastKnownLocation() {
-        // TODO Auto-generated method stub
-        return null;
-    }
     
     private void loadResourceManagers() {
         // We probably don't have SD card access if we get an
@@ -253,5 +287,7 @@ public class Jianjianroid extends Application {
             }
         }
     }
+
+
 
 }
