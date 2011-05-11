@@ -20,7 +20,10 @@ import com.liangshan.jianjian.general.Jianjian.JLocation;
 import com.liangshan.jianjian.types.User;
 import com.liangshan.jianjian.util.IconUtils;
 import android.app.Application;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.pm.PackageInfo;
@@ -96,6 +99,9 @@ public class Jianjianroid extends Application {
         // Set up storage cache.
         loadResourceManagers();
         
+        // Catch logins or logouts.
+        new LoggedInOutBroadcastReceiver().register();
+        
         // Log into Jianjian, if we can.
         loadJianjian();
         
@@ -159,6 +165,10 @@ public class Jianjianroid extends Application {
         // TODO Auto-generated method stub
         return JPreferences.getUserId(mPrefs);
     }
+    
+    public void requestUpdateUser() {
+        mTaskHandler.sendEmptyMessage(TaskHandler.MESSAGE_UPDATE_USER);
+    }
 
 
 
@@ -179,6 +189,12 @@ public class Jianjianroid extends Application {
         String phoneNumber = mPrefs.getString(JPreferences.PREFERENCE_LOGIN, null);
         String password = mPrefs.getString(JPreferences.PREFERENCE_PASSWORD, null);
         mJianjian.setCredentials(phoneNumber, password);
+        
+        if (mJianjian.hasLoginAndPassword()) {
+            sendBroadcast(new Intent(INTENT_ACTION_LOGGED_IN));
+        } else {
+            sendBroadcast(new Intent(INTENT_ACTION_LOGGED_OUT));
+        }
         
     }
 
@@ -223,6 +239,26 @@ public class Jianjianroid extends Application {
         } catch (IllegalStateException e) {
             if (DEBUG) Log.d(TAG, "Falling back to NullDiskCache for RemoteResourceManager");
             mRemoteResourceManager = new RemoteResourceManager(new NullDiskCache());
+        }
+    }
+    
+    private class LoggedInOutBroadcastReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (INTENT_ACTION_LOGGED_IN.equals(intent.getAction())) {
+                requestUpdateUser();
+            }
+        }
+
+        public void register() {
+            // Register our media card broadcast receiver so we can
+            // enable/disable the cache as
+            // appropriate.
+            IntentFilter intentFilter = new IntentFilter();
+            intentFilter.addAction(INTENT_ACTION_LOGGED_IN);
+            intentFilter.addAction(INTENT_ACTION_LOGGED_OUT);
+            registerReceiver(this, intentFilter);
         }
     }
     

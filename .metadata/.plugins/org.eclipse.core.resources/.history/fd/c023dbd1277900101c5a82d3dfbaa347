@@ -1,6 +1,5 @@
 package com.liangshan.jianjian.android;
 
-import com.joelapenna.foursquared.LoginActivity;
 import com.liangshan.jianjian.android.util.TabsUtil;
 import com.liangshan.jianjian.android.util.UserUtils;
 

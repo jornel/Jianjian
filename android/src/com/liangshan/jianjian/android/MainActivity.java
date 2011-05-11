@@ -5,7 +5,10 @@ import com.liangshan.jianjian.android.util.UserUtils;
 
 import android.app.Activity;
 import android.app.TabActivity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Window;
@@ -21,12 +24,22 @@ public class MainActivity extends TabActivity {
 	public static final boolean DEBUG = JianjianSettings.DEBUG;
 	
 	private TabHost mTabHost;
+	
+    private BroadcastReceiver mLoggedOutReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (DEBUG) Log.d(TAG, "onReceive: " + intent);
+            finish();
+        }
+    };
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (DEBUG) Log.d(TAG, "onCreate()");
         setDefaultKeyMode(Activity.DEFAULT_KEYS_SEARCH_LOCAL);
+        registerReceiver(mLoggedOutReceiver, new IntentFilter(Jianjianroid.INTENT_ACTION_LOGGED_OUT));
+
         
         // Don't start the main activity if we don't have credentials
         if (!((Jianjianroid) getApplication()).isReady()) {
