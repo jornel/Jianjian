@@ -14,7 +14,6 @@ import com.liangshan.jianjian.android.JianjianSettings;
 import com.liangshan.jianjian.android.R;
 import com.liangshan.jianjian.android.error.JianjianCredentialsException;
 import com.liangshan.jianjian.android.error.JianjianException;
-import com.liangshan.jianjian.android.util.StringFormatters;
 import com.liangshan.jianjian.general.Jianjian;
 import com.liangshan.jianjian.general.Jianjian.JLocation;
 import com.liangshan.jianjian.types.User;
@@ -38,7 +37,9 @@ public class JPreferences {
     private static final String PREFERENCE_ID = "userid";
     private static final String PREFERENCE_USER_NAME = "user_name";
     private static final String PREFERENCE_USER_EMAIL = "user_email";
-    private static final String PREFERENCE_GENDER = "gender";
+    //private static final String PREFERENCE_USER_NICK = "user_nick";
+    private static final String PREFERENCE_USER_CITY = "user_city";
+    //private static final String PREFERENCE_USER_PIC = "user_pic";
     
     // Credentials related preferences
     public static final String PREFERENCE_LOGIN = "phone";
@@ -72,9 +73,11 @@ public class JPreferences {
     public static void storeUser(final Editor editor, User user) {
         if (user != null && user.getUserid() != null) {
             editor.putString(PREFERENCE_ID, user.getUserid());
-            editor.putString(PREFERENCE_USER_NAME, StringFormatters.getUserFullName(user));
+            editor.putString(PREFERENCE_USER_NAME, user.getUsername());
             editor.putString(PREFERENCE_USER_EMAIL, user.getEmail());
-            editor.putString(PREFERENCE_GENDER, user.getGender());
+            //editor.putString(PREFERENCE_USER_NICK, user.getNick());
+            editor.putString(PREFERENCE_USER_CITY, user.getCity());
+            
             if (DEBUG) Log.d(TAG, "Setting user info");
         } else {
             if (JPreferences.DEBUG) Log.d(JPreferences.TAG, "Unable to lookup user.");
@@ -83,6 +86,18 @@ public class JPreferences {
     
     public static String getUserId(SharedPreferences prefs) {
         return prefs.getString(PREFERENCE_ID, null);
+    }
+    
+    public static String getUserName(SharedPreferences prefs) {
+        return prefs.getString(PREFERENCE_USER_EMAIL, null);
+    }
+    
+    public static String getUserEmail(SharedPreferences prefs) {
+        return prefs.getString(PREFERENCE_USER_EMAIL, null);
+    }
+    
+    public static String getUserCity(SharedPreferences prefs) {
+        return prefs.getString(PREFERENCE_USER_CITY, null);
     }
 
     /**

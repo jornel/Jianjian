@@ -56,6 +56,10 @@
                 <action
                   android:name="android.intent.action.MAIN" />
             </intent-filter>
+            <intent-filter>
+                <action
+                  android:name="com.liangshan.jianjianroid.intent.action.LOGGED_OUT" />
+            </intent-filter>
         </activity>
         
         <activity 
@@ -69,6 +73,10 @@
             <intent-filter>
                 <action
                   android:name="android.intent.action.MAIN" />
+            </intent-filter>
+            <intent-filter>
+                <action
+                  android:name="com.liangshan.jianjianroid.intent.action.LOGGED_OUT" />
             </intent-filter>
         </activity>
 

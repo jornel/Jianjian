@@ -13,16 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="receiver" key="selection"/>
+		<item value="INVISIBLE" key="selection"/>
 		<list key="findhistory">
-			<item value="receiver"/>
-			<item value="Receiver"/>
-			<item value="onCreateDialog"/>
-			<item value="onPreferenceTreeClick"/>
-			<item value="setUser"/>
+			<item value="INVISIBLE"/>
+			<item value="viewBadges"/>
+			<item value="ivBadgesChevron"/>
+			<item value="LOAD_TYPE_USER_PARTIAL"/>
+			<item value="EXTRA_USER_ID"/>
+			<item value="friend&quot;"/>
 			<item value="setIsLoggedInUser"/>
-			<item value="logout"/>
-			<item value="log out"/>
+			<item value="getIsLoggedInUser"/>
 		</list>
 		<list key="replacehistory">
 		</list>

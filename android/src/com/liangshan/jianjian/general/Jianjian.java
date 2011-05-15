@@ -68,6 +68,46 @@ public class Jianjian {
             return mJianjianV1.user(user, b, c, d, null, null, null, null, null);
         }
     }
+    
+    /**
+     * @param string
+     * @param b
+     * @param c
+     * @param d
+     * @param createFoursquareLocation
+     * @return
+     */
+    @V1
+    public User showUser(String user, JLocation location) 
+            throws JianjianException, JianjianError, IOException{
+        // TODO Auto-generated method stub
+        if (location != null) {
+            return mJianjianV1.showUser(user, location.geolat, location.geolong,
+                    location.geohacc, location.geovacc, location.geoalt);
+        } else {
+            return mJianjianV1.showUser(user, null, null, null, null, null);
+        }
+    }
+    
+    /**
+     * @param mUserId
+     * @return
+     */
+    @V1
+    public User friendApprove(String mUserId) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    /**
+     * @param mUserId
+     * @return
+     */
+    @V1
+    public User friendSendrequest(String mUserId) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
     
     
@@ -122,5 +162,7 @@ public class Jianjian {
     public @interface V1 {
 
     }
+
+
 
 }

@@ -13,8 +13,8 @@
 	<section name="DialogBounds_SearchDialog">
 		<item value="522" key="DIALOG_WIDTH"/>
 		<item value="125" key="DIALOG_Y_ORIGIN"/>
-		<item value="423" key="DIALOG_HEIGHT"/>
 		<item value="523" key="DIALOG_X_ORIGIN"/>
+		<item value="423" key="DIALOG_HEIGHT"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="Search">
@@ -39,33 +39,6 @@
 		<item value="12" key="HISTORY_SIZE"/>
 		<section name="HISTORY11">
 			<item value="false" key="isRegExSearch"/>
-			<item value="userDetailsActivityFriendsFollowers" key="textPattern"/>
-			<item value="0" key="scope"/>
-			<item value="true" key="ignoreCase"/>
-			<list key="fileNamePatterns">
-				<item value="*"/>
-			</list>
-			<list key="workingSets">
-			</list>
-		</section>
-		<section name="EXTENSIONS">
-			<item value="*" key="2"/>
-			<item value="*.*" key="1"/>
-			<item value="*.java" key="0"/>
-		</section>
-		<section name="HISTORY10">
-			<item value="false" key="isRegExSearch"/>
-			<item value="FriendsFollowers" key="textPattern"/>
-			<item value="0" key="scope"/>
-			<item value="true" key="ignoreCase"/>
-			<list key="fileNamePatterns">
-				<item value="*"/>
-			</list>
-			<list key="workingSets">
-			</list>
-		</section>
-		<section name="HISTORY9">
-			<item value="false" key="isRegExSearch"/>
 			<item value="com.joelapenna.foursquared.widget.PhotoStrip" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
@@ -75,7 +48,13 @@
 			<list key="workingSets">
 			</list>
 		</section>
-		<section name="HISTORY8">
+		<section name="EXTENSIONS">
+			<item value="*" key="3"/>
+			<item value="*.*" key="2"/>
+			<item value="*.xml" key="1"/>
+			<item value="*.java" key="0"/>
+		</section>
+		<section name="HISTORY10">
 			<item value="false" key="isRegExSearch"/>
 			<item value="ResourceRequestObserver" key="textPattern"/>
 			<item value="0" key="scope"/>
@@ -86,29 +65,7 @@
 			<list key="workingSets">
 			</list>
 		</section>
-		<section name="HISTORY5">
-			<item value="false" key="isRegExSearch"/>
-			<item value="requestStartService" key="textPattern"/>
-			<item value="0" key="scope"/>
-			<item value="true" key="ignoreCase"/>
-			<list key="fileNamePatterns">
-				<item value="*.java"/>
-			</list>
-			<list key="workingSets">
-			</list>
-		</section>
-		<section name="HISTORY4">
-			<item value="false" key="isRegExSearch"/>
-			<item value="INTENT_ACTION_LOGGED_IN" key="textPattern"/>
-			<item value="0" key="scope"/>
-			<item value="true" key="ignoreCase"/>
-			<list key="fileNamePatterns">
-				<item value="*.java"/>
-			</list>
-			<list key="workingSets">
-			</list>
-		</section>
-		<section name="HISTORY7">
+		<section name="HISTORY9">
 			<item value="false" key="isRegExSearch"/>
 			<item value="Dumpcatcher" key="textPattern"/>
 			<item value="0" key="scope"/>
@@ -119,9 +76,53 @@
 			<list key="workingSets">
 			</list>
 		</section>
-		<section name="HISTORY6">
+		<section name="HISTORY8">
 			<item value="false" key="isRegExSearch"/>
 			<item value="FoursquareCredentialsException" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<list key="fileNamePatterns">
+				<item value="*.java"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY5">
+			<item value="false" key="isRegExSearch"/>
+			<item value="INTENT_ACTION_LOGGED_OUT" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<list key="fileNamePatterns">
+				<item value="*.java"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY4">
+			<item value="false" key="isRegExSearch"/>
+			<item value="logout" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<list key="fileNamePatterns">
+				<item value="*.java"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY7">
+			<item value="false" key="isRegExSearch"/>
+			<item value="requestStartService" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<list key="fileNamePatterns">
+				<item value="*.java"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY6">
+			<item value="false" key="isRegExSearch"/>
+			<item value="INTENT_ACTION_LOGGED_IN" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
@@ -136,23 +137,12 @@
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
-				<item value="*.*"/>
+				<item value="*.xml"/>
 			</list>
 			<list key="workingSets">
 			</list>
 		</section>
 		<section name="HISTORY3">
-			<item value="false" key="isRegExSearch"/>
-			<item value="INTENT_ACTION_LOGGED_OUT" key="textPattern"/>
-			<item value="0" key="scope"/>
-			<item value="true" key="ignoreCase"/>
-			<list key="fileNamePatterns">
-				<item value="*.java"/>
-			</list>
-			<list key="workingSets">
-			</list>
-		</section>
-		<section name="HISTORY0">
 			<item value="false" key="isRegExSearch"/>
 			<item value="Menu" key="textPattern"/>
 			<item value="0" key="scope"/>
@@ -163,9 +153,20 @@
 			<list key="workingSets">
 			</list>
 		</section>
+		<section name="HISTORY0">
+			<item value="false" key="isRegExSearch"/>
+			<item value="EXTRA_USER_ID" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<list key="fileNamePatterns">
+				<item value="*.java"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
 		<section name="HISTORY1">
 			<item value="false" key="isRegExSearch"/>
-			<item value="logout" key="textPattern"/>
+			<item value="send_feedback" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">

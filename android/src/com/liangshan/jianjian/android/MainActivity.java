@@ -53,6 +53,12 @@ public class MainActivity extends TabActivity {
         setContentView(R.layout.main_activity);
         initTabHost();
     }
+    
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(mLoggedOutReceiver);
+    }
     /**
      * 
      */
@@ -64,9 +70,9 @@ public class MainActivity extends TabActivity {
             Intent.FLAG_ACTIVITY_NO_HISTORY | 
             Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS | 
             Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        Log.d("CZP","======redirect to login ======");
+        
         startActivity(intent);
-        Log.d("CZP","======MainActivity finished======");
+        
         finish();
         
     }
@@ -96,7 +102,7 @@ public class MainActivity extends TabActivity {
         
         Intent meIntent= new Intent(this, UserDetailsActivity.class);
         //TODO simulate the user id
-        String userId = getString(R.string.testuserid1);
+        String userId = ((Jianjianroid) getApplication()).getUserId();
         String userGender = getString(R.string.male);
         meIntent.putExtra(UserDetailsActivity.EXTRA_USER_ID, userId == null ? "unknown"
                 : userId);

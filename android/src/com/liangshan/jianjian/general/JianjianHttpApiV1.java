@@ -34,8 +34,9 @@ public class JianjianHttpApiV1 {
     private static final boolean DEBUG = Jianjian.DEBUG;
 
     private static final String URL_API_USER = "/account/verify_credentials";
+    private static final String URL_API_USER_DETAIL = "/users/show";
 
-    private static final String DATATYPE = ".json";
+    //private static final String DATATYPE = ".json";
     
     private HttpApi mHttpApi;
     
@@ -85,6 +86,36 @@ public class JianjianHttpApiV1 {
                 new BasicNameValuePair("b", (b) ? "1" : "0"), //
                 new BasicNameValuePair("c", (c) ? "1" : "0"), //
                 new BasicNameValuePair("d", (d) ? "1" : "0"), //
+                new BasicNameValuePair("geolat", geolat), //
+                new BasicNameValuePair("geolong", geolong), //
+                new BasicNameValuePair("geohacc", geohacc), //
+                new BasicNameValuePair("geovacc", geovacc), //
+                new BasicNameValuePair("geoalt", geoalt) //
+                );
+        return (User) mHttpApi.doHttpRequest(httpGet, new UserParser());
+    }
+    
+    /**
+     * /user?uid=9937
+     * @param user
+     * @param b
+     * @param c
+     * @param d
+     * @param geolat
+     * @param geolong
+     * @param geohacc
+     * @param geovacc
+     * @param geoalt
+     * @return
+     */
+    User showUser(String uid, String geolat, String geolong,
+            String geohacc, String geovacc, String geoalt)  throws JianjianException,
+            JianjianError, IOException{
+        
+        HttpGet httpGet = mHttpApi.createHttpGet(fullUrl(URL_API_USER_DETAIL), //
+                new BasicNameValuePair("source", "jianjian"), //
+                new BasicNameValuePair("lang", "CHS"), //
+                new BasicNameValuePair("uid", uid), //
                 new BasicNameValuePair("geolat", geolat), //
                 new BasicNameValuePair("geolong", geolong), //
                 new BasicNameValuePair("geohacc", geohacc), //

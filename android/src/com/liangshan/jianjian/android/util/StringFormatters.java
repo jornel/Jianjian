@@ -116,9 +116,9 @@ public class StringFormatters {
 
     public static String getUserFullName(User user) {
         StringBuffer sb = new StringBuffer();
-        sb.append(user.getUserid());//userid is the name of user
+        sb.append(user.getUsername());//username is the name of user
         return sb.toString();
-    }
+    }    
     
     public static String getUserAbbreviatedName(User user) {
         StringBuffer sb = new StringBuffer();

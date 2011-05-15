@@ -11,7 +11,7 @@ import com.liangshan.jianjian.general.Jianjian.JLocation;
  */
 public class LocationUtils {
 
-    public static final JLocation createFoursquareLocation(android.location.Location location) {
+    public static final JLocation createJianjianLocation(android.location.Location location) {
         if (location == null) {
             return new JLocation(null, null, null, null, null);
         }

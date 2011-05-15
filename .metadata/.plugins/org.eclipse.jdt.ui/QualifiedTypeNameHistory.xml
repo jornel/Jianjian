@@ -27,9 +27,9 @@
 <fullyQualifiedTypeName name="com.liangshan.jianjian.util.JSONUtils"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.JianjianSettings"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.preferences.JPreferences"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.general.Jianjian"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.location.LocationUtils"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.NotificationsUtil"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.error.JianjianException"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.error.JianjianCredentialsException"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.general.Jianjian"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.error.JianjianException"/>
 </qualifiedTypeNameHistroy>

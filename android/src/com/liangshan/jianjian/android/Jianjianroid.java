@@ -161,10 +161,23 @@ public class Jianjianroid extends Application {
     /**
      * @return
      */
-    private String getUserId() {
-        // TODO Auto-generated method stub
+    public String getUserId() {
+        
         return JPreferences.getUserId(mPrefs);
     }
+    
+    public String getUserName() {
+        return JPreferences.getUserName(mPrefs);
+    }
+    
+    public String getUserEmail() {
+        return JPreferences.getUserEmail(mPrefs);
+    }
+    
+    public String getUserCity() {
+        return JPreferences.getUserCity(mPrefs);
+    }
+    
     
     public void requestUpdateUser() {
         mTaskHandler.sendEmptyMessage(TaskHandler.MESSAGE_UPDATE_USER);
@@ -196,6 +209,10 @@ public class Jianjianroid extends Application {
             sendBroadcast(new Intent(INTENT_ACTION_LOGGED_OUT));
         }
         
+    }
+    
+    public boolean getIsFirstRun() {
+        return mIsFirstRun;
     }
 
     /**
@@ -285,7 +302,7 @@ public class Jianjianroid extends Application {
                         // Use location when requesting user information, if we
                         // have it.
                         JLocation location = LocationUtils
-                                .createFoursquareLocation(getLastKnownLocation());
+                                .createJianjianLocation(getLastKnownLocation());
                         User user = getJianjian().user(
                                 null, false, false, false, location);
 

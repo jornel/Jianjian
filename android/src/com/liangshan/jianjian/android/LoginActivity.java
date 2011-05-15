@@ -189,7 +189,7 @@ public class LoginActivity extends Activity {
                 String password = mPasswordEditText.getText().toString();
 
                 JLocation location = null;
-                location = LocationUtils.createFoursquareLocation(
+                location = LocationUtils.createJianjianLocation(
                     jianjianroid.getLastKnownLocation());
 
                 boolean loggedIn = JPreferences.loginUser(jianjian, phoneNumber, password,

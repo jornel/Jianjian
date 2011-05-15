@@ -11,6 +11,7 @@
     <string name="tab_main_nav_me">我</string>
     <string name="user_details_activity_general_badges">徽章</string>
     <string name="user_details_activity_general_tips">收藏</string>
+    <string name="user_details_activity_general_points">积分</string>
     <string name="user_details_activity_add_friends">添加好友</string>
     <string name="user_details_activity_friend_confirm">确认加为好友</string>
     <string name="user_details_activity_friend_add">加为好友</string>
@@ -26,6 +27,11 @@
     <string name="phone_number_or_email">Username or Email</string>
     <string name="password">Password</string>
     <string name="need_an_account">Need an account?</string>
+    
+    <!-- Menu -->
+    <string name="refresh">Refresh</string>
+    <string name="preferences_logout_title">Logout</string>
+    <string name="preferences_exit_title">Exit</string>
     
     <!-- test user string -->
     <string name="testuserid1">鲶鱼哥哥</string>
