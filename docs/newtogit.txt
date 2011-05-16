@@ -44,3 +44,6 @@ how to add the file
 
 7. git push origin master
 
+=============================
+clone the project
+1. git clone git@github.com:jornel/Jianjian.git
