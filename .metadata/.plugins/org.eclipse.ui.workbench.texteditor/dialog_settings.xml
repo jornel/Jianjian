@@ -13,16 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="INVISIBLE" key="selection"/>
+		<item value="locationManager" key="selection"/>
 		<list key="findhistory">
+			<item value="locationManager"/>
+			<item value="LocationManager"/>
+			<item value="user_details_activity_friends_followers_text_plural"/>
 			<item value="INVISIBLE"/>
 			<item value="viewBadges"/>
 			<item value="ivBadgesChevron"/>
 			<item value="LOAD_TYPE_USER_PARTIAL"/>
 			<item value="EXTRA_USER_ID"/>
-			<item value="friend&quot;"/>
-			<item value="setIsLoggedInUser"/>
-			<item value="getIsLoggedInUser"/>
 		</list>
 		<list key="replacehistory">
 		</list>

@@ -9,4 +9,8 @@
 <typeInfo handle="=foursquared2/src&lt;com.joelapenna.foursquared{UserDetailsActivity.java[UserDetailsActivity" modifiers="1" timestamp="1296632766000"/>
 <typeInfo handle="=foursquared2/src&lt;com.joelapenna.foursquared{MainActivity.java[MainActivity" modifiers="1" timestamp="1305443472000"/>
 <typeInfo handle="=android/src&lt;com.liangshan.jianjian.android{MainActivity.java[MainActivity" modifiers="1" timestamp="1305471887000"/>
+<typeInfo handle="=foursquared2/src&lt;com.joelapenna.foursquare.parsers.json{UserParser.java[UserParser" modifiers="1" timestamp="1286631502000"/>
+<typeInfo handle="=android/src&lt;com.liangshan.jianjian.parsers.json{UserParser.java[UserParser" modifiers="1" timestamp="1305645580000"/>
+<typeInfo handle="=android/src&lt;com.liangshan.jianjian.android.preferences{JPreferences.java[JPreferences" modifiers="1" timestamp="1305447108000"/>
+<typeInfo handle="=android/src&lt;com.liangshan.jianjian.http{AbstractHttpApi.java[AbstractHttpApi" modifiers="1025" timestamp="1305643572000"/>
 </typeInfoHistroy>

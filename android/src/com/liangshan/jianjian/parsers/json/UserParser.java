@@ -25,8 +25,8 @@ public class UserParser extends AbstractParser<User> {
         if (json.has("email")) {
             user.setEmail(json.getString("email"));
         }
-        if (json.has("friendcount")) {
-            user.setFriendCount(json.getInt("friendcount"));
+        if (json.has("friends_num")) {
+            user.setFriendCount(json.getInt("friends_num"));
         }
         if (json.has("friendsincommon")) {
             //user.setFriendsInCommon(
@@ -57,11 +57,11 @@ public class UserParser extends AbstractParser<User> {
         if (json.has("city")) {
             user.setCity(json.getString("city"));
         }
-        if (json.has("num_points")) {
-            user.setPoints(json.getInt("num_points"));
+        if (json.has("points_total")) {
+            user.setPoints(json.getInt("points_total"));
         }
-        if (json.has("num_badges")) {
-            user.setBadgesCount(json.getInt("num_badges"));
+        if (json.has("badges_num")) {
+            user.setBadgesCount(json.getInt("badges_num"));
         }
         
         

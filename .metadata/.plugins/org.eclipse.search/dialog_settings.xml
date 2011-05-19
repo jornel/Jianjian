@@ -39,11 +39,11 @@
 		<item value="12" key="HISTORY_SIZE"/>
 		<section name="HISTORY11">
 			<item value="false" key="isRegExSearch"/>
-			<item value="com.joelapenna.foursquared.widget.PhotoStrip" key="textPattern"/>
+			<item value="Dumpcatcher" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
-				<item value="*"/>
+				<item value="*.java"/>
 			</list>
 			<list key="workingSets">
 			</list>
@@ -56,7 +56,7 @@
 		</section>
 		<section name="HISTORY10">
 			<item value="false" key="isRegExSearch"/>
-			<item value="ResourceRequestObserver" key="textPattern"/>
+			<item value="FoursquareCredentialsException" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
@@ -67,7 +67,7 @@
 		</section>
 		<section name="HISTORY9">
 			<item value="false" key="isRegExSearch"/>
-			<item value="Dumpcatcher" key="textPattern"/>
+			<item value="requestStartService" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
@@ -78,7 +78,7 @@
 		</section>
 		<section name="HISTORY8">
 			<item value="false" key="isRegExSearch"/>
-			<item value="FoursquareCredentialsException" key="textPattern"/>
+			<item value="INTENT_ACTION_LOGGED_IN" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
@@ -89,7 +89,7 @@
 		</section>
 		<section name="HISTORY5">
 			<item value="false" key="isRegExSearch"/>
-			<item value="INTENT_ACTION_LOGGED_OUT" key="textPattern"/>
+			<item value="Menu" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
@@ -100,18 +100,18 @@
 		</section>
 		<section name="HISTORY4">
 			<item value="false" key="isRegExSearch"/>
-			<item value="logout" key="textPattern"/>
+			<item value="preferences_logout_title" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
-				<item value="*.java"/>
+				<item value="*.xml"/>
 			</list>
 			<list key="workingSets">
 			</list>
 		</section>
 		<section name="HISTORY7">
 			<item value="false" key="isRegExSearch"/>
-			<item value="requestStartService" key="textPattern"/>
+			<item value="INTENT_ACTION_LOGGED_OUT" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
@@ -122,7 +122,7 @@
 		</section>
 		<section name="HISTORY6">
 			<item value="false" key="isRegExSearch"/>
-			<item value="INTENT_ACTION_LOGGED_IN" key="textPattern"/>
+			<item value="logout" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
@@ -133,18 +133,18 @@
 		</section>
 		<section name="HISTORY2">
 			<item value="false" key="isRegExSearch"/>
-			<item value="preferences_logout_title" key="textPattern"/>
+			<item value="EXTRA_USER_ID" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
-				<item value="*.xml"/>
+				<item value="*.java"/>
 			</list>
 			<list key="workingSets">
 			</list>
 		</section>
 		<section name="HISTORY3">
 			<item value="false" key="isRegExSearch"/>
-			<item value="Menu" key="textPattern"/>
+			<item value="send_feedback" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
@@ -155,7 +155,7 @@
 		</section>
 		<section name="HISTORY0">
 			<item value="false" key="isRegExSearch"/>
-			<item value="EXTRA_USER_ID" key="textPattern"/>
+			<item value="locationManager" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
@@ -166,7 +166,7 @@
 		</section>
 		<section name="HISTORY1">
 			<item value="false" key="isRegExSearch"/>
-			<item value="send_feedback" key="textPattern"/>
+			<item value="gzip" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">

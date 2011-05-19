@@ -35,6 +35,9 @@ public class JianjianHttpApiV1 {
 
     private static final String URL_API_USER = "/account/verify_credentials";
     private static final String URL_API_USER_DETAIL = "/users/show";
+    
+    
+    private static final String URL_API_USER_SHOW_TMP = "http://api.jiepang.com/users/show.json";
 
     //private static final String DATATYPE = ".json";
     
@@ -112,7 +115,7 @@ public class JianjianHttpApiV1 {
             String geohacc, String geovacc, String geoalt)  throws JianjianException,
             JianjianError, IOException{
         
-        HttpGet httpGet = mHttpApi.createHttpGet(fullUrl(URL_API_USER_DETAIL), //
+        HttpGet httpGet = mHttpApi.createHttpGet(URL_API_USER_SHOW_TMP, //
                 new BasicNameValuePair("source", "jianjian"), //
                 new BasicNameValuePair("lang", "CHS"), //
                 new BasicNameValuePair("uid", uid), //
@@ -133,6 +136,7 @@ public class JianjianHttpApiV1 {
         return mApiBaseUrl + url;
 
     }
+    
 
     /**
      * @param phone

@@ -15,7 +15,7 @@
     <string name="user_details_activity_add_friends">添加好友</string>
     <string name="user_details_activity_friend_confirm">确认加为好友</string>
     <string name="user_details_activity_friend_add">加为好友</string>
-    <string name="user_details_activity_friends_in_common_text">n个好友</string>
+    <string name="user_details_activity_friends_in_common_text">%d个好友</string>
     <string name="login_get_started">Get Started</string>
     <string name="login_get_started_more">Got a jianjian account? We just need your email or phone# and password</string>
     <string name="login_failed_login_toast">Unable to log in. Please check your phone number and password.</string>

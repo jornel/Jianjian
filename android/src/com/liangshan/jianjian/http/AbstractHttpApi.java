@@ -12,12 +12,11 @@ import com.liangshan.jianjian.parsers.json.Parser;
 import com.liangshan.jianjian.types.JianjianType;
 import com.liangshan.jianjian.util.JSONUtils;
 
+
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
-import org.apache.http.ParseException;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.params.HttpClientParams;
 import org.apache.http.client.utils.URLEncodedUtils;
@@ -36,6 +35,8 @@ import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -43,6 +44,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.zip.GZIPInputStream;
 
 
 /**
@@ -111,15 +113,17 @@ abstract public class AbstractHttpApi implements HttpApi {
             Parser<? extends JianjianType> parser) throws 
             JianjianParseException, JianjianException, IOException{
         if (DEBUG) LOG.log(Level.FINE, "doHttpRequest: " + httpRequest.getURI());
-
+        
+        httpRequest.addHeader("Accept-Encoding", "gzip");
         HttpResponse response = executeHttpRequest(httpRequest);
         if (DEBUG) LOG.log(Level.FINE, "executed HttpRequest for: "
                 + httpRequest.getURI().toString());
-
+        
+        
         int statusCode = response.getStatusLine().getStatusCode();
         switch (statusCode) {
             case 200:
-                String content = EntityUtils.toString(response.getEntity());
+                String content = getResponseBodyAsString(response);
                 return JSONUtils.consume(parser, content);
                 
             case 400:
@@ -199,8 +203,35 @@ abstract public class AbstractHttpApi implements HttpApi {
 
         return params;
     }
-
     
+    private String getResponseBodyAsString(HttpResponse response) throws IOException {
+        String html = null;
+        GZIPInputStream gzin;
+        
+        if (response.getEntity().getContentEncoding() != null && response.getEntity().getContentEncoding().getValue().toLowerCase().indexOf("gzip") > -1) {
+            InputStream is = response.getEntity().getContent();
+            gzin = new GZIPInputStream(is);
 
+            InputStreamReader isr = new InputStreamReader(gzin, "iso-8859-1");
+            java.io.BufferedReader br = new java.io.BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String tempbf;
+            while (( tempbf = br.readLine() ) != null) {
+                sb.append(tempbf);
+                sb.append("\r\n");
+            }
+            isr.close();
+            gzin.close();
+            html = sb.toString();
+            html = new String(html.getBytes("iso-8859-1"), "utf-8");
+        } else {
+            HttpEntity entity = response.getEntity();
+            html = EntityUtils.toString(entity, "utf-8");
+            if (entity != null) {
+                entity.consumeContent();
+            }
+        }
+        return html;
+    }
 
 }

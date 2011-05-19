@@ -18,18 +18,22 @@
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.NullDiskCache"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.http.HttpApi"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.http.HttpApiWithBasicAuth"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.http.AbstractHttpApi"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.types.User"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.parsers.json.UserParser"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.types.JianjianType"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.parsers.json.Parser"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.error.JianjianParseException"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.util.JSONUtils"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.JianjianSettings"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.preferences.JPreferences"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.location.LocationUtils"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.NotificationsUtil"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.error.JianjianCredentialsException"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.general.Jianjian"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.error.JianjianException"/>
+<fullyQualifiedTypeName name="java.util.zip.GZIPInputStream"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="org.apache.http.HttpEntity"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.http.AbstractHttpApi"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.JianjianSettings"/>
 </qualifiedTypeNameHistroy>

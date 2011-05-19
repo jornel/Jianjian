@@ -241,7 +241,12 @@ public class UserDetailsActivity extends Activity {
             ensureUiPhoto(user);
            
             tvUsername.setText(user.getNick());
-            tvLastSeen.setText("");//to-do
+            
+            if(user.getLastRecMsg()==null){
+                tvLastSeen.setText(user.getCity());//to-do
+                
+            }
+            
             
             //set the btnFriend
             
