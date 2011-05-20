@@ -5,11 +5,14 @@ package com.liangshan.jianjian.android;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Observer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.liangshan.jianjian.android.error.JianjianError;
 import com.liangshan.jianjian.android.error.JianjianException;
+import com.liangshan.jianjian.android.error.LocationException;
+import com.liangshan.jianjian.android.location.BestLocationListener;
 import com.liangshan.jianjian.android.location.LocationUtils;
 import com.liangshan.jianjian.android.preferences.JPreferences;
 import com.liangshan.jianjian.android.util.JavaLoggingHandler;
@@ -30,6 +33,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.location.Location;
+import android.location.LocationManager;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
@@ -59,6 +63,8 @@ public class Jianjianroid extends Application {
     
     private SharedPreferences mPrefs;    
     private RemoteResourceManager mRemoteResourceManager;
+    
+    private BestLocationListener mBestLocationListener = new BestLocationListener();
     
     private String mVersion = null;
     private TaskHandler mTaskHandler;
@@ -132,14 +138,6 @@ public class Jianjianroid extends Application {
     public Jianjian getJianjian() {
         return mJianjian;
     }
-
-    /**
-     * @return
-     */
-    public Location getLastKnownLocation() {
-        // TODO Auto-generated method stub
-        return null;
-    }
     
     /**
      * @return
@@ -151,11 +149,6 @@ public class Jianjianroid extends Application {
     
     public RemoteResourceManager getRemoteResourceManager() {
         return mRemoteResourceManager;
-    }
-    
-    public void requestStartService() {
-        mTaskHandler.sendMessage( //
-                mTaskHandler.obtainMessage(TaskHandler.MESSAGE_START_SERVICE));
     }
     
     /**
@@ -181,6 +174,54 @@ public class Jianjianroid extends Application {
     
     public void requestUpdateUser() {
         mTaskHandler.sendEmptyMessage(TaskHandler.MESSAGE_UPDATE_USER);
+    }
+    
+    public void requestStartService() {
+        mTaskHandler.sendMessage( //
+                mTaskHandler.obtainMessage(TaskHandler.MESSAGE_START_SERVICE));
+    }
+    
+    public BestLocationListener requestLocationUpdates(boolean gps) {
+        mBestLocationListener.register(
+                (LocationManager) getSystemService(Context.LOCATION_SERVICE), gps);
+        return mBestLocationListener;
+    }
+    
+    public BestLocationListener requestLocationUpdates(Observer observer) {
+        mBestLocationListener.addObserver(observer);
+        mBestLocationListener.register(
+                (LocationManager) getSystemService(Context.LOCATION_SERVICE), true);
+        return mBestLocationListener;
+    }
+    
+    public void removeLocationUpdates() {
+        mBestLocationListener
+                .unregister((LocationManager) getSystemService(Context.LOCATION_SERVICE));
+    }
+    
+    public void removeLocationUpdates(Observer observer) {
+        mBestLocationListener.deleteObserver(observer);
+        this.removeLocationUpdates();
+    }
+    
+    public Location getLastKnownLocation() {
+        return mBestLocationListener.getLastKnownLocation();
+    }
+
+    public Location getLastKnownLocationOrThrow() throws LocationException {
+        Location location = mBestLocationListener.getLastKnownLocation();
+        if (location == null) {
+            throw new LocationException();
+        }
+        return location;
+    }
+    
+    public void clearLastKnownLocation() {
+        mBestLocationListener.clearLastKnownLocation();
+    }
+    
+    public boolean getIsFirstRun() {
+        return mIsFirstRun;
     }
 
 
@@ -211,9 +252,7 @@ public class Jianjianroid extends Application {
         
     }
     
-    public boolean getIsFirstRun() {
-        return mIsFirstRun;
-    }
+
 
     /**
      * @return

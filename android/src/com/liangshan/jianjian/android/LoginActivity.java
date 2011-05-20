@@ -73,7 +73,7 @@ public class LoginActivity extends Activity {
     @Override
     public void onResume() {
         super.onResume();
-        //((Jianjianroid) getApplication()).requestLocationUpdates(false);
+        ((Jianjianroid) getApplication()).requestLocationUpdates(false);
     }
 
     @Override
