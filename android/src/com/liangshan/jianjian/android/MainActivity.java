@@ -92,7 +92,7 @@ public class MainActivity extends TabActivity {
         //if(startupTab.equalsIgnoreCase("Me")){
         //}
         Intent friendsIntent = new Intent(this, FriendsActivity.class);
-        Intent productsIntent = new Intent(this, ProductsActivity.class);
+        Intent productsIntent = new Intent(this, RecommendItActivity.class);
         
         TabsUtil.addTab(mTabHost, getString(R.string.tab_main_nav_friends), R.drawable.tab_main_nav_friends_selector, 
                 1, friendsIntent);

@@ -145,7 +145,7 @@ public final class R {
         public static final int phone_number_or_email=0x7f060018;
         public static final int preferences_exit_title=0x7f06001d;
         public static final int preferences_logout_title=0x7f06001c;
-        public static final int products_activity_label=0x7f060004;
+        public static final int recommendit_activity_label=0x7f060004;
         /**  Menu 
          */
         public static final int refresh=0x7f06001b;

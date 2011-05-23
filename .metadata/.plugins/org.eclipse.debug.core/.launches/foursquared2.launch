@@ -8,12 +8,10 @@
 <booleanAttribute key="com.android.ide.eclipse.adt.target" value="true"/>
 <booleanAttribute key="com.android.ide.eclipse.adt.wipedata" value="false"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/foursquared2"/>
-<listEntry value="/foursquared2/AndroidManifest.xml"/>
+<listEntry value="/foursquared1"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="4"/>
-<listEntry value="1"/>
 </listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="foursquared2"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="foursquared1"/>
 </launchConfiguration>

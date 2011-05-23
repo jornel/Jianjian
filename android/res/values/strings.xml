@@ -4,7 +4,7 @@
     <string name="app_name">Jianjian</string>
     <string name="main_name">随时随地推荐好东西给好友</string>
     <string name="friends_activity_label">jianjian friends</string>
-    <string name="products_activity_label">jianjian products</string>
+    <string name="recommendit_activity_label">jianjian products</string>
     <string name="me_activity_label">jianjian me</string>
     <string name="tab_main_nav_friends">朋友</string>
     <string name="tab_main_nav_products">推荐它</string>

@@ -63,8 +63,8 @@
         </activity>
         
         <activity 
-                  android:name=".ProductsActivity"
-                  android:label="@string/products_activity_label">
+                  android:name=".RecommendItActivity"
+                  android:label="@string/recommendit_activity_label">
         </activity>
         
         <activity 
