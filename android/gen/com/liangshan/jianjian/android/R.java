@@ -59,71 +59,85 @@ public final class R {
         public static final int jianjian_gradient=0x7f02000e;
         public static final int line=0x7f02000f;
         public static final int listview_background=0x7f020010;
-        public static final int listview_item_manual=0x7f020011;
-        public static final int main_logo=0x7f020012;
-        public static final int photo_background=0x7f020013;
-        public static final int points=0x7f020014;
-        public static final int purple_plate=0x7f020015;
-        public static final int tab_main_nav_friends_off=0x7f020016;
-        public static final int tab_main_nav_friends_on=0x7f020017;
-        public static final int tab_main_nav_friends_selector=0x7f020018;
-        public static final int tab_main_nav_me_boy_off=0x7f020019;
-        public static final int tab_main_nav_me_boy_on=0x7f02001a;
-        public static final int tab_main_nav_me_boy_selector=0x7f02001b;
-        public static final int tab_main_nav_me_girl_off=0x7f02001c;
-        public static final int tab_main_nav_me_girl_on=0x7f02001d;
-        public static final int tab_main_nav_me_girl_selector=0x7f02001e;
-        public static final int tab_main_nav_nearby_off=0x7f02001f;
-        public static final int tab_main_nav_nearby_on=0x7f020020;
-        public static final int tab_main_nav_nearby_selector=0x7f020021;
-        public static final int tab_main_nav_off=0x7f020022;
-        public static final int tab_main_nav_on=0x7f020023;
-        public static final int tab_main_nav_selector=0x7f020024;
-        public static final int tab_main_nav_text_selector=0x7f020025;
-        public static final int tip=0x7f020026;
-        public static final int user_details_activity_general_selector=0x7f020027;
+        public static final int listview_header_background=0x7f020011;
+        public static final int listview_item_manual=0x7f020012;
+        public static final int main_logo=0x7f020013;
+        public static final int photo_background=0x7f020014;
+        public static final int points=0x7f020015;
+        public static final int purple_plate=0x7f020016;
+        public static final int tab_main_nav_friends_off=0x7f020017;
+        public static final int tab_main_nav_friends_on=0x7f020018;
+        public static final int tab_main_nav_friends_selector=0x7f020019;
+        public static final int tab_main_nav_me_boy_off=0x7f02001a;
+        public static final int tab_main_nav_me_boy_on=0x7f02001b;
+        public static final int tab_main_nav_me_boy_selector=0x7f02001c;
+        public static final int tab_main_nav_me_girl_off=0x7f02001d;
+        public static final int tab_main_nav_me_girl_on=0x7f02001e;
+        public static final int tab_main_nav_me_girl_selector=0x7f02001f;
+        public static final int tab_main_nav_nearby_off=0x7f020020;
+        public static final int tab_main_nav_nearby_on=0x7f020021;
+        public static final int tab_main_nav_nearby_selector=0x7f020022;
+        public static final int tab_main_nav_off=0x7f020023;
+        public static final int tab_main_nav_on=0x7f020024;
+        public static final int tab_main_nav_selector=0x7f020025;
+        public static final int tab_main_nav_text_selector=0x7f020026;
+        public static final int tip=0x7f020027;
+        public static final int user_details_activity_general_selector=0x7f020028;
     }
     public static final class id {
+        public static final int addVenueButton=0x7f080012;
+        public static final int addressEditText=0x7f08000f;
+        public static final int addressLabel=0x7f08000e;
         public static final int button=0x7f080004;
+        public static final int buttonBar=0x7f08000b;
+        public static final int cityEditText=0x7f080011;
+        public static final int crossstreetEditText=0x7f080010;
         public static final int emptyProgress=0x7f080000;
         public static final int emptyText=0x7f080001;
-        public static final int friend_button=0x7f08001f;
-        public static final int ivIcon=0x7f080008;
+        public static final int friend_button=0x7f08002b;
+        public static final int infoLabel=0x7f080009;
+        public static final int ivIcon=0x7f080014;
+        public static final int nameEditText=0x7f08000a;
         public static final int newAccountTextView=0x7f080005;
         public static final int passwordEditText=0x7f080003;
         public static final int phoneEditText=0x7f080002;
+        public static final int scrollView=0x7f080007;
+        public static final int stateEditText=0x7f08000c;
         public static final int tabBackground=0x7f080006;
-        public static final int tabMainNav=0x7f080007;
-        public static final int tvTitle=0x7f080009;
-        public static final int userActivityDetailsProgress=0x7f08000e;
-        public static final int userDetailsActivityAddFriends=0x7f08001c;
-        public static final int userDetailsActivityAddFriendsChevron=0x7f08001e;
-        public static final int userDetailsActivityAddFriendsText=0x7f08001d;
-        public static final int userDetailsActivityFriendButton=0x7f08000d;
-        public static final int userDetailsActivityFriends=0x7f080019;
-        public static final int userDetailsActivityFriendsChevron=0x7f08001b;
-        public static final int userDetailsActivityFriendsText=0x7f08001a;
-        public static final int userDetailsActivityGeneral=0x7f08000f;
-        public static final int userDetailsActivityGeneralBadges=0x7f080010;
-        public static final int userDetailsActivityGeneralBadgesChevron=0x7f080014;
-        public static final int userDetailsActivityGeneralBadgesIcon=0x7f080012;
-        public static final int userDetailsActivityGeneralBadgesTitle=0x7f080011;
-        public static final int userDetailsActivityGeneralBadgesValue=0x7f080013;
-        public static final int userDetailsActivityGeneralPoints=0x7f080015;
-        public static final int userDetailsActivityGeneralPointsIcon=0x7f080017;
-        public static final int userDetailsActivityGeneralPointsTitle=0x7f080016;
-        public static final int userDetailsActivityGeneralPointsValue=0x7f080018;
-        public static final int userDetailsActivityHometownOrLastSeen=0x7f08000c;
-        public static final int userDetailsActivityPhoto=0x7f08000a;
-        public static final int userDetailsActivityUsername=0x7f08000b;
+        public static final int tabMainNav=0x7f080013;
+        public static final int titlebar=0x7f080008;
+        public static final int tvTitle=0x7f080015;
+        public static final int userActivityDetailsProgress=0x7f08001a;
+        public static final int userDetailsActivityAddFriends=0x7f080028;
+        public static final int userDetailsActivityAddFriendsChevron=0x7f08002a;
+        public static final int userDetailsActivityAddFriendsText=0x7f080029;
+        public static final int userDetailsActivityFriendButton=0x7f080019;
+        public static final int userDetailsActivityFriends=0x7f080025;
+        public static final int userDetailsActivityFriendsChevron=0x7f080027;
+        public static final int userDetailsActivityFriendsText=0x7f080026;
+        public static final int userDetailsActivityGeneral=0x7f08001b;
+        public static final int userDetailsActivityGeneralBadges=0x7f08001c;
+        public static final int userDetailsActivityGeneralBadgesChevron=0x7f080020;
+        public static final int userDetailsActivityGeneralBadgesIcon=0x7f08001e;
+        public static final int userDetailsActivityGeneralBadgesTitle=0x7f08001d;
+        public static final int userDetailsActivityGeneralBadgesValue=0x7f08001f;
+        public static final int userDetailsActivityGeneralPoints=0x7f080021;
+        public static final int userDetailsActivityGeneralPointsIcon=0x7f080023;
+        public static final int userDetailsActivityGeneralPointsTitle=0x7f080022;
+        public static final int userDetailsActivityGeneralPointsValue=0x7f080024;
+        public static final int userDetailsActivityHometownOrLastSeen=0x7f080018;
+        public static final int userDetailsActivityPhoto=0x7f080016;
+        public static final int userDetailsActivityUsername=0x7f080017;
+        public static final int zipEditText=0x7f08000d;
     }
     public static final class layout {
         public static final int empty_loading=0x7f030000;
         public static final int friends_list_activity=0x7f030001;
         public static final int login_activity=0x7f030002;
         public static final int main_activity=0x7f030003;
-        public static final int tab_main_nav=0x7f030004;
-        public static final int user_details_activity=0x7f030005;
+        public static final int recommend_it_activity=0x7f030004;
+        public static final int tab_main_nav=0x7f030005;
+        public static final int user_details_activity=0x7f030006;
     }
     public static final class string {
         public static final int app_name=0x7f060001;
@@ -165,6 +179,7 @@ public final class R {
     }
     public static final class style {
         public static final int JianjianTheme=0x7f070000;
+        public static final int TextViewStyleHeaderDivider=0x7f070009;
         public static final int TextViewStyleTabMainNav=0x7f070001;
         public static final int TextViewStyleUserDetailsActivityGeneralTitle=0x7f070004;
         public static final int TextViewStyleUserDetailsActivityGeneralValue=0x7f070005;
@@ -174,5 +189,8 @@ public final class R {
         /**  Used in user details for adding or confirming a friend. 
          */
         public static final int friendButton=0x7f070007;
+        /**  Header divider used with separated list adapter. 
+         */
+        public static final int listSeparatorTextViewStyle=0x7f070008;
     }
 }
