@@ -12,6 +12,21 @@
     android:layout_height="fill_parent"
     android:padding="0dip"
 	android:background="#4d4d4d">
+	
+	<LinearLayout
+      android:id="@+id/widget31"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:gravity="top">
+      <ImageView
+        android:id="@+id/widget33"        
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:src="@drawable/titlebar_logo_unpressed">
+      </ImageView>
+    </LinearLayout>
+	
     
     <TabWidget
       android:id="@android:id/tabs"

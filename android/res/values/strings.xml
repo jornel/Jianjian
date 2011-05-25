@@ -38,6 +38,7 @@
     <string name="refresh">Refresh</string>
     <string name="preferences_logout_title">Logout</string>
     <string name="preferences_exit_title">Exit</string>
+    <string name="pickup_place_product">选择地址</string>
     
     <!-- test user string -->
     <string name="testuserid1">鲶鱼哥哥</string>
