@@ -59,7 +59,7 @@
             android:textAppearance="@android:style/TextAppearance.Large"
             android:hint="@string/password" />
         <Button
-            android:id="@+id/button"
+            android:id="@+id/loginbutton"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"

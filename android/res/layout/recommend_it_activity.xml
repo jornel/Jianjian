@@ -88,13 +88,13 @@
         android:layout_marginBottom="4dip" />
         
       <TableLayout
-        android:id="@+id/buttonBar"
+        android:id="@+id/priceBar"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:layout_marginBottom="4dip">
         <TableRow>
           <EditText
-            android:id="@+id/priceText"
+            android:id="@+id/priceEditText"
             android:layout_width="0dip"
             android:layout_weight="2"
             android:layout_height="wrap_content"
@@ -116,7 +116,7 @@
       </TableLayout>
         
       <TableLayout
-        android:id="@+id/buttonBar"
+        android:id="@+id/recommendBar"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:layout_marginBottom="0dip">
@@ -134,7 +134,7 @@
             android:layout_marginLeft="5dip"
             android:layout_marginRight="5dip" />
           <ImageButton
-            android:id="@+id/takephotoButton"
+            android:id="@+id/takePhotoImgButton"
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:src="@drawable/addphoto_checkin"
@@ -148,11 +148,12 @@
 
         
       <Button
-        android:id="@+id/addVenueButton"
+        android:id="@+id/recommendItButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:enabled="false"
-        android:text="add_venue_activity_btn_add_venue"
+        android:text="@string/recommenditbtn"
+        android:textSize = "25dip"
         android:layout_marginLeft="5dip"
         android:layout_marginRight="5dip" />
         
