@@ -113,7 +113,7 @@ public class LoginActivity extends Activity {
     }
 
     private void ensureUi() {
-        final Button button = (Button) findViewById(R.id.button);
+        final Button button = (Button) findViewById(R.id.loginbutton);
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
