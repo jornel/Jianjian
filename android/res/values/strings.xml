@@ -38,8 +38,13 @@
     <string name="refresh">Refresh</string>
     <string name="preferences_logout_title">Logout</string>
     <string name="preferences_exit_title">Exit</string>
-    <string name="pickup_place_product">选择商品地址</string>
+    <string name="pickup_venue_product">选择商品地址</string>
     <string name="recommenditbtn">推荐给好友</string>
+    
+    <string name="submitting_the_recommendation">正在提交推荐...</string>
+    <string name="add_recommend_it_fail">提交推荐时发生了错误，请重新试一下</string>
+    
+    
     
     <!-- test user string -->
     <string name="testuserid1">鲶鱼哥哥</string>

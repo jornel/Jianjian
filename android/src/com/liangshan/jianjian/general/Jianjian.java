@@ -9,7 +9,9 @@ import java.util.logging.Logger;
 
 import com.liangshan.jianjian.android.error.JianjianError;
 import com.liangshan.jianjian.android.error.JianjianException;
+import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.User;
+import com.liangshan.jianjian.types.Venue;
 
 /**
  * @author jornel
@@ -90,6 +92,24 @@ public class Jianjian {
     }
     
     /**
+     * @param location 
+     * @param page 
+     * @return
+     */
+    public Group<Venue> getVenuesByLocation(JLocation location, int page) 
+            throws JianjianException, JianjianError, IOException{
+        
+        
+        if(location != null){
+            return mJianjianV1.getVenuesByLocation(location.geolat,location.geolong,page);
+        }else {
+            throw new JianjianException("can't get the Venues due to null location");
+            
+        }
+        
+    }
+    
+    /**
      * @param mUserId
      * @return
      */
@@ -162,6 +182,8 @@ public class Jianjian {
     public @interface V1 {
 
     }
+
+
 
 
 

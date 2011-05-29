@@ -19,8 +19,12 @@ import com.liangshan.jianjian.android.error.JianjianException;
 import com.liangshan.jianjian.http.AbstractHttpApi;
 import com.liangshan.jianjian.http.HttpApi;
 import com.liangshan.jianjian.http.HttpApiWithBasicAuth;
+import com.liangshan.jianjian.parsers.json.GroupParser;
 import com.liangshan.jianjian.parsers.json.UserParser;
+import com.liangshan.jianjian.parsers.json.VenueParser;
+import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.User;
+import com.liangshan.jianjian.types.Venue;
 
 /**
  * @author jornel
@@ -127,6 +131,27 @@ public class JianjianHttpApiV1 {
                 );
         return (User) mHttpApi.doHttpRequest(httpGet, new UserParser());
     }
+    
+    /**
+     * @param geolat
+     * @param geolong
+     * @param page
+     * @return
+     */
+    public Group<Venue> getVenuesByLocation(String geolat, 
+              String geolong, int page) throws JianjianException,
+              JianjianError, IOException{
+        if(page == 0){ page = 1; }
+        
+        HttpGet httpGet = mHttpApi.createHttpGet(URL_API_USER_SHOW_TMP, //
+                new BasicNameValuePair("source", "jianjian"), //
+                new BasicNameValuePair("lang", "CHS"), //
+                new BasicNameValuePair("page", String.valueOf(page)), //
+                new BasicNameValuePair("geolat", geolat), //
+                new BasicNameValuePair("geolong", geolong) //
+                );
+        return (Group<Venue>) mHttpApi.doHttpRequest(httpGet, new GroupParser(new VenueParser()));
+    }
 
     /**
      * @param urlApiUser
@@ -153,6 +178,8 @@ public class JianjianHttpApiV1 {
         }
         
     }
+
+
 
 
 

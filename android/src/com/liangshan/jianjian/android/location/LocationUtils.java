@@ -31,7 +31,7 @@ public class LocationUtils {
         }
 
         String geoalt = null;
-        if (location.hasAccuracy()) {
+        if (location.hasAltitude()) {
             geoalt = String.valueOf(location.hasAltitude());
         }
 

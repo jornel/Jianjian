@@ -106,9 +106,9 @@ public final class R {
         public static final int newAccountTextView=0x7f080005;
         public static final int passwordEditText=0x7f080003;
         public static final int phoneEditText=0x7f080002;
-        public static final int pickupPlaceIcon=0x7f08000c;
-        public static final int pickupPlaceLayout=0x7f08000b;
-        public static final int pickupPlaceTextView=0x7f08000d;
+        public static final int pickupVenueIcon=0x7f08000c;
+        public static final int pickupVenueLayout=0x7f08000b;
+        public static final int pickupVenueTextView=0x7f08000d;
         public static final int priceBar=0x7f08000f;
         public static final int priceEditText=0x7f080010;
         public static final int recommendBar=0x7f080012;
@@ -153,6 +153,7 @@ public final class R {
         public static final int user_details_activity=0x7f030006;
     }
     public static final class string {
+        public static final int add_recommend_it_fail=0x7f060027;
         public static final int app_name=0x7f060001;
         public static final int friends_activity_label=0x7f060003;
         public static final int hello=0x7f060000;
@@ -168,13 +169,13 @@ public final class R {
         public static final int login_label=0x7f060013;
         public static final int login_welcome_toast=0x7f060014;
         public static final int main_name=0x7f060002;
-        public static final int male=0x7f060027;
+        public static final int male=0x7f060029;
         public static final int me_activity_label=0x7f060005;
         public static final int need_an_account=0x7f06001a;
         public static final int password=0x7f060019;
         public static final int phone_number=0x7f060017;
         public static final int phone_number_or_email=0x7f060018;
-        public static final int pickup_place_product=0x7f060024;
+        public static final int pickup_venue_product=0x7f060024;
         public static final int preferences_exit_title=0x7f060023;
         public static final int preferences_logout_title=0x7f060022;
         public static final int product_info_separator_text=0x7f06001b;
@@ -184,12 +185,13 @@ public final class R {
         /**  Menu 
          */
         public static final int refresh=0x7f060021;
+        public static final int submitting_the_recommendation=0x7f060026;
         public static final int tab_main_nav_friends=0x7f060006;
         public static final int tab_main_nav_me=0x7f060008;
         public static final int tab_main_nav_products=0x7f060007;
         /**  test user string 
          */
-        public static final int testuserid1=0x7f060026;
+        public static final int testuserid1=0x7f060028;
         public static final int user_details_activity_add_friends=0x7f06000c;
         public static final int user_details_activity_friend_add=0x7f06000e;
         public static final int user_details_activity_friend_confirm=0x7f06000d;

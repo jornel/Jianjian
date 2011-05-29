@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, MainActivity!</string>
+    <string name="app_name">Jianjian</string>
+    <string name="main_name">随时随地推荐好东西给好友</string>
+    <string name="friends_activity_label">jianjian friends</string>
+    <string name="recommendit_activity_label">jianjian recommend</string>
+    <string name="me_activity_label">jianjian me</string>
+    <string name="tab_main_nav_friends">朋友</string>
+    <string name="tab_main_nav_products">推荐它</string>
+    <string name="tab_main_nav_me">我</string>
+    <string name="user_details_activity_general_badges">徽章</string>
+    <string name="user_details_activity_general_tips">收藏</string>
+    <string name="user_details_activity_general_points">积分</string>
+    <string name="user_details_activity_add_friends">添加好友</string>
+    <string name="user_details_activity_friend_confirm">确认加为好友</string>
+    <string name="user_details_activity_friend_add">加为好友</string>
+    <string name="user_details_activity_friends_in_common_text">%d个好友</string>
+    <string name="login_get_started">Get Started</string>
+    <string name="login_get_started_more">Got a jianjian account? We just need your email or phone# and password</string>
+    <string name="login_failed_login_toast">Unable to log in. Please check your phone number and password.</string>
+    <string name="login_label">Log-in</string>
+    <string name="login_welcome_toast">Welcome to Jianjian!</string>
+    <string name="login_dialog_message">Please wait while logging into Jianjian...</string>
+    <string name="login_dialog_title">Logging in...</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="phone_number_or_email">Username or Email</string>
+    <string name="password">Password</string>
+    <string name="need_an_account">Need an account?</string>
+    
+    <string name="product_info_separator_text">商品信息</string>
+    <string name="hint_product_name">商品名称</string>
+    <string name="hint_product_price">0.00</string>
+    <string name="hint_product_currency">元</string>
+    <string name="recommend_info_separator_text">推荐描述</string>
+    <string name="hint_recommend_description">为你的推荐说两句...</string>
+    <!-- Menu -->
+    <string name="refresh">Refresh</string>
+    <string name="preferences_logout_title">Logout</string>
+    <string name="preferences_exit_title">Exit</string>
+    <string name="pickup_place_product">选择商品地址</string>
+    <string name="recommenditbtn">推荐给好友</string>
+    
+    <!-- test user string -->
+    <string name="testuserid1">鲶鱼哥哥</string>
+    <string name="male">male</string>
+</resources>
