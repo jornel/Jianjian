@@ -15,7 +15,6 @@ public class Group<T extends JianjianType> extends ArrayList<T> implements Jianj
     private static final long serialVersionUID = 1L;
 
     private String mType;
-    private Boolean hasMore;
     
     public Group() {
         super();
@@ -32,13 +31,4 @@ public class Group<T extends JianjianType> extends ArrayList<T> implements Jianj
     public String getType() {
         return mType;
     }
-    
-    public void setHasMore(Boolean has_more) {
-        hasMore = has_more;
-    }
-
-    public Boolean isHasMore() {
-        return hasMore;
-    }
-    
 }

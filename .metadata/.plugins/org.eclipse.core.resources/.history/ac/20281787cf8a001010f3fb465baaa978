@@ -43,10 +43,8 @@ public class GroupParser extends AbstractParser<Group> {
         while (it.hasNext()) {
             String key = it.next();
             if (key.equals("has_more")) {
-                group.setHasMore(Boolean.valueOf(json.getString(key)));
-            } else if (key.equals("province")){
-                continue;
-            }else {
+                group.isHasMore(Boolean.valueOf(json.getString(key)));
+            } else {
                 Object obj = json.get(key);
                 if (obj instanceof JSONArray) {  
                     parse(group, (JSONArray)obj);

@@ -19,8 +19,8 @@ public class VenueParser extends AbstractParser<Venue> {
     public Venue parse(JSONObject json) throws JSONException {
 
         Venue obj = new Venue();
-        if (json.has("addr")) {
-            obj.setAddress(json.getString("addr"));
+        if (json.has("address")) {
+            obj.setAddress(json.getString("address"));
         } 
         /*
         if (json.has("checkins")) {
@@ -40,11 +40,11 @@ public class VenueParser extends AbstractParser<Venue> {
         if (json.has("distance")) {
             obj.setDistance(json.getString("distance"));
         } 
-        if (json.has("lat")) {
-            obj.setGeolat(json.getString("lat"));
+        if (json.has("geolat")) {
+            obj.setGeolat(json.getString("geolat"));
         }
-        if (json.has("lon")) {
-            obj.setGeolong(json.getString("lon"));
+        if (json.has("geolong")) {
+            obj.setGeolong(json.getString("geolong"));
         } 
         if (json.has("hasTodo")) {
         	obj.setHasTodo(json.getBoolean("hasTodo"));
