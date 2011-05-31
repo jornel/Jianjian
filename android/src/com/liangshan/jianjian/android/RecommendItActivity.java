@@ -137,6 +137,7 @@ public class RecommendItActivity extends Activity {
         } else {
             mStateHolder = new StateHolder();
             
+            mStateHolder.startTaskGetVenueList(this);
             
             // If passed the venue parcelable, then we are in 'edit' mode.
             /*if (getIntent().getExtras() != null && getIntent().getExtras().containsKey(EXTRA_VENUE_TO_EDIT)) {
@@ -244,76 +245,7 @@ public class RecommendItActivity extends Activity {
         
     }
     
-    private static class AddandRecommendItTask extends AsyncTask<Void, Void, RecommendMsg> {
 
-        private RecommendItActivity mActivity;
-        private String[] mParams;
-        private Exception mReason;
-        private Jianjianroid mJianjianroid;
-        private String mErrorMsgForRecommendIt;
-        private String mSubmittingMsg;
-
-        public AddandRecommendItTask(RecommendItActivity activity, 
-                            String[] params) {
-            mActivity = activity;
-            mParams = params;
-            mJianjianroid = (Jianjianroid) activity.getApplication();
-            mErrorMsgForRecommendIt = activity.getResources().getString(
-                    R.string.add_recommend_it_fail);
-            mSubmittingMsg = activity.getResources().getString(
-                    R.string.submitting_the_recommendation);
-        }
-
-        public void setActivity(RecommendItActivity activity) {
-            mActivity = activity;
-        }
-        
-        @Override
-        protected void onPreExecute() {
-            mActivity.startProgressBar(mSubmittingMsg);
-        }
-
-        @Override
-        protected RecommendMsg doInBackground(Void... params) {
-            try {
-                Jianjian jianjian = mJianjianroid.getJianjian();
-                Location location = mJianjianroid.getLastKnownLocationOrThrow();
-
-                /*    return jianjian.addVenue(
-                            mParams[0], // name
-                            mParams[1], // address
-                            mParams[2], // cross street
-                            mParams[3], // city
-                            mParams[4], // state,
-                            mParams[5], // zip
-                            mParams[6], // phone
-                            mParams[7], // category id
-                            LocationUtils.createJianjianLocation(location));
-                */
-                //LocationUtils.createJianjianLocation(location);
-            } catch (Exception e) {
-                Log.e(TAG, "Exception during recommend the product.", e);
-                mReason = e;
-            }
-            
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(RecommendMsg recommdmsg) {
-            if (DEBUG) Log.d(TAG, "onPostExecute()");
-            if (mActivity != null) {
-                mActivity.onAddandRecommendItTaskComplete(recommdmsg, mReason);
-            }
-        }
-
-        @Override
-        protected void onCancelled() {
-            if (mActivity != null) {
-                mActivity.onAddandRecommendItTaskComplete(null, mReason);
-            }
-        }
-    }
     
     private static class GetVenueListTask extends AsyncTask<Void, Void, Group<Venue>> {
 
@@ -414,6 +346,77 @@ public class RecommendItActivity extends Activity {
             }
         }
     }
+    
+    private static class AddandRecommendItTask extends AsyncTask<Void, Void, RecommendMsg> {
+
+        private RecommendItActivity mActivity;
+        private String[] mParams;
+        private Exception mReason;
+        private Jianjianroid mJianjianroid;
+        private String mErrorMsgForRecommendIt;
+        private String mSubmittingMsg;
+
+        public AddandRecommendItTask(RecommendItActivity activity, 
+                            String[] params) {
+            mActivity = activity;
+            mParams = params;
+            mJianjianroid = (Jianjianroid) activity.getApplication();
+            mErrorMsgForRecommendIt = activity.getResources().getString(
+                    R.string.add_recommend_it_fail);
+            mSubmittingMsg = activity.getResources().getString(
+                    R.string.submitting_the_recommendation);
+        }
+
+        public void setActivity(RecommendItActivity activity) {
+            mActivity = activity;
+        }
+        
+        @Override
+        protected void onPreExecute() {
+            mActivity.startProgressBar(mSubmittingMsg);
+        }
+
+        @Override
+        protected RecommendMsg doInBackground(Void... params) {
+            try {
+                Jianjian jianjian = mJianjianroid.getJianjian();
+                Location location = mJianjianroid.getLastKnownLocationOrThrow();
+
+                /*    return jianjian.addVenue(
+                            mParams[0], // name
+                            mParams[1], // address
+                            mParams[2], // cross street
+                            mParams[3], // city
+                            mParams[4], // state,
+                            mParams[5], // zip
+                            mParams[6], // phone
+                            mParams[7], // category id
+                            LocationUtils.createJianjianLocation(location));
+                */
+                //LocationUtils.createJianjianLocation(location);
+            } catch (Exception e) {
+                Log.e(TAG, "Exception during recommend the product.", e);
+                mReason = e;
+            }
+            
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(RecommendMsg recommdmsg) {
+            if (DEBUG) Log.d(TAG, "onPostExecute()");
+            if (mActivity != null) {
+                mActivity.onAddandRecommendItTaskComplete(recommdmsg, mReason);
+            }
+        }
+
+        @Override
+        protected void onCancelled() {
+            if (mActivity != null) {
+                mActivity.onAddandRecommendItTaskComplete(null, mReason);
+            }
+        }
+    }
 
     private static class StateHolder {
         
@@ -422,6 +425,9 @@ public class RecommendItActivity extends Activity {
         private boolean mIsRunningTaskTakePhoto;
         
         private String mError;
+        private GetVenueListTask mTaskGetVenueList;
+        private TakePhotoTask mTaskTakePhoto;
+        private AddandRecommendItTask mTaskAddandRecommendIt;
         
         public StateHolder() {
         }
@@ -459,6 +465,24 @@ public class RecommendItActivity extends Activity {
         
         public void setError(String error) {
             mError = error;
+        }
+        
+        public void startTaskGetVenueList(RecommendItActivity activity) {
+            mIsRunningTaskGetVenueList = true;
+            mTaskGetVenueList = new GetVenueListTask(activity);
+            mTaskGetVenueList.execute();
+        }
+        
+        public void startTaskTakePhoto(RecommendItActivity activity) {
+            mIsRunningTaskTakePhoto = true;
+            mTaskTakePhoto = new TakePhotoTask(activity);
+            mTaskTakePhoto.execute();
+        }
+        
+        public void startTaskAddandRecommendIt(RecommendItActivity activity,String[] params) {
+            mIsRunningTaskAddandRecommendIt = true;
+            mTaskAddandRecommendIt = new AddandRecommendItTask(activity, params);
+            mTaskAddandRecommendIt.execute();
         }
         
     
