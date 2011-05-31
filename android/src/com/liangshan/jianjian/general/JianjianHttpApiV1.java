@@ -39,6 +39,7 @@ public class JianjianHttpApiV1 {
 
     private static final String URL_API_USER = "/account/verify_credentials";
     private static final String URL_API_USER_DETAIL = "/users/show";
+    private static final String URL_API_VENUE_LIST = "/locations/search";
     
     
     private static final String URL_API_USER_SHOW_TMP = "http://api.jiepang.com/users/show.json";
@@ -143,12 +144,12 @@ public class JianjianHttpApiV1 {
               JianjianError, IOException{
         if(page == 0){ page = 1; }
         
-        HttpGet httpGet = mHttpApi.createHttpGet(URL_API_USER_SHOW_TMP, //
+        HttpGet httpGet = mHttpApi.createHttpGet(fullUrl(URL_API_VENUE_LIST), //
                 new BasicNameValuePair("source", "jianjian"), //
                 new BasicNameValuePair("lang", "CHS"), //
                 new BasicNameValuePair("page", String.valueOf(page)), //
-                new BasicNameValuePair("geolat", geolat), //
-                new BasicNameValuePair("geolong", geolong) //
+                new BasicNameValuePair("lat", geolat), //
+                new BasicNameValuePair("lon", geolong) //
                 );
         return (Group<Venue>) mHttpApi.doHttpRequest(httpGet, new GroupParser(new VenueParser()));
     }

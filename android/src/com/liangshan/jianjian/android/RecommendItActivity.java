@@ -8,7 +8,9 @@ import java.net.URLEncoder;
 import java.util.List;
 
 import com.liangshan.jianjian.android.location.LocationUtils;
+import com.liangshan.jianjian.android.util.NotificationsUtil;
 import com.liangshan.jianjian.general.Jianjian;
+import com.liangshan.jianjian.general.Jianjian.JLocation;
 import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.RecommendMsg;
 import com.liangshan.jianjian.types.Venue;
@@ -232,8 +234,27 @@ public class RecommendItActivity extends Activity {
         
         mStateHolder.setIsRunningTaskGetVenueList(false);
         
+        if(venuelist != null){
+            
+        } else {
+            NotificationsUtil.ToastReasonForFailure(this, mReason);
+        }
+        
+        stopIndeterminateProgressBar();
+        
     }
     
+    /**
+     * 
+     */
+    private void stopIndeterminateProgressBar() {
+        // TODO Auto-generated method stub
+        if (mStateHolder.getIsRunningTaskTakePhoto() == false &&
+                mStateHolder.getIsRunningTaskGetVenueList() == false) {
+                setProgressBarIndeterminateVisibility(false);
+            }
+    }
+
     /**
      * @param venuelist
      * @param mReason
@@ -270,8 +291,11 @@ public class RecommendItActivity extends Activity {
             try {
                 Jianjianroid mJianjianroid = (Jianjianroid) mActivity.getApplication();
                 Jianjian jianjian = mJianjianroid.getJianjian();
+                
                 Location location = mJianjianroid.getLastKnownLocationOrThrow();
                 int page=1;
+                //Location location = mJianjianroid.getLastKnownLocation();
+                //return jianjian.getVenuesByLocation(new JLocation("31.220302","121.351007",null,null,null),page);
                 return jianjian.getVenuesByLocation(LocationUtils.createJianjianLocation(location),page);
             } catch (Exception e) {
                 if (DEBUG)
@@ -293,7 +317,7 @@ public class RecommendItActivity extends Activity {
         protected void onCancelled() {
             if (mActivity != null) {
                 mActivity.onGetVenueListTaskComplete(null,
-                        new Exception("Get categories task request cancelled."));
+                        new Exception("Get Venue List task request cancelled."));
             }
         }
     }
