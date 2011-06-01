@@ -235,6 +235,8 @@ public class RecommendItActivity extends Activity {
         mStateHolder.setIsRunningTaskGetVenueList(false);
         
         if(venuelist != null){
+            mStateHolder.setVenueList(venuelist);
+            mPickupVenueLayout.setEnabled(true);
             
         } else {
             NotificationsUtil.ToastReasonForFailure(this, mReason);
@@ -447,16 +449,38 @@ public class RecommendItActivity extends Activity {
         private boolean mIsRunningTaskAddandRecommendIt;
         private boolean mIsRunningTaskGetVenueList;
         private boolean mIsRunningTaskTakePhoto;
-        
+        private Group<Venue> mVenueList;
         private String mError;
         private GetVenueListTask mTaskGetVenueList;
         private TakePhotoTask mTaskTakePhoto;
         private AddandRecommendItTask mTaskAddandRecommendIt;
         
         public StateHolder() {
+            mVenueList = new Group<Venue>();
+            mIsRunningTaskAddandRecommendIt = false;
+            mIsRunningTaskGetVenueList = false;
+            mIsRunningTaskTakePhoto = false;
+            
         }
         
         public void setActivity(RecommendItActivity activity) {
+            if (mTaskGetVenueList != null) {
+                mTaskGetVenueList.setActivity(activity);
+            }
+            if (mTaskTakePhoto != null) {
+                mTaskTakePhoto.setActivity(activity);
+            }
+            if (mTaskAddandRecommendIt != null) {
+                mTaskAddandRecommendIt.setActivity(activity);
+            }
+        }
+        
+        public Group<Venue> getVenueList() {
+            return mVenueList;
+        }
+        
+        public void setVenueList(Group<Venue> venuelist) {
+            mVenueList = venuelist;
         }
         
         public void setIsRunningTaskAddandRecommendIt(boolean isRunning) {
