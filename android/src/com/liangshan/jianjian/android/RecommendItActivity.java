@@ -16,11 +16,16 @@ import com.liangshan.jianjian.types.RecommendMsg;
 import com.liangshan.jianjian.types.Venue;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.DialogInterface.OnCancelListener;
+import android.content.DialogInterface.OnDismissListener;
 import android.graphics.Bitmap;
 import android.location.Location;
 import android.os.AsyncTask;
@@ -138,7 +143,7 @@ public class RecommendItActivity extends Activity {
             
         } else {
             mStateHolder = new StateHolder();
-            
+            mPickupVenueTextView.setText(getResources().getString(R.string.loading_venue_product));
             mStateHolder.startTaskGetVenueList(this);
             
             // If passed the venue parcelable, then we are in 'edit' mode.
@@ -237,8 +242,10 @@ public class RecommendItActivity extends Activity {
         if(venuelist != null){
             mStateHolder.setVenueList(venuelist);
             mPickupVenueLayout.setEnabled(true);
+            mPickupVenueTextView.setText(getResources().getString(R.string.pickup_venue_product));
             
         } else {
+            mStateHolder.setVenueList(new Group<Venue>());
             NotificationsUtil.ToastReasonForFailure(this, mReason);
         }
         
@@ -534,6 +541,44 @@ public class RecommendItActivity extends Activity {
         }
         
     
+    }
+    
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        switch (id) {
+            case DIALOG_PICK_CATEGORY:
+                // When the user cancels the dialog (by hitting the 'back' key), we
+                // finish this activity. We don't listen to onDismiss() for this
+                // action, because a device rotation will fire onDismiss(), and our
+                // dialog would not be re-displayed after the rotation is complete.
+                /*CategoryPickerDialog dlg = new CategoryPickerDialog(
+                    this, 
+                    mStateHolder.getCategories(), 
+                    ((Foursquared)getApplication()));
+                dlg.setOnCancelListener(new OnCancelListener() {
+                    @Override
+                    public void onCancel(DialogInterface dialog) {
+                        CategoryPickerDialog dlg = (CategoryPickerDialog)dialog;
+                        setChosenCategory(dlg.getChosenCategory());
+                        removeDialog(DIALOG_PICK_CATEGORY);
+                    }
+                });
+                return dlg;
+                */
+            case DIALOG_ERROR:
+                AlertDialog dlgInfo = new AlertDialog.Builder(this)
+                    .setIcon(0)
+                    .setTitle(getResources().getString(R.string.recommendit_progress_bar_title_recommendit))
+                    .setMessage(mStateHolder.getError()).create();
+                dlgInfo.setOnDismissListener(new OnDismissListener() {
+                    public void onDismiss(DialogInterface dialog) {
+                        removeDialog(DIALOG_ERROR);
+                    }
+                });
+            
+            return dlgInfo;
+        }
+        return null;
     }
     
     

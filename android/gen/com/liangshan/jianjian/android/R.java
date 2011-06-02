@@ -97,11 +97,11 @@ public final class R {
         public static final int currencySpinner=0x7f080011;
         public static final int emptyProgress=0x7f080000;
         public static final int emptyText=0x7f080001;
-        public static final int friend_button=0x7f08002f;
+        public static final int friend_button=0x7f080030;
         public static final int infoLabel=0x7f080009;
         public static final int ivIcon=0x7f080017;
         public static final int loginbutton=0x7f080004;
-        public static final int myselector=0x7f08002e;
+        public static final int myselector=0x7f08002f;
         public static final int nameEditText=0x7f08000a;
         public static final int newAccountTextView=0x7f080005;
         public static final int passwordEditText=0x7f080003;
@@ -142,6 +142,7 @@ public final class R {
         public static final int userDetailsActivityHometownOrLastSeen=0x7f08001b;
         public static final int userDetailsActivityPhoto=0x7f080019;
         public static final int userDetailsActivityUsername=0x7f08001a;
+        public static final int venuePickerViewFlipper=0x7f08002e;
     }
     public static final class layout {
         public static final int empty_loading=0x7f030000;
@@ -151,9 +152,10 @@ public final class R {
         public static final int recommend_it_activity=0x7f030004;
         public static final int tab_main_nav=0x7f030005;
         public static final int user_details_activity=0x7f030006;
+        public static final int venue_picker_dialog=0x7f030007;
     }
     public static final class string {
-        public static final int add_recommend_it_fail=0x7f060027;
+        public static final int add_recommend_it_fail=0x7f060029;
         public static final int app_name=0x7f060001;
         public static final int friends_activity_label=0x7f060003;
         public static final int hello=0x7f060000;
@@ -161,6 +163,7 @@ public final class R {
         public static final int hint_product_name=0x7f06001c;
         public static final int hint_product_price=0x7f06001d;
         public static final int hint_recommend_description=0x7f060020;
+        public static final int loading_venue_product=0x7f060024;
         public static final int login_dialog_message=0x7f060015;
         public static final int login_dialog_title=0x7f060016;
         public static final int login_failed_login_toast=0x7f060012;
@@ -169,29 +172,30 @@ public final class R {
         public static final int login_label=0x7f060013;
         public static final int login_welcome_toast=0x7f060014;
         public static final int main_name=0x7f060002;
-        public static final int male=0x7f060029;
+        public static final int male=0x7f06002b;
         public static final int me_activity_label=0x7f060005;
         public static final int need_an_account=0x7f06001a;
         public static final int password=0x7f060019;
         public static final int phone_number=0x7f060017;
         public static final int phone_number_or_email=0x7f060018;
-        public static final int pickup_venue_product=0x7f060024;
+        public static final int pickup_venue_product=0x7f060025;
         public static final int preferences_exit_title=0x7f060023;
         public static final int preferences_logout_title=0x7f060022;
         public static final int product_info_separator_text=0x7f06001b;
         public static final int recommend_info_separator_text=0x7f06001f;
         public static final int recommendit_activity_label=0x7f060004;
-        public static final int recommenditbtn=0x7f060025;
+        public static final int recommendit_progress_bar_title_recommendit=0x7f060027;
+        public static final int recommenditbtn=0x7f060026;
         /**  Menu 
          */
         public static final int refresh=0x7f060021;
-        public static final int submitting_the_recommendation=0x7f060026;
+        public static final int submitting_the_recommendation=0x7f060028;
         public static final int tab_main_nav_friends=0x7f060006;
         public static final int tab_main_nav_me=0x7f060008;
         public static final int tab_main_nav_products=0x7f060007;
         /**  test user string 
          */
-        public static final int testuserid1=0x7f060028;
+        public static final int testuserid1=0x7f06002a;
         public static final int user_details_activity_add_friends=0x7f06000c;
         public static final int user_details_activity_friend_add=0x7f06000e;
         public static final int user_details_activity_friend_confirm=0x7f06000d;
