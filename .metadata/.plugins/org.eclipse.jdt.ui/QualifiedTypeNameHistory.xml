@@ -6,11 +6,8 @@
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.JavaLoggingHandler"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.preferences.Preferences"/>
-<fullyQualifiedTypeName name="android.R"/>
 <fullyQualifiedTypeName name="android.R.array"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.util.IconUtils"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.general.Jianjian.JLocation"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.error.JianjianError"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.StringFormatters"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.RemoteResourceManager"/>
@@ -23,7 +20,6 @@
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.error.JianjianParseException"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.util.JSONUtils"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.preferences.JPreferences"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.NotificationsUtil"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.error.JianjianCredentialsException"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.error.JianjianException"/>
 <fullyQualifiedTypeName name="java.util.zip.GZIPInputStream"/>
@@ -31,8 +27,6 @@
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="org.apache.http.HttpEntity"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.http.AbstractHttpApi"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.JianjianSettings"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.id"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.types.RecommendMsg"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.string"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.general.Jianjian"/>
@@ -41,9 +35,23 @@
 <fullyQualifiedTypeName name="android.graphics.Bitmap"/>
 <fullyQualifiedTypeName name="java.net.URLEncoder"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.location.LocationUtils"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.types.Group"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.types.JianjianType"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.types.Venue"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.parsers.json.GroupParser"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.parsers.json.VenueParser"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.general.Jianjian.JLocation"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.NotificationsUtil"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.types.Group"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.JianjianSettings"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.types.Venue"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.widget.VenuePickerAdapter"/>
+<fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="android.R.layout"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="android.os.Handler"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R"/>
+<fullyQualifiedTypeName name="android.widget.LinearLayout.LayoutParams"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.id"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.layout"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 </qualifiedTypeNameHistroy>

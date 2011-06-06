@@ -31,6 +31,7 @@ import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
@@ -63,7 +64,7 @@ public class RecommendItActivity extends Activity {
     private ImageView mPickupVenueIcon;
     private TextView mPickupVenueTextView;
     private EditText mPriceEditText;
-    private Spinner mCurrencySpinner;
+    //private Spinner mCurrencySpinner;
     private EditText mRecommendDesEditText;
     private ImageButton mTakePhotoImgButton;
     
@@ -108,7 +109,7 @@ public class RecommendItActivity extends Activity {
         mPickupVenueIcon = (ImageView) findViewById(R.id.pickupVenueIcon);
         mPickupVenueTextView = (TextView) findViewById(R.id.pickupVenueTextView);
         mPriceEditText = (EditText) findViewById(R.id.priceEditText);
-        mCurrencySpinner = (Spinner) findViewById(R.id.currencySpinner);
+        //mCurrencySpinner = (Spinner) findViewById(R.id.currencySpinner);
         mRecommendDesEditText = (EditText) findViewById(R.id.recommendDesEditText);
         mTakePhotoImgButton = (ImageButton) findViewById(R.id.takePhotoImgButton);
         
@@ -127,8 +128,31 @@ public class RecommendItActivity extends Activity {
                 
                 String productName = mNameEditText.getText().toString();
                 String price = mPriceEditText.getText().toString();
-                String currency = mCurrencySpinner.getSelectedItem().toString();
+                //temporary price
+                price = price + "Ԫ";
+                //String currency = mCurrencySpinner.getSelectedItem().toString();
                 String recommendDes = mRecommendDesEditText.getText().toString();
+                Bitmap bitmapPhoto = mTakePhotoImgButton.getDrawingCache();
+                Venue chosenVenue = mStateHolder.getChosenVenue();
+                if (TextUtils.isEmpty(productName)) {
+                    showDialogError(getResources().getString(
+                            R.string.recommend_it_activity_error_no_product_name));
+                    return;
+                } else if (chosenVenue == null) {
+                    showDialogError(getResources().getString(
+                            R.string.recommend_it_activity_error_no_chosen_venue));
+                    return;
+                }
+                
+                mStateHolder.startTaskAddandRecommendIt(
+                        RecommendItActivity.this, 
+                        new String[]{
+                                productName,
+                                price,
+                                recommendDes,
+                                chosenVenue.getId()
+                        },
+                        bitmapPhoto != null? bitmapPhoto:null);
                 
             }
         });
@@ -301,11 +325,11 @@ public class RecommendItActivity extends Activity {
                 Jianjianroid mJianjianroid = (Jianjianroid) mActivity.getApplication();
                 Jianjian jianjian = mJianjianroid.getJianjian();
                 
-                Location location = mJianjianroid.getLastKnownLocationOrThrow();
+                //Location location = mJianjianroid.getLastKnownLocationOrThrow();
                 int page=1;
-                //Location location = mJianjianroid.getLastKnownLocation();
-                //return jianjian.getVenuesByLocation(new JLocation("31.220302","121.351007",null,null,null),page);
-                return jianjian.getVenuesByLocation(LocationUtils.createJianjianLocation(location),page);
+                Location location = mJianjianroid.getLastKnownLocation();
+                return jianjian.getVenuesByLocation(new JLocation("31.220302","121.351007",null,null,null),page);
+                //return jianjian.getVenuesByLocation(LocationUtils.createJianjianLocation(location),page);
             } catch (Exception e) {
                 if (DEBUG)
                     Log.d(TAG, "GetVenueListTask: Exception doing get venue list request.", e);
@@ -384,15 +408,17 @@ public class RecommendItActivity extends Activity {
 
         private RecommendItActivity mActivity;
         private String[] mParams;
+        private Bitmap mPhoto;
         private Exception mReason;
         private Jianjianroid mJianjianroid;
         private String mErrorMsgForRecommendIt;
         private String mSubmittingMsg;
 
         public AddandRecommendItTask(RecommendItActivity activity, 
-                            String[] params) {
+                            String[] params,Bitmap photo) {
             mActivity = activity;
             mParams = params;
+            mPhoto = photo;
             mJianjianroid = (Jianjianroid) activity.getApplication();
             mErrorMsgForRecommendIt = activity.getResources().getString(
                     R.string.add_recommend_it_fail);
@@ -461,6 +487,7 @@ public class RecommendItActivity extends Activity {
         private GetVenueListTask mTaskGetVenueList;
         private TakePhotoTask mTaskTakePhoto;
         private AddandRecommendItTask mTaskAddandRecommendIt;
+        private Venue mChosenVenue;
         
         public StateHolder() {
             mVenueList = new Group<Venue>();
@@ -534,10 +561,18 @@ public class RecommendItActivity extends Activity {
             mTaskTakePhoto.execute();
         }
         
-        public void startTaskAddandRecommendIt(RecommendItActivity activity,String[] params) {
+        public void startTaskAddandRecommendIt(RecommendItActivity activity,String[] params,Bitmap photo) {
             mIsRunningTaskAddandRecommendIt = true;
-            mTaskAddandRecommendIt = new AddandRecommendItTask(activity, params);
+            mTaskAddandRecommendIt = new AddandRecommendItTask(activity, params, photo);
             mTaskAddandRecommendIt.execute();
+        }
+        
+        public Venue getChosenVenue() {
+            return mChosenVenue;
+        }
+        
+        public void setChosenVenu(Venue venue) {
+            mChosenVenue = venue;
         }
         
     
@@ -551,20 +586,20 @@ public class RecommendItActivity extends Activity {
                 // finish this activity. We don't listen to onDismiss() for this
                 // action, because a device rotation will fire onDismiss(), and our
                 // dialog would not be re-displayed after the rotation is complete.
-                /*CategoryPickerDialog dlg = new CategoryPickerDialog(
+                VenuePickerDialog dlg = new VenuePickerDialog(
                     this, 
-                    mStateHolder.getCategories(), 
-                    ((Foursquared)getApplication()));
+                    mStateHolder.getVenueList(), 
+                    ((Jianjianroid)getApplication()));
                 dlg.setOnCancelListener(new OnCancelListener() {
                     @Override
                     public void onCancel(DialogInterface dialog) {
-                        CategoryPickerDialog dlg = (CategoryPickerDialog)dialog;
-                        setChosenCategory(dlg.getChosenCategory());
+                        VenuePickerDialog dlg = (VenuePickerDialog)dialog;
+                        setChosenVenueView(dlg.getChosenVenue());
                         removeDialog(DIALOG_PICK_CATEGORY);
                     }
                 });
                 return dlg;
-                */
+                
             case DIALOG_ERROR:
                 AlertDialog dlgInfo = new AlertDialog.Builder(this)
                     .setIcon(0)
@@ -583,6 +618,27 @@ public class RecommendItActivity extends Activity {
     
     
     
+    /**
+     * @param chosenVenue
+     */
+    protected void setChosenVenueView(Venue venue) {
+        
+        if(venue == null){
+            mPickupVenueTextView.setText(getResources().getString(R.string.pickup_venue_product));
+            return;
+        }
+        
+        mPickupVenueTextView.setText(venue.getName());
+        
+        mStateHolder.setChosenVenu(venue);
+        
+        if (canEnableSaveButton()) {
+            mRecommendItButton.setEnabled(canEnableSaveButton());
+        }
+        
+        
+    }
+
     private boolean canEnableSaveButton() {
         return mNameEditText.getText().length() > 0;
     }

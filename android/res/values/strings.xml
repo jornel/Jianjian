@@ -42,11 +42,15 @@
     <string name="pickup_venue_product">选择商品地址</string>
     <string name="recommenditbtn">推荐给好友</string>
     <string name="recommendit_progress_bar_title_recommendit">加载商品</string>
+    <string name="recommend_it_activity_error_no_product_name">商品名称不能为空</string>
+    <string name="recommend_it_activity_error_no_chosen_venue">商品地址不能为空</string>
     
     
     <string name="submitting_the_recommendation">正在提交推荐...</string>
     <string name="add_recommend_it_fail">提交推荐时发生了错误，请重新试一下</string>
     
+    <string name="venue_picker_dialog_title">选择一个地址</string>
+    <string name="more_venues">显示更多地址</string>
     
     
     <!-- test user string -->
