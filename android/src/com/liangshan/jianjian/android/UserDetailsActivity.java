@@ -449,7 +449,7 @@ public class UserDetailsActivity extends Activity {
     }
     
     private void setUserPhotoMissing(ImageView ivPhoto, User user) {
-        if ("male".equals(user.getGender())) {
+        if ("male".equals(user.getGender())||"1".equals(user.getGender())) {
             ivPhoto.setImageResource(R.drawable.blank_boy);
         } else {
             ivPhoto.setImageResource(R.drawable.blank_girl);

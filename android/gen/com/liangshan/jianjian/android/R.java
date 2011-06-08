@@ -98,11 +98,11 @@ public final class R {
         public static final int currencyText=0x7f080016;
         public static final int emptyProgress=0x7f080000;
         public static final int emptyText=0x7f080001;
-        public static final int friend_button=0x7f080038;
+        public static final int friend_button=0x7f080039;
         public static final int infoLabel=0x7f080009;
         public static final int ivIcon=0x7f080019;
         public static final int loginbutton=0x7f080004;
-        public static final int myselector=0x7f080037;
+        public static final int myselector=0x7f080038;
         public static final int nameEditText=0x7f08000a;
         public static final int newAccountTextView=0x7f080005;
         public static final int passwordEditText=0x7f080003;
@@ -144,13 +144,14 @@ public final class R {
         public static final int userDetailsActivityPhoto=0x7f08001b;
         public static final int userDetailsActivityUsername=0x7f08001c;
         public static final int vacantText=0x7f080017;
-        public static final int venueMorePickerName=0x7f080036;
+        public static final int venueMorePickerName=0x7f080037;
         public static final int venueMoreShow=0x7f080030;
         public static final int venuePickerIcon=0x7f080032;
-        public static final int venuePickerListView=0x7f080034;
+        public static final int venuePickerListView=0x7f080035;
         public static final int venuePickerName=0x7f080033;
+        public static final int venuePickerRootVenueButton=0x7f080034;
         public static final int venuePickerViewFlipper=0x7f080031;
-        public static final int venueloadingMoreVenueButton=0x7f080035;
+        public static final int venueloadingMoreVenueButton=0x7f080036;
     }
     public static final class layout {
         public static final int empty_loading=0x7f030000;

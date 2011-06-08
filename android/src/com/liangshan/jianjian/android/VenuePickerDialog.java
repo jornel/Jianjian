@@ -174,9 +174,9 @@ public class VenuePickerDialog extends Dialog {
             listview.setOnItemClickListener(mOnItemClickListener);
 
 
-            //LinearLayout llRootCategory = (LinearLayout) view
-            //.findViewById(R.id.venuePickerRootVenueButton);
-            //llRootCategory.setVisibility(View.GONE);
+            LinearLayout llRootCategory = (LinearLayout) view
+            .findViewById(R.id.venuePickerRootVenueButton);
+            llRootCategory.setVisibility(View.GONE);
                        
         }
         
