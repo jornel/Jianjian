@@ -355,11 +355,11 @@ public class RecommendItActivity extends Activity {
                 Jianjianroid mJianjianroid = (Jianjianroid) mActivity.getApplication();
                 Jianjian jianjian = mJianjianroid.getJianjian();
                 
-                //Location location = mJianjianroid.getLastKnownLocationOrThrow();
+                Location location = mJianjianroid.getLastKnownLocationOrThrow();
                 int page=1;
-                Location location = mJianjianroid.getLastKnownLocation();
-                return jianjian.getVenuesByLocation(new JLocation("31.220302","121.351007",null,null,null),page);
-                //return jianjian.getVenuesByLocation(LocationUtils.createJianjianLocation(location),page);
+                //Location location = mJianjianroid.getLastKnownLocation();
+                //return jianjian.getVenuesByLocation(new JLocation("31.220302","121.351007",null,null,null),page);
+                return jianjian.getVenuesByLocation(LocationUtils.createJianjianLocation(location),page);
             } catch (Exception e) {
                 if (DEBUG)
                     Log.d(TAG, "GetVenueListTask: Exception doing get venue list request.", e);

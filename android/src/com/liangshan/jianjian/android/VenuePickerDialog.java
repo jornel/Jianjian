@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import com.liangshan.jianjian.android.error.JianjianError;
 import com.liangshan.jianjian.android.error.JianjianException;
+import com.liangshan.jianjian.android.location.LocationUtils;
 import com.liangshan.jianjian.android.widget.VenuePickerAdapter;
 import com.liangshan.jianjian.general.Jianjian;
 import com.liangshan.jianjian.general.Jianjian.JLocation;
@@ -139,22 +140,23 @@ public class VenuePickerDialog extends Dialog {
                 
                 @Override
                 public void onClick(View v) {
-                    
+                                       
                     Jianjian jianjian = mJianjianroid.getJianjian();
                     
-                    //Location location = mJianjianroid.getLastKnownLocationOrThrow();
+                    
                     
                     if(mVenueList.isHasMore()){
                         venuePage+=1;
                     }
-                    Location location = mJianjianroid.getLastKnownLocation();
+                    //Location location = mJianjianroid.getLastKnownLocation();
                     try {
-                        mMoreVenueList = jianjian.getVenuesByLocation(new JLocation("31.220302","121.351007",null,null,null),venuePage);
-                      //return jianjian.getVenuesByLocation(LocationUtils.createJianjianLocation(location),page);
+                        Location location = mJianjianroid.getLastKnownLocationOrThrow();
+                        //mMoreVenueList = jianjian.getVenuesByLocation(new JLocation("31.220302","121.351007",null,null,null),venuePage);
+                        mMoreVenueList = jianjian.getVenuesByLocation(LocationUtils.createJianjianLocation(location),venuePage);
                         if(mVenueList.addAll(mMoreVenueList)){
                             mVenueList.setHasMore(mMoreVenueList.isHasMore());
                         }
-                        mListAdapter.updateVenueList(mVenueList);
+                        mListAdapter.updateVenueList(mVenueList);                        
                         mListAdapter.notifyDataSetChanged();
                         if(!mVenueList.isHasMore()){
                             footerview.setVisibility(View.GONE);

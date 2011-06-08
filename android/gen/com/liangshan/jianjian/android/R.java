@@ -176,6 +176,7 @@ public final class R {
         public static final int hint_product_name=0x7f06001c;
         public static final int hint_product_price=0x7f06001d;
         public static final int hint_recommend_description=0x7f060020;
+        public static final int loading_more=0x7f06002e;
         public static final int loading_venue_product=0x7f060024;
         public static final int login_dialog_message=0x7f060015;
         public static final int login_dialog_title=0x7f060016;
@@ -185,7 +186,7 @@ public final class R {
         public static final int login_label=0x7f060013;
         public static final int login_welcome_toast=0x7f060014;
         public static final int main_name=0x7f060002;
-        public static final int male=0x7f06002f;
+        public static final int male=0x7f060030;
         public static final int me_activity_label=0x7f060005;
         public static final int more_venues=0x7f06002d;
         public static final int need_an_account=0x7f06001a;
@@ -211,7 +212,7 @@ public final class R {
         public static final int tab_main_nav_products=0x7f060007;
         /**  test user string 
          */
-        public static final int testuserid1=0x7f06002e;
+        public static final int testuserid1=0x7f06002f;
         public static final int user_details_activity_add_friends=0x7f06000c;
         public static final int user_details_activity_friend_add=0x7f06000e;
         public static final int user_details_activity_friend_confirm=0x7f06000d;

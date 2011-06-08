@@ -20,6 +20,7 @@
   android:paddingRight="12dip"
   android:paddingTop="5dip"
   android:paddingBottom="5dip"
+  android:background="@drawable/listview_item_manual"
   >
     
     <TextView

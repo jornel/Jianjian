@@ -35,7 +35,8 @@
       android:name="Jianjianroid"
       android:icon="@drawable/icon" 
       android:label="@string/app_name"
-      android:theme="@style/JianjianTheme">    
+      android:theme="@style/JianjianTheme"
+      android:debuggable="true">    
     
         <uses-library
            android:name="com.google.android.maps" />

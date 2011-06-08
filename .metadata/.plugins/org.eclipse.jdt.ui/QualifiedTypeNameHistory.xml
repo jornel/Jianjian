@@ -34,7 +34,6 @@
 <fullyQualifiedTypeName name="com.liangshan.jianjian.util.ParcelUtils"/>
 <fullyQualifiedTypeName name="android.graphics.Bitmap"/>
 <fullyQualifiedTypeName name="java.net.URLEncoder"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.location.LocationUtils"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.types.JianjianType"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.parsers.json.GroupParser"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.parsers.json.VenueParser"/>
@@ -54,4 +53,5 @@
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.id"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.layout"/>
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.location.LocationUtils"/>
 </qualifiedTypeNameHistroy>

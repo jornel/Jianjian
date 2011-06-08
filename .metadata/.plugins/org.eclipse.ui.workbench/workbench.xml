@@ -20,12 +20,12 @@
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="84" y="22"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="120" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="54" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="152" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.browser.editor" itemType="typePlaceholder" x="-1" y="-1"/>
@@ -49,13 +49,20 @@
 <part id="7"/>
 <part id="8"/>
 <part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
+<part id="13"/>
+<part id="14"/>
+<part id="15"/>
+<part id="16"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RecommendItActivity.java" partName="RecommendItActivity.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/RecommendItActivity.java" title="RecommendItActivity.java" tooltip="android/src/com/liangshan/jianjian/android/RecommendItActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/RecommendItActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="15703" selectionTopPixel="6284"/>
+<editorState selectionHorizontalPixel="0" selectionLength="32" selectionOffset="8353" selectionTopPixel="1692"/>
 </editor>
 <editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="recommend_it_activity.xml" partName="recommend_it_activity.xml" path="/Users/jornel/project/jianjian/android/res/layout/recommend_it_activity.xml" title="recommend_it_activity.xml" tooltip="android/res/layout/recommend_it_activity.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/res/layout/recommend_it_activity.xml"/>
@@ -83,20 +90,52 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/foursquared1/src/com/joelapenna/foursquare/http/AbstractHttpApi.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="18" selectionOffset="2676" selectionTopPixel="270"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.ClassFileEditor" name="AbstractHttpClient.class" partName="AbstractHttpClient.class" title="AbstractHttpClient.class" tooltip="org.apache.http.impl.client.AbstractHttpClient" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=foursquared1/\/Users\/jornel\/develop\/android-sdk-mac_86\/platforms\/android-8\/android.jar&lt;org.apache.http.impl.client(AbstractHttpClient.class"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FriendsActivity.java" partName="FriendsActivity.java" path="/Users/jornel/project/android/foursquare/foursquared/main/src/com/joelapenna/foursquared/FriendsActivity.java" title="FriendsActivity.java" tooltip="foursquared1/src/com/joelapenna/foursquared/FriendsActivity.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FriendsActivity.java" partName="FriendsActivity.java" path="/Users/jornel/project/android/foursquare/foursquared/main/src/com/joelapenna/foursquared/FriendsActivity.java" title="FriendsActivity.java" tooltip="foursquared1/src/com/joelapenna/foursquared/FriendsActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/foursquared1/src/com/joelapenna/foursquared/FriendsActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="20356" selectionTopPixel="6735"/>
+<editorState selectionHorizontalPixel="0" selectionLength="6" selectionOffset="22629" selectionTopPixel="589"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="VenuePickerDialog.java" partName="VenuePickerDialog.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/VenuePickerDialog.java" title="VenuePickerDialog.java" tooltip="android/src/com/liangshan/jianjian/android/VenuePickerDialog.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/VenuePickerDialog.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5724" selectionTopPixel="1731"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Jianjianroid.java" partName="Jianjianroid.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/Jianjianroid.java" title="Jianjianroid.java" tooltip="android/src/com/liangshan/jianjian/android/Jianjianroid.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/Jianjianroid.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7126" selectionTopPixel="2520"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BestLocationListener.java" partName="BestLocationListener.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/location/BestLocationListener.java" title="BestLocationListener.java" tooltip="android/src/com/liangshan/jianjian/android/location/BestLocationListener.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/location/BestLocationListener.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="21" selectionOffset="2522" selectionTopPixel="609"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserDetailsActivity.java" partName="UserDetailsActivity.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/UserDetailsActivity.java" title="UserDetailsActivity.java" tooltip="android/src/com/liangshan/jianjian/android/UserDetailsActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/UserDetailsActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="8" selectionOffset="249" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" partName="MainActivity.java" path="/Users/jornel/project/android/foursquare/foursquared/main/src/com/joelapenna/foursquared/MainActivity.java" title="MainActivity.java" tooltip="foursquared1/src/com/joelapenna/foursquared/MainActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/foursquared1/src/com/joelapenna/foursquared/MainActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NearbyVenuesActivity.java" partName="NearbyVenuesActivity.java" path="/Users/jornel/project/android/foursquare/foursquared/main/src/com/joelapenna/foursquared/NearbyVenuesActivity.java" title="NearbyVenuesActivity.java" tooltip="foursquared1/src/com/joelapenna/foursquared/NearbyVenuesActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/foursquared1/src/com/joelapenna/foursquared/NearbyVenuesActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="11323" selectionTopPixel="3522"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BestLocationListener.java" partName="BestLocationListener.java" path="/Users/jornel/project/android/foursquare/foursquared/main/src/com/joelapenna/foursquared/location/BestLocationListener.java" title="BestLocationListener.java" tooltip="foursquared1/src/com/joelapenna/foursquared/location/BestLocationListener.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/foursquared1/src/com/joelapenna/foursquared/location/BestLocationListener.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4956" selectionTopPixel="400"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Foursquared.java" partName="Foursquared.java" path="/Users/jornel/project/android/foursquare/foursquared/main/src/com/joelapenna/foursquared/Foursquared.java" title="Foursquared.java" tooltip="foursquared1/src/com/joelapenna/foursquared/Foursquared.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/foursquared1/src/com/joelapenna/foursquared/Foursquared.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4" selectionTopPixel="1694"/>
 </editor>
 </editors>
 <views>
+<view id="com.android.ide.eclipse.ddms.views.DeviceView" partName="Devices">
+<viewState/>
+</view>
 <view id="org.eclipse.search.ui.views.SearchView" partName="Search">
 <viewState isPinned="false">
-<view IMemento.internal.id="org.eclipse.jdt.ui.JavaSearchResultPage" org.eclipse.jdt.search.resultpage.grouping="3" org.eclipse.jdt.search.resultpage.limit="1000" org.eclipse.jdt.search.resultpage.limit_enabled="TRUE" org.eclipse.jdt.search.resultpage.sorting="1" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2"/>
 <view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
+<view IMemento.internal.id="org.eclipse.jdt.ui.JavaSearchResultPage" org.eclipse.jdt.search.resultpage.grouping="3" org.eclipse.jdt.search.resultpage.limit="1000" org.eclipse.jdt.search.resultpage.limit_enabled="TRUE" org.eclipse.jdt.search.resultpage.sorting="1" org.eclipse.search.lastActivation="4" org.eclipse.search.resultpage.layout="2"/>
+<view IMemento.internal.id="org.eclipse.search.text.FileSearchResultPage" org.eclipse.search.lastActivation="3" org.eclipse.search.resultpage.layout="2" org.eclipse.search.resultpage.limit="1000" org.eclipse.search.resultpage.sorting="2"/>
 </viewState>
 </view>
 <view id="org.eclipse.jdt.callhierarchy.view" partName="Call Hierarchy">
@@ -105,9 +144,12 @@
 <view id="org.eclipse.debug.ui.DebugView" partName="Debug">
 <viewState/>
 </view>
+<view id="com.android.ide.eclipse.ddms.views.ThreadView" partName="Threads">
+<viewState/>
+</view>
 <view id="org.eclipse.ui.views.TaskList" partName="Tasks">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.completionField" categoryGroup="none" markerContentGenerator="org.eclipse.ui.ide.tasksGenerator" partName="Tasks">
-<columnWidths org.eclipse.ui.ide.completionField="0" org.eclipse.ui.ide.descriptionField="0" org.eclipse.ui.ide.locationField="0" org.eclipse.ui.ide.markerType="0" org.eclipse.ui.ide.pathField="0" org.eclipse.ui.ide.priorityField="0" org.eclipse.ui.ide.resourceField="0"/>
+<columnWidths org.eclipse.ui.ide.completionField="40" org.eclipse.ui.ide.descriptionField="324" org.eclipse.ui.ide.locationField="84" org.eclipse.ui.ide.markerType="114" org.eclipse.ui.ide.pathField="144" org.eclipse.ui.ide.priorityField="40" org.eclipse.ui.ide.resourceField="114"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.completionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.priorityField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.descriptionField"/>
@@ -126,7 +168,13 @@
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
 </view>
+<view id="com.android.ide.eclipse.ddms.views.HeapView" partName="Heap">
+<viewState/>
+</view>
 <view id="com.android.ide.eclipse.ddms.views.LogCatView" partName="LogCat">
+<viewState/>
+</view>
+<view id="com.android.ide.eclipse.ddms.views.FileExplorerView" partName="File Explorer">
 <viewState/>
 </view>
 <view id="org.eclipse.ui.views.PropertySheet" partName="Properties">
@@ -134,8 +182,7 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Warnings (100 of 208 items)"/>
+<expanded>&#x0A;<category IMemento.internal.id="Warnings (100 of 202 items)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="0" org.eclipse.ui.ide.markerType="0" org.eclipse.ui.ide.pathField="0" org.eclipse.ui.ide.resourceField="0" org.eclipse.ui.ide.severityAndDescriptionField="0"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -144,6 +191,9 @@
 <visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
 </viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
 </view>
 <view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
 <viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="">
@@ -173,17 +223,20 @@
 </customFilters>
 </viewState>
 </view>
-<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<view id="com.android.ide.eclipse.ddms.views.EmulatorControlView" partName="Emulator Control">
 <viewState/>
 </view>
 <view id="org.eclipse.jdt.ui.SourceView" partName="Declaration">
+<viewState/>
+</view>
+<view id="com.android.ide.eclipse.ddms.views.AllocTrackerView" partName="Allocation Tracker">
 <viewState/>
 </view>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc">
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -245,13 +298,13 @@
 <perspective_action id="com.android.ide.eclipse.ddms.Perspective"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
-<view id="org.eclipse.jdt.ui.PackageExplorer"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.jdt.ui.JavadocView"/>
 <view id="org.eclipse.ui.views.PropertySheet"/>
 <view id="org.eclipse.jdt.callhierarchy.view"/>
 <view id="org.eclipse.search.ui.views.SearchView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViews>
 <view id="org.eclipse.jdt.ui.SourceView" ratio="0.3"/>
@@ -424,153 +477,250 @@
 </mainWindow>
 </layout>
 </perspective>
+<perspective editorAreaTrimState="2" editorAreaVisible="0" fixed="0" version="0.016">
+<descriptor class="com.android.ide.eclipse.ddms.Perspective" id="com.android.ide.eclipse.ddms.Perspective" label="DDMS"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="adt.actionSet.wizards"/>
+<alwaysOnActionSet id="adt.actionSet.refactorings"/>
+<alwaysOnActionSet id="adt.actionSet.avdManager"/>
+<show_view_action id="com.android.ide.eclipse.ddms.views.DeviceView"/>
+<show_view_action id="com.android.ide.eclipse.ddms.views.FileExplorerView"/>
+<show_view_action id="com.android.ide.eclipse.ddms.views.HeapView"/>
+<show_view_action id="com.android.ide.eclipse.ddms.views.AllocTrackerView"/>
+<show_view_action id="com.android.ide.eclipse.ddms.views.LogCatView"/>
+<show_view_action id="com.android.ide.eclipse.ddms.views.ThreadView"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.BookmarkView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.ProgressView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<perspective_action id="org.eclipse.ui.resourcePerspective"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="com.android.ide.eclipse.ddms.views.LogCatView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="com.android.ide.eclipse.ddms.views.DeviceView"/>
+<view id="com.android.ide.eclipse.ddms.views.EmulatorControlView"/>
+<view id="com.android.ide.eclipse.ddms.views.ThreadView"/>
+<view id="com.android.ide.eclipse.ddms.views.HeapView"/>
+<view id="com.android.ide.eclipse.ddms.views.AllocTrackerView"/>
+<view id="com.android.ide.eclipse.ddms.views.FileExplorerView"/>
+<fastViewBars/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="devices">&#x0A;<folder activePageID="com.android.ide.eclipse.ddms.views.DeviceView" appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.DeviceView" label="Devices"/>
+<page content="com.android.ide.eclipse.ddms.views.DeviceView:*" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.74939954" ratioLeft="936" ratioRight="313" relationship="2" relative="devices">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info folder="true" part="logcat" ratio="0.79935795" ratioLeft="498" ratioRight="125" relationship="4" relative="devices">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="com.android.ide.eclipse.ddms.views.LogCatView:*" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.29943955" ratioLeft="374" ratioRight="875" relationship="2" relative="devices"/>
+<info folder="true" part="ddms-detail" ratio="0.49942857" ratioLeft="437" ratioRight="438" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="com.android.ide.eclipse.ddms.views.ThreadView" appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.ThreadView" label="Threads"/>
+<page content="com.android.ide.eclipse.ddms.views.HeapView" label="Heap"/>
+<page content="com.android.ide.eclipse.ddms.views.AllocTrackerView" label="Allocation Tracker"/>
+<page content="com.android.ide.eclipse.ddms.views.FileExplorerView" label="File Explorer"/>
+<page content="com.android.ide.eclipse.ddms.views.ThreadView:*" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="emulator" ratio="0.5" ratioLeft="249" ratioRight="249" relationship="4" relative="devices">&#x0A;<folder activePageID="com.android.ide.eclipse.ddms.views.EmulatorControlView" appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.EmulatorControlView" label="Emulator Control"/>
+<page content="com.android.ide.eclipse.ddms.views.EmulatorControlView:*" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
 </perspectives>
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/RecommendItActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquared/AddVenueActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquare/Foursquare.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquare/FoursquareHttpApiV1.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquared/FriendsActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquared/NearbyVenuesActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquared/location/BestLocationListener.java"/>
+<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=android/\/Users\/jornel\/develop\/android-sdk-mac_86\/platforms\/android-8\/android.jar&lt;android.app(Activity.class"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquared/Foursquared.java"/>
+<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=android/\/Users\/jornel\/develop\/android-sdk-mac_86\/platforms\/android-8\/android.jar&lt;android.content(ContextWrapper.class"/>
+<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=android/\/Users\/jornel\/develop\/android-sdk-mac_86\/platforms\/android-8\/android.jar&lt;android.location(LocationManager.class"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquared/Foursquared.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquared/NearbyVenuesActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquared/Foursquared.java"/>
 </editors>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="5672" y="26"/>
+<item historyLabel="Activity.class" index="2">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="20114" y="26"/>
+<item historyLabel="NearbyVenuesActivity.java" index="0">
+<position info="not_deleted" x="5967" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="6063" y="0"/>
+<item historyLabel="Foursquared.java" index="3">
+<position/>
 </item>
-<item historyLabel="AddVenueActivity.java" index="1">
-<position info="not_deleted" x="7089" y="23"/>
+<item historyLabel="Foursquared.java" index="3">
+<position/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="6063" y="0"/>
+<item historyLabel="Foursquared.java" index="3">
+<position/>
 </item>
-<item historyLabel="AddVenueActivity.java" index="1">
-<position info="not_deleted" x="7089" y="23"/>
+<item historyLabel="ContextWrapper.class" index="4">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="6063" y="0"/>
+<item historyLabel="Foursquared.java" index="3">
+<position info="not_deleted" x="6599" y="0"/>
 </item>
-<item historyLabel="AddVenueActivity.java" index="1">
-<position info="not_deleted" x="7089" y="23"/>
+<item historyLabel="Foursquared.java" index="3">
+<position info="not_deleted" x="6559" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="5699" y="0"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="5751" y="0"/>
 </item>
-<item historyLabel="AddVenueActivity.java" index="1">
-<position info="not_deleted" x="7113" y="0"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="5811" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="5699" y="0"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="5879" y="0"/>
 </item>
-<item historyLabel="AddVenueActivity.java" index="1">
-<position info="not_deleted" x="5494" y="2305"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="5898" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="5699" y="0"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="5952" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="5672" y="26"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="6024" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="20114" y="26"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="6093" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="20297" y="21"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="6140" y="0"/>
 </item>
-<item historyLabel="AddVenueActivity.java" index="1">
-<position info="not_deleted" x="5494" y="2305"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="6191" y="0"/>
 </item>
-<item historyLabel="AddVenueActivity.java" index="1">
-<position info="not_deleted" x="25621" y="23"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="6243" y="0"/>
 </item>
-<item historyLabel="AddVenueActivity.java" index="1">
-<position info="not_deleted" x="25820" y="18"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="6310" y="0"/>
 </item>
-<item historyLabel="AddVenueActivity.java" index="1">
-<position info="not_deleted" x="16766" y="18"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="6478" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="20297" y="21"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="6326" y="14"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="15234" y="0"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="2130" y="14"/>
 </item>
-<item historyLabel="AddVenueActivity.java" index="1">
-<position info="not_deleted" x="16766" y="18"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="1396" y="18"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="15234" y="0"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="1221" y="17"/>
 </item>
-<item historyLabel="AddVenueActivity.java" index="1">
-<position info="not_deleted" x="16766" y="18"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="1358" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="15234" y="0"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="1325" y="0"/>
 </item>
-<item historyLabel="AddVenueActivity.java" index="1">
-<position info="not_deleted" x="16766" y="18"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="1358" y="0"/>
 </item>
-<item historyLabel="AddVenueActivity.java" index="1">
-<position info="not_deleted" x="17119" y="0"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="1359" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="15234" y="0"/>
+<item historyLabel="LocationManager.class" index="5">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="15554" y="16"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="1358" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="8498" y="16"/>
+<item historyLabel="NearbyVenuesActivity.java" index="0">
+<position info="not_deleted" x="5967" y="0"/>
 </item>
-<item historyLabel="AddVenueActivity.java" index="1">
-<position info="not_deleted" x="17119" y="0"/>
+<item historyLabel="NearbyVenuesActivity.java" index="0">
+<position info="not_deleted" x="6008" y="22"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="15853" y="0"/>
+<item historyLabel="NearbyVenuesActivity.java" index="0">
+<position info="not_deleted" x="6008" y="22"/>
 </item>
-<item historyLabel="AddVenueActivity.java" index="1">
-<position info="not_deleted" x="17119" y="0"/>
+<item historyLabel="Foursquared.java" index="6">
+<position info="not_deleted" x="6462" y="22"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="15853" y="0"/>
+<item historyLabel="Foursquared.java" index="6">
+<position info="not_deleted" x="6506" y="0"/>
 </item>
-<item historyLabel="AddVenueActivity.java" index="1">
-<position info="not_deleted" x="17856" y="0"/>
+<item historyLabel="Foursquared.java" index="6">
+<position info="not_deleted" x="6559" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="15853" y="0"/>
+<item historyLabel="Foursquared.java" index="6">
+<position info="not_deleted" x="6897" y="0"/>
 </item>
-<item historyLabel="AddVenueActivity.java" index="1">
-<position info="not_deleted" x="17856" y="0"/>
+<item historyLabel="NearbyVenuesActivity.java" index="0">
+<position info="not_deleted" x="6008" y="22"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="15853" y="0"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="1358" y="0"/>
 </item>
-<item historyLabel="AddVenueActivity.java" index="1">
-<position info="not_deleted" x="17560" y="1752"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="1333" y="14"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="15703" y="0"/>
+<item historyLabel="BestLocationListener.java" index="1">
+<position info="not_deleted" x="2130" y="14"/>
 </item>
-<item historyLabel="AddVenueActivity.java" index="1">
-<position info="not_deleted" x="17799" y="8"/>
+<item historyLabel="NearbyVenuesActivity.java" index="7">
+<position info="not_deleted" x="4" y="0"/>
 </item>
-<item historyLabel="Foursquare.java" index="2">
-<position info="not_deleted" x="4219" y="8"/>
+<item historyLabel="NearbyVenuesActivity.java" index="7">
+<position info="not_deleted" x="6008" y="22"/>
 </item>
-<item historyLabel="FoursquareHttpApiV1.java" index="3">
-<position info="not_deleted" x="11816" y="8"/>
+<item historyLabel="NearbyVenuesActivity.java" index="7">
+<position info="not_deleted" x="7426" y="9"/>
 </item>
-<item historyLabel="Foursquare.java" index="2">
-<position info="not_deleted" x="4986" y="8"/>
+<item historyLabel="NearbyVenuesActivity.java" index="7">
+<position info="not_deleted" x="12386" y="9"/>
 </item>
-<item active="true" historyLabel="FriendsActivity.java" index="4">
-<position info="not_deleted" x="20281" y="74"/>
+<item historyLabel="NearbyVenuesActivity.java" index="7">
+<position info="not_deleted" x="12418" y="27"/>
+</item>
+<item historyLabel="NearbyVenuesActivity.java" index="7">
+<position info="not_deleted" x="10720" y="27"/>
+</item>
+<item active="true" historyLabel="Foursquared.java" index="8">
+<position info="not_deleted" x="4" y="0"/>
+</item>
+<item historyLabel="NearbyVenuesActivity.java" index="7">
+<position info="not_deleted" x="11323" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -578,13 +728,6 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="left"/>
-</trimArea>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="bottom"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@127a5a2"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -596,50 +739,50 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FriendsActivity.java" tooltip="foursquared1/src/com/joelapenna/foursquared/FriendsActivity.java">
-<persistable path="/foursquared1/src/com/joelapenna/foursquared/FriendsActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Foursquared.java" tooltip="foursquared1/src/com/joelapenna/foursquared/Foursquared.java">
+<persistable path="/foursquared1/src/com/joelapenna/foursquared/Foursquared.java"/>
 </file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="AbstractHttpClient.class" tooltip="org.apache.http.impl.client.AbstractHttpClient">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=foursquared1/\/Users\/jornel\/develop\/android-sdk-mac_86\/platforms\/android-8\/android.jar&lt;org.apache.http.impl.client(AbstractHttpClient.class"/>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="LocationManager.class" tooltip="android.location.LocationManager">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=android/\/Users\/jornel\/develop\/android-sdk-mac_86\/platforms\/android-8\/android.jar&lt;android.location(LocationManager.class"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AbstractHttpApi.java" tooltip="foursquared1/src/com/joelapenna/foursquare/http/AbstractHttpApi.java">
-<persistable path="/foursquared1/src/com/joelapenna/foursquare/http/AbstractHttpApi.java"/>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="ContextWrapper.class" tooltip="android.content.ContextWrapper">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=android/\/Users\/jornel\/develop\/android-sdk-mac_86\/platforms\/android-8\/android.jar&lt;android.content(ContextWrapper.class"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HttpApiWithBasicAuth.java" tooltip="foursquared1/src/com/joelapenna/foursquare/http/HttpApiWithBasicAuth.java">
-<persistable path="/foursquared1/src/com/joelapenna/foursquare/http/HttpApiWithBasicAuth.java"/>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Activity.class" tooltip="android.app.Activity">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=android/\/Users\/jornel\/develop\/android-sdk-mac_86\/platforms\/android-8\/android.jar&lt;android.app(Activity.class"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FoursquareHttpApiV1.java" tooltip="foursquared1/src/com/joelapenna/foursquare/FoursquareHttpApiV1.java">
-<persistable path="/foursquared1/src/com/joelapenna/foursquare/FoursquareHttpApiV1.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BestLocationListener.java" tooltip="foursquared1/src/com/joelapenna/foursquared/location/BestLocationListener.java">
+<persistable path="/foursquared1/src/com/joelapenna/foursquared/location/BestLocationListener.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Foursquare.java" tooltip="foursquared1/src/com/joelapenna/foursquare/Foursquare.java">
-<persistable path="/foursquared1/src/com/joelapenna/foursquare/Foursquare.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NearbyVenuesActivity.java" tooltip="foursquared1/src/com/joelapenna/foursquared/NearbyVenuesActivity.java">
+<persistable path="/foursquared1/src/com/joelapenna/foursquared/NearbyVenuesActivity.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="strings.xml" tooltip="android/res/values/strings.xml">
-<persistable path="/android/res/values/strings.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="foursquared1/AndroidManifest.xml">
+<persistable path="/foursquared1/AndroidManifest.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AddVenueActivity.java" tooltip="foursquared1/src/com/joelapenna/foursquared/AddVenueActivity.java">
-<persistable path="/foursquared1/src/com/joelapenna/foursquared/AddVenueActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="android/AndroidManifest.xml">
+<persistable path="/android/AndroidManifest.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="recommend_it3_activity.xml" tooltip="android/res/layout/recommend_it3_activity.xml">
-<persistable path="/android/res/layout/recommend_it3_activity.xml"/>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Instrumentation.class" tooltip="android.app.Instrumentation">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=android/\/Users\/jornel\/develop\/android-sdk-mac_86\/platforms\/android-8\/android.jar&lt;android.app(Instrumentation.class"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="colors.xml" tooltip="android/res/values/colors.xml">
-<persistable path="/android/res/values/colors.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LoginActivity.java" tooltip="android/src/com/liangshan/jianjian/android/LoginActivity.java">
+<persistable path="/android/src/com/liangshan/jianjian/android/LoginActivity.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="recommend_it2_activity.xml" tooltip="android/res/layout/recommend_it2_activity.xml">
-<persistable path="/android/res/layout/recommend_it2_activity.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LocationException.java" tooltip="android/src/com/liangshan/jianjian/android/error/LocationException.java">
+<persistable path="/android/src/com/liangshan/jianjian/android/error/LocationException.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main_activity.xml" tooltip="android/res/layout/main_activity.xml">
-<persistable path="/android/res/layout/main_activity.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" tooltip="foursquared1/src/com/joelapenna/foursquared/MainActivity.java">
+<persistable path="/foursquared1/src/com/joelapenna/foursquared/MainActivity.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="tab_main_nav.xml" tooltip="android/res/layout/tab_main_nav.xml">
-<persistable path="/android/res/layout/tab_main_nav.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserDetailsActivity.java" tooltip="android/src/com/liangshan/jianjian/android/UserDetailsActivity.java">
+<persistable path="/android/src/com/liangshan/jianjian/android/UserDetailsActivity.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="recommend_it_activity.xml" tooltip="android/res/layout/recommend_it_activity.xml">
-<persistable path="/android/res/layout/recommend_it_activity.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" tooltip="android/src/com/liangshan/jianjian/android/MainActivity.java">
+<persistable path="/android/src/com/liangshan/jianjian/android/MainActivity.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RecommendItActivity.java" tooltip="android/src/com/liangshan/jianjian/android/RecommendItActivity.java">
-<persistable path="/android/src/com/liangshan/jianjian/android/RecommendItActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BestLocationListener.java" tooltip="android/src/com/liangshan/jianjian/android/location/BestLocationListener.java">
+<persistable path="/android/src/com/liangshan/jianjian/android/location/BestLocationListener.java"/>
 </file>
 </mruList>
 </workbench>

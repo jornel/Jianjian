@@ -51,6 +51,7 @@
     
     <string name="venue_picker_dialog_title">选择一个地址</string>
     <string name="more_venues">显示更多地址</string>
+    <string name="loading_more">加载中...</string>
     
     
     <!-- test user string -->
