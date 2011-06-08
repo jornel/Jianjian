@@ -23,7 +23,13 @@
   <uses-permission 
     android:name="android.permission.READ_LOGS" />
   
-  <uses-sdk android:minSdkVersion="8" />
+  <uses-sdk
+    android:minSdkVersion="3"
+    android:targetSdkVersion="8" />
+  <supports-screens
+    largeScreens="true"
+    normalScreens="true"
+    smallScreens="true" />
     
   <application
       android:name="Jianjianroid"

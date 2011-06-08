@@ -7,6 +7,7 @@ package com.liangshan.jianjian.android;
 import java.net.URLEncoder;
 import java.util.List;
 
+import com.liangshan.jianjian.android.error.LocationException;
 import com.liangshan.jianjian.android.location.LocationUtils;
 import com.liangshan.jianjian.android.util.NotificationsUtil;
 import com.liangshan.jianjian.general.Jianjian;
@@ -168,7 +169,7 @@ public class RecommendItActivity extends Activity {
         } else {
             mStateHolder = new StateHolder();
             mPickupVenueTextView.setText(getResources().getString(R.string.loading_venue_product));
-            mStateHolder.startTaskGetVenueList(this);
+            
             
             // If passed the venue parcelable, then we are in 'edit' mode.
             /*if (getIntent().getExtras() != null && getIntent().getExtras().containsKey(EXTRA_VENUE_TO_EDIT)) {
@@ -195,7 +196,36 @@ public class RecommendItActivity extends Activity {
     @Override
     public void onResume() {
         super.onResume();
-        ((Jianjianroid) getApplication()).requestLocationUpdates(true);
+        Jianjianroid mJianjianroid = (Jianjianroid) this.getApplication();
+        Boolean hasLocation = false;
+        mJianjianroid.requestLocationUpdates(true);
+        
+        Location lastLocation = mJianjianroid.getLastKnownLocation();
+        if(lastLocation == null){
+            try{               
+                //check the lastLocation each second
+                for(int i=0;i<5;++i){
+                    startProgressBar("loading current location...");
+                    Thread.sleep(1000L);
+                    if(mJianjianroid.getLastKnownLocation()!= null){
+                        hasLocation = true; 
+                        break;
+                    }
+                }
+                stopProgressBar();
+            }catch(Exception e){
+                NotificationsUtil.ToastReasonForFailure(this, e);
+            }
+        }else{
+            hasLocation = true;
+        }
+
+        if(hasLocation == true){
+            mStateHolder.startTaskGetVenueList(this);            
+        }else{
+            NotificationsUtil.ToastReasonForFailure(this, new LocationException());
+        }
+        
         
         /*if (mStateHolder.getIsRunningTaskAddOrEditVenue()) {
             startProgressBar();
