@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import com.liangshan.jianjian.android.error.JianjianError;
 import com.liangshan.jianjian.android.error.JianjianException;
+import com.liangshan.jianjian.android.error.LocationException;
 import com.liangshan.jianjian.android.location.LocationUtils;
 import com.liangshan.jianjian.android.widget.VenuePickerAdapter;
 import com.liangshan.jianjian.general.Jianjian;
@@ -102,10 +103,12 @@ public class VenuePickerDialog extends Dialog {
     }
     
     private static class VenuePickerPage {
+        protected static final long mSleepTimeInMs = 2000L;
         private VenuePickerAdapter mListAdapter;
         private Group<Venue> mVenueList;
         private PageListItemSelected mClickListener;
         private Jianjianroid mJianjianroid;
+        private Jianjian mJianjian;
         private Group<Venue> mMoreVenueList;
         private LinearLayout footerview;
         private int venuePage;
@@ -113,6 +116,7 @@ public class VenuePickerDialog extends Dialog {
         public VenuePickerPage(){
             venuePage = 1;
         }
+        
         
 
         /**
@@ -140,19 +144,16 @@ public class VenuePickerDialog extends Dialog {
                 
                 @Override
                 public void onClick(View v) {
-                                       
-                    Jianjian jianjian = mJianjianroid.getJianjian();
-                    
-                    
-                    
+                                                                                                
                     if(mVenueList.isHasMore()){
                         venuePage+=1;
                     }
                     //Location location = mJianjianroid.getLastKnownLocation();
                     try {
-                        Location location = mJianjianroid.getLastKnownLocationOrThrow();
+                        updateVenueListByPage(venuePage);
+                        /*Location location = mJianjianroid.getLastKnownLocationOrThrow();
                         //mMoreVenueList = jianjian.getVenuesByLocation(new JLocation("31.220302","121.351007",null,null,null),venuePage);
-                        mMoreVenueList = jianjian.getVenuesByLocation(LocationUtils.createJianjianLocation(location),venuePage);
+                        mMoreVenueList = mJianjian.getVenuesByLocation(LocationUtils.createJianjianLocation(location),venuePage);
                         if(mVenueList.addAll(mMoreVenueList)){
                             mVenueList.setHasMore(mMoreVenueList.isHasMore());
                         }
@@ -160,7 +161,7 @@ public class VenuePickerDialog extends Dialog {
                         mListAdapter.notifyDataSetChanged();
                         if(!mVenueList.isHasMore()){
                             footerview.setVisibility(View.GONE);
-                        }
+                        }*/
                         
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -177,8 +178,36 @@ public class VenuePickerDialog extends Dialog {
 
 
             LinearLayout llRootCategory = (LinearLayout) view
-            .findViewById(R.id.venuePickerRootVenueButton);
-            llRootCategory.setVisibility(View.GONE);
+            .findViewById(R.id.venuePickerRefreshVenueButton);
+            llRootCategory.setClickable(true);
+            llRootCategory.setOnClickListener(new View.OnClickListener() {
+                
+                @Override
+                public void onClick(View v) {
+                    
+                    mJianjianroid.clearLastKnownLocation();
+                    mJianjianroid.removeLocationUpdates();
+                    mJianjianroid.requestLocationUpdates(true);
+                    try{
+                        Thread.sleep(mSleepTimeInMs);
+                        
+                        updateVenueListByPage(1);
+                        /*
+                        Location location = mJianjianroid.getLastKnownLocationOrThrow();
+                        mVenueList = mJianjian.getVenuesByLocation(LocationUtils.createJianjianLocation(location),1);
+                        mListAdapter.updateVenueList(mVenueList);
+                        mListAdapter.notifyDataSetChanged();
+                        if(!mVenueList.isHasMore()){
+                            footerview.setVisibility(View.GONE);
+                        }*/
+                        
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                    
+                }
+            });            
+            //llRootCategory.setVisibility(View.GONE);
                        
         }
         
@@ -187,6 +216,24 @@ public class VenuePickerDialog extends Dialog {
          */
         public void setApplication(Jianjianroid mApplication) {
             mJianjianroid = mApplication;
+            mJianjian = mJianjianroid.getJianjian();
+            
+        }
+        
+        private void updateVenueListByPage(int page)throws Exception {
+            Group<Venue> venues;
+            Location location = mJianjianroid.getLastKnownLocationOrThrow();
+            venues = mJianjian.getVenuesByLocation(LocationUtils.createJianjianLocation(location),page);
+            if(page > 1){
+                if(mVenueList.addAll(venues)){
+                    mVenueList.setHasMore(venues.isHasMore());
+                }
+            }
+            mListAdapter.updateVenueList(mVenueList);
+            mListAdapter.notifyDataSetChanged();
+            if(!mVenueList.isHasMore()){
+                footerview.setVisibility(View.GONE);
+            }
             
         }
 

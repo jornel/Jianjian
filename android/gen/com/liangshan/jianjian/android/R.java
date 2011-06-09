@@ -98,11 +98,11 @@ public final class R {
         public static final int currencyText=0x7f080016;
         public static final int emptyProgress=0x7f080000;
         public static final int emptyText=0x7f080001;
-        public static final int friend_button=0x7f080039;
+        public static final int friend_button=0x7f08003b;
         public static final int infoLabel=0x7f080009;
         public static final int ivIcon=0x7f080019;
         public static final int loginbutton=0x7f080004;
-        public static final int myselector=0x7f080038;
+        public static final int myselector=0x7f08003a;
         public static final int nameEditText=0x7f08000a;
         public static final int newAccountTextView=0x7f080005;
         public static final int passwordEditText=0x7f080003;
@@ -144,14 +144,16 @@ public final class R {
         public static final int userDetailsActivityPhoto=0x7f08001b;
         public static final int userDetailsActivityUsername=0x7f08001c;
         public static final int vacantText=0x7f080017;
-        public static final int venueMorePickerName=0x7f080037;
+        public static final int venueMorePickerName=0x7f080039;
         public static final int venueMoreShow=0x7f080030;
         public static final int venuePickerIcon=0x7f080032;
-        public static final int venuePickerListView=0x7f080035;
+        public static final int venuePickerListView=0x7f080037;
         public static final int venuePickerName=0x7f080033;
-        public static final int venuePickerRootVenueButton=0x7f080034;
+        public static final int venuePickerRefreshVenueButton=0x7f080034;
         public static final int venuePickerViewFlipper=0x7f080031;
-        public static final int venueloadingMoreVenueButton=0x7f080036;
+        public static final int venueRefreshIcon=0x7f080035;
+        public static final int venueRefreshName=0x7f080036;
+        public static final int venueloadingMoreVenueButton=0x7f080038;
     }
     public static final class layout {
         public static final int empty_loading=0x7f030000;
@@ -186,7 +188,7 @@ public final class R {
         public static final int login_label=0x7f060013;
         public static final int login_welcome_toast=0x7f060014;
         public static final int main_name=0x7f060002;
-        public static final int male=0x7f060030;
+        public static final int male=0x7f060031;
         public static final int me_activity_label=0x7f060005;
         public static final int more_venues=0x7f06002d;
         public static final int need_an_account=0x7f06001a;
@@ -212,7 +214,7 @@ public final class R {
         public static final int tab_main_nav_products=0x7f060007;
         /**  test user string 
          */
-        public static final int testuserid1=0x7f06002f;
+        public static final int testuserid1=0x7f060030;
         public static final int user_details_activity_add_friends=0x7f06000c;
         public static final int user_details_activity_friend_add=0x7f06000e;
         public static final int user_details_activity_friend_confirm=0x7f06000d;
@@ -221,6 +223,7 @@ public final class R {
         public static final int user_details_activity_general_points=0x7f06000b;
         public static final int user_details_activity_general_tips=0x7f06000a;
         public static final int venue_picker_dialog_title=0x7f06002c;
+        public static final int venue_picker_page_refresh=0x7f06002f;
     }
     public static final class style {
         public static final int JianjianTheme=0x7f070000;
