@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package com.liangshan.jianjian.parsers.json;
+
+import com.liangshan.jianjian.types.JianjianType;
+
+/**
+ * @author jornel
+ *
+ */
+public class RecommendMsgParser implements Parser<? extends JianjianType> {
+
+}

@@ -19,5 +19,10 @@
 			<type>2</type>
 			<location>/Users/jornel/develop/android-sdk-mac_86/platforms/android-3/sources</location>
 		</link>
+		<link>
+			<name>.link2</name>
+			<type>2</type>
+			<location>/Users/jornel/develop/android-sdk-mac_86/platforms/android-4/sources</location>
+		</link>
 	</linkedResources>
 </projectDescription>

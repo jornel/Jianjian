@@ -7,9 +7,13 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import android.graphics.Bitmap;
+
 import com.liangshan.jianjian.android.error.JianjianError;
 import com.liangshan.jianjian.android.error.JianjianException;
+import com.liangshan.jianjian.general.Jianjian.JLocation;
 import com.liangshan.jianjian.types.Group;
+import com.liangshan.jianjian.types.RecommendMsg;
 import com.liangshan.jianjian.types.User;
 import com.liangshan.jianjian.types.Venue;
 
@@ -62,7 +66,7 @@ public class Jianjian {
     public User user(String user, boolean b, boolean c, boolean d,
             JLocation location) 
             throws JianjianException, JianjianError, IOException{
-        // TODO Auto-generated method stub
+        
         if (location != null) {
             return mJianjianV1.user(user, b, c, d, location.geolat, location.geolong,
                     location.geohacc, location.geovacc, location.geoalt);
@@ -82,7 +86,7 @@ public class Jianjian {
     @V1
     public User showUser(String user, JLocation location) 
             throws JianjianException, JianjianError, IOException{
-        // TODO Auto-generated method stub
+        
         if (location != null) {
             return mJianjianV1.showUser(user, location.geolat, location.geolong,
                     location.geohacc, location.geovacc, location.geoalt);
@@ -99,7 +103,6 @@ public class Jianjian {
     public Group<Venue> getVenuesByLocation(JLocation location, int page) 
             throws JianjianException, JianjianError, IOException{
         
-        
         if(location != null){
             return mJianjianV1.getVenuesByLocation(location.geolat,location.geolong,page);
         }else {
@@ -107,6 +110,27 @@ public class Jianjian {
             
         }
         
+    }
+    
+    /**
+     * @param string
+     * @param string2
+     * @param string3
+     * @param string4
+     * @param mPhoto
+     * @param createJianjianLocation
+     * @return
+     */
+    public RecommendMsg recommendItToAllFriends(String productName, String price, String recommendDes,
+            String VenueId, Bitmap mPhoto, JLocation location) 
+            throws JianjianException, JianjianError, IOException{
+        
+        if(location != null){
+            return mJianjianV1.recommendItToAllFriends(location.geolat,location.geolong,productName,price,recommendDes,VenueId,mPhoto);
+        }else {
+            throw new JianjianException("failed to recommend the product...");
+            
+        }
     }
     
     /**
@@ -182,9 +206,6 @@ public class Jianjian {
     public @interface V1 {
 
     }
-
-
-
 
 
 }

@@ -27,8 +27,6 @@
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="org.apache.http.HttpEntity"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.http.AbstractHttpApi"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.types.RecommendMsg"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.string"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.general.Jianjian"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.util.ParcelUtils"/>
@@ -50,8 +48,10 @@
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.R"/>
 <fullyQualifiedTypeName name="android.widget.LinearLayout.LayoutParams"/>
 <fullyQualifiedTypeName name="android.widget.TextView"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.id"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.layout"/>
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.location.LocationUtils"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.id"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.string"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.types.RecommendMsg"/>
 </qualifiedTypeNameHistroy>

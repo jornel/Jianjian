@@ -13,16 +13,16 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="mSearchLocationObserver" key="selection"/>
+		<item value="CREATOR" key="selection"/>
 		<list key="findhistory">
+			<item value="Creator"/>
+			<item value="CREATOR"/>
+			<item value="DIALOG_PICK_CATEGORY"/>
+			<item value="31.220302"/>
 			<item value="mSearchLocationObserver"/>
 			<item value="startTask"/>
 			<item value="SearchLocationObserver"/>
 			<item value="getClearGeolocationOnSearch"/>
-			<item value="requestLocationUpdates"/>
-			<item value="mLastLocation"/>
-			<item value="location"/>
-			<item value="checkin"/>
 		</list>
 		<list key="replacehistory">
 			<item value="venue"/>

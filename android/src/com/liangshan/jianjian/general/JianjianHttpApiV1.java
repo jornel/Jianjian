@@ -14,15 +14,20 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
 
+import android.graphics.Bitmap;
+
 import com.liangshan.jianjian.android.error.JianjianError;
 import com.liangshan.jianjian.android.error.JianjianException;
+import com.liangshan.jianjian.android.error.JianjianParseException;
 import com.liangshan.jianjian.http.AbstractHttpApi;
 import com.liangshan.jianjian.http.HttpApi;
 import com.liangshan.jianjian.http.HttpApiWithBasicAuth;
 import com.liangshan.jianjian.parsers.json.GroupParser;
+import com.liangshan.jianjian.parsers.json.RecommendMsgParser;
 import com.liangshan.jianjian.parsers.json.UserParser;
 import com.liangshan.jianjian.parsers.json.VenueParser;
 import com.liangshan.jianjian.types.Group;
+import com.liangshan.jianjian.types.RecommendMsg;
 import com.liangshan.jianjian.types.User;
 import com.liangshan.jianjian.types.Venue;
 
@@ -43,6 +48,8 @@ public class JianjianHttpApiV1 {
     
     
     private static final String URL_API_USER_SHOW_TMP = "http://api.jiepang.com/users/show.json";
+
+    private static final String URL_API_CHECK_IN = "/statuses/checkin";
 
     //private static final String DATATYPE = ".json";
     
@@ -139,6 +146,7 @@ public class JianjianHttpApiV1 {
      * @param page
      * @return
      */
+    @SuppressWarnings("unchecked")
     public Group<Venue> getVenuesByLocation(String geolat, 
               String geolong, int page) throws JianjianException,
               JianjianError, IOException{
@@ -152,6 +160,48 @@ public class JianjianHttpApiV1 {
                 new BasicNameValuePair("lon", geolong) //
                 );
         return (Group<Venue>) mHttpApi.doHttpRequest(httpGet, new GroupParser(new VenueParser()));
+    }
+    
+    /**
+     * @param geolat
+     * @param geolong
+     * @param productName
+     * @param price
+     * @param recommendDes
+     * @param venueId
+     * @param mPhoto
+     * @return
+     * @throws IOException 
+     * @throws JianjianException 
+     * @throws JianjianParseException 
+     */
+    public RecommendMsg recommendItToAllFriends(String geolat, String geolong, String productName,
+            String price, String recommendDes, String venueId, Bitmap mPhoto) 
+            throws JianjianException, JianjianException, IOException {
+        // TODO Auto-generated method stub
+        
+        String checkinBody;
+        if(price == null||price == ""){
+            price = " ";
+        }
+        if(recommendDes == null || recommendDes ==""){
+            recommendDes = " ";
+        }
+        checkinBody = productName + "++" + price + "++" + recommendDes + "(from jianjian)";
+        
+        HttpGet httpGet = mHttpApi.createHttpGet(fullUrl(URL_API_CHECK_IN), //
+                new BasicNameValuePair("source", "jianjian"), //
+                new BasicNameValuePair("lang", "CHS"), //
+                new BasicNameValuePair("guid", venueId), //
+                new BasicNameValuePair("lat", geolat), //
+                new BasicNameValuePair("lon", geolong),//
+                new BasicNameValuePair("body", checkinBody)//
+                //new BasicNameValuePair("syncs", checkinBody) 
+                //同步SNS，允许值(renren,kaixin001,sina,douban,fanfou,facebook,twitter,plurk,qq)，逗号分隔
+                //空字符串为都不同步，不传此参数则为全部同步
+                );
+        RecommendMsg recMsg = (RecommendMsg) mHttpApi.doHttpRequest(httpGet, new RecommendMsgParser());
+        return recMsg;
     }
 
     /**
@@ -179,6 +229,8 @@ public class JianjianHttpApiV1 {
         }
         
     }
+
+
 
 
 

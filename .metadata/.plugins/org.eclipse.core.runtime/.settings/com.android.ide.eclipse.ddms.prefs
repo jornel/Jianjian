@@ -1,11 +1,12 @@
-#Tue Jun 07 21:23:41 CST 2011
+#Wed Jun 08 23:17:17 CST 2011
 threadPanel.stack.col0=119
 emulatorControl.waypoint.desc=98
 emulatorControl.track.first=128
-com.android.ide.eclipse.ddms.logcat.message=614
+com.android.ide.eclipse.ddms.logcat.message=748
 emulatorControl.waypoint.elevation=50
 com.android.ide.eclipse.ddms.explorer.permissions=71
 com.android.ide.eclipse.ddms.explorer.time=36
+com.android.ide.eclipse.ddms.logcat.filters=location\:2\:BestLocationListener|
 com.android.ide.eclipse.ddms.logcat.time=91
 com.android.ide.eclipse.ddms.explorer.info=71
 com.android.ide.eclipse.ddms.explorer.data=73
@@ -25,7 +26,7 @@ allocPanel.Col2=25
 com.android.ide.eclipse.ddms.explorer.size=46
 allocPanel.Col1=86
 allocPanel.Col0=25
-com.android.ide.eclipse.ddms.logcat.tag=113
+com.android.ide.eclipse.ddms.logcat.tag=218
 eclipse.preferences.version=1
 heapPanel.col6=72
 threadPanel.Col5=269
