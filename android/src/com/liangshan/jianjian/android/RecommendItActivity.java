@@ -7,6 +7,7 @@ package com.liangshan.jianjian.android;
 import java.net.URLEncoder;
 import java.util.List;
 
+import com.liangshan.jianjian.android.error.JianjianException;
 import com.liangshan.jianjian.android.error.LocationException;
 import com.liangshan.jianjian.android.location.LocationUtils;
 import com.liangshan.jianjian.android.util.NotificationsUtil;
@@ -273,14 +274,18 @@ public class RecommendItActivity extends Activity {
     }
     
     /**
-     * @param recommdmsg
+     * @param recommendmsg
      * @param mReason
      */
-    public void onAddandRecommendItTaskComplete(RecommendMsg recommdmsg, Exception mReason) {
+    public void onAddandRecommendItTaskComplete(RecommendMsg recommendmsg, Exception mReason) {
         // TODO Auto-generated method stub
         
         mStateHolder.setIsRunningTaskAddandRecommendIt(false);
         stopProgressBar();
+        if(recommendmsg != null){
+            NotificationsUtil.ToastReasonForFailure(this,new Exception("recommend finished"));
+        }
+        
         
     }
     

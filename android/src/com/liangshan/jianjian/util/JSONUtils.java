@@ -42,7 +42,7 @@ public class JSONUtils {
             // type of API call, the content might be a JSONObject or a JSONArray.
             // Since JSONArray does not derive from JSONObject, we need to check for
             // either of these cases to parse correctly.
-            if(content == null ||content ==""){
+            if(content == null){
                 throw new JianjianException("Error parsing JSON response, object had no single child key.");
             }
             if(content.substring(0,1) == "["){

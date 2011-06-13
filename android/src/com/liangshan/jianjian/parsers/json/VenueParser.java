@@ -49,8 +49,8 @@ public class VenueParser extends AbstractParser<Venue> {
         if (json.has("hasTodo")) {
         	obj.setHasTodo(json.getBoolean("hasTodo"));
         }
-        if (json.has("id")) {
-            obj.setId(json.getString("id"));
+        if (json.has("guid")) {
+            obj.setId(json.getString("guid"));
         } 
         if (json.has("name")) {
             obj.setName(json.getString("name"));
