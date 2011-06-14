@@ -66,6 +66,7 @@ public class RecommendItActivity extends Activity {
     private ImageView mPickupVenueIcon;
     private TextView mPickupVenueTextView;
     private EditText mPriceEditText;
+    private TextView mCurrencyText;
     //private Spinner mCurrencySpinner;
     private EditText mRecommendDesEditText;
     private ImageButton mTakePhotoImgButton;
@@ -111,6 +112,7 @@ public class RecommendItActivity extends Activity {
         mPickupVenueIcon = (ImageView) findViewById(R.id.pickupVenueIcon);
         mPickupVenueTextView = (TextView) findViewById(R.id.pickupVenueTextView);
         mPriceEditText = (EditText) findViewById(R.id.priceEditText);
+        mCurrencyText = (TextView) findViewById(R.id.currencyText);
         //mCurrencySpinner = (Spinner) findViewById(R.id.currencySpinner);
         mRecommendDesEditText = (EditText) findViewById(R.id.recommendDesEditText);
         mTakePhotoImgButton = (ImageButton) findViewById(R.id.takePhotoImgButton);
@@ -131,7 +133,7 @@ public class RecommendItActivity extends Activity {
                 String productName = mNameEditText.getText().toString();
                 String price = mPriceEditText.getText().toString();
                 //temporary price
-                price = price + "Ԫ";
+                price = price + mCurrencyText.getText().toString();
                 //String currency = mCurrencySpinner.getSelectedItem().toString();
                 String recommendDes = mRecommendDesEditText.getText().toString();
                 Bitmap bitmapPhoto = mTakePhotoImgButton.getDrawingCache();
