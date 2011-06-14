@@ -283,7 +283,7 @@ public class RecommendItActivity extends Activity {
         mStateHolder.setIsRunningTaskAddandRecommendIt(false);
         stopProgressBar();
         if(recommendmsg != null){
-            NotificationsUtil.ToastReasonForFailure(this,new Exception("recommend finished"));
+            //NotificationsUtil.ToastReasonForFailure(this,new Exception("recommend finished"));
         }
         
         

@@ -51,6 +51,9 @@ public class JSONUtils {
             }else {
         
             JSONObject json = new JSONObject(content);
+            if(json.length() == 0){
+                return parser.parse(json);
+            }
             Iterator<String> it = (Iterator<String>)json.keys();
             if (it.hasNext()) {
                 String key = (String)it.next();
