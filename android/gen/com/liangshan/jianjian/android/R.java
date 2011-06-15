@@ -15,31 +15,32 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int black_end=0x7f05000d;
-        public static final int black_start=0x7f05000c;
-        public static final int blue_badges_mayor=0x7f050010;
-        public static final int blue_end=0x7f050005;
+        public static final int black_end=0x7f05000e;
+        public static final int black_start=0x7f05000d;
+        public static final int blue_badges_mayor=0x7f050011;
+        public static final int blue_end=0x7f050006;
         /**  427BBA, 0f93b8 
          */
-        public static final int blue_start=0x7f050004;
-        public static final int color_bright_green=0x7f050014;
-        public static final int color_score_list_adapter_highlight=0x7f050012;
-        public static final int color_score_mayor_section_background=0x7f050013;
-        public static final int dgrey_end=0x7f050009;
-        public static final int dgrey_start=0x7f050008;
-        public static final int grey_end=0x7f05000f;
-        public static final int grey_start=0x7f05000e;
-        public static final int item_grey_end=0x7f05000b;
-        public static final int item_grey_start=0x7f05000a;
-        public static final int lgrey_end=0x7f050007;
-        public static final int lgrey_start=0x7f050006;
-        public static final int purple_end=0x7f050002;
-        public static final int purple_start=0x7f050001;
-        public static final int red_bright=0x7f050003;
-        public static final int tip_detail_actions_background=0x7f050015;
-        public static final int transparent=0x7f050017;
-        public static final int user_details_activity_general=0x7f050016;
-        public static final int vlgrey=0x7f050011;
+        public static final int blue_start=0x7f050005;
+        public static final int color_bright_green=0x7f050015;
+        public static final int color_score_list_adapter_highlight=0x7f050013;
+        public static final int color_score_mayor_section_background=0x7f050014;
+        public static final int dark_white=0x7f050001;
+        public static final int dgrey_end=0x7f05000a;
+        public static final int dgrey_start=0x7f050009;
+        public static final int grey_end=0x7f050010;
+        public static final int grey_start=0x7f05000f;
+        public static final int item_grey_end=0x7f05000c;
+        public static final int item_grey_start=0x7f05000b;
+        public static final int lgrey_end=0x7f050008;
+        public static final int lgrey_start=0x7f050007;
+        public static final int purple_end=0x7f050003;
+        public static final int purple_start=0x7f050002;
+        public static final int red_bright=0x7f050004;
+        public static final int tip_detail_actions_background=0x7f050016;
+        public static final int transparent=0x7f050018;
+        public static final int user_details_activity_general=0x7f050017;
+        public static final int vlgrey=0x7f050012;
         public static final int white=0x7f050000;
     }
     public static final class drawable {
@@ -94,19 +95,23 @@ public final class R {
         public static final int venue_none=0x7f020030;
     }
     public static final class id {
+        public static final int camerabutton=0x7f08001d;
         public static final int currencySpinner=0x7f080011;
         public static final int currencyText=0x7f080016;
         public static final int emptyProgress=0x7f080000;
         public static final int emptyText=0x7f080001;
-        public static final int friend_button=0x7f08003b;
+        public static final int friend_button=0x7f080040;
+        public static final int gallarybutton=0x7f08001e;
         public static final int infoLabel=0x7f080009;
         public static final int ivIcon=0x7f080019;
         public static final int loginbutton=0x7f080004;
-        public static final int myselector=0x7f08003a;
+        public static final int myselector=0x7f08003f;
         public static final int nameEditText=0x7f08000a;
         public static final int newAccountTextView=0x7f080005;
         public static final int passwordEditText=0x7f080003;
         public static final int phoneEditText=0x7f080002;
+        public static final int photoImage=0x7f08001f;
+        public static final int photoframeText=0x7f08001c;
         public static final int pickupVenueIcon=0x7f08000c;
         public static final int pickupVenueLayout=0x7f08000b;
         public static final int pickupVenueTextView=0x7f08000d;
@@ -120,40 +125,41 @@ public final class R {
         public static final int tabBackground=0x7f080006;
         public static final int tabMainNav=0x7f080018;
         public static final int takePhotoImgButton=0x7f080014;
+        public static final int titleBackground=0x7f08001b;
         public static final int titlebar=0x7f080008;
         public static final int tvTitle=0x7f08001a;
-        public static final int userActivityDetailsProgress=0x7f08001f;
-        public static final int userDetailsActivityAddFriends=0x7f08002d;
-        public static final int userDetailsActivityAddFriendsChevron=0x7f08002f;
-        public static final int userDetailsActivityAddFriendsText=0x7f08002e;
-        public static final int userDetailsActivityFriendButton=0x7f08001e;
-        public static final int userDetailsActivityFriends=0x7f08002a;
-        public static final int userDetailsActivityFriendsChevron=0x7f08002c;
-        public static final int userDetailsActivityFriendsText=0x7f08002b;
-        public static final int userDetailsActivityGeneral=0x7f080020;
-        public static final int userDetailsActivityGeneralBadges=0x7f080021;
-        public static final int userDetailsActivityGeneralBadgesChevron=0x7f080025;
-        public static final int userDetailsActivityGeneralBadgesIcon=0x7f080023;
-        public static final int userDetailsActivityGeneralBadgesTitle=0x7f080022;
-        public static final int userDetailsActivityGeneralBadgesValue=0x7f080024;
-        public static final int userDetailsActivityGeneralPoints=0x7f080026;
-        public static final int userDetailsActivityGeneralPointsIcon=0x7f080028;
-        public static final int userDetailsActivityGeneralPointsTitle=0x7f080027;
-        public static final int userDetailsActivityGeneralPointsValue=0x7f080029;
-        public static final int userDetailsActivityHometownOrLastSeen=0x7f08001d;
-        public static final int userDetailsActivityPhoto=0x7f08001b;
-        public static final int userDetailsActivityUsername=0x7f08001c;
+        public static final int userActivityDetailsProgress=0x7f080024;
+        public static final int userDetailsActivityAddFriends=0x7f080032;
+        public static final int userDetailsActivityAddFriendsChevron=0x7f080034;
+        public static final int userDetailsActivityAddFriendsText=0x7f080033;
+        public static final int userDetailsActivityFriendButton=0x7f080023;
+        public static final int userDetailsActivityFriends=0x7f08002f;
+        public static final int userDetailsActivityFriendsChevron=0x7f080031;
+        public static final int userDetailsActivityFriendsText=0x7f080030;
+        public static final int userDetailsActivityGeneral=0x7f080025;
+        public static final int userDetailsActivityGeneralBadges=0x7f080026;
+        public static final int userDetailsActivityGeneralBadgesChevron=0x7f08002a;
+        public static final int userDetailsActivityGeneralBadgesIcon=0x7f080028;
+        public static final int userDetailsActivityGeneralBadgesTitle=0x7f080027;
+        public static final int userDetailsActivityGeneralBadgesValue=0x7f080029;
+        public static final int userDetailsActivityGeneralPoints=0x7f08002b;
+        public static final int userDetailsActivityGeneralPointsIcon=0x7f08002d;
+        public static final int userDetailsActivityGeneralPointsTitle=0x7f08002c;
+        public static final int userDetailsActivityGeneralPointsValue=0x7f08002e;
+        public static final int userDetailsActivityHometownOrLastSeen=0x7f080022;
+        public static final int userDetailsActivityPhoto=0x7f080020;
+        public static final int userDetailsActivityUsername=0x7f080021;
         public static final int vacantText=0x7f080017;
-        public static final int venueMorePickerName=0x7f080039;
-        public static final int venueMoreShow=0x7f080030;
-        public static final int venuePickerIcon=0x7f080032;
-        public static final int venuePickerListView=0x7f080037;
-        public static final int venuePickerName=0x7f080033;
-        public static final int venuePickerRefreshVenueButton=0x7f080034;
-        public static final int venuePickerViewFlipper=0x7f080031;
-        public static final int venueRefreshIcon=0x7f080035;
-        public static final int venueRefreshName=0x7f080036;
-        public static final int venueloadingMoreVenueButton=0x7f080038;
+        public static final int venueMorePickerName=0x7f08003e;
+        public static final int venueMoreShow=0x7f080035;
+        public static final int venuePickerIcon=0x7f080037;
+        public static final int venuePickerListView=0x7f08003c;
+        public static final int venuePickerName=0x7f080038;
+        public static final int venuePickerRefreshVenueButton=0x7f080039;
+        public static final int venuePickerViewFlipper=0x7f080036;
+        public static final int venueRefreshIcon=0x7f08003a;
+        public static final int venueRefreshName=0x7f08003b;
+        public static final int venueloadingMoreVenueButton=0x7f08003d;
     }
     public static final class layout {
         public static final int empty_loading=0x7f030000;
@@ -163,11 +169,12 @@ public final class R {
         public static final int recommend_it3_activity=0x7f030004;
         public static final int recommend_it_activity=0x7f030005;
         public static final int tab_main_nav=0x7f030006;
-        public static final int user_details_activity=0x7f030007;
-        public static final int venue_list_footer=0x7f030008;
-        public static final int venue_picker_dialog=0x7f030009;
-        public static final int venue_picker_list_item=0x7f03000a;
-        public static final int venue_picker_page=0x7f03000b;
+        public static final int take_photo_activity=0x7f030007;
+        public static final int user_details_activity=0x7f030008;
+        public static final int venue_list_footer=0x7f030009;
+        public static final int venue_picker_dialog=0x7f03000a;
+        public static final int venue_picker_list_item=0x7f03000b;
+        public static final int venue_picker_page=0x7f03000c;
     }
     public static final class string {
         public static final int add_recommend_it_fail=0x7f06002b;

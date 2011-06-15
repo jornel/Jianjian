@@ -5,6 +5,8 @@
     <color
         name="white">#fff</color>
     <color
+        name="dark_white">#efefef</color>
+    <color
         name="purple_start">#9b256b</color>
     <color
         name="purple_end">#5d2761</color>
