@@ -5,6 +5,8 @@
     <string name="main_name">随时随地推荐好东西给好友</string>
     <string name="friends_activity_label">jianjian friends</string>
     <string name="recommendit_activity_label">jianjian recommend</string>
+    <string name="take_photo_activity_label">jianjian take photo</string>
+    
     <string name="me_activity_label">jianjian me</string>
     <string name="tab_main_nav_friends">朋友</string>
     <string name="tab_main_nav_products">推荐它</string>
@@ -54,6 +56,11 @@
     <string name="loading_more">加载中...</string>
     <string name="venue_picker_page_refresh">刷新地址列表</string>
     
+    <string name="upload_photo_label">上传照片</string>
+    <string name="fromcamera_label">从照相机</string>
+    <string name="fromgallary_label">从图片库</string>
+    <string name="confirm_label">确定</string>
+    <string name="cancel_label">取消</string>
     
     
     <!-- test user string -->

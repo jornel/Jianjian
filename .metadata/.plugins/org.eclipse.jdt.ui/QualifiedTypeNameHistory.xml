@@ -51,7 +51,7 @@
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.layout"/>
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.location.LocationUtils"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.id"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.string"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.types.RecommendMsg"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.id"/>
 </qualifiedTypeNameHistroy>

@@ -94,6 +94,14 @@
                   android:name="com.liangshan.jianjianroid.intent.action.LOGGED_OUT" />
             </intent-filter>
         </activity>
+        <activity
+                  android:name=".TakePhotoActivity"
+                  android:label="@string/take_photo_activity_label">
+            <intent-filter>
+                <action
+                  android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
 
     </application>
 

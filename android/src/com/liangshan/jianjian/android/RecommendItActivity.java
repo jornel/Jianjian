@@ -161,6 +161,18 @@ public class RecommendItActivity extends Activity {
             }
         });
         
+        mTakePhotoImgButton.setEnabled(true);
+        mTakePhotoImgButton.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent intent = new Intent(RecommendItActivity.this, TakePhotoActivity.class);
+                startActivity(intent);
+            }
+            
+        });
+        
         mNameEditText.addTextChangedListener(mNameFieldWatcher);
         Object retained = getLastNonConfigurationInstance();
         
