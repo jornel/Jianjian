@@ -57,10 +57,14 @@
     <string name="venue_picker_page_refresh">刷新地址列表</string>
     
     <string name="upload_photo_label">上传照片</string>
+    <string name="restart_upload_label">点击照片重新上传</string>
     <string name="fromcamera_label">从照相机</string>
     <string name="fromgallary_label">从图片库</string>
     <string name="confirm_label">确定</string>
     <string name="cancel_label">取消</string>
+    <string name="no_sd_text">没有sd卡</string>
+    <string name="photoPicker_NotFound_text">没有找到照片</string>
+    
     
     
     <!-- test user string -->

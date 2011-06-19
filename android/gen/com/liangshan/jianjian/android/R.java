@@ -182,11 +182,11 @@ public final class R {
     public static final class string {
         public static final int add_recommend_it_fail=0x7f06002c;
         public static final int app_name=0x7f060001;
-        public static final int cancel_label=0x7f060035;
-        public static final int confirm_label=0x7f060034;
+        public static final int cancel_label=0x7f060036;
+        public static final int confirm_label=0x7f060035;
         public static final int friends_activity_label=0x7f060003;
-        public static final int fromcamera_label=0x7f060032;
-        public static final int fromgallary_label=0x7f060033;
+        public static final int fromcamera_label=0x7f060033;
+        public static final int fromgallary_label=0x7f060034;
         public static final int hello=0x7f060000;
         public static final int hint_product_currency=0x7f06001f;
         public static final int hint_product_name=0x7f06001d;
@@ -202,13 +202,15 @@ public final class R {
         public static final int login_label=0x7f060014;
         public static final int login_welcome_toast=0x7f060015;
         public static final int main_name=0x7f060002;
-        public static final int male=0x7f060037;
+        public static final int male=0x7f06003a;
         public static final int me_activity_label=0x7f060006;
         public static final int more_venues=0x7f06002e;
         public static final int need_an_account=0x7f06001b;
+        public static final int no_sd_text=0x7f060037;
         public static final int password=0x7f06001a;
         public static final int phone_number=0x7f060018;
         public static final int phone_number_or_email=0x7f060019;
+        public static final int photoPicker_NotFound_text=0x7f060038;
         public static final int pickup_venue_product=0x7f060026;
         public static final int preferences_exit_title=0x7f060024;
         public static final int preferences_logout_title=0x7f060023;
@@ -222,6 +224,7 @@ public final class R {
         /**  Menu 
          */
         public static final int refresh=0x7f060022;
+        public static final int restart_upload_label=0x7f060032;
         public static final int submitting_the_recommendation=0x7f06002b;
         public static final int tab_main_nav_friends=0x7f060007;
         public static final int tab_main_nav_me=0x7f060009;
@@ -229,7 +232,7 @@ public final class R {
         public static final int take_photo_activity_label=0x7f060005;
         /**  test user string 
          */
-        public static final int testuserid1=0x7f060036;
+        public static final int testuserid1=0x7f060039;
         public static final int upload_photo_label=0x7f060031;
         public static final int user_details_activity_add_friends=0x7f06000d;
         public static final int user_details_activity_friend_add=0x7f06000f;

@@ -46,6 +46,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * @author ezhuche
@@ -57,6 +58,7 @@ public class RecommendItActivity extends Activity {
     static final boolean DEBUG = JianjianSettings.DEBUG;
     private static final int DIALOG_PICK_CATEGORY = 1;
     private static final int DIALOG_ERROR = 2;
+    protected static final int TAKE_PHOTO_WITH_DATA = 100;
     
     private StateHolder mStateHolder;
     
@@ -168,7 +170,7 @@ public class RecommendItActivity extends Activity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Intent intent = new Intent(RecommendItActivity.this, TakePhotoActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent,TAKE_PHOTO_WITH_DATA);
             }
             
         });
@@ -297,7 +299,8 @@ public class RecommendItActivity extends Activity {
         mStateHolder.setIsRunningTaskAddandRecommendIt(false);
         stopProgressBar();
         if(recommendmsg != null){
-            //NotificationsUtil.ToastReasonForFailure(this,new Exception("recommend finished"));
+            Toast.makeText(this, "ÍÆ¼öÍê³É£º£©",  
+                    Toast.LENGTH_LONG).show(); //NotificationsUtil.ToastReasonForFailure(this,new Exception("recommend finished"));
         }
         
         

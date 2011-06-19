@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="android.os.Parcelable"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.UserUtils"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.general.Jianjian.Location"/>
-<fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.JavaLoggingHandler"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.preferences.Preferences"/>
 <fullyQualifiedTypeName name="android.R.array"/>
@@ -51,7 +47,17 @@
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.layout"/>
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.location.LocationUtils"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.string"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.types.RecommendMsg"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.id"/>
+<fullyQualifiedTypeName name="android.widget.Button"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="android.os.Environment"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="android.view.Gravity"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.string"/>
+<fullyQualifiedTypeName name="android.content.ActivityNotFoundException"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="android.provider.MediaStore"/>
+<fullyQualifiedTypeName name="android.net.Uri"/>
 </qualifiedTypeNameHistroy>
