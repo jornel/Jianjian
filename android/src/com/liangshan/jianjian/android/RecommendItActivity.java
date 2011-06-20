@@ -187,6 +187,11 @@ public class RecommendItActivity extends Activity {
             mStateHolder = new StateHolder();
             mPickupVenueTextView.setText(getResources().getString(R.string.loading_venue_product));
             
+            if(loadLocationinSeconds(5)){
+                mStateHolder.startTaskGetVenueList(this);            
+            }else{
+                NotificationsUtil.ToastReasonForFailure(this, new LocationException());
+            }
             
             // If passed the venue parcelable, then we are in 'edit' mode.
             /*if (getIntent().getExtras() != null && getIntent().getExtras().containsKey(EXTRA_VENUE_TO_EDIT)) {
@@ -214,36 +219,9 @@ public class RecommendItActivity extends Activity {
     public void onResume() {
         super.onResume();
         Jianjianroid mJianjianroid = (Jianjianroid) this.getApplication();
-        Boolean hasLocation = false;
+        
         mJianjianroid.requestLocationUpdates(true);
-        
-        Location lastLocation = mJianjianroid.getLastKnownLocation();
-        if(lastLocation == null){
-            try{               
-                //check the lastLocation each second
-                for(int i=0;i<5;++i){
-                    startProgressBar("loading current location...");
-                    Thread.sleep(1000L);
-                    if(mJianjianroid.getLastKnownLocation()!= null){
-                        hasLocation = true; 
-                        break;
-                    }
-                }
-                stopProgressBar();
-            }catch(Exception e){
-                NotificationsUtil.ToastReasonForFailure(this, e);
-            }
-        }else{
-            hasLocation = true;
-        }
-
-        if(hasLocation == true){
-            mStateHolder.startTaskGetVenueList(this);            
-        }else{
-            NotificationsUtil.ToastReasonForFailure(this, new LocationException());
-        }
-        
-        
+               
         /*if (mStateHolder.getIsRunningTaskAddOrEditVenue()) {
             startProgressBar();
         }*/
@@ -267,6 +245,49 @@ public class RecommendItActivity extends Activity {
     public Object onRetainNonConfigurationInstance() {
         mStateHolder.setActivity(null);
         return mStateHolder;
+    }
+    
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {  
+        if (resultCode != RESULT_OK)  {
+            return;  
+        }       
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {  
+            case TAKE_PHOTO_WITH_DATA: {
+                mTakePhotoImgButton.setScaleType(ImageView.ScaleType.FIT_XY);
+                Bitmap returned_image = (Bitmap) data.getParcelableExtra(TakePhotoActivity.EXTRA_PHOTO_RETURNED);
+                mTakePhotoImgButton.setImageBitmap(returned_image);
+                mStateHolder.setPhotoBitmap(returned_image);
+            }  
+        }  
+    }  
+    
+    private boolean loadLocationinSeconds(int n){
+        Jianjianroid mJianjianroid = (Jianjianroid) this.getApplication();
+        
+        mJianjianroid.requestLocationUpdates(true);
+        Boolean hasLocation = false;
+        Location lastLocation = mJianjianroid.getLastKnownLocation();
+        if(lastLocation == null){
+            try{               
+                //check the lastLocation each second
+                for(int i=0;i<n;++i){
+                    startProgressBar("loading current location...");
+                    Thread.sleep(1000L);
+                    if(mJianjianroid.getLastKnownLocation()!= null){
+                        hasLocation = true; 
+                        break;
+                    }
+                }
+                stopProgressBar();
+            }catch(Exception e){
+                NotificationsUtil.ToastReasonForFailure(this, e);
+            }
+        }else{
+            hasLocation = true;
+        }
+        return hasLocation;
     }
     
     
@@ -536,6 +557,7 @@ public class RecommendItActivity extends Activity {
         private TakePhotoTask mTaskTakePhoto;
         private AddandRecommendItTask mTaskAddandRecommendIt;
         private Venue mChosenVenue;
+        private Bitmap mPhoto;
         
         public StateHolder() {
             mVenueList = new Group<Venue>();
@@ -621,6 +643,14 @@ public class RecommendItActivity extends Activity {
         
         public void setChosenVenu(Venue venue) {
             mChosenVenue = venue;
+        }
+        
+        public Bitmap getPhotoBitmap() {
+            return mPhoto;
+        }
+        
+        public void setPhotoBitmap(Bitmap photo) {
+            mPhoto = photo;
         }
         
     

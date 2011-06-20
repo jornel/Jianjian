@@ -228,6 +228,8 @@ public class VenuePickerDialog extends Dialog {
                 if(mVenueList.addAll(venues)){
                     mVenueList.setHasMore(venues.isHasMore());
                 }
+            }else if(page == 1){
+                mVenueList = venues;
             }
             mListAdapter.updateVenueList(mVenueList);
             mListAdapter.notifyDataSetChanged();

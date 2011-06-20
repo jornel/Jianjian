@@ -54,7 +54,8 @@ public class TakePhotoActivity extends Activity {
     private static final int PHOTO_PICKED_WITH_DATA = 1002;  
   
     /*拍照的照片存储位置*/  
-    private static final File PHOTO_DIR = new File(Environment.getExternalStorageDirectory() + "/DCIM/Camera");  
+    private static final File PHOTO_DIR = new File(Environment.getExternalStorageDirectory() + "/DCIM/Camera");
+    protected static final String EXTRA_PHOTO_RETURNED = "UPLOADED_PHOTO";  
   
     private File mCurrentPhotoFile;//照相机拍照得到的图片  
     
@@ -139,6 +140,23 @@ public class TakePhotoActivity extends Activity {
             public void onClick(View v) {
                 
                 finish();
+            }
+            
+        });
+        
+        mConfirmButton.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if(mPhoto!=null){
+                    Intent intent = new Intent();
+                    intent.putExtra(EXTRA_PHOTO_RETURNED, mPhoto);
+                    TakePhotoActivity.this.setResult(Activity.RESULT_OK, intent);
+                    TakePhotoActivity.this.finish();
+                }else{
+                    showToast(getResources().getString(R.string.no_photo_loaded));
+                }
+                
             }
             
         });

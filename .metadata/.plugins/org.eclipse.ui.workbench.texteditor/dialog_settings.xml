@@ -13,16 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="AddVenue" key="selection"/>
+		<item value="mChosenVenue" key="selection"/>
 		<list key="findhistory">
-			<item value="addvenue"/>
-			<item value="Creator"/>
-			<item value="CREATOR"/>
+			<item value="mChosenVenue"/>
+			<item value="fit"/>
+			<item value="addTipA"/>
+			<item value="showToast"/>
+			<item value="mPhoto"/>
+			<item value="throws"/>
 			<item value="DIALOG_PICK_CATEGORY"/>
-			<item value="31.220302"/>
-			<item value="mSearchLocationObserver"/>
-			<item value="startTask"/>
-			<item value="SearchLocationObserver"/>
+			<item value="requestStartService"/>
 		</list>
 		<list key="replacehistory">
 			<item value="venue"/>

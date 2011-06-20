@@ -64,6 +64,8 @@
     <string name="cancel_label">取消</string>
     <string name="no_sd_text">没有sd卡</string>
     <string name="photoPicker_NotFound_text">没有找到照片</string>
+    <string name="no_photo_loaded">没有上传图片</string>
+    
     
     
     

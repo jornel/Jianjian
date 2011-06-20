@@ -202,10 +202,11 @@ public final class R {
         public static final int login_label=0x7f060014;
         public static final int login_welcome_toast=0x7f060015;
         public static final int main_name=0x7f060002;
-        public static final int male=0x7f06003a;
+        public static final int male=0x7f06003b;
         public static final int me_activity_label=0x7f060006;
         public static final int more_venues=0x7f06002e;
         public static final int need_an_account=0x7f06001b;
+        public static final int no_photo_loaded=0x7f060039;
         public static final int no_sd_text=0x7f060037;
         public static final int password=0x7f06001a;
         public static final int phone_number=0x7f060018;
@@ -232,7 +233,7 @@ public final class R {
         public static final int take_photo_activity_label=0x7f060005;
         /**  test user string 
          */
-        public static final int testuserid1=0x7f060039;
+        public static final int testuserid1=0x7f06003a;
         public static final int upload_photo_label=0x7f060031;
         public static final int user_details_activity_add_friends=0x7f06000d;
         public static final int user_details_activity_friend_add=0x7f06000f;
