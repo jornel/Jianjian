@@ -11,6 +11,7 @@ import com.liangshan.jianjian.android.error.JianjianException;
 import com.liangshan.jianjian.android.error.LocationException;
 import com.liangshan.jianjian.android.location.LocationUtils;
 import com.liangshan.jianjian.android.util.NotificationsUtil;
+import com.liangshan.jianjian.android.util.StringFormatters;
 import com.liangshan.jianjian.general.Jianjian;
 import com.liangshan.jianjian.general.Jianjian.JLocation;
 import com.liangshan.jianjian.types.Group;
@@ -138,7 +139,8 @@ public class RecommendItActivity extends Activity {
                 price = price + mCurrencyText.getText().toString();
                 //String currency = mCurrencySpinner.getSelectedItem().toString();
                 String recommendDes = mRecommendDesEditText.getText().toString();
-                Bitmap bitmapPhoto = mTakePhotoImgButton.getDrawingCache();
+                //Bitmap bitmapPhoto = mTakePhotoImgButton.getDrawingCache();
+                byte[] bytePhoto = StringFormatters.getBitmapByte(mStateHolder.getPhotoBitmap());
                 Venue chosenVenue = mStateHolder.getChosenVenue();
                 if (TextUtils.isEmpty(productName)) {
                     showDialogError(getResources().getString(
@@ -158,7 +160,7 @@ public class RecommendItActivity extends Activity {
                                 recommendDes,
                                 chosenVenue.getId()
                         },
-                        bitmapPhoto != null? bitmapPhoto:null);
+                        bytePhoto != null? bytePhoto:null);
                 
             }
         });
@@ -481,14 +483,14 @@ public class RecommendItActivity extends Activity {
 
         private RecommendItActivity mActivity;
         private String[] mParams;
-        private Bitmap mPhoto;
+        private byte[] mPhoto;
         private Exception mReason;
         private Jianjianroid mJianjianroid;
         private String mErrorMsgForRecommendIt;
         private String mSubmittingMsg;
 
         public AddandRecommendItTask(RecommendItActivity activity, 
-                            String[] params,Bitmap photo) {
+                            String[] params,byte[] photo) {
             mActivity = activity;
             mParams = params;
             mPhoto = photo;
@@ -631,7 +633,7 @@ public class RecommendItActivity extends Activity {
             mTaskTakePhoto.execute();
         }
         
-        public void startTaskAddandRecommendIt(RecommendItActivity activity,String[] params,Bitmap photo) {
+        public void startTaskAddandRecommendIt(RecommendItActivity activity,String[] params,byte[] photo) {
             mIsRunningTaskAddandRecommendIt = true;
             mTaskAddandRecommendIt = new AddandRecommendItTask(activity, params, photo);
             mTaskAddandRecommendIt.execute();

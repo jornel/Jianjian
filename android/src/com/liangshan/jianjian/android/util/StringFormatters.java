@@ -5,6 +5,8 @@
 package com.liangshan.jianjian.android.util;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.DateFormat;
@@ -16,6 +18,7 @@ import java.util.Date;
 import com.liangshan.jianjian.types.User;
 
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
 
@@ -222,4 +225,16 @@ public class StringFormatters {
     	DateFormat df = new SimpleDateFormat("EEE, dd MMM yy HH:mm:ss Z");
     	return df.format(new Date());
     }
+    
+    public static byte[] getBitmapByte(Bitmap bitmap){   
+        ByteArrayOutputStream out = new ByteArrayOutputStream();   
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);   
+        try {   
+            out.flush();   
+            out.close();   
+        } catch (IOException e) {   
+            e.printStackTrace();   
+        }   
+        return out.toByteArray();   
+    }   
 }

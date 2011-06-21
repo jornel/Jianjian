@@ -176,7 +176,7 @@ public class JianjianHttpApiV1 {
      * @throws JianjianParseException 
      */
     public RecommendMsg recommendItToAllFriends(String geolat, String geolong, String productName,
-            String price, String recommendDes, String venueId, Bitmap mPhoto) 
+            String price, String recommendDes, String venueId, byte[] mPhoto) 
             throws JianjianException, JianjianException, IOException {
         // TODO Auto-generated method stub
         

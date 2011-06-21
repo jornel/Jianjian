@@ -122,7 +122,7 @@ public class Jianjian {
      * @return
      */
     public RecommendMsg recommendItToAllFriends(String productName, String price, String recommendDes,
-            String VenueId, Bitmap mPhoto, JLocation location) 
+            String VenueId, byte[] mPhoto, JLocation location) 
             throws JianjianException, JianjianError, IOException{
         
         if(location != null){

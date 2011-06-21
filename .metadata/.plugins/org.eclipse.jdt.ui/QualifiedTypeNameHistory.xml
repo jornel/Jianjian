@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="android.R.array"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.util.IconUtils"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.error.JianjianError"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.StringFormatters"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.RemoteResourceManager"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.NullDiskCache"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.http.HttpApi"/>
@@ -54,10 +51,13 @@
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="android.provider.MediaStore"/>
 <fullyQualifiedTypeName name="android.net.Uri"/>
-<fullyQualifiedTypeName name="android.graphics.Bitmap"/>
 <fullyQualifiedTypeName name="android.widget.ImageView"/>
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
 <fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.id"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.string"/>
+<fullyQualifiedTypeName name="android.graphics.Bitmap"/>
+<fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.StringFormatters"/>
 </qualifiedTypeNameHistroy>

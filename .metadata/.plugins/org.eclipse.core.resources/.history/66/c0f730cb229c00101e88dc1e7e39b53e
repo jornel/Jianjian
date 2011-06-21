@@ -46,6 +46,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * @author ezhuche
@@ -57,6 +58,7 @@ public class RecommendItActivity extends Activity {
     static final boolean DEBUG = JianjianSettings.DEBUG;
     private static final int DIALOG_PICK_CATEGORY = 1;
     private static final int DIALOG_ERROR = 2;
+    protected static final int TAKE_PHOTO_WITH_DATA = 100;
     
     private StateHolder mStateHolder;
     
@@ -66,6 +68,7 @@ public class RecommendItActivity extends Activity {
     private ImageView mPickupVenueIcon;
     private TextView mPickupVenueTextView;
     private EditText mPriceEditText;
+    private TextView mCurrencyText;
     //private Spinner mCurrencySpinner;
     private EditText mRecommendDesEditText;
     private ImageButton mTakePhotoImgButton;
@@ -111,6 +114,7 @@ public class RecommendItActivity extends Activity {
         mPickupVenueIcon = (ImageView) findViewById(R.id.pickupVenueIcon);
         mPickupVenueTextView = (TextView) findViewById(R.id.pickupVenueTextView);
         mPriceEditText = (EditText) findViewById(R.id.priceEditText);
+        mCurrencyText = (TextView) findViewById(R.id.currencyText);
         //mCurrencySpinner = (Spinner) findViewById(R.id.currencySpinner);
         mRecommendDesEditText = (EditText) findViewById(R.id.recommendDesEditText);
         mTakePhotoImgButton = (ImageButton) findViewById(R.id.takePhotoImgButton);
@@ -131,10 +135,11 @@ public class RecommendItActivity extends Activity {
                 String productName = mNameEditText.getText().toString();
                 String price = mPriceEditText.getText().toString();
                 //temporary price
-                price = price + "元";
+                price = price + mCurrencyText.getText().toString();
                 //String currency = mCurrencySpinner.getSelectedItem().toString();
                 String recommendDes = mRecommendDesEditText.getText().toString();
-                Bitmap bitmapPhoto = mTakePhotoImgButton.getDrawingCache();
+                //Bitmap bitmapPhoto = mTakePhotoImgButton.getDrawingCache();
+                Bitmap bitmapPhoto = mStateHolder.getPhotoBitmap();
                 Venue chosenVenue = mStateHolder.getChosenVenue();
                 if (TextUtils.isEmpty(productName)) {
                     showDialogError(getResources().getString(
@@ -159,6 +164,18 @@ public class RecommendItActivity extends Activity {
             }
         });
         
+        mTakePhotoImgButton.setEnabled(true);
+        mTakePhotoImgButton.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent intent = new Intent(RecommendItActivity.this, TakePhotoActivity.class);
+                startActivityForResult(intent,TAKE_PHOTO_WITH_DATA);
+            }
+            
+        });
+        
         mNameEditText.addTextChangedListener(mNameFieldWatcher);
         Object retained = getLastNonConfigurationInstance();
         
@@ -171,6 +188,11 @@ public class RecommendItActivity extends Activity {
             mStateHolder = new StateHolder();
             mPickupVenueTextView.setText(getResources().getString(R.string.loading_venue_product));
             
+            if(loadLocationinSeconds(5)){
+                mStateHolder.startTaskGetVenueList(this);            
+            }else{
+                NotificationsUtil.ToastReasonForFailure(this, new LocationException());
+            }
             
             // If passed the venue parcelable, then we are in 'edit' mode.
             /*if (getIntent().getExtras() != null && getIntent().getExtras().containsKey(EXTRA_VENUE_TO_EDIT)) {
@@ -198,36 +220,9 @@ public class RecommendItActivity extends Activity {
     public void onResume() {
         super.onResume();
         Jianjianroid mJianjianroid = (Jianjianroid) this.getApplication();
-        Boolean hasLocation = false;
+        
         mJianjianroid.requestLocationUpdates(true);
-        
-        Location lastLocation = mJianjianroid.getLastKnownLocation();
-        if(lastLocation == null){
-            try{               
-                //check the lastLocation each second
-                for(int i=0;i<5;++i){
-                    startProgressBar("loading current location...");
-                    Thread.sleep(1000L);
-                    if(mJianjianroid.getLastKnownLocation()!= null){
-                        hasLocation = true; 
-                        break;
-                    }
-                }
-                stopProgressBar();
-            }catch(Exception e){
-                NotificationsUtil.ToastReasonForFailure(this, e);
-            }
-        }else{
-            hasLocation = true;
-        }
-
-        if(hasLocation == true){
-            mStateHolder.startTaskGetVenueList(this);            
-        }else{
-            NotificationsUtil.ToastReasonForFailure(this, new LocationException());
-        }
-        
-        
+               
         /*if (mStateHolder.getIsRunningTaskAddOrEditVenue()) {
             startProgressBar();
         }*/
@@ -251,6 +246,49 @@ public class RecommendItActivity extends Activity {
     public Object onRetainNonConfigurationInstance() {
         mStateHolder.setActivity(null);
         return mStateHolder;
+    }
+    
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {  
+        if (resultCode != RESULT_OK)  {
+            return;  
+        }       
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {  
+            case TAKE_PHOTO_WITH_DATA: {
+                mTakePhotoImgButton.setScaleType(ImageView.ScaleType.FIT_XY);
+                Bitmap returned_image = (Bitmap) data.getParcelableExtra(TakePhotoActivity.EXTRA_PHOTO_RETURNED);
+                mTakePhotoImgButton.setImageBitmap(returned_image);
+                mStateHolder.setPhotoBitmap(returned_image);
+            }  
+        }  
+    }  
+    
+    private boolean loadLocationinSeconds(int n){
+        Jianjianroid mJianjianroid = (Jianjianroid) this.getApplication();
+        
+        mJianjianroid.requestLocationUpdates(true);
+        Boolean hasLocation = false;
+        Location lastLocation = mJianjianroid.getLastKnownLocation();
+        if(lastLocation == null){
+            try{               
+                //check the lastLocation each second
+                for(int i=0;i<n;++i){
+                    startProgressBar("loading current location...");
+                    Thread.sleep(1000L);
+                    if(mJianjianroid.getLastKnownLocation()!= null){
+                        hasLocation = true; 
+                        break;
+                    }
+                }
+                stopProgressBar();
+            }catch(Exception e){
+                NotificationsUtil.ToastReasonForFailure(this, e);
+            }
+        }else{
+            hasLocation = true;
+        }
+        return hasLocation;
     }
     
     
@@ -283,7 +321,8 @@ public class RecommendItActivity extends Activity {
         mStateHolder.setIsRunningTaskAddandRecommendIt(false);
         stopProgressBar();
         if(recommendmsg != null){
-            //NotificationsUtil.ToastReasonForFailure(this,new Exception("recommend finished"));
+            Toast.makeText(this, "推荐完成：）",  
+                    Toast.LENGTH_LONG).show(); //NotificationsUtil.ToastReasonForFailure(this,new Exception("recommend finished"));
         }
         
         
@@ -519,6 +558,7 @@ public class RecommendItActivity extends Activity {
         private TakePhotoTask mTaskTakePhoto;
         private AddandRecommendItTask mTaskAddandRecommendIt;
         private Venue mChosenVenue;
+        private Bitmap mPhoto;
         
         public StateHolder() {
             mVenueList = new Group<Venue>();
@@ -604,6 +644,14 @@ public class RecommendItActivity extends Activity {
         
         public void setChosenVenu(Venue venue) {
             mChosenVenue = venue;
+        }
+        
+        public Bitmap getPhotoBitmap() {
+            return mPhoto;
+        }
+        
+        public void setPhotoBitmap(Bitmap photo) {
+            mPhoto = photo;
         }
         
     
