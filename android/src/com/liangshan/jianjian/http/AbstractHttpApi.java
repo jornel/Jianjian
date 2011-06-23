@@ -16,7 +16,9 @@ import com.liangshan.jianjian.util.JSONUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.params.HttpClientParams;
 import org.apache.http.client.utils.URLEncodedUtils;
@@ -104,6 +106,35 @@ abstract public class AbstractHttpApi implements HttpApi {
         return httpGet;
     }
     
+    public HttpPost createHttpPost(String url, NameValuePair... nameValuePairs) {
+        if (DEBUG) LOG.log(Level.FINE, "creating HttpPost for: " + url);
+        HttpPost httpPost = new HttpPost(url);
+        httpPost.addHeader(CLIENT_VERSION_HEADER, mClientVersion);
+        try {
+            httpPost.setEntity(new UrlEncodedFormEntity(stripNulls(nameValuePairs), HTTP.UTF_8));
+        } catch (UnsupportedEncodingException e1) {
+            throw new IllegalArgumentException("Unable to encode http parameters.");
+        }
+        if (DEBUG) LOG.log(Level.FINE, "Created: " + httpPost);
+        return httpPost;
+    }
+    
+    public HttpURLConnection createHttpURLConnectionPost(URL url, 
+            String boundary) throws IOException {
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setDoInput(true);        
+        conn.setDoOutput(true); 
+        conn.setUseCaches(false); 
+        conn.setConnectTimeout(TIMEOUT * 1000);
+        conn.setRequestMethod("POST");
+
+        conn.setRequestProperty(CLIENT_VERSION_HEADER, mClientVersion);
+        conn.setRequestProperty("Connection", "Keep-Alive"); 
+        conn.setRequestProperty("Content-Type", "multipart/form-data;boundary=" + boundary);
+    
+        return conn;
+     }
+    
     /**
      * @param httpRequest
      * @param parser
@@ -155,6 +186,8 @@ abstract public class AbstractHttpApi implements HttpApi {
         }
          
     }
+    
+    
     
     /**
      * execute() an httpRequest catching exceptions and returning null instead.

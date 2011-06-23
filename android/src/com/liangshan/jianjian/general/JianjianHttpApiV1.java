@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
@@ -181,6 +182,7 @@ public class JianjianHttpApiV1 {
         // TODO Auto-generated method stub
         
         String checkinBody;
+        String photoStr;
         if(price == null||price == ""){
             price = " ";
         }
@@ -188,19 +190,25 @@ public class JianjianHttpApiV1 {
             recommendDes = " ";
         }
         checkinBody = productName + "++" + price + "++" + recommendDes + "(from jianjian)";
+        if(mPhoto != null){
+            photoStr = new String(mPhoto);
+        }else {
+            photoStr = null;
+        }
         
-        HttpGet httpGet = mHttpApi.createHttpGet(fullUrl(URL_API_CHECK_IN), //
+        HttpPost httpPost = mHttpApi.createHttpPost(fullUrl(URL_API_CHECK_IN), //
                 new BasicNameValuePair("source", "jianjian"), //
                 new BasicNameValuePair("lang", "CHS"), //
                 new BasicNameValuePair("guid", venueId), //
                 new BasicNameValuePair("lat", geolat), //
                 new BasicNameValuePair("lon", geolong),//
+                new BasicNameValuePair("attachment_photo", photoStr),//
                 new BasicNameValuePair("body", checkinBody)//
                 //new BasicNameValuePair("syncs", checkinBody) 
                 //同步SNS，允许值(renren,kaixin001,sina,douban,fanfou,facebook,twitter,plurk,qq)，逗号分隔
                 //空字符串为都不同步，不传此参数则为全部同步
                 );
-        RecommendMsg recMsg = (RecommendMsg) mHttpApi.doHttpRequest(httpGet, new RecommendMsgParser());
+        RecommendMsg recMsg = (RecommendMsg) mHttpApi.doHttpRequest(httpPost, new RecommendMsgParser());
         return recMsg;
     }
 

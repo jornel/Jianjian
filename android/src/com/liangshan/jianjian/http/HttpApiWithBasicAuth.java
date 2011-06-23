@@ -8,6 +8,7 @@ import org.apache.http.HttpException;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpRequestInterceptor;
+import org.apache.http.NameValuePair;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.AuthState;
 import org.apache.http.client.CredentialsProvider;
@@ -24,6 +25,8 @@ import com.liangshan.jianjian.parsers.json.Parser;
 import com.liangshan.jianjian.types.JianjianType;
 
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 /**
  * @author Joe Chen
@@ -66,6 +69,7 @@ public class HttpApiWithBasicAuth extends AbstractHttpApi {
             JianjianParseException, JianjianException, IOException {
         return executeHttpRequest(httpRequest, parser);
     }
+
 
 
 }

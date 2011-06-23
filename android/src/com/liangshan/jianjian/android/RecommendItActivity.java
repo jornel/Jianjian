@@ -10,6 +10,7 @@ import java.util.List;
 import com.liangshan.jianjian.android.error.JianjianException;
 import com.liangshan.jianjian.android.error.LocationException;
 import com.liangshan.jianjian.android.location.LocationUtils;
+import com.liangshan.jianjian.android.util.Base64;
 import com.liangshan.jianjian.android.util.NotificationsUtil;
 import com.liangshan.jianjian.android.util.StringFormatters;
 import com.liangshan.jianjian.general.Jianjian;
@@ -140,7 +141,14 @@ public class RecommendItActivity extends Activity {
                 //String currency = mCurrencySpinner.getSelectedItem().toString();
                 String recommendDes = mRecommendDesEditText.getText().toString();
                 //Bitmap bitmapPhoto = mTakePhotoImgButton.getDrawingCache();
-                byte[] bytePhoto = StringFormatters.getBitmapByte(mStateHolder.getPhotoBitmap());
+                byte[] bytePhoto = null;
+                byte[] encodPhoto = null;
+                
+                if(mStateHolder != null&&mStateHolder.getPhotoBitmap()!= null){
+                    bytePhoto = StringFormatters.getBitmapByte(mStateHolder.getPhotoBitmap());
+                    //encodPhoto=Base64.encode(bytePhoto,Base64.DEFAULT);
+                }
+
                 Venue chosenVenue = mStateHolder.getChosenVenue();
                 if (TextUtils.isEmpty(productName)) {
                     showDialogError(getResources().getString(
