@@ -171,6 +171,14 @@ public class Jianjianroid extends Application {
         return JPreferences.getUserCity(mPrefs);
     }
     
+    public String getLoginName() {
+        return mPrefs.getString(JPreferences.PREFERENCE_LOGIN, null);
+    }
+    
+    public String getPassword() {
+        return mPrefs.getString(JPreferences.PREFERENCE_PASSWORD, null);
+    }
+    
     
     public void requestUpdateUser() {
         mTaskHandler.sendEmptyMessage(TaskHandler.MESSAGE_UPDATE_USER);

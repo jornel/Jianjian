@@ -5,10 +5,11 @@
 <typeInfo handle="=android/src&lt;com.liangshan.jianjian.android{MainActivity.java[MainActivity" modifiers="1" timestamp="1306159558000"/>
 <typeInfo handle="=android/src&lt;com.liangshan.jianjian.parsers.json{UserParser.java[UserParser" modifiers="1" timestamp="1305645580000"/>
 <typeInfo handle="=android/src&lt;com.liangshan.jianjian.android.preferences{JPreferences.java[JPreferences" modifiers="1" timestamp="1305447108000"/>
-<typeInfo handle="=android/src&lt;com.liangshan.jianjian.http{AbstractHttpApi.java[AbstractHttpApi" modifiers="1025" timestamp="1305643572000"/>
+<typeInfo handle="=android/src&lt;com.liangshan.jianjian.http{AbstractHttpApi.java[AbstractHttpApi" modifiers="1025" timestamp="1308831067000"/>
 <typeInfo handle="=foursquared1/src&lt;com.joelapenna.foursquared{AddVenueActivity.java[AddVenueActivity" modifiers="1" timestamp="1286631502000"/>
 <typeInfo handle="=android/src&lt;com.liangshan.jianjian.android{UserDetailsActivity.java[UserDetailsActivity" modifiers="1" timestamp="1307533466000"/>
 <typeInfo handle="=foursquared1/src&lt;com.joelapenna.foursquared{MainActivity.java[MainActivity" modifiers="1" timestamp="1305443472000"/>
 <typeInfo handle="=foursquared1/src&lt;com.joelapenna.foursquared.location{LocationUtils.java[LocationUtils" modifiers="1" timestamp="1286631502000"/>
 <typeInfo handle="=foursquared1/src&lt;com.joelapenna.foursquare{FoursquareHttpApiV1.java[FoursquareHttpApiV1" modifiers="0" timestamp="1286631502000"/>
+<typeInfo handle="=foursquared1/src&lt;com.joelapenna.foursquare.http{AbstractHttpApi.java[AbstractHttpApi" modifiers="1025" timestamp="1286631502000"/>
 </typeInfoHistroy>

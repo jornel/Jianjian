@@ -4,6 +4,7 @@
 package com.liangshan.jianjian.android;
 
 
+import java.io.File;
 import java.net.URLEncoder;
 import java.util.List;
 
@@ -11,6 +12,7 @@ import com.liangshan.jianjian.android.error.JianjianException;
 import com.liangshan.jianjian.android.error.LocationException;
 import com.liangshan.jianjian.android.location.LocationUtils;
 import com.liangshan.jianjian.android.util.Base64;
+import com.liangshan.jianjian.android.util.ImageUtil;
 import com.liangshan.jianjian.android.util.NotificationsUtil;
 import com.liangshan.jianjian.android.util.StringFormatters;
 import com.liangshan.jianjian.general.Jianjian;
@@ -143,10 +145,12 @@ public class RecommendItActivity extends Activity {
                 //Bitmap bitmapPhoto = mTakePhotoImgButton.getDrawingCache();
                 byte[] bytePhoto = null;
                 byte[] encodPhoto = null;
+                File mPhotoFile = null;
                 
                 if(mStateHolder != null&&mStateHolder.getPhotoBitmap()!= null){
-                    bytePhoto = StringFormatters.getBitmapByte(mStateHolder.getPhotoBitmap());
+                    //bytePhoto = StringFormatters.getBitmapByte(mStateHolder.getPhotoBitmap());
                     //encodPhoto=Base64.encode(bytePhoto,Base64.DEFAULT);
+                    mPhotoFile = ImageUtil.getBitmapFile(mStateHolder.getPhotoBitmap());
                 }
 
                 Venue chosenVenue = mStateHolder.getChosenVenue();
@@ -168,7 +172,7 @@ public class RecommendItActivity extends Activity {
                                 recommendDes,
                                 chosenVenue.getId()
                         },
-                        bytePhoto != null? bytePhoto:null);
+                        mPhotoFile != null? mPhotoFile:null);
                 
             }
         });
@@ -491,17 +495,17 @@ public class RecommendItActivity extends Activity {
 
         private RecommendItActivity mActivity;
         private String[] mParams;
-        private byte[] mPhoto;
+        private File mPhotoFile;
         private Exception mReason;
         private Jianjianroid mJianjianroid;
         private String mErrorMsgForRecommendIt;
         private String mSubmittingMsg;
 
         public AddandRecommendItTask(RecommendItActivity activity, 
-                            String[] params,byte[] photo) {
+                            String[] params,File photoFile) {
             mActivity = activity;
             mParams = params;
-            mPhoto = photo;
+            mPhotoFile = photoFile;
             mJianjianroid = (Jianjianroid) activity.getApplication();
             mErrorMsgForRecommendIt = activity.getResources().getString(
                     R.string.add_recommend_it_fail);
@@ -523,13 +527,17 @@ public class RecommendItActivity extends Activity {
             try {
                 Jianjian jianjian = mJianjianroid.getJianjian();
                 Location location = mJianjianroid.getLastKnownLocationOrThrow();
+                String loginName = mJianjianroid.getLoginName();
+                String password = mJianjianroid.getPassword();
 
                 return jianjian.recommendItToAllFriends(
                         mParams[0], // productName
                         mParams[1], // price
                         mParams[2], // recommendDes
                         mParams[3], // VenueId
-                        mPhoto,     // Photo,
+                        mPhotoFile,     // Photo,
+                        loginName,
+                        password,
                         LocationUtils.createJianjianLocation(location));
                 //LocationUtils.createJianjianLocation(location);
             } catch (Exception e) {
@@ -641,9 +649,9 @@ public class RecommendItActivity extends Activity {
             mTaskTakePhoto.execute();
         }
         
-        public void startTaskAddandRecommendIt(RecommendItActivity activity,String[] params,byte[] photo) {
+        public void startTaskAddandRecommendIt(RecommendItActivity activity,String[] params,File photoFile) {
             mIsRunningTaskAddandRecommendIt = true;
-            mTaskAddandRecommendIt = new AddandRecommendItTask(activity, params, photo);
+            mTaskAddandRecommendIt = new AddandRecommendItTask(activity, params, photoFile);
             mTaskAddandRecommendIt.execute();
         }
         

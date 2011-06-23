@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Base64Coder.java&apos; to &apos;android/src/com.liangshan.jianjian.android.util&apos;&#x0A;- Original project: &apos;foursquared1&apos;&#x0A;- Destination element: &apos;android/src/com.liangshan.jianjian.android.util&apos;&#x0A;- Original element: &apos;com.joelapenna.foursquared.util.Base64Coder.java&apos;" description="Copy compilation unit" destination="=android/src&lt;com.liangshan.jianjian.android.util" element1="/src&lt;com.joelapenna.foursquared.util{Base64Coder.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1308845214973" units="1" version="1.0"/>
+</session>

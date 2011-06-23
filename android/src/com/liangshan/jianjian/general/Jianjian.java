@@ -3,6 +3,7 @@
  */
 package com.liangshan.jianjian.general;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -122,11 +123,11 @@ public class Jianjian {
      * @return
      */
     public RecommendMsg recommendItToAllFriends(String productName, String price, String recommendDes,
-            String VenueId, byte[] mPhoto, JLocation location) 
+            String VenueId, File mPhotoFile, String username, String password, JLocation location) 
             throws JianjianException, JianjianError, IOException{
         
         if(location != null){
-            return mJianjianV1.recommendItToAllFriends(location.geolat,location.geolong,productName,price,recommendDes,VenueId,mPhoto);
+            return mJianjianV1.recommendItToAllFriends(location.geolat,location.geolong,productName,price,recommendDes,VenueId,mPhotoFile,username,password);
         }else {
             throw new JianjianException("failed to recommend the product...");
             

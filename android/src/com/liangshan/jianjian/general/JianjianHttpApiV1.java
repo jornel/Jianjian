@@ -3,7 +3,12 @@
  */
 package com.liangshan.jianjian.general;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.SocketTimeoutException;
+import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -20,6 +25,8 @@ import android.graphics.Bitmap;
 import com.liangshan.jianjian.android.error.JianjianError;
 import com.liangshan.jianjian.android.error.JianjianException;
 import com.liangshan.jianjian.android.error.JianjianParseException;
+import com.liangshan.jianjian.android.util.Base64;
+import com.liangshan.jianjian.android.util.Base64Coder;
 import com.liangshan.jianjian.http.AbstractHttpApi;
 import com.liangshan.jianjian.http.HttpApi;
 import com.liangshan.jianjian.http.HttpApiWithBasicAuth;
@@ -177,12 +184,12 @@ public class JianjianHttpApiV1 {
      * @throws JianjianParseException 
      */
     public RecommendMsg recommendItToAllFriends(String geolat, String geolong, String productName,
-            String price, String recommendDes, String venueId, byte[] mPhoto) 
-            throws JianjianException, JianjianException, IOException {
-        // TODO Auto-generated method stub
+            String price, String recommendDes, String venueId, File mPhotoFile, String username, String password) 
+            throws SocketTimeoutException, JianjianException, JianjianParseException, JianjianException, IOException {
+        
         
         String checkinBody;
-        String photoStr;
+        String photoPath;
         if(price == null||price == ""){
             price = " ";
         }
@@ -190,24 +197,25 @@ public class JianjianHttpApiV1 {
             recommendDes = " ";
         }
         checkinBody = productName + "++" + price + "++" + recommendDes + "(from jianjian)";
-        if(mPhoto != null){
-            photoStr = new String(mPhoto);
+        if(mPhotoFile != null){
+            photoPath = mPhotoFile.getPath();
         }else {
-            photoStr = null;
+            photoPath = null;
         }
         
-        HttpPost httpPost = mHttpApi.createHttpPost(fullUrl(URL_API_CHECK_IN), //
-                new BasicNameValuePair("source", "jianjian"), //
-                new BasicNameValuePair("lang", "CHS"), //
-                new BasicNameValuePair("guid", venueId), //
-                new BasicNameValuePair("lat", geolat), //
-                new BasicNameValuePair("lon", geolong),//
-                new BasicNameValuePair("attachment_photo", photoStr),//
-                new BasicNameValuePair("body", checkinBody)//
-                //new BasicNameValuePair("syncs", checkinBody) 
-                //同步SNS，允许值(renren,kaixin001,sina,douban,fanfou,facebook,twitter,plurk,qq)，逗号分隔
-                //空字符串为都不同步，不传此参数则为全部同步
-                );
+        String BOUNDARY = "******";
+        String lineEnd = "\r\n"; 
+        String twoHyphens = "--";
+        int maxBufferSize = 8192;
+        
+        File file = new File(photoPath);
+        FileInputStream fileInputStream = new FileInputStream(file);
+        URL url = new URL(fullUrl(URL_API_CHECK_IN));
+        HttpURLConnection conn = mHttpApi.createHttpURLConnectionPost(url, BOUNDARY);
+        
+        conn.setRequestProperty("Authorization", "Basic " +  Base64Coder.encodeString(username + ":" + password));
+        
+        
         RecommendMsg recMsg = (RecommendMsg) mHttpApi.doHttpRequest(httpPost, new RecommendMsgParser());
         return recMsg;
     }

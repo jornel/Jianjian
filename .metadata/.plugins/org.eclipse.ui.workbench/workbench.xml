@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="29" version="2.0">
+<workbench progressCount="15" version="2.0">
 <workbenchAdvisor/>
 <window height="708" width="1257" x="8" y="22">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="org.eclipse.debug.ui.DebugView"/>
-<orientation position="512" view="org.eclipse.jdt.ui.SourceView"/>
 <orientation position="512" view="org.eclipse.ui.views.ContentOutline"/>
+<orientation position="512" view="org.eclipse.jdt.ui.SourceView"/>
 </fastViewData>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -46,42 +46,33 @@
 <part id="3"/>
 <part id="4"/>
 <part id="5"/>
-<part id="6"/>
-<part id="7"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Jianjian.java" partName="Jianjian.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/general/Jianjian.java" title="Jianjian.java" tooltip="android/src/com/liangshan/jianjian/general/Jianjian.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/general/Jianjian.java"/>
-<editorState selectionHorizontalPixel="69" selectionLength="0" selectionOffset="3768" selectionTopPixel="1575"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TakePhotoActivity.java" partName="TakePhotoActivity.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/TakePhotoActivity.java" title="TakePhotoActivity.java" tooltip="android/src/com/liangshan/jianjian/android/TakePhotoActivity.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/TakePhotoActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="26" selectionOffset="6788" selectionTopPixel="2475"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3526" selectionTopPixel="1455"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RecommendItActivity.java" partName="RecommendItActivity.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/RecommendItActivity.java" title="RecommendItActivity.java" tooltip="android/src/com/liangshan/jianjian/android/RecommendItActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/RecommendItActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="19121" selectionTopPixel="6960"/>
+<editorState selectionHorizontalPixel="0" selectionLength="23" selectionOffset="19747" selectionTopPixel="6898"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Jianjianroid.java" partName="Jianjianroid.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/Jianjianroid.java" title="Jianjianroid.java" tooltip="android/src/com/liangshan/jianjian/android/Jianjianroid.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/Jianjianroid.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="22" selectionOffset="6084" selectionTopPixel="2040"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AddTipActivity.java" partName="AddTipActivity.java" path="/Users/jornel/project/android/foursquare/foursquared/main/src/com/joelapenna/foursquared/AddTipActivity.java" title="AddTipActivity.java" tooltip="foursquared1/src/com/joelapenna/foursquared/AddTipActivity.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/foursquared1/src/com/joelapenna/foursquared/AddTipActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6362" selectionTopPixel="2150"/>
-</editor>
-<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="recommend_it_activity.xml" partName="recommend_it_activity.xml" path="/Users/jornel/project/jianjian/android/res/layout/recommend_it_activity.xml" title="recommend_it_activity.xml" tooltip="android/res/layout/recommend_it_activity.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/res/layout/recommend_it_activity.xml"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JianjianHttpApiV1.java" partName="JianjianHttpApiV1.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java" title="JianjianHttpApiV1.java" tooltip="android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7850" selectionTopPixel="2943"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StringFormatters.java" partName="StringFormatters.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/util/StringFormatters.java" title="StringFormatters.java" tooltip="android/src/com/liangshan/jianjian/android/util/StringFormatters.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/util/StringFormatters.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7172" selectionTopPixel="2880"/>
+<editorState selectionHorizontalPixel="0" selectionLength="396" selectionOffset="7820" selectionTopPixel="2892"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JianjianHttpApiV1.java" partName="JianjianHttpApiV1.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java" title="JianjianHttpApiV1.java" tooltip="android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java"/>
-<editorState selectionHorizontalPixel="54" selectionLength="0" selectionOffset="6373" selectionTopPixel="2249"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ImageUtil.java" partName="ImageUtil.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/util/ImageUtil.java" title="ImageUtil.java" tooltip="android/src/com/liangshan/jianjian/android/util/ImageUtil.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/util/ImageUtil.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="513" selectionTopPixel="192"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FoursquareHttpApiV1.java" partName="FoursquareHttpApiV1.java" path="/Users/jornel/project/android/foursquare/foursquared/main/src/com/joelapenna/foursquare/FoursquareHttpApiV1.java" title="FoursquareHttpApiV1.java" tooltip="foursquared1/src/com/joelapenna/foursquare/FoursquareHttpApiV1.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/foursquared1/src/com/joelapenna/foursquare/FoursquareHttpApiV1.java"/>
+<editorState selectionHorizontalPixel="14" selectionLength="0" selectionOffset="33855" selectionTopPixel="9492"/>
 </editor>
 </editors>
 <views>
@@ -90,8 +81,8 @@
 </view>
 <view id="org.eclipse.search.ui.views.SearchView" partName="Search">
 <viewState isPinned="false">
-<view IMemento.internal.id="org.eclipse.search.text.FileSearchResultPage" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2" org.eclipse.search.resultpage.limit="1000" org.eclipse.search.resultpage.sorting="2"/>
 <view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
+<view IMemento.internal.id="org.eclipse.jdt.ui.JavaSearchResultPage" org.eclipse.jdt.search.resultpage.grouping="3" org.eclipse.jdt.search.resultpage.limit="1000" org.eclipse.jdt.search.resultpage.limit_enabled="TRUE" org.eclipse.jdt.search.resultpage.sorting="1" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2"/>
 </viewState>
 </view>
 <view id="org.eclipse.jdt.callhierarchy.view" partName="Call Hierarchy">
@@ -138,6 +129,9 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Warnings (100 of 547 items)"/>
+</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="0" org.eclipse.ui.ide.markerType="0" org.eclipse.ui.ide.pathField="0" org.eclipse.ui.ide.resourceField="0" org.eclipse.ui.ide.severityAndDescriptionField="0"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -230,7 +224,7 @@
 <show_view_action id="org.eclipse.pde.runtime.LogView"/>
 <show_view_action id="org.eclipse.ant.ui.views.AntView"/>
 <show_view_action id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
-<show_in_time id="org.eclipse.jdt.ui.PackageExplorer" time="1307810047650"/>
+<show_in_time id="org.eclipse.jdt.ui.PackageExplorer" time="1308845204276"/>
 <new_wizard_action id="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
 <new_wizard_action id="org.eclipse.jdt.ui.wizards.NewPackageCreationWizard"/>
 <new_wizard_action id="org.eclipse.jdt.ui.wizards.NewClassCreationWizard"/>
@@ -286,9 +280,9 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.27929375" ratioLeft="348" ratioRight="898" relationship="2" relative="left"/>
+<info part="org.eclipse.ui.editorss" ratio="0.16934189" ratioLeft="211" ratioRight="1035" relationship="2" relative="left"/>
 <info folder="true" part="bottom" ratio="0.8016129" ratioLeft="497" ratioRight="123" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.PropertySheet" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.search.ui.views.SearchView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
 <page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
@@ -522,163 +516,166 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/RecommendItActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/TakePhotoActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquared/AddTipActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/android/res/layout/recommend_it_activity.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/RecommendItActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/util/UserUtils.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/util/IconUtils.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/util/JSONUtils.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/util/StringFormatters.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/general/Jianjian.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/general/Jianjian.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquared/util/Base64Coder.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/Jianjianroid.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/RecommendItActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/preferences/JPreferences.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/util/Base64.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/util/Base64Coder.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquare/http/AbstractHttpApi.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquare/FoursquareHttpApiV1.java"/>
 </editors>
-<item historyLabel="TakePhotoActivity.java" index="1">
-<position info="not_deleted" x="5377" y="0"/>
+<item historyLabel="Jianjian.java" index="1">
+<position info="not_deleted" x="1303" y="14"/>
 </item>
-<item historyLabel="AddTipActivity.java" index="2">
-<position info="not_deleted" x="6162" y="0"/>
+<item historyLabel="Jianjianroid.java" index="3">
+<position info="not_deleted" x="3158" y="61"/>
 </item>
-<item historyLabel="TakePhotoActivity.java" index="1">
-<position info="not_deleted" x="5377" y="0"/>
+<item historyLabel="JianjianHttpApiV1.java" index="0">
+<position info="not_deleted" x="7458" y="0"/>
 </item>
-<item historyLabel="AddTipActivity.java" index="2">
-<position info="not_deleted" x="7316" y="0"/>
+<item historyLabel="Jianjianroid.java" index="3">
+<position info="not_deleted" x="3158" y="61"/>
 </item>
-<item historyLabel="TakePhotoActivity.java" index="1">
-<position info="not_deleted" x="5377" y="0"/>
-</item>
-<item historyLabel="TakePhotoActivity.java" index="1">
-<position info="not_deleted" x="5377" y="0"/>
-</item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="7578" y="0"/>
-</item>
-<item historyLabel="AddTipActivity.java" index="2">
-<position info="not_deleted" x="6362" y="0"/>
-</item>
-<item historyLabel="TakePhotoActivity.java" index="1">
-<position info="not_deleted" x="5964" y="1434"/>
-</item>
-<item historyLabel="RecommendItActivity.java" index="0">
+<item historyLabel="JianjianHttpApiV1.java" index="0">
 <position/>
 </item>
-<item historyLabel="TakePhotoActivity.java" index="1">
-<position info="not_deleted" x="5964" y="1434"/>
+<item historyLabel="Jianjian.java" index="1">
+<position info="not_deleted" x="1303" y="14"/>
 </item>
-<item historyLabel="TakePhotoActivity.java" index="1">
-<position info="not_deleted" x="5210" y="20"/>
+<item historyLabel="JianjianHttpApiV1.java" index="0">
+<position/>
 </item>
-<item historyLabel="TakePhotoActivity.java" index="1">
-<position info="not_deleted" x="1769" y="14"/>
+<item historyLabel="Jianjianroid.java" index="3">
+<position info="not_deleted" x="2365" y="33"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="9971" y="0"/>
+<item historyLabel="JianjianHttpApiV1.java" index="0">
+<position/>
 </item>
-<item historyLabel="TakePhotoActivity.java" index="1">
-<position info="not_deleted" x="949" y="17"/>
+<item historyLabel="Jianjianroid.java" index="3">
+<position info="not_deleted" x="2365" y="33"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="10060" y="0"/>
+<item historyLabel="JianjianHttpApiV1.java" index="0">
+<position info="not_deleted" x="2295" y="0"/>
 </item>
-<item historyLabel="recommend_it_activity.xml" index="3"/>
-<item historyLabel="TakePhotoActivity.java" index="1">
-<position info="not_deleted" x="6808" y="3"/>
+<item historyLabel="Jianjianroid.java" index="3">
+<position info="not_deleted" x="3158" y="61"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="9917" y="26"/>
+<item historyLabel="JianjianHttpApiV1.java" index="0">
+<position info="not_deleted" x="626" y="0"/>
 </item>
-<item historyLabel="TakePhotoActivity.java" index="1">
-<position info="not_deleted" x="6788" y="26"/>
+<item historyLabel="Jianjianroid.java" index="3">
+<position info="not_deleted" x="3158" y="61"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="9917" y="26"/>
+<item historyLabel="JianjianHttpApiV1.java" index="0">
+<position info="not_deleted" x="6533" y="23"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="10060" y="0"/>
-</item>
-<item historyLabel="RecommendItActivity.java" index="0">
-<position info="not_deleted" x="10191" y="0"/>
-</item>
-<item historyLabel="recommend_it_activity.xml" index="3"/>
-<item historyLabel="RecommendItActivity.java" index="4">
-<position info="not_deleted" x="10350" y="0"/>
+<item historyLabel="Jianjian.java" index="1">
+<position info="not_deleted" x="3390" y="23"/>
 </item>
 <item historyLabel="RecommendItActivity.java" index="4">
-<position info="not_deleted" x="10319" y="14"/>
+<position info="not_deleted" x="19711" y="0"/>
+</item>
+<item historyLabel="Jianjianroid.java" index="3">
+<position info="not_deleted" x="5808" y="54"/>
+</item>
+<item historyLabel="JPreferences.java" index="5">
+<position info="not_deleted" x="1776" y="16"/>
+</item>
+<item historyLabel="JianjianHttpApiV1.java" index="0">
+<position info="not_deleted" x="6533" y="23"/>
+</item>
+<item historyLabel="Jianjianroid.java" index="3">
+<position info="not_deleted" x="5792" y="0"/>
+</item>
+<item historyLabel="JianjianHttpApiV1.java" index="0">
+<position info="not_deleted" x="6533" y="23"/>
 </item>
 <item historyLabel="RecommendItActivity.java" index="4">
-<position info="not_deleted" x="6190" y="26"/>
+<position info="not_deleted" x="19747" y="23"/>
+</item>
+<item historyLabel="Jianjian.java" index="1">
+<position info="not_deleted" x="3547" y="0"/>
 </item>
 <item historyLabel="RecommendItActivity.java" index="4">
-<position info="not_deleted" x="23142" y="26"/>
+<position info="not_deleted" x="19747" y="23"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="4">
-<position info="not_deleted" x="23325" y="21"/>
+<item historyLabel="Jianjian.java" index="1">
+<position info="not_deleted" x="3705" y="23"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="4">
-<position info="not_deleted" x="11405" y="0"/>
+<item historyLabel="JianjianHttpApiV1.java" index="0">
+<position info="not_deleted" x="6700" y="0"/>
 </item>
-<item historyLabel="UserUtils.java" index="5">
-<position info="not_deleted" x="4" y="0"/>
+<item historyLabel="Jianjian.java" index="1">
+<position info="not_deleted" x="3526" y="0"/>
 </item>
-<item historyLabel="IconUtils.java" index="6">
-<position info="not_deleted" x="750" y="0"/>
+<item historyLabel="JianjianHttpApiV1.java" index="0">
+<position info="not_deleted" x="6700" y="0"/>
 </item>
-<item historyLabel="JSONUtils.java" index="7">
-<position info="not_deleted" x="4" y="0"/>
+<item historyLabel="Base64Coder.java" index="2">
+<position info="not_deleted" x="2258" y="312"/>
 </item>
-<item historyLabel="StringFormatters.java" index="8">
-<position info="not_deleted" x="7838" y="0"/>
+<item historyLabel="Base64.java" index="6">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="4">
-<position info="not_deleted" x="5519" y="0"/>
+<item historyLabel="Base64Coder.java" index="2">
+<position info="not_deleted" x="2258" y="312"/>
 </item>
-<item historyLabel="StringFormatters.java" index="8">
-<position info="not_deleted" x="7172" y="0"/>
+<item historyLabel="Base64Coder.java" index="2">
+<position info="not_deleted" x="2572" y="336"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="4">
-<position info="not_deleted" x="5519" y="0"/>
+<item historyLabel="Base64.java" index="6">
+<position/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="4">
-<position info="not_deleted" x="5563" y="0"/>
+<item historyLabel="JianjianHttpApiV1.java" index="0">
+<position info="not_deleted" x="6700" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="4">
-<position info="not_deleted" x="6190" y="26"/>
+<item historyLabel="Base64.java" index="6">
+<position/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="4">
-<position info="not_deleted" x="23142" y="26"/>
+<item historyLabel="Base64Coder.java" index="2">
+<position info="not_deleted" x="2910" y="1186"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="4">
-<position info="not_deleted" x="23325" y="21"/>
+<item historyLabel="Base64.java" index="6">
+<position/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="4">
-<position info="not_deleted" x="17979" y="21"/>
+<item historyLabel="Base64Coder.java" index="2">
+<position info="not_deleted" x="3874" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="4">
-<position info="not_deleted" x="6190" y="26"/>
+<item historyLabel="Base64.java" index="6">
+<position info="not_deleted" x="3338" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="4">
-<position info="not_deleted" x="23142" y="26"/>
+<item historyLabel="Base64Coder.java" index="2">
+<position info="not_deleted" x="3874" y="0"/>
 </item>
-<item historyLabel="Jianjian.java" index="9">
-<position info="not_deleted" x="3648" y="23"/>
+<item historyLabel="Base64Coder.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Jianjian.java" index="9">
-<position info="not_deleted" x="3648" y="23"/>
+<item historyLabel="JianjianHttpApiV1.java" index="0">
+<position info="not_deleted" x="7850" y="0"/>
 </item>
-<item historyLabel="JianjianHttpApiV1.java" index="10">
-<position info="not_deleted" x="6373" y="0"/>
+<item historyLabel="Jianjianroid.java" index="3">
+<position info="not_deleted" x="5792" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="4">
-<position info="not_deleted" x="19121" y="0"/>
+<item historyLabel="JianjianHttpApiV1.java" index="0">
+<position info="not_deleted" x="7850" y="0"/>
 </item>
-<item historyLabel="Jianjian.java" index="9">
-<position info="not_deleted" x="3768" y="0"/>
+<item historyLabel="AbstractHttpApi.java" index="8">
+<position info="not_deleted" x="7825" y="27"/>
 </item>
-<item active="true" historyLabel="JianjianHttpApiV1.java" index="10">
-<position info="not_deleted" x="6373" y="0"/>
+<item historyLabel="JianjianHttpApiV1.java" index="0">
+<position info="not_deleted" x="7850" y="0"/>
+</item>
+<item historyLabel="FoursquareHttpApiV1.java" index="9">
+<position info="not_deleted" x="2776" y="19"/>
+</item>
+<item historyLabel="JianjianHttpApiV1.java" index="0">
+<position info="not_deleted" x="7850" y="0"/>
+</item>
+<item active="true" historyLabel="FoursquareHttpApiV1.java" index="9">
+<position info="not_deleted" x="2776" y="19"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -686,6 +683,12 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="left"/>
+</trimArea>
+<trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@127a5a2"/>
+</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -693,15 +696,37 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="bottom"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JianjianHttpApiV1.java" tooltip="android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java">
-<persistable path="/android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FoursquareHttpApiV1.java" tooltip="foursquared1/src/com/joelapenna/foursquare/FoursquareHttpApiV1.java">
+<persistable path="/foursquared1/src/com/joelapenna/foursquare/FoursquareHttpApiV1.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Base64Coder.java" tooltip="android/src/com/liangshan/jianjian/android/util/Base64Coder.java">
+<persistable path="/android/src/com/liangshan/jianjian/android/util/Base64Coder.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Base64.java" tooltip="android/src/com/liangshan/jianjian/android/util/Base64.java">
+<persistable path="/android/src/com/liangshan/jianjian/android/util/Base64.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JPreferences.java" tooltip="android/src/com/liangshan/jianjian/android/preferences/JPreferences.java">
+<persistable path="/android/src/com/liangshan/jianjian/android/preferences/JPreferences.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Base64Coder.java" tooltip="foursquared1/src/com/joelapenna/foursquared/util/Base64Coder.java">
+<persistable path="/foursquared1/src/com/joelapenna/foursquared/util/Base64Coder.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AbstractHttpApi.java" tooltip="foursquared1/src/com/joelapenna/foursquare/http/AbstractHttpApi.java">
+<persistable path="/foursquared1/src/com/joelapenna/foursquare/http/AbstractHttpApi.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ImageUtil.java" tooltip="android/src/com/liangshan/jianjian/android/util/ImageUtil.java">
+<persistable path="/android/src/com/liangshan/jianjian/android/util/ImageUtil.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StringFormatters.java" tooltip="android/src/com/liangshan/jianjian/android/util/StringFormatters.java">
 <persistable path="/android/src/com/liangshan/jianjian/android/util/StringFormatters.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JianjianHttpApiV1.java" tooltip="android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java">
+<persistable path="/android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JSONUtils.java" tooltip="android/src/com/liangshan/jianjian/util/JSONUtils.java">
 <persistable path="/android/src/com/liangshan/jianjian/util/JSONUtils.java"/>
@@ -717,30 +742,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="foursquared1/AndroidManifest.xml">
 <persistable path="/foursquared1/AndroidManifest.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AddTipActivity.java" tooltip="foursquared1/src/com/joelapenna/foursquared/AddTipActivity.java">
-<persistable path="/foursquared1/src/com/joelapenna/foursquared/AddTipActivity.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NearbyVenuesActivity.java" tooltip="foursquared1/src/com/joelapenna/foursquared/NearbyVenuesActivity.java">
-<persistable path="/foursquared1/src/com/joelapenna/foursquared/NearbyVenuesActivity.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AddVenueActivity.java" tooltip="foursquared1/src/com/joelapenna/foursquared/AddVenueActivity.java">
-<persistable path="/foursquared1/src/com/joelapenna/foursquared/AddVenueActivity.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="VenuePickerAdapter.java" tooltip="android/src/com/liangshan/jianjian/android/widget/VenuePickerAdapter.java">
-<persistable path="/android/src/com/liangshan/jianjian/android/widget/VenuePickerAdapter.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Jianjianroid.java" tooltip="android/src/com/liangshan/jianjian/android/Jianjianroid.java">
-<persistable path="/android/src/com/liangshan/jianjian/android/Jianjianroid.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="VenuePickerDialog.java" tooltip="android/src/com/liangshan/jianjian/android/VenuePickerDialog.java">
-<persistable path="/android/src/com/liangshan/jianjian/android/VenuePickerDialog.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="strings.xml" tooltip="android/res/values/strings.xml">
-<persistable path="/android/res/values/strings.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="take_photo_activity.xml" tooltip="android/res/layout/take_photo_activity.xml">
-<persistable path="/android/res/layout/take_photo_activity.xml"/>
 </file>
 </mruList>
 </workbench>

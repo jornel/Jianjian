@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.error.JianjianError"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.RemoteResourceManager"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.NullDiskCache"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.http.HttpApi"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.http.HttpApiWithBasicAuth"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.types.User"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.parsers.json.UserParser"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.parsers.json.Parser"/>
@@ -42,7 +37,6 @@
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.location.LocationUtils"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.types.RecommendMsg"/>
 <fullyQualifiedTypeName name="android.widget.Button"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="android.os.Environment"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="android.view.Gravity"/>
@@ -60,4 +54,10 @@
 <fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.StringFormatters"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.ImageUtil"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.net.SocketTimeoutException"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.Base64"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.Base64Coder"/>
 </qualifiedTypeNameHistroy>
