@@ -275,7 +275,7 @@ public class JianjianHttpApiV1 {
         dos.writeBytes(twoHyphens + BOUNDARY + lineEnd); 
         dos.writeBytes("Content-Disposition: form-data; name=\"body\"" + lineEnd);
         dos.writeBytes(lineEnd); 
-        dos.writeBytes(URLEncoder.encode(checkinBody,"GBK"));
+        dos.writeBytes(toGBK(checkinBody));
         dos.writeBytes(lineEnd);
         
         
@@ -388,10 +388,10 @@ public class JianjianHttpApiV1 {
     }
     
 
-    public String toUtf8(String str) {
+    public String toGBK(String str) {
         String output = null;
       try {
-          output = new String(str.getBytes("UTF-8"),"UTF-8");
+          output = new String(str.getBytes(),"iso-8859-1");
       } catch (UnsupportedEncodingException e) {
           e.printStackTrace();
       }
