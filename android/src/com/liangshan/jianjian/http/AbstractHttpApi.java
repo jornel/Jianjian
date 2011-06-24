@@ -129,7 +129,9 @@ abstract public class AbstractHttpApi implements HttpApi {
         conn.setRequestMethod("POST");
 
         conn.setRequestProperty(CLIENT_VERSION_HEADER, mClientVersion);
-        conn.setRequestProperty("Connection", "Keep-Alive"); 
+        conn.setRequestProperty("Connection", "Keep-Alive");
+        conn.setRequestProperty("pragma", "no-cache");
+        conn.setRequestProperty("accept-charset", "UTF-8");
         conn.setRequestProperty("Content-Type", "multipart/form-data;boundary=" + boundary);
     
         return conn;

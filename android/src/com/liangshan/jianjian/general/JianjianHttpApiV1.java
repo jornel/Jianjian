@@ -3,21 +3,32 @@
  */
 package com.liangshan.jianjian.general;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.SocketTimeoutException;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.zip.GZIPInputStream;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.util.EntityUtils;
 
 
 import android.graphics.Bitmap;
@@ -38,6 +49,7 @@ import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.RecommendMsg;
 import com.liangshan.jianjian.types.User;
 import com.liangshan.jianjian.types.Venue;
+import com.liangshan.jianjian.util.JSONUtils;
 
 /**
  * @author jornel
@@ -190,6 +202,7 @@ public class JianjianHttpApiV1 {
         
         String checkinBody;
         String photoPath;
+        String photoName;
         if(price == null||price == ""){
             price = " ";
         }
@@ -197,27 +210,125 @@ public class JianjianHttpApiV1 {
             recommendDes = " ";
         }
         checkinBody = productName + "++" + price + "++" + recommendDes + "(from jianjian)";
+        
+        /*
         if(mPhotoFile != null){
             photoPath = mPhotoFile.getPath();
+            photoName = mPhotoFile.getName();
+            File file = new File(photoPath);
+            FileInputStream fileInputStream = new FileInputStream(file);
         }else {
             photoPath = null;
-        }
+            photoName = null;
+        }*/
         
         String BOUNDARY = "******";
         String lineEnd = "\r\n"; 
         String twoHyphens = "--";
         int maxBufferSize = 8192;
         
-        File file = new File(photoPath);
-        FileInputStream fileInputStream = new FileInputStream(file);
+
         URL url = new URL(fullUrl(URL_API_CHECK_IN));
         HttpURLConnection conn = mHttpApi.createHttpURLConnectionPost(url, BOUNDARY);
         
         conn.setRequestProperty("Authorization", "Basic " +  Base64Coder.encodeString(username + ":" + password));
         
+        // We are always saving the image to a jpg so we can use .jpg as the extension below.
+        DataOutputStream dos = new DataOutputStream(conn.getOutputStream()); 
+
+        //write source
+        dos.writeBytes(twoHyphens + BOUNDARY + lineEnd); 
+        dos.writeBytes("Content-Disposition: form-data; name=\"source\"" + lineEnd);
+        dos.writeBytes(lineEnd); 
+        dos.writeBytes(URLEncoder.encode("jianjian"));
+        dos.writeBytes(lineEnd);
         
-        RecommendMsg recMsg = (RecommendMsg) mHttpApi.doHttpRequest(httpPost, new RecommendMsgParser());
-        return recMsg;
+        //write source
+        dos.writeBytes(twoHyphens + BOUNDARY + lineEnd); 
+        dos.writeBytes("Content-Disposition: form-data; name=\"lang\"" + lineEnd);
+        dos.writeBytes(lineEnd); 
+        dos.writeBytes(URLEncoder.encode("zh_CN"));
+        dos.writeBytes(lineEnd);
+        
+        //write guid
+        dos.writeBytes(twoHyphens + BOUNDARY + lineEnd); 
+        dos.writeBytes("Content-Disposition: form-data; name=\"guid\"" + lineEnd);
+        dos.writeBytes(lineEnd); 
+        dos.writeBytes(URLEncoder.encode(venueId));
+        dos.writeBytes(lineEnd);
+        
+        //write source
+        dos.writeBytes(twoHyphens + BOUNDARY + lineEnd); 
+        dos.writeBytes("Content-Disposition: form-data; name=\"lat\"" + lineEnd);
+        dos.writeBytes(lineEnd); 
+        dos.writeBytes(URLEncoder.encode(geolat));
+        dos.writeBytes(lineEnd);
+        
+        //write source
+        dos.writeBytes(twoHyphens + BOUNDARY + lineEnd); 
+        dos.writeBytes("Content-Disposition: form-data; name=\"lon\"" + lineEnd);
+        dos.writeBytes(lineEnd); 
+        dos.writeBytes(URLEncoder.encode(geolong));
+        dos.writeBytes(lineEnd);
+        
+        //write source
+        dos.writeBytes(twoHyphens + BOUNDARY + lineEnd); 
+        dos.writeBytes("Content-Disposition: form-data; name=\"body\"" + lineEnd);
+        dos.writeBytes(lineEnd); 
+        dos.writeBytes(URLEncoder.encode(checkinBody,"GBK"));
+        dos.writeBytes(lineEnd);
+        
+        
+        //write image
+        if(mPhotoFile != null){
+            photoPath = mPhotoFile.getPath();
+            photoName = mPhotoFile.getName();
+            File file = new File(photoPath);
+            FileInputStream fileInputStream = new FileInputStream(file);
+            dos.writeBytes(twoHyphens + BOUNDARY + lineEnd); 
+            dos.writeBytes("Content-Disposition: form-data; name=\"attachment_photo\";filename=\"" + photoName +"\"" + lineEnd); 
+            dos.writeBytes("Content-Type: " + "image/jpeg" + lineEnd);
+            dos.writeBytes(lineEnd); 
+            
+            int bytesAvailable = fileInputStream.available(); 
+            int bufferSize = Math.min(bytesAvailable, maxBufferSize); 
+            byte[] buffer = new byte[bufferSize]; 
+            
+            int bytesRead = fileInputStream.read(buffer, 0, bufferSize); 
+            int totalBytesRead = bytesRead;
+            while (bytesRead > 0) {
+                dos.write(buffer, 0, bufferSize); 
+                bytesAvailable = fileInputStream.available(); 
+                bufferSize = Math.min(bytesAvailable, maxBufferSize); 
+                bytesRead = fileInputStream.read(buffer, 0, bufferSize); 
+                totalBytesRead = totalBytesRead  + bytesRead;
+            }
+            dos.writeBytes(lineEnd); 
+            
+            fileInputStream.close(); 
+            
+        }
+
+        dos.writeBytes(twoHyphens + BOUNDARY + twoHyphens + lineEnd); 
+        
+        
+        dos.flush(); 
+        dos.close(); 
+        
+        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream(),HTTP.UTF_8));
+        StringBuilder response = new StringBuilder();
+        String responseLine = "";
+        while ((responseLine = in.readLine()) != null) {
+            response.append(responseLine);
+        }
+        in.close();
+        
+        try {
+            return (RecommendMsg)JSONUtils.consume(new RecommendMsgParser(), response.toString());
+        } catch (Exception ex) {
+            throw new JianjianParseException(
+                    "Error parsing user photo upload response, invalid json.");
+        }
     }
 
     /**
@@ -244,6 +355,47 @@ public class JianjianHttpApiV1 {
                     new UsernamePasswordCredentials(phone, password));
         }
         
+    }
+    
+    private String getResponseBodyAsString(HttpResponse response) throws IOException {
+        String html = null;
+        GZIPInputStream gzin;
+        
+        if (response.getEntity().getContentEncoding() != null && response.getEntity().getContentEncoding().getValue().toLowerCase().indexOf("gzip") > -1) {
+            InputStream is = response.getEntity().getContent();
+            gzin = new GZIPInputStream(is);
+
+            InputStreamReader isr = new InputStreamReader(gzin, "iso-8859-1");
+            java.io.BufferedReader br = new java.io.BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String tempbf;
+            while (( tempbf = br.readLine() ) != null) {
+                sb.append(tempbf);
+                sb.append("\r\n");
+            }
+            isr.close();
+            gzin.close();
+            html = sb.toString();
+            html = new String(html.getBytes("iso-8859-1"), "utf-8");
+        } else {
+            HttpEntity entity = response.getEntity();
+            html = EntityUtils.toString(entity, "utf-8");
+            if (entity != null) {
+                entity.consumeContent();
+            }
+        }
+        return html;
+    }
+    
+
+    public String toUtf8(String str) {
+        String output = null;
+      try {
+          output = new String(str.getBytes("UTF-8"),"UTF-8");
+      } catch (UnsupportedEncodingException e) {
+          e.printStackTrace();
+      }
+         return output;
     }
 
 
