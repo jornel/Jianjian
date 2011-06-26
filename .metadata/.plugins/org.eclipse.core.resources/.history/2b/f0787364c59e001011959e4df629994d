@@ -197,9 +197,6 @@ public class RecommendItActivity extends Activity {
             mStateHolder = (StateHolder) retained;
             mStateHolder.setActivity(this);
             mPickupVenueLayout.setEnabled(true);
-            if(mStateHolder.getPhotoBitmap() != null){
-                mTakePhotoImgButton.setImageBitmap(mStateHolder.getPhotoBitmap());
-            }
             
         } else {
             mStateHolder = new StateHolder();
