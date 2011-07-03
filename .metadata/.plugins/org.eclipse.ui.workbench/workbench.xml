@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="17" version="2.0">
+<workbench progressCount="15" version="2.0">
 <workbenchAdvisor/>
 <window height="708" width="1257" x="8" y="22">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="org.eclipse.debug.ui.DebugView"/>
-<orientation position="512" view="org.eclipse.jdt.ui.SourceView"/>
 <orientation position="512" view="org.eclipse.ui.views.ContentOutline"/>
+<orientation position="512" view="org.eclipse.jdt.ui.SourceView"/>
 </fastViewData>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -21,13 +21,13 @@
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="84" y="22"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="120" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="54" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="152" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.browser.editor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -43,6 +43,9 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
 </presentation>
 </folder>
 </info>
@@ -51,13 +54,25 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/general/Jianjian.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4112" selectionTopPixel="1604"/>
 </editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FriendsActivity.java" partName="FriendsActivity.java" path="/Users/jornel/project/android/foursquare/foursquared/main/src/com/joelapenna/foursquared/FriendsActivity.java" title="FriendsActivity.java" tooltip="foursquared1/src/com/joelapenna/foursquared/FriendsActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/foursquared1/src/com/joelapenna/foursquared/FriendsActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4805" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserDetailsActivity.java" partName="UserDetailsActivity.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/UserDetailsActivity.java" title="UserDetailsActivity.java" tooltip="android/src/com/liangshan/jianjian/android/UserDetailsActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/UserDetailsActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6455" selectionTopPixel="0"/>
+</editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RecommendItActivity.java" partName="RecommendItActivity.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/RecommendItActivity.java" title="RecommendItActivity.java" tooltip="android/src/com/liangshan/jianjian/android/RecommendItActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/RecommendItActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8155" selectionTopPixel="3613"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="11340" selectionTopPixel="5885"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JianjianHttpApiV1.java" partName="JianjianHttpApiV1.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java" title="JianjianHttpApiV1.java" tooltip="android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7850" selectionTopPixel="2002"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Jianjianroid.java" partName="Jianjianroid.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/Jianjianroid.java" title="Jianjianroid.java" tooltip="android/src/com/liangshan/jianjian/android/Jianjianroid.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/Jianjianroid.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2548" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BestLocationListener.java" partName="BestLocationListener.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/location/BestLocationListener.java" title="BestLocationListener.java" tooltip="android/src/com/liangshan/jianjian/android/location/BestLocationListener.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/location/BestLocationListener.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="2" selectionOffset="1926" selectionTopPixel="570"/>
 </editor>
 </editors>
 <views>
@@ -66,6 +81,8 @@
 </view>
 <view id="org.eclipse.search.ui.views.SearchView" partName="Search">
 <viewState isPinned="false">
+<view IMemento.internal.id="org.eclipse.jdt.ui.JavaSearchResultPage" org.eclipse.jdt.search.resultpage.grouping="3" org.eclipse.jdt.search.resultpage.limit="1000" org.eclipse.jdt.search.resultpage.limit_enabled="TRUE" org.eclipse.jdt.search.resultpage.sorting="1" org.eclipse.search.lastActivation="2" org.eclipse.search.resultpage.layout="2"/>
+<view IMemento.internal.id="org.eclipse.search.text.FileSearchResultPage" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2" org.eclipse.search.resultpage.limit="1000" org.eclipse.search.resultpage.sorting="2"/>
 <view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
 </viewState>
 </view>
@@ -113,7 +130,8 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>&#x0A;<category IMemento.internal.id="Warnings (100 of 547 items)"/>
+<expanded>
+<category IMemento.internal.id="Warnings (100 of 553 items)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="0" org.eclipse.ui.ide.markerType="0" org.eclipse.ui.ide.pathField="0" org.eclipse.ui.ide.resourceField="0" org.eclipse.ui.ide.severityAndDescriptionField="0"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -168,7 +186,7 @@
 </view>
 </views>
 <perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
-<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<perspective editorAreaTrimState="1" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
@@ -191,6 +209,7 @@
 <alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
 <alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
 <alwaysOnActionSet id="org.eclipse.jdt.junit.JUnitActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.debugActionSet"/>
 <show_view_action id="org.eclipse.jdt.ui.PackageExplorer"/>
 <show_view_action id="org.eclipse.jdt.ui.TypeHierarchy"/>
 <show_view_action id="org.eclipse.jdt.ui.SourceView"/>
@@ -207,7 +226,7 @@
 <show_view_action id="org.eclipse.pde.runtime.LogView"/>
 <show_view_action id="org.eclipse.ant.ui.views.AntView"/>
 <show_view_action id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
-<show_in_time id="org.eclipse.jdt.ui.PackageExplorer" time="1308845204276"/>
+<show_in_time id="org.eclipse.jdt.ui.PackageExplorer" time="1309700179430"/>
 <new_wizard_action id="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
 <new_wizard_action id="org.eclipse.jdt.ui.wizards.NewPackageCreationWizard"/>
 <new_wizard_action id="org.eclipse.jdt.ui.wizards.NewClassCreationWizard"/>
@@ -229,30 +248,42 @@
 <perspective_action id="com.android.ide.eclipse.ddms.Perspective"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
-<view id="org.eclipse.ui.views.ProblemView"/>
-<view id="org.eclipse.jdt.ui.JavadocView"/>
-<view id="org.eclipse.ui.views.PropertySheet"/>
-<view id="org.eclipse.jdt.callhierarchy.view"/>
-<view id="org.eclipse.ui.console.ConsoleView"/>
-<view id="org.eclipse.search.ui.views.SearchView"/>
-<view id="org.eclipse.jdt.ui.PackageExplorer"/>
-<view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViews>
 <view id="org.eclipse.jdt.ui.SourceView" ratio="0.3"/>
 </fastViews>
-<fastViewBars/>
+<fastViewBars>
+<fastViewBar fastViewLocation="1024" id="bottom" orientation="256" selectedTabId="org.eclipse.search.ui.views.SearchView" style="1">
+<fastViews>
+<view id="org.eclipse.ui.views.ProblemView" ratio="0.3"/>
+<view id="org.eclipse.jdt.ui.JavadocView" ratio="0.3"/>
+<view id="org.eclipse.ui.views.PropertySheet" ratio="0.3"/>
+<view id="org.eclipse.jdt.callhierarchy.view" ratio="0.3"/>
+<view id="org.eclipse.ui.console.ConsoleView" ratio="0.3"/>
+<view id="org.eclipse.search.ui.views.SearchView" ratio="0.29855537"/>
+<view id="org.eclipse.debug.ui.DebugView" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+<fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@127a5a2" orientation="512" selectedTabId="org.eclipse.ui.views.ContentOutline" style="1">
+<fastViews>
+<view id="org.eclipse.ui.views.ContentOutline" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+<fastViewBar fastViewLocation="16384" id="left" orientation="512" selectedTabId="org.eclipse.jdt.ui.PackageExplorer" style="1">
+<fastViews>
+<view id="org.eclipse.jdt.ui.PackageExplorer" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+</fastViewBars>
 <layout>
 <mainWindow>
 <info folder="true" part="left">
-<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
-<page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@7cf883" ratio="0.75" ratioLeft="762" ratioRight="254" relationship="2" relative="left">
@@ -263,26 +294,20 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.16934189" ratioLeft="211" ratioRight="1035" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.8016129" ratioLeft="497" ratioRight="123" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
-<page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
-<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
-<page content="org.eclipse.jdt.callhierarchy.view" label="Call Hierarchy"/>
-<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
-<page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
+<info part="org.eclipse.ui.editorss" ratio="0.24558587" ratioLeft="306" ratioRight="940" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.7564516" ratioLeft="469" ratioRight="151" relationship="4" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.JavadocView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.callhierarchy.view" label="LabelNotFound"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
-<part id="4"/>
-<part id="5"/>
-</presentation>
+<page content="org.eclipse.debug.ui.DebugView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1bdcbb2" ratio="0.8210526" ratioLeft="780" ratioRight="170" relationship="2" relative="org.eclipse.ui.editorss">
@@ -299,11 +324,9 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@127a5a2" ratio="0.7497425" ratioLeft="728" ratioRight="243" relationship="2" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 </mainWindow>
@@ -358,52 +381,73 @@
 <view id="org.eclipse.ui.views.TaskList"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViewBars/>
-<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<layout>
+<mainWindow>
+<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="933" ratioRight="311" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="933" ratioRight="311" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.65967745" ratioLeft="409" ratioRight="211" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.6016129" ratioLeft="373" ratioRight="247" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.debug.ui.DisplayView" label="LabelNotFound"/>
 <page content="org.eclipse.search.SearchResultView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 <part id="1"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@1475cbd" ratio="0.5" ratioLeft="622" ratioRight="622" relationship="2" relative="org.eclipse.debug.internal.ui.ConsoleFolderView">&#x0A;<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1475cbd" ratio="0.5" ratioLeft="622" ratioRight="622" relationship="2" relative="org.eclipse.debug.internal.ui.ConsoleFolderView">
+<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
+<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 <part id="1"/>
 </presentation>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.36453202" ratioLeft="148" ratioRight="258" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
-<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.75" ratioLeft="933" ratioRight="311" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.75" ratioLeft="933" ratioRight="311" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@90b343" ratio="0.5" ratioLeft="622" ratioRight="622" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@90b343" ratio="0.5" ratioLeft="622" ratioRight="622" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">
+<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.49959967" ratioLeft="624" ratioRight="625" relationship="2" relative="org.eclipse.ui.internal.ViewStack@90b343">&#x0A;<folder activePageID="org.eclipse.debug.ui.BreakpointView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.49959967" ratioLeft="624" ratioRight="625" relationship="2" relative="org.eclipse.ui.internal.ViewStack@90b343">
+<folder activePageID="org.eclipse.debug.ui.BreakpointView" appearance="2" expanded="2">
+<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
 <page content="org.eclipse.debug.ui.BreakpointView" label="Breakpoints"/>
 <page content="org.eclipse.debug.ui.ExpressionView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 <part id="1"/>
 </presentation>
 </folder>
@@ -499,170 +543,165 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/general/Jianjian.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquared/util/Base64Coder.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/FriendsActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/app/LoadableListActivityWithViewAndHeader.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" path="/foursquared1/res/values/attrs.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" path="/android/res/layout/loadable_list_activity_with_view_and_header.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquared/widget/SegmentedButton.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquared/app/LoadableListActivityWithViewAndHeader.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquared/FriendsActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/util/NotificationsUtil.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/RecommendItActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/UserDetailsActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/location/BestLocationListener.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/Jianjianroid.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/RecommendItActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/preferences/JPreferences.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/util/Base64.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/util/Base64Coder.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquare/http/AbstractHttpApi.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquare/FoursquareHttpApiV1.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/general/Jianjian.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/RecommendItActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=android/\/Users\/jornel\/develop\/android-sdk-mac_86\/platforms\/android-8\/android.jar&lt;android.app(Activity.class"/>
+<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=android/\/Users\/jornel\/develop\/android-sdk-mac_86\/platforms\/android-8\/android.jar&lt;android.widget(Toast.class"/>
 </editors>
-<item historyLabel="JianjianHttpApiV1.java" index="0">
-<position/>
+<item historyLabel="LoadableListActivityWithViewAndHeader.java" index="1">
+<position info="not_deleted" x="876" y="0"/>
 </item>
-<item historyLabel="Jianjianroid.java" index="3">
-<position info="not_deleted" x="2365" y="33"/>
+<item historyLabel="FriendsActivity.java" index="0">
+<position info="not_deleted" x="393" y="0"/>
 </item>
-<item historyLabel="JianjianHttpApiV1.java" index="0">
-<position info="not_deleted" x="2295" y="0"/>
+<item historyLabel="LoadableListActivityWithViewAndHeader.java" index="1">
+<position info="not_deleted" x="876" y="0"/>
 </item>
-<item historyLabel="Jianjianroid.java" index="3">
-<position info="not_deleted" x="3158" y="61"/>
+<item historyLabel="loadable_list_activity_with_view_and_header.xml" index="3"/>
+<item historyLabel="attrs.xml" index="2"/>
+<item historyLabel="SegmentedButton.java" index="4">
+<position info="not_deleted" x="1993" y="9"/>
 </item>
-<item historyLabel="JianjianHttpApiV1.java" index="0">
-<position info="not_deleted" x="626" y="0"/>
+<item historyLabel="LoadableListActivityWithViewAndHeader.java" index="5">
+<position info="not_deleted" x="2375" y="15"/>
 </item>
-<item historyLabel="Jianjianroid.java" index="3">
-<position info="not_deleted" x="3158" y="61"/>
+<item historyLabel="FriendsActivity.java" index="6">
+<position info="not_deleted" x="2241" y="37"/>
 </item>
-<item historyLabel="JianjianHttpApiV1.java" index="0">
-<position info="not_deleted" x="6533" y="23"/>
+<item historyLabel="NotificationsUtil.java" index="7">
+<position info="not_deleted" x="720" y="0"/>
 </item>
-<item historyLabel="Jianjian.java" index="1">
-<position info="not_deleted" x="3390" y="23"/>
-</item>
-<item historyLabel="RecommendItActivity.java" index="4">
-<position info="not_deleted" x="19711" y="0"/>
-</item>
-<item historyLabel="Jianjianroid.java" index="3">
-<position info="not_deleted" x="5808" y="54"/>
-</item>
-<item historyLabel="JPreferences.java" index="5">
-<position info="not_deleted" x="1776" y="16"/>
-</item>
-<item historyLabel="JianjianHttpApiV1.java" index="0">
-<position info="not_deleted" x="6533" y="23"/>
-</item>
-<item historyLabel="Jianjianroid.java" index="3">
-<position info="not_deleted" x="5792" y="0"/>
-</item>
-<item historyLabel="JianjianHttpApiV1.java" index="0">
-<position info="not_deleted" x="6533" y="23"/>
-</item>
-<item historyLabel="RecommendItActivity.java" index="4">
-<position info="not_deleted" x="19747" y="23"/>
-</item>
-<item historyLabel="Jianjian.java" index="1">
-<position info="not_deleted" x="3547" y="0"/>
-</item>
-<item historyLabel="RecommendItActivity.java" index="4">
-<position info="not_deleted" x="19747" y="23"/>
-</item>
-<item historyLabel="Jianjian.java" index="1">
-<position info="not_deleted" x="3705" y="23"/>
-</item>
-<item historyLabel="JianjianHttpApiV1.java" index="0">
-<position info="not_deleted" x="6700" y="0"/>
-</item>
-<item historyLabel="Jianjian.java" index="1">
-<position info="not_deleted" x="3526" y="0"/>
-</item>
-<item historyLabel="JianjianHttpApiV1.java" index="0">
-<position info="not_deleted" x="6700" y="0"/>
-</item>
-<item historyLabel="Base64Coder.java" index="2">
-<position info="not_deleted" x="2258" y="312"/>
-</item>
-<item historyLabel="Base64.java" index="6">
+<item historyLabel="RecommendItActivity.java" index="8">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Base64Coder.java" index="2">
-<position info="not_deleted" x="2258" y="312"/>
+<item historyLabel="RecommendItActivity.java" index="8">
+<position info="not_deleted" x="10057" y="21"/>
 </item>
-<item historyLabel="Base64Coder.java" index="2">
-<position info="not_deleted" x="2572" y="336"/>
+<item historyLabel="RecommendItActivity.java" index="8">
+<position info="not_deleted" x="25319" y="21"/>
 </item>
-<item historyLabel="Base64.java" index="6">
-<position/>
+<item historyLabel="RecommendItActivity.java" index="8">
+<position info="not_deleted" x="25458" y="16"/>
 </item>
-<item historyLabel="JianjianHttpApiV1.java" index="0">
-<position info="not_deleted" x="6700" y="0"/>
+<item historyLabel="RecommendItActivity.java" index="8">
+<position info="not_deleted" x="15110" y="16"/>
 </item>
-<item historyLabel="Base64.java" index="6">
-<position/>
+<item historyLabel="RecommendItActivity.java" index="8">
+<position info="not_deleted" x="15808" y="21"/>
 </item>
-<item historyLabel="Base64Coder.java" index="2">
-<position info="not_deleted" x="2910" y="1186"/>
+<item historyLabel="RecommendItActivity.java" index="8">
+<position info="not_deleted" x="18222" y="21"/>
 </item>
-<item historyLabel="Base64.java" index="6">
-<position/>
+<item historyLabel="NotificationsUtil.java" index="7">
+<position info="not_deleted" x="591" y="21"/>
 </item>
-<item historyLabel="Base64Coder.java" index="2">
-<position info="not_deleted" x="3874" y="0"/>
+<item historyLabel="RecommendItActivity.java" index="8">
+<position info="not_deleted" x="18222" y="21"/>
 </item>
-<item historyLabel="Base64.java" index="6">
-<position info="not_deleted" x="3338" y="0"/>
+<item historyLabel="FriendsActivity.java" index="6">
+<position info="not_deleted" x="4805" y="0"/>
 </item>
-<item historyLabel="Base64Coder.java" index="2">
-<position info="not_deleted" x="3874" y="0"/>
+<item historyLabel="UserDetailsActivity.java" index="9">
+<position info="not_deleted" x="6455" y="0"/>
 </item>
-<item historyLabel="Base64Coder.java" index="7">
+<item historyLabel="BestLocationListener.java" index="10">
+<position info="not_deleted" x="6691" y="0"/>
+</item>
+<item historyLabel="UserDetailsActivity.java" index="9">
+<position info="not_deleted" x="6455" y="0"/>
+</item>
+<item historyLabel="FriendsActivity.java" index="6">
+<position info="not_deleted" x="4805" y="0"/>
+</item>
+<item historyLabel="RecommendItActivity.java" index="8">
+<position info="not_deleted" x="18144" y="0"/>
+</item>
+<item historyLabel="UserDetailsActivity.java" index="9">
+<position info="not_deleted" x="6455" y="0"/>
+</item>
+<item historyLabel="FriendsActivity.java" index="6">
+<position info="not_deleted" x="4805" y="0"/>
+</item>
+<item historyLabel="UserDetailsActivity.java" index="9">
+<position info="not_deleted" x="6455" y="0"/>
+</item>
+<item historyLabel="RecommendItActivity.java" index="8">
+<position info="not_deleted" x="18144" y="0"/>
+</item>
+<item historyLabel="UserDetailsActivity.java" index="9">
+<position info="not_deleted" x="6455" y="0"/>
+</item>
+<item historyLabel="RecommendItActivity.java" index="8">
+<position info="not_deleted" x="17467" y="22"/>
+</item>
+<item historyLabel="Jianjianroid.java" index="11">
+<position info="not_deleted" x="6386" y="8"/>
+</item>
+<item historyLabel="BestLocationListener.java" index="10">
+<position info="not_deleted" x="1981" y="0"/>
+</item>
+<item historyLabel="RecommendItActivity.java" index="8">
+<position info="not_deleted" x="18204" y="54"/>
+</item>
+<item historyLabel="BestLocationListener.java" index="10">
+<position info="not_deleted" x="1981" y="0"/>
+</item>
+<item historyLabel="RecommendItActivity.java" index="8">
+<position info="not_deleted" x="13307" y="92"/>
+</item>
+<item historyLabel="BestLocationListener.java" index="10">
+<position info="not_deleted" x="1981" y="0"/>
+</item>
+<item historyLabel="RecommendItActivity.java" index="8">
+<position info="not_deleted" x="13313" y="8"/>
+</item>
+<item historyLabel="Toast.class" index="12">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="JianjianHttpApiV1.java" index="0">
-<position info="not_deleted" x="7850" y="0"/>
+<item historyLabel="RecommendItActivity.java" index="8">
+<position info="not_deleted" x="13313" y="8"/>
 </item>
-<item historyLabel="Jianjianroid.java" index="3">
-<position info="not_deleted" x="5792" y="0"/>
+<item historyLabel="BestLocationListener.java" index="10">
+<position info="not_deleted" x="1981" y="0"/>
 </item>
-<item historyLabel="JianjianHttpApiV1.java" index="0">
-<position info="not_deleted" x="7850" y="0"/>
+<item historyLabel="Jianjianroid.java" index="11">
+<position info="not_deleted" x="6386" y="8"/>
 </item>
-<item historyLabel="AbstractHttpApi.java" index="8">
-<position info="not_deleted" x="7825" y="27"/>
+<item historyLabel="RecommendItActivity.java" index="8">
+<position info="not_deleted" x="13307" y="5"/>
 </item>
-<item historyLabel="JianjianHttpApiV1.java" index="0">
-<position info="not_deleted" x="7850" y="0"/>
+<item historyLabel="BestLocationListener.java" index="10">
+<position info="not_deleted" x="1981" y="0"/>
 </item>
-<item historyLabel="FoursquareHttpApiV1.java" index="9">
-<position info="not_deleted" x="2776" y="19"/>
+<item historyLabel="RecommendItActivity.java" index="8">
+<position info="not_deleted" x="13307" y="5"/>
 </item>
-<item historyLabel="JianjianHttpApiV1.java" index="0">
-<position info="not_deleted" x="7850" y="0"/>
+<item historyLabel="BestLocationListener.java" index="10">
+<position info="not_deleted" x="1947" y="0"/>
 </item>
-<item historyLabel="FoursquareHttpApiV1.java" index="9">
-<position info="not_deleted" x="33855" y="0"/>
+<item historyLabel="RecommendItActivity.java" index="8">
+<position info="not_deleted" x="11340" y="0"/>
 </item>
-<item historyLabel="Jianjian.java" index="10">
-<position info="not_deleted" x="3526" y="0"/>
+<item historyLabel="BestLocationListener.java" index="10">
+<position info="not_deleted" x="1236" y="20"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="11">
-<position info="not_deleted" x="19952" y="23"/>
+<item historyLabel="Jianjianroid.java" index="11">
+<position info="not_deleted" x="2548" y="0"/>
 </item>
-<item historyLabel="JianjianHttpApiV1.java" index="12">
-<position info="not_deleted" x="7850" y="0"/>
+<item historyLabel="BestLocationListener.java" index="10">
+<position info="not_deleted" x="1926" y="2"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="11">
-<position info="not_deleted" x="19952" y="23"/>
-</item>
-<item historyLabel="RecommendItActivity.java" index="11">
-<position info="not_deleted" x="7533" y="22"/>
-</item>
-<item historyLabel="Activity.class" index="13">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="RecommendItActivity.java" index="11">
-<position info="not_deleted" x="8155" y="0"/>
-</item>
-<item active="true" historyLabel="JianjianHttpApiV1.java" index="12">
-<position info="not_deleted" x="7850" y="0"/>
+<item active="true" historyLabel="Jianjianroid.java" index="11">
+<position info="not_deleted" x="2548" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -670,6 +709,18 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="left"/>
+</trimArea>
+<trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@127a5a2"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@90b343"/>
+<trimItem IMemento.internal.id="org.eclipse.debug.internal.ui.ToolsFolderView"/>
+<trimItem IMemento.internal.id="org.eclipse.debug.internal.ui.ConsoleFolderView"/>
+<trimItem IMemento.internal.id="org.eclipse.debug.internal.ui.OutlineFolderView"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@1475cbd"/>
+</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -677,54 +728,55 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="bottom"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Activity.class" tooltip="android.app.Activity">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=android/\/Users\/jornel\/develop\/android-sdk-mac_86\/platforms\/android-8\/android.jar&lt;android.app(Activity.class"/>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="Toast.class" tooltip="android.widget.Toast">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=android/\/Users\/jornel\/develop\/android-sdk-mac_86\/platforms\/android-8\/android.jar&lt;android.widget(Toast.class"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FoursquareHttpApiV1.java" tooltip="foursquared1/src/com/joelapenna/foursquare/FoursquareHttpApiV1.java">
-<persistable path="/foursquared1/src/com/joelapenna/foursquare/FoursquareHttpApiV1.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BestLocationListener.java" tooltip="android/src/com/liangshan/jianjian/android/location/BestLocationListener.java">
+<persistable path="/android/src/com/liangshan/jianjian/android/location/BestLocationListener.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Base64Coder.java" tooltip="android/src/com/liangshan/jianjian/android/util/Base64Coder.java">
-<persistable path="/android/src/com/liangshan/jianjian/android/util/Base64Coder.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Jianjianroid.java" tooltip="android/src/com/liangshan/jianjian/android/Jianjianroid.java">
+<persistable path="/android/src/com/liangshan/jianjian/android/Jianjianroid.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Base64.java" tooltip="android/src/com/liangshan/jianjian/android/util/Base64.java">
-<persistable path="/android/src/com/liangshan/jianjian/android/util/Base64.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RecommendItActivity.java" tooltip="android/src/com/liangshan/jianjian/android/RecommendItActivity.java">
+<persistable path="/android/src/com/liangshan/jianjian/android/RecommendItActivity.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JPreferences.java" tooltip="android/src/com/liangshan/jianjian/android/preferences/JPreferences.java">
-<persistable path="/android/src/com/liangshan/jianjian/android/preferences/JPreferences.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NotificationsUtil.java" tooltip="android/src/com/liangshan/jianjian/android/util/NotificationsUtil.java">
+<persistable path="/android/src/com/liangshan/jianjian/android/util/NotificationsUtil.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Base64Coder.java" tooltip="foursquared1/src/com/joelapenna/foursquared/util/Base64Coder.java">
-<persistable path="/foursquared1/src/com/joelapenna/foursquared/util/Base64Coder.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="R.java" tooltip="android/gen/com/liangshan/jianjian/android/R.java">
+<persistable path="/android/gen/com/liangshan/jianjian/android/R.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AbstractHttpApi.java" tooltip="foursquared1/src/com/joelapenna/foursquare/http/AbstractHttpApi.java">
-<persistable path="/foursquared1/src/com/joelapenna/foursquare/http/AbstractHttpApi.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="styles.xml" tooltip="foursquared1/res/values/styles.xml">
+<persistable path="/foursquared1/res/values/styles.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ImageUtil.java" tooltip="android/src/com/liangshan/jianjian/android/util/ImageUtil.java">
-<persistable path="/android/src/com/liangshan/jianjian/android/util/ImageUtil.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="sytles.xml" tooltip="android/res/values/sytles.xml">
+<persistable path="/android/res/values/sytles.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StringFormatters.java" tooltip="android/src/com/liangshan/jianjian/android/util/StringFormatters.java">
-<persistable path="/android/src/com/liangshan/jianjian/android/util/StringFormatters.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="loadable_list_activity_with_view_and_header.xml" tooltip="foursquared1/res/layout/loadable_list_activity_with_view_and_header.xml">
+<persistable path="/foursquared1/res/layout/loadable_list_activity_with_view_and_header.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JianjianHttpApiV1.java" tooltip="android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java">
-<persistable path="/android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="header_blue.xml" tooltip="foursquared1/res/drawable/header_blue.xml">
+<persistable path="/foursquared1/res/drawable/header_blue.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JSONUtils.java" tooltip="android/src/com/liangshan/jianjian/util/JSONUtils.java">
-<persistable path="/android/src/com/liangshan/jianjian/util/JSONUtils.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="loadable_list_activity_with_view_and_header.xml" tooltip="android/res/layout/loadable_list_activity_with_view_and_header.xml">
+<persistable path="/android/res/layout/loadable_list_activity_with_view_and_header.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="IconUtils.java" tooltip="android/src/com/liangshan/jianjian/util/IconUtils.java">
-<persistable path="/android/src/com/liangshan/jianjian/util/IconUtils.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="attrs.xml" tooltip="android/res/values/attrs.xml">
+<persistable path="/android/res/values/attrs.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserUtils.java" tooltip="android/src/com/liangshan/jianjian/android/util/UserUtils.java">
-<persistable path="/android/src/com/liangshan/jianjian/android/util/UserUtils.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="arrays.xml" tooltip="android/res/values/arrays.xml">
+<persistable path="/android/res/values/arrays.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="recommend_it_activity.xml" tooltip="android/res/layout/recommend_it_activity.xml">
-<persistable path="/android/res/layout/recommend_it_activity.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="attrs.xml" tooltip="foursquared1/res/values/attrs.xml">
+<persistable path="/foursquared1/res/values/attrs.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="foursquared1/AndroidManifest.xml">
-<persistable path="/foursquared1/AndroidManifest.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="R.java" tooltip="foursquared1/gen/com/joelapenna/foursquared/R.java">
+<persistable path="/foursquared1/gen/com/joelapenna/foursquared/R.java"/>
 </file>
 </mruList>
 </workbench>

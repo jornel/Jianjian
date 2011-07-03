@@ -60,7 +60,7 @@ public class BestLocationListener extends Observable implements LocationListener
 
     synchronized public void onBestLocationChanged(Location location) {
         if (DEBUG) Log.d(TAG, "onBestLocationChanged: " + location);
-        //Toast.makeText(this, "recommend finished", 2).show();
+        Toast.makeText(getApplicationContext(), "recommend finished", 2).show();
         mLastLocation = location;
         setChanged();
         notifyObservers(location);
