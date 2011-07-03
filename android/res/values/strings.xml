@@ -66,6 +66,10 @@
     <string name="photoPicker_NotFound_text">没有找到照片</string>
     <string name="no_photo_loaded">没有上传图片</string>
     
+    <string name="no_friend_recommends">没有好友推荐消息</string>
+    <string name="no_search_results">没有结果</string>
+    
+    
     
     
     

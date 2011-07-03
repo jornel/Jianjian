@@ -40,6 +40,7 @@ public class MainActivity extends TabActivity {
         setDefaultKeyMode(Activity.DEFAULT_KEYS_SEARCH_LOCAL);
         registerReceiver(mLoggedOutReceiver, new IntentFilter(Jianjianroid.INTENT_ACTION_LOGGED_OUT));
 
+        ((Jianjianroid) getApplication()).requestLocationUpdates(true);
         
         // Don't start the main activity if we don't have credentials
         if (!((Jianjianroid) getApplication()).isReady()) {

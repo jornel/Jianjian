@@ -63,6 +63,7 @@ public class RecommendItActivity extends Activity {
     private static final int DIALOG_PICK_CATEGORY = 1;
     private static final int DIALOG_ERROR = 2;
     protected static final int TAKE_PHOTO_WITH_DATA = 100;
+    protected static final int mSleepTimeInSec = 20;
     
     private StateHolder mStateHolder;
     
@@ -205,11 +206,11 @@ public class RecommendItActivity extends Activity {
             mStateHolder = new StateHolder();
             mPickupVenueTextView.setText(getResources().getString(R.string.loading_venue_product));
             
-            if(loadLocationinSeconds(5)){
+            //if(loadLocationinSeconds(mSleepTimeInSec)){
                 mStateHolder.startTaskGetVenueList(this);            
-            }else{
-                NotificationsUtil.ToastReasonForFailure(this, new LocationException());
-            }
+            //}else{
+            //    NotificationsUtil.ToastReasonForFailure(this, new LocationException());
+            //}
             
             // If passed the venue parcelable, then we are in 'edit' mode.
             /*if (getIntent().getExtras() != null && getIntent().getExtras().containsKey(EXTRA_VENUE_TO_EDIT)) {
@@ -239,6 +240,10 @@ public class RecommendItActivity extends Activity {
         Jianjianroid mJianjianroid = (Jianjianroid) this.getApplication();
         
         mJianjianroid.requestLocationUpdates(true);
+        
+        if(!mStateHolder.getIsRunningTaskGetVenueList()&&!mPickupVenueLayout.isEnabled()){
+            mStateHolder.startTaskGetVenueList(this);
+        }
                
         /*if (mStateHolder.getIsRunningTaskAddOrEditVenue()) {
             startProgressBar();
@@ -281,6 +286,7 @@ public class RecommendItActivity extends Activity {
         }  
     }  
     
+    /*
     private boolean loadLocationinSeconds(int n){
         Jianjianroid mJianjianroid = (Jianjianroid) this.getApplication();
         
@@ -291,7 +297,7 @@ public class RecommendItActivity extends Activity {
             try{               
                 //check the lastLocation each second
                 for(int i=0;i<n;++i){
-                    startProgressBar("loading current location...");
+                    //startProgressBar("loading current location...");
                     Thread.sleep(1000L);
                     if(mJianjianroid.getLastKnownLocation()!= null){
                         hasLocation = true; 
@@ -307,6 +313,7 @@ public class RecommendItActivity extends Activity {
         }
         return hasLocation;
     }
+    */
     
     
     private void startProgressBar(String message) {
@@ -415,8 +422,15 @@ public class RecommendItActivity extends Activity {
             try {
                 Jianjianroid mJianjianroid = (Jianjianroid) mActivity.getApplication();
                 Jianjian jianjian = mJianjianroid.getJianjian();
+                Location location = null;
                 
-                Location location = mJianjianroid.getLastKnownLocationOrThrow();
+                if(loadLocationinSeconds(mSleepTimeInSec,mJianjianroid)){
+                      location = mJianjianroid.getLastKnownLocationOrThrow();         
+                }else{
+                    NotificationsUtil.ToastReasonForFailure(mActivity, new LocationException());
+                }
+                
+                //Location location = mJianjianroid.getLastKnownLocationOrThrow();
                 int page=1;
                 //Location location = mJianjianroid.getLastKnownLocation();
                 //return jianjian.getVenuesByLocation(new JLocation("31.220302","121.351007",null,null,null),page);
@@ -443,6 +457,32 @@ public class RecommendItActivity extends Activity {
                 mActivity.onGetVenueListTaskComplete(null,
                         new Exception("Get Venue List task request cancelled."));
             }
+        }
+        
+        private boolean loadLocationinSeconds(int n,Jianjianroid mJianjianroid){
+            
+            mJianjianroid.requestLocationUpdates(true);
+            Boolean hasLocation = false;
+            Location lastLocation = mJianjianroid.getLastKnownLocation();
+            if(lastLocation == null){
+                try{               
+                    //check the lastLocation each second
+                    for(int i=0;i<n;++i){
+                        //startProgressBar("loading current location...");
+                        Thread.sleep(1000L);
+                        if(mJianjianroid.getLastKnownLocation()!= null){
+                            hasLocation = true; 
+                            break;
+                        }
+                    }
+                    
+                }catch(Exception e){
+                    NotificationsUtil.ToastReasonForFailure(mActivity, e);
+                }
+            }else{
+                hasLocation = true;
+            }
+            return hasLocation;
         }
     }
     
