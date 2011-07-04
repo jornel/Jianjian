@@ -23,6 +23,9 @@
     android:name="android.permission.VIBRATE" /> 
   <uses-permission 
     android:name="android.permission.READ_LOGS" />
+    
+  <uses-library
+    android:name="com.google.android.maps" />
   
   <uses-sdk
     android:minSdkVersion="3"

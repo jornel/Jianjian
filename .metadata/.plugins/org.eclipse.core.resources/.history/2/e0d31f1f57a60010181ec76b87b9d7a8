@@ -297,10 +297,6 @@ public class RecommendItActivity extends Activity {
                 for(int i=0;i<n;++i){
                     //startProgressBar("loading current location...");
                     Thread.sleep(1000L);
-                    if(n%5==0){
-                        Toast.makeText(this, n+" seconds passed. No location found",  
-                                Toast.LENGTH_LONG).show();
-                    }
                     if(mJianjianroid.getLastKnownLocation()!= null){
                         hasLocation = true; 
                         break;

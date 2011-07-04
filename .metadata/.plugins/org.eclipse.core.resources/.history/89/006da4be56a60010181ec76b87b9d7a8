@@ -236,13 +236,16 @@ public class RecommendItActivity extends Activity {
         
         mJianjianroid.requestLocationUpdates(true);
         
-        if(loadLocationinSeconds(10)&&!mStateHolder.getIsRunningTaskGetVenueList()&&!mPickupVenueLayout.isEnabled()){
-            mStateHolder.startTaskGetVenueList(this); 
-        } else {
+        if(!mStateHolder.getIsRunningTaskGetVenueList()&&!mPickupVenueLayout.isEnabled()){
+            if(loadLocationinSeconds(10)){
+                mStateHolder.startTaskGetVenueList(this); 
+            } else {
+                mStateHolder.setVenueList(new Group<Venue>());
+                mPickupVenueLayout.setEnabled(true);
+                mPickupVenueTextView.setText(getResources().getString(R.string.pickup_venue_product));
+            }
             
-            mStateHolder.setVenueList(new Group<Venue>());
-            mPickupVenueLayout.setEnabled(true);
-            mPickupVenueTextView.setText(getResources().getString(R.string.pickup_venue_product));
+            
         }
                
         /*if (mStateHolder.getIsRunningTaskAddOrEditVenue()) {
@@ -297,10 +300,6 @@ public class RecommendItActivity extends Activity {
                 for(int i=0;i<n;++i){
                     //startProgressBar("loading current location...");
                     Thread.sleep(1000L);
-                    if(n%5==0){
-                        Toast.makeText(this, n+" seconds passed. No location found",  
-                                Toast.LENGTH_LONG).show();
-                    }
                     if(mJianjianroid.getLastKnownLocation()!= null){
                         hasLocation = true; 
                         break;

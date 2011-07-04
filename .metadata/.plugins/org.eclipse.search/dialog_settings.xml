@@ -2,8 +2,6 @@
 <section name="Workbench">
 	<section name="">
 		<item value="1000" key="org.eclipse.search.resultpage.limit"/>
-		<item value="TRUE" key="org.eclipse.jdt.search.resultpage.limit_enabled"/>
-		<item value="1000" key="org.eclipse.jdt.search.resultpage.limit"/>
 	</section>
 	<section name="org.eclipse.jdt.ui.JavaSearchResultPage">
 		<item value="TRUE" key="org.eclipse.jdt.search.resultpage.limit_enabled"/>
@@ -15,8 +13,8 @@
 	<section name="DialogBounds_SearchDialog">
 		<item value="610" key="DIALOG_WIDTH"/>
 		<item value="125" key="DIALOG_Y_ORIGIN"/>
-		<item value="662" key="DIALOG_X_ORIGIN"/>
 		<item value="459" key="DIALOG_HEIGHT"/>
+		<item value="662" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="Search">
@@ -41,7 +39,7 @@
 		<item value="12" key="HISTORY_SIZE"/>
 		<section name="HISTORY11">
 			<item value="false" key="isRegExSearch"/>
-			<item value="activity_sample_code" key="textPattern"/>
+			<item value="app_name" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
@@ -58,17 +56,6 @@
 		</section>
 		<section name="HISTORY10">
 			<item value="false" key="isRegExSearch"/>
-			<item value="app_name" key="textPattern"/>
-			<item value="0" key="scope"/>
-			<item value="true" key="ignoreCase"/>
-			<list key="fileNamePatterns">
-				<item value="*.*"/>
-			</list>
-			<list key="workingSets">
-			</list>
-		</section>
-		<section name="HISTORY9">
-			<item value="false" key="isRegExSearch"/>
 			<item value="relative" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
@@ -78,7 +65,7 @@
 			<list key="workingSets">
 			</list>
 		</section>
-		<section name="HISTORY8">
+		<section name="HISTORY9">
 			<item value="false" key="isRegExSearch"/>
 			<item value="startActivity" key="textPattern"/>
 			<item value="0" key="scope"/>
@@ -89,29 +76,7 @@
 			<list key="workingSets">
 			</list>
 		</section>
-		<section name="HISTORY5">
-			<item value="false" key="isRegExSearch"/>
-			<item value="finish" key="textPattern"/>
-			<item value="0" key="scope"/>
-			<item value="true" key="ignoreCase"/>
-			<list key="fileNamePatterns">
-				<item value="*.java"/>
-			</list>
-			<list key="workingSets">
-			</list>
-		</section>
-		<section name="HISTORY4">
-			<item value="false" key="isRegExSearch"/>
-			<item value="FLAG_ACTIVITY_CLEAR_TOP" key="textPattern"/>
-			<item value="0" key="scope"/>
-			<item value="true" key="ignoreCase"/>
-			<list key="fileNamePatterns">
-				<item value="*.java"/>
-			</list>
-			<list key="workingSets">
-			</list>
-		</section>
-		<section name="HISTORY7">
+		<section name="HISTORY8">
 			<item value="false" key="isRegExSearch"/>
 			<item value="setResult" key="textPattern"/>
 			<item value="0" key="scope"/>
@@ -122,29 +87,18 @@
 			<list key="workingSets">
 			</list>
 		</section>
-		<section name="HISTORY6">
+		<section name="HISTORY5">
 			<item value="false" key="isRegExSearch"/>
-			<item value="empty_loading" key="textPattern"/>
+			<item value="FLAG_ACTIVITY_CLEAR_TOP" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
-				<item value="*.*"/>
+				<item value="*.java"/>
 			</list>
 			<list key="workingSets">
 			</list>
 		</section>
-		<section name="HISTORY2">
-			<item value="false" key="isRegExSearch"/>
-			<item value="styleable" key="textPattern"/>
-			<item value="0" key="scope"/>
-			<item value="true" key="ignoreCase"/>
-			<list key="fileNamePatterns">
-				<item value="*.*"/>
-			</list>
-			<list key="workingSets">
-			</list>
-		</section>
-		<section name="HISTORY3">
+		<section name="HISTORY4">
 			<item value="false" key="isRegExSearch"/>
 			<item value="INTENT_ACTION_LOGGED_OUT" key="textPattern"/>
 			<item value="0" key="scope"/>
@@ -155,9 +109,53 @@
 			<list key="workingSets">
 			</list>
 		</section>
+		<section name="HISTORY7">
+			<item value="false" key="isRegExSearch"/>
+			<item value="empty_loading" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<list key="fileNamePatterns">
+				<item value="*.*"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY6">
+			<item value="false" key="isRegExSearch"/>
+			<item value="finish" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<list key="fileNamePatterns">
+				<item value="*.java"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY2">
+			<item value="false" key="isRegExSearch"/>
+			<item value="surprise" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<list key="fileNamePatterns">
+				<item value="*.java"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY3">
+			<item value="false" key="isRegExSearch"/>
+			<item value="styleable" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<list key="fileNamePatterns">
+				<item value="*.*"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
 		<section name="HISTORY0">
 			<item value="false" key="isRegExSearch"/>
-			<item value="surprising" key="textPattern"/>
+			<item value="clear" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
@@ -168,7 +166,7 @@
 		</section>
 		<section name="HISTORY1">
 			<item value="false" key="isRegExSearch"/>
-			<item value="surprise" key="textPattern"/>
+			<item value="surprising" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
