@@ -236,14 +236,15 @@ public class RecommendItActivity extends Activity {
         
         mJianjianroid.requestLocationUpdates(true);
         
-        if(loadLocationinSeconds(10)&&!mStateHolder.getIsRunningTaskGetVenueList()&&!mPickupVenueLayout.isEnabled()){
+        if(!mStateHolder.getIsRunningTaskGetVenueList()&&!mPickupVenueLayout.isEnabled()){
             mStateHolder.startTaskGetVenueList(this); 
-        } else {
+        } 
+        /*else {
             
             mStateHolder.setVenueList(new Group<Venue>());
             mPickupVenueLayout.setEnabled(true);
             mPickupVenueTextView.setText(getResources().getString(R.string.pickup_venue_product));
-        }
+        }*/
                
         /*if (mStateHolder.getIsRunningTaskAddOrEditVenue()) {
             startProgressBar();
@@ -427,7 +428,8 @@ public class RecommendItActivity extends Activity {
                 Location location = null;
                 
                 //if(loadLocationinSeconds(mSleepTimeInSec,mJianjianroid)){
-                      location = mJianjianroid.getLastKnownLocationOrThrow();         
+                Thread.sleep(1000L);
+                location = mJianjianroid.getLastKnownLocationOrThrow();         
                 //}else{
                 //    NotificationsUtil.ToastReasonForFailure(mActivity, new LocationException());
                 //}
