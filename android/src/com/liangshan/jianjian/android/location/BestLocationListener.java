@@ -160,7 +160,7 @@ public class BestLocationListener extends Observable implements LocationListener
         for (int i = 0; i < providersCount; i++) {
             String providerName = providers.get(i);
             if (locationManager.isProviderEnabled(providerName)) {
-                updateLocation(locationManager.getLastKnownLocation(providerName));
+                updateLocation(locationManager.getLastKnownLocation("network"));
             }
             // Only register with GPS if we've explicitly allowed it.
             if (gps || !LocationManager.GPS_PROVIDER.equals(providerName)) {

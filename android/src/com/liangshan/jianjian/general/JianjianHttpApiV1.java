@@ -278,6 +278,13 @@ public class JianjianHttpApiV1 {
         dos.writeBytes(toGBK(checkinBody));
         dos.writeBytes(lineEnd);
         
+        //write source
+        dos.writeBytes(twoHyphens + BOUNDARY + lineEnd); 
+        dos.writeBytes("Content-Disposition: form-data; name=\"syncs\"" + lineEnd);
+        dos.writeBytes(lineEnd); 
+        dos.writeBytes("");
+        dos.writeBytes(lineEnd);
+        
         
         //write image
         if(mPhotoFile != null){

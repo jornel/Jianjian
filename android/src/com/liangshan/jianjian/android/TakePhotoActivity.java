@@ -55,6 +55,7 @@ public class TakePhotoActivity extends Activity {
   
     /*拍照的照片存储位置*/  
     private static final File PHOTO_DIR = new File(Environment.getExternalStorageDirectory() + "/DCIM/Camera");
+    //private static final File PHOTO_DIR = new File(Environment.getExternalStorageDirectory() + "/DCIM/100ANDRO");
     protected static final String EXTRA_PHOTO_RETURNED = "UPLOADED_PHOTO";  
   
     private File mCurrentPhotoFile;//照相机拍照得到的图片  
@@ -251,6 +252,7 @@ public class TakePhotoActivity extends Activity {
             // Launch camera to take photo for selected contact  
             PHOTO_DIR.mkdirs();// 创建照片的存储目录  
             mCurrentPhotoFile = new File(PHOTO_DIR, getPhotoFileName());// 给新照的照片文件命名
+            
 
             final Intent intent = getTakePhotoIntent(mCurrentPhotoFile);  
             startActivityForResult(intent, CAMERA_WITH_DATA);  
@@ -265,7 +267,7 @@ public class TakePhotoActivity extends Activity {
      * @return
      */
     private Intent getTakePhotoIntent(File f) {
-        // TODO Auto-generated method stub
+        
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE, null);  
         intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(f));  
         intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1);
