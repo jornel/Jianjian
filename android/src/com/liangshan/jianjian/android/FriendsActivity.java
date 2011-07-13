@@ -1,6 +1,7 @@
 package com.liangshan.jianjian.android;
 
 import com.liangshan.jianjian.android.app.LoadableListActivityWithViewAndHeader;
+import com.liangshan.jianjian.android.widget.SegmentedButton;
 import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.RecommendMsg;
 
@@ -123,7 +124,16 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
      */
     private void ensureUi() {
         // TODO Auto-generated method stub
-        
+        SegmentedButton buttons = getHeaderButton();
+        buttons.clearButtons();
+        buttons.addButtons(
+                getString(R.string.friendsactivity_btn_recent),
+                getString(R.string.friendsactivity_btn_nearby));
+        if (mStateHolder.getSortMethod() == SORT_METHOD_RECENT) {
+            buttons.setPushedButtonIndex(0);
+        } else {
+            buttons.setPushedButtonIndex(1);
+        }
     }
     
     private static class StateHolder {

@@ -316,6 +316,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int cancel_label=0x7f060036;
         public static final int confirm_label=0x7f060035;
         public static final int friends_activity_label=0x7f060003;
+        public static final int friendsactivity_btn_nearby=0x7f06003d;
+        public static final int friendsactivity_btn_recent=0x7f06003c;
         public static final int fromcamera_label=0x7f060033;
         public static final int fromgallary_label=0x7f060034;
         public static final int hello=0x7f060000;
@@ -333,7 +335,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int login_label=0x7f060014;
         public static final int login_welcome_toast=0x7f060015;
         public static final int main_name=0x7f060002;
-        public static final int male=0x7f06003d;
+        public static final int male=0x7f06003f;
         public static final int me_activity_label=0x7f060006;
         public static final int more_venues=0x7f06002e;
         public static final int need_an_account=0x7f06001b;
@@ -366,7 +368,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int take_photo_activity_label=0x7f060005;
         /**  test user string 
          */
-        public static final int testuserid1=0x7f06003c;
+        public static final int testuserid1=0x7f06003e;
         public static final int upload_photo_label=0x7f060031;
         public static final int user_details_activity_add_friends=0x7f06000d;
         public static final int user_details_activity_friend_add=0x7f06000f;

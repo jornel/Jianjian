@@ -69,7 +69,8 @@
     <string name="no_friend_recommends">没有好友推荐消息</string>
     <string name="no_search_results">没有结果</string>
     
-    
+    <string name="friendsactivity_btn_recent">最新</string>
+    <string name="friendsactivity_btn_nearby">附近</string>
     
     
     
