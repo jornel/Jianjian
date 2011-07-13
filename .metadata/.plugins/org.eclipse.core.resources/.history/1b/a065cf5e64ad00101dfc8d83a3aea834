@@ -2,6 +2,7 @@ package com.liangshan.jianjian.android;
 
 import java.util.LinkedHashMap;
 
+import com.joelapenna.foursquared.R;
 import com.liangshan.jianjian.android.app.LoadableListActivityWithViewAndHeader;
 import com.liangshan.jianjian.android.widget.SegmentedButton;
 import com.liangshan.jianjian.android.widget.SegmentedButton.OnClickListenerSegmentedButton;

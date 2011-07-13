@@ -1,10 +1,7 @@
 package com.liangshan.jianjian.android;
 
-import java.util.LinkedHashMap;
-
 import com.liangshan.jianjian.android.app.LoadableListActivityWithViewAndHeader;
 import com.liangshan.jianjian.android.widget.SegmentedButton;
-import com.liangshan.jianjian.android.widget.SegmentedButton.OnClickListenerSegmentedButton;
 import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.RecommendMsg;
 
@@ -28,12 +25,8 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
     private static final int SORT_METHOD_RECENT = 0;
     private static final int SORT_METHOD_NEARBY = 1;
     
-    private static final int MENU_MORE_MAP             = 20;
-    private static final int MENU_MORE_LEADERBOARD     = 21;
-    
     private static final int MENU_REFRESH   = 0;
     private static final int MENU_EXIT = 1;
-    private LinkedHashMap<Integer, String> mMenuMoreSubitems;
     
     private BroadcastReceiver mLoggedOutReceiver = new BroadcastReceiver() {
         @Override
@@ -154,19 +147,6 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
                 ensureUiListView();
             }
         });
-        
-        mMenuMoreSubitems = new LinkedHashMap<Integer, String>();
-        mMenuMoreSubitems.put(MENU_MORE_MAP, getResources().getString(
-                R.string.friendsactivity_menu_map));
-        mMenuMoreSubitems.put(MENU_MORE_LEADERBOARD, getResources().getString(
-                R.string.friendsactivity_menu_leaderboard));
-        
-        ensureUiListView();
-    }
-    
-    private void ensureUiListView() {
-        // TODO Auto-generated method stub
-        
     }
     
     private static class StateHolder {
