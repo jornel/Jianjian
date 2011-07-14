@@ -185,6 +185,21 @@ public class JianjianHttpApiV1 {
     /**
      * @param geolat
      * @param geolong
+     * @param geohacc
+     * @param geovacc
+     * @param geoalt
+     * @return
+     */
+    @SuppressWarnings("unchecked")
+    public Group<RecommendMsg> recommends(String geolat, String geolong, String geohacc,
+            String geovacc, String geoalt) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+    
+    /**
+     * @param geolat
+     * @param geolong
      * @param productName
      * @param price
      * @param recommendDes
@@ -404,10 +419,6 @@ public class JianjianHttpApiV1 {
       }
          return output;
     }
-
-
-
-
 
 
 

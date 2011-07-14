@@ -101,6 +101,7 @@ public class Jianjian {
      * @param page 
      * @return
      */
+    @V1
     public Group<Venue> getVenuesByLocation(JLocation location, int page) 
             throws JianjianException, JianjianError, IOException{
         
@@ -122,6 +123,7 @@ public class Jianjian {
      * @param createJianjianLocation
      * @return
      */
+    @V1
     public RecommendMsg recommendItToAllFriends(String productName, String price, String recommendDes,
             String VenueId, File mPhotoFile, String username, String password, JLocation location) 
             throws JianjianException, JianjianError, IOException{
@@ -132,6 +134,18 @@ public class Jianjian {
             throw new JianjianException("failed to recommend the product...");
             
         }
+    }
+    
+    /**
+     * @param createJianjianLocation
+     * @return
+     */
+    @V1
+    public Group<RecommendMsg> getRecommends(JLocation location) 
+            throws JianjianException, JianjianError, IOException{
+        
+        return mJianjianV1.recommends(location.geolat, location.geolong, location.geohacc,
+                location.geovacc, location.geoalt);
     }
     
     /**
@@ -207,6 +221,7 @@ public class Jianjian {
     public @interface V1 {
 
     }
+
 
 
 }

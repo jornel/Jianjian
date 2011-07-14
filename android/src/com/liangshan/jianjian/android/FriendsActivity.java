@@ -1,22 +1,39 @@
 package com.liangshan.jianjian.android;
 
+import java.io.IOException;
+import java.util.Collections;
 import java.util.LinkedHashMap;
 
 import com.liangshan.jianjian.android.app.LoadableListActivityWithViewAndHeader;
+import com.liangshan.jianjian.android.error.JianjianException;
+import com.liangshan.jianjian.android.location.LocationUtils;
 import com.liangshan.jianjian.android.widget.SegmentedButton;
+import com.liangshan.jianjian.android.widget.SeparatedListAdapter;
 import com.liangshan.jianjian.android.widget.SegmentedButton.OnClickListenerSegmentedButton;
 import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.RecommendMsg;
+import com.liangshan.jianjian.util.UiUtil;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.location.Location;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.ScrollView;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class FriendsActivity extends LoadableListActivityWithViewAndHeader {    
     static final String TAG = "FriendsActivity";
@@ -33,7 +50,9 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
     
     private static final int MENU_REFRESH   = 0;
     private static final int MENU_EXIT = 1;
+    public static final long SLEEP_TIME_IF_NO_LOCATION = 3000L;
     private LinkedHashMap<Integer, String> mMenuMoreSubitems;
+    private SeparatedListAdapter mListAdapter;
     
     private BroadcastReceiver mLoggedOutReceiver = new BroadcastReceiver() {
         @Override
@@ -130,7 +149,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
      * 
      */
     private void ensureUi() {
-        // TODO Auto-generated method stub
+        
         SegmentedButton buttons = getHeaderButton();
         buttons.clearButtons();
         buttons.addButtons(
@@ -165,16 +184,195 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
     }
     
     private void ensureUiListView() {
+        
+        mListAdapter = new SeparatedListAdapter(this);
+        if (mStateHolder.getSortMethod() == SORT_METHOD_RECENT) {
+            sortCheckinsRecent(mStateHolder.getRecommends(), mListAdapter);
+        } else {
+            sortCheckinsDistance(mStateHolder.getRecommends(), mListAdapter);
+        }
+        ListView listView = getListView();
+        listView.setAdapter(mListAdapter);
+        listView.setDividerHeight(0);
+        
+        listView.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                /*
+                Checkin checkin = (Checkin) parent.getAdapter().getItem(position);
+                if (checkin.getUser() != null) {
+                    Intent intent = new Intent(FriendsActivity.this, UserDetailsActivity.class);
+                    intent.putExtra(UserDetailsActivity.EXTRA_USER_PARCEL, checkin.getUser());
+                    intent.putExtra(UserDetailsActivity.EXTRA_SHOW_ADD_FRIEND_OPTIONS, true);
+                    startActivity(intent);
+                }
+                */
+            }
+        });
+        
+        // Prepare our no-results view. Something odd is going on with the layout parameters though.
+        // If we don't explicitly set the layout to be fill/fill after inflating, the layout jumps
+        // to a wrap/wrap layout. Furthermore, sdk 3 crashes with the original layout using two
+        // buttons in a horizontal LinearLayout.
+        LayoutInflater inflater = LayoutInflater.from(this);
+        if (UiUtil.sdkVersion() > 3) {
+            mLayoutEmpty = (ScrollView)inflater.inflate(
+                    R.layout.friends_activity_empty, null);
+            
+            Button btnAddFriends = (Button)mLayoutEmpty.findViewById(
+                    R.id.friendsActivityEmptyBtnAddFriends);
+            btnAddFriends.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    /*
+                    Intent intent = new Intent(FriendsActivity.this, AddFriendsActivity.class);
+                    startActivity(intent);*/
+                }
+            });
+            
+            Button btnFriendRequests = (Button)mLayoutEmpty.findViewById(
+                    R.id.friendsActivityEmptyBtnFriendRequests);
+            btnFriendRequests.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    /*
+                    Intent intent = new Intent(FriendsActivity.this, FriendRequestsActivity.class);
+                    startActivity(intent);*/
+                }
+            });
+            
+        } else {
+            // Inflation on 1.5 is causing a lot of issues, dropping full layout.
+            mLayoutEmpty = (ScrollView)inflater.inflate(
+                    R.layout.friends_activity_empty_sdk3, null);
+        }
+        
+        mLayoutEmpty.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT));
+        
+        if (mListAdapter.getCount() == 0) {
+            setEmptyView(mLayoutEmpty);
+        }
+        
+        if (mStateHolder.getIsRunningTask()) {
+            setProgressBarIndeterminateVisibility(true);
+            if (!mStateHolder.getRanOnce()) {
+                setLoadingView();
+            }
+        } else {
+            setProgressBarIndeterminateVisibility(false);
+        }
+    }
+    
+    /**
+     * @param recommends
+     * @param mListAdapter2
+     */
+    private void sortCheckinsDistance(Group<RecommendMsg> recommends,
+            SeparatedListAdapter mListAdapter2) {
+        // TODO Auto-generated method stub
+        
+    }
+
+
+    /**
+     * @param recommends
+     * @param mListAdapter2
+     */
+    private void sortCheckinsRecent(Group<RecommendMsg> recommends,
+            SeparatedListAdapter mListAdapter2) {
         // TODO Auto-generated method stub
         
     }
     
+    private void onTaskStart() {
+        setProgressBarIndeterminateVisibility(true);
+        setLoadingView();
+    }
+    
+    /**
+     * @param recommends
+     * @param mException
+     */
+    public void onTaskComplete(Group<RecommendMsg> recommends, Exception mException) {
+        // TODO Auto-generated method stub
+        
+    }
+    
+    private static class TaskRecommends extends AsyncTask<Void, Void, Group<RecommendMsg>> {
+        private Jianjianroid mJianjianroid;
+        private FriendsActivity mActivity;
+        private Exception mException;
+
+        private TaskRecommends(FriendsActivity activity){
+            mJianjianroid = (Jianjianroid)activity.getApplication();
+            mActivity = activity;
+        }
+        
+        public void setActivity(FriendsActivity activity) {
+            mActivity = activity;
+        }
+        /* (non-Javadoc)
+         * @see android.os.AsyncTask#doInBackground(Params[])
+         */
+        @Override
+        protected Group<RecommendMsg> doInBackground(Void... params) {
+            
+            Group<RecommendMsg> recommends = null;
+            try {
+                recommends = getRecommends();
+            } catch (Exception ex) {
+                mException = ex;
+            }
+
+            return recommends;
+        }
+        
+        /**
+         * @return
+         */
+        private Group<RecommendMsg> getRecommends() throws JianjianException, IOException{
+            
+            // If we're the startup tab, it's likely that we won't have a geo location
+            // immediately. For now we can use this ugly method of sleeping for N
+            // seconds to at least let network location get a lock. We're only trying
+            // to discern between same-city, so we can even use LocationManager's
+            // getLastKnownLocation() method because we don't care if we're even a few
+            // miles off. The api endpoint doesn't require location, so still go ahead
+            // even if we can't find a location.
+            Location loc = mJianjianroid.getLastKnownLocation();
+            if (loc == null) {
+                try { Thread.sleep(SLEEP_TIME_IF_NO_LOCATION); } catch (InterruptedException ex) {}
+                loc = mJianjianroid.getLastKnownLocation();
+            }
+            Group<RecommendMsg> recommends = mJianjianroid.getJianjian().getRecommends(LocationUtils
+                    .createJianjianLocation(loc));
+            
+            //Collections.sort(recommends, Comparators.getCheckinRecencyComparator());
+            
+            return recommends;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            mActivity.onTaskStart();
+        }
+
+        @Override
+        public void onPostExecute(Group<RecommendMsg> recommends) {
+            if (mActivity != null) {
+                mActivity.onTaskComplete(recommends, mException);
+            }
+        }
+        
+    }
+
     private static class StateHolder {
         private Group<RecommendMsg> mRecMsgs;
         private int mSortMethod;
         private boolean mRanOnce;
         private boolean mIsRunningTask;
-        //private TaskCheckins mTaskCheckins;
+        private TaskRecommends mTaskRecommends;
         
         public StateHolder() {
             mRanOnce = false;
@@ -190,11 +388,11 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
             mSortMethod = sortMethod;
         }
         
-        public Group<RecommendMsg> getCheckins() {
+        public Group<RecommendMsg> getRecommends() {
             return mRecMsgs;
         }
         
-        public void setCheckins(Group<RecommendMsg> recommends) {
+        public void setRecommends(Group<RecommendMsg> recommends) {
             mRecMsgs = recommends;
         }
         
@@ -206,25 +404,35 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
             mRanOnce = ranOnce;
         }
         
+        public boolean getIsRunningTask() {
+            return mIsRunningTask;
+        }
+        
+        public void setIsRunningTask(boolean isRunning) {
+            mIsRunningTask = isRunning;
+        }
+        
         public void setActivity(FriendsActivity activity) {
             if (mIsRunningTask) {
-                //mTaskCheckins.setActivity(activity);
+                mTaskRecommends.setActivity(activity);
             }
         }
         public void startTask(FriendsActivity activity) {
             if (!mIsRunningTask) {
-                //mTaskCheckins = new TaskCheckins(activity);
-                //mTaskCheckins.execute();
+                mTaskRecommends = new TaskRecommends(activity);
+                mTaskRecommends.execute();
                 mIsRunningTask = true;
             }
         }
         public void cancel() {
             if (mIsRunningTask) {
-                //mTaskCheckins.cancel(true);
+                mTaskRecommends.cancel(true);
                 mIsRunningTask = false;
             }
         }
         
     }
+
+
 
 }

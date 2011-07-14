@@ -73,6 +73,9 @@
     <string name="friendsactivity_btn_nearby">附近</string>
     <string name="friendsactivity_menu_map">Map</string>
     <string name="friendsactivity_menu_leaderboard">Leaderboard</string>
+    <string name="no_friend_checkins">没有任何好友的推荐</string>
+    <string name="preferences_friend_add_title">添加好友</string>
+    <string name="preferences_friend_requests_title">查看好友请求</string>
     
     
     
