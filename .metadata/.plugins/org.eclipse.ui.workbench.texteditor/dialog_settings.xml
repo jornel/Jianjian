@@ -13,16 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="mTakePhotoImgButton" key="selection"/>
+		<item value="mListAdapter" key="selection"/>
 		<list key="findhistory">
+			<item value="mListAdapter"/>
+			<item value="execute"/>
+			<item value="task"/>
+			<item value="page"/>
+			<item value="friendsactivity_menu_map"/>
+			<item value="mMenuMoreSubitems"/>
 			<item value="mTakePhotoImgButton"/>
 			<item value="PHOTO_DIR"/>
-			<item value="userDetailsActivityPhoto"/>
-			<item value="mBgLeftOff"/>
-			<item value="Toast.makeText(this, &quot;recommend finished&quot;,  &#x0A;                    Toast.LENGTH_LONG).show();"/>
-			<item value="Toast"/>
-			<item value="clear"/>
-			<item value="location"/>
 		</list>
 		<list key="replacehistory">
 			<item value="venue"/>

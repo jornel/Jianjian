@@ -303,10 +303,12 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         private Jianjianroid mJianjianroid;
         private FriendsActivity mActivity;
         private Exception mException;
+        private int mPage;
 
-        private TaskRecommends(FriendsActivity activity){
+        private TaskRecommends(FriendsActivity activity,int page){
             mJianjianroid = (Jianjianroid)activity.getApplication();
             mActivity = activity;
+            mPage = page;
         }
         
         public void setActivity(FriendsActivity activity) {
@@ -320,7 +322,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
             
             Group<RecommendMsg> recommends = null;
             try {
-                recommends = getRecommends();
+                recommends = getRecommends(mPage);
             } catch (Exception ex) {
                 mException = ex;
             }
@@ -331,7 +333,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         /**
          * @return
          */
-        private Group<RecommendMsg> getRecommends() throws JianjianException, IOException{
+        private Group<RecommendMsg> getRecommends(int page) throws JianjianException, IOException{
             
             // If we're the startup tab, it's likely that we won't have a geo location
             // immediately. For now we can use this ugly method of sleeping for N
@@ -345,7 +347,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
                 try { Thread.sleep(SLEEP_TIME_IF_NO_LOCATION); } catch (InterruptedException ex) {}
                 loc = mJianjianroid.getLastKnownLocation();
             }
-            Group<RecommendMsg> recommends = mJianjianroid.getJianjian().getRecommends(LocationUtils
+            Group<RecommendMsg> recommends = mJianjianroid.getJianjian().getRecommends(page, LocationUtils
                     .createJianjianLocation(loc));
             
             //Collections.sort(recommends, Comparators.getCheckinRecencyComparator());
@@ -369,6 +371,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
 
     private static class StateHolder {
         private Group<RecommendMsg> mRecMsgs;
+        private int mCurrentPage;
         private int mSortMethod;
         private boolean mRanOnce;
         private boolean mIsRunningTask;
@@ -378,6 +381,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
             mRanOnce = false;
             mIsRunningTask = false; 
             mRecMsgs = new Group<RecommendMsg>();
+            mCurrentPage = 0;
         }
         
         public int getSortMethod() {
@@ -386,6 +390,13 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         
         public void setSortMethod(int sortMethod) {
             mSortMethod = sortMethod;
+        }
+        public int getCurrentPage() {
+            return mCurrentPage;
+        }
+        
+        public void setCurrentPage(int page) {
+            mCurrentPage = page;
         }
         
         public Group<RecommendMsg> getRecommends() {
@@ -419,7 +430,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         }
         public void startTask(FriendsActivity activity) {
             if (!mIsRunningTask) {
-                mTaskRecommends = new TaskRecommends(activity);
+                mTaskRecommends = new TaskRecommends(activity,mCurrentPage+1);
                 mTaskRecommends.execute();
                 mIsRunningTask = true;
             }

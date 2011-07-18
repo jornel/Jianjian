@@ -71,6 +71,10 @@ public class JianjianHttpApiV1 {
 
     private static final String URL_API_CHECK_IN = "/statuses/checkin";
 
+    private static final String URL_API_EVENT_LIST = "/events/list";
+
+    private static final String EVENT_LIST_PAGE_COUNT = "20";
+
     //private static final String DATATYPE = ".json";
     
     private HttpApi mHttpApi;
@@ -191,10 +195,21 @@ public class JianjianHttpApiV1 {
      * @return
      */
     @SuppressWarnings("unchecked")
-    public Group<RecommendMsg> recommends(String geolat, String geolong, String geohacc,
-            String geovacc, String geoalt) {
-        // TODO Auto-generated method stub
-        return null;
+    public Group<RecommendMsg> recommends(int page, String geolat, String geolong, String geohacc,
+            String geovacc, String geoalt) throws JianjianException,
+            JianjianError, IOException{
+        
+        if(page == 0){ page = 1; }
+        
+        HttpGet httpGet = mHttpApi.createHttpGet(fullUrl(URL_API_EVENT_LIST), //
+                new BasicNameValuePair("source", "jianjian"), //
+                new BasicNameValuePair("lang", "CHS"), //
+                new BasicNameValuePair("page", String.valueOf(page)), //
+                new BasicNameValuePair("count", EVENT_LIST_PAGE_COUNT) //
+                );
+        
+        return (Group<RecommendMsg>) mHttpApi.doHttpRequest(httpGet,
+                new GroupParser(new RecommendMsgParser()));
     }
     
     /**

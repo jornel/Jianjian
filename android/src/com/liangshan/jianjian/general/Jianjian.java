@@ -141,10 +141,10 @@ public class Jianjian {
      * @return
      */
     @V1
-    public Group<RecommendMsg> getRecommends(JLocation location) 
+    public Group<RecommendMsg> getRecommends(int page, JLocation location) 
             throws JianjianException, JianjianError, IOException{
         
-        return mJianjianV1.recommends(location.geolat, location.geolong, location.geohacc,
+        return mJianjianV1.recommends(page, location.geolat, location.geolong, location.geohacc,
                 location.geovacc, location.geoalt);
     }
     
