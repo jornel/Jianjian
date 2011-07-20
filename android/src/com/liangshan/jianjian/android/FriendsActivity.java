@@ -10,6 +10,7 @@ import com.liangshan.jianjian.android.location.LocationUtils;
 import com.liangshan.jianjian.android.widget.SegmentedButton;
 import com.liangshan.jianjian.android.widget.SeparatedListAdapter;
 import com.liangshan.jianjian.android.widget.SegmentedButton.OnClickListenerSegmentedButton;
+import com.liangshan.jianjian.types.Event;
 import com.liangshan.jianjian.types.Fragment;
 import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.RecommendMsg;
@@ -319,22 +320,22 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
          * @see android.os.AsyncTask#doInBackground(Params[])
          */
         @Override
-        protected Group<RecommendMsg> doInBackground(Void... params) {
+        protected Group<Event> doInBackground(Void... params) {
             
-            Group<RecommendMsg> recommends = null;
+            Group<Event> events = null;
             try {
-                recommends = getRecommends(mPage);
+                events = getRecommends(mPage);
             } catch (Exception ex) {
                 mException = ex;
             }
 
-            return recommends;
+            return events;
         }
         
         /**
          * @return
          */
-        private Group<RecommendMsg> getRecommends(int page) throws JianjianException, IOException{
+        private Group<Event> getRecommends(int page) throws JianjianException, IOException{
             
             // If we're the startup tab, it's likely that we won't have a geo location
             // immediately. For now we can use this ugly method of sleeping for N
@@ -349,12 +350,12 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
                 loc = mJianjianroid.getLastKnownLocation();
             }            
             
-            Group<RecommendMsg> recommends = mJianjianroid.getJianjian().getRecommends(page, LocationUtils
+            Group<Event> events = mJianjianroid.getJianjian().getRecommends(page, LocationUtils
                     .createJianjianLocation(loc));
             
             //Collections.sort(recommends, Comparators.getCheckinRecencyComparator());
             
-            return recommends;
+            return events;
         }
 
         @Override

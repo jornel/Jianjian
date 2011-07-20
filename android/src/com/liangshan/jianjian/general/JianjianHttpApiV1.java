@@ -41,10 +41,12 @@ import com.liangshan.jianjian.android.util.Base64Coder;
 import com.liangshan.jianjian.http.AbstractHttpApi;
 import com.liangshan.jianjian.http.HttpApi;
 import com.liangshan.jianjian.http.HttpApiWithBasicAuth;
+import com.liangshan.jianjian.parsers.json.EventParser;
 import com.liangshan.jianjian.parsers.json.GroupParser;
 import com.liangshan.jianjian.parsers.json.RecommendMsgParser;
 import com.liangshan.jianjian.parsers.json.UserParser;
 import com.liangshan.jianjian.parsers.json.VenueParser;
+import com.liangshan.jianjian.types.Event;
 import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.RecommendMsg;
 import com.liangshan.jianjian.types.User;
@@ -195,7 +197,7 @@ public class JianjianHttpApiV1 {
      * @return
      */
     @SuppressWarnings("unchecked")
-    public Group<RecommendMsg> recommends(int page, String geolat, String geolong, String geohacc,
+    public Group<Event> recommends(int page, String geolat, String geolong, String geohacc,
             String geovacc, String geoalt) throws JianjianException,
             JianjianError, IOException{
         
@@ -208,8 +210,8 @@ public class JianjianHttpApiV1 {
                 new BasicNameValuePair("count", EVENT_LIST_PAGE_COUNT) //
                 );
         
-        return (Group<RecommendMsg>) mHttpApi.doHttpRequest(httpGet,
-                new GroupParser(new RecommendMsgParser()));
+        return (Group<Event>) mHttpApi.doHttpRequest(httpGet,
+                new GroupParser(new EventParser()));
     }
     
     /**

@@ -14,12 +14,9 @@ public class RecommendMsg extends Fragment {
     
     //private String mMessageId;
     private Venue mVenue;
-    private String mProductId;
-    private String mProductName;
+    private Product mProduct;
     private String mPrice;
     private String mDescription;
-    private String mGeolat;
-    private String mGeolong;
     private String[] mPhoto;
     private Boolean mIsPrivate;
     private int mNumComments;
@@ -61,20 +58,14 @@ public class RecommendMsg extends Fragment {
     public void setVenue(Venue venue) {
         mVenue = venue;
     }
-    public String getProductId() {
-        return mProductId;
+    public Product getProduct() {
+        return mProduct;
     }
-    public void setProductId(String productId) {
-        mProductId = productId;
-    }
-    public String getProductName() {
-        return mProductName;
-    }
-    public void setProductName(String productName) {
-        mProductName = productName;
+    public void setProduct(Product pro) {
+        mProduct = pro;
     }
     public String getPrice() {
-        return mProductName;
+        return mPrice;
     }
     public void setPrice(String price) {
         mPrice = price;
@@ -84,18 +75,6 @@ public class RecommendMsg extends Fragment {
     }
     public void setDescription(String description) {
         mDescription = description;
-    }
-    public String getGeolat() {
-        return mGeolat;
-    }
-    public void setGeolat(String geolat) {
-        mGeolat = geolat;
-    }
-    public String getGeolong() {
-        return mGeolong;
-    }
-    public void setGeolong(String geolong) {
-        mGeolong = geolong;
     }
     public String[] getPhoto() {
         return mPhoto;

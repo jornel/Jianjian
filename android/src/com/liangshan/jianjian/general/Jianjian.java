@@ -13,6 +13,7 @@ import android.graphics.Bitmap;
 import com.liangshan.jianjian.android.error.JianjianError;
 import com.liangshan.jianjian.android.error.JianjianException;
 import com.liangshan.jianjian.general.Jianjian.JLocation;
+import com.liangshan.jianjian.types.Event;
 import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.RecommendMsg;
 import com.liangshan.jianjian.types.User;
@@ -141,7 +142,7 @@ public class Jianjian {
      * @return
      */
     @V1
-    public Group<RecommendMsg> getRecommends(int page, JLocation location) 
+    public Group<Event> getRecommends(int page, JLocation location) 
             throws JianjianException, JianjianError, IOException{
         
         return mJianjianV1.recommends(page, location.geolat, location.geolong, location.geohacc,

@@ -7,6 +7,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.liangshan.jianjian.types.JianjianType;
+import com.liangshan.jianjian.types.Product;
 import com.liangshan.jianjian.types.RecommendMsg;
 
 /**
@@ -54,9 +55,15 @@ public class RecommendMsgParser extends AbstractParser<RecommendMsg> {
                 recommend_body = recommend_body.substring(0, recommend_body.indexOf(From_Jianjian)-1).replace("?", " ");
                 String[] entity = recommend_body.split("++");
                 
-            } 
-            
-            message.setVenue(new VenueParser().parse(json.getJSONObject("location")));
+                Product pro = new Product();
+                pro.setName(entity[0]);
+                String price = entity [1];
+                String description = entity[2];
+                
+                message.setProduct(pro);
+                message.setPrice(price);
+                message.setDescription(description);
+            }             
         }
         
         
