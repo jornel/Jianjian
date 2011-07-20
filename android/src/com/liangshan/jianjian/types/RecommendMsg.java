@@ -12,8 +12,7 @@ import android.os.Parcelable;
  */
 public class RecommendMsg extends Fragment {
     
-    //private String mMessageId;
-    private Venue mVenue;
+    
     private Product mProduct;
     private String mPrice;
     private String mDescription;
@@ -52,12 +51,7 @@ public class RecommendMsg extends Fragment {
     public void setMessageId(String messageId) {
         mMessageId = messageId;
     }*/
-    public Venue getVenue() {
-        return mVenue;
-    }
-    public void setVenue(Venue venue) {
-        mVenue = venue;
-    }
+
     public Product getProduct() {
         return mProduct;
     }

@@ -9123,3 +9123,70 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+!SESSION 2011-07-19 22:38:44.502 -----------------------------------------------
+eclipse.buildId=I20100608-0911
+java.version=1.6.0_26
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/jornel/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -product org.eclipse.epp.package.java.product -keyring /Users/jornel/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2011-07-19 22:39:15.395
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2011-07-20 22:19:46.915 -----------------------------------------------
+eclipse.buildId=I20100608-0911
+java.version=1.6.0_26
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/jornel/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -product org.eclipse.epp.package.java.product -keyring /Users/jornel/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2011-07-20 22:20:59.288
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jdt.debug 4 120 2011-07-21 00:26:24.603
+!MESSAGE Exception processing async thread queue
+!SUBENTRY 1 org.eclipse.jdt.debug 4 120 2011-07-21 00:26:24.603
+!MESSAGE Exception processing async thread queue
+!STACK 0
+org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 5211.
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:171)
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:180)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:174)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:230)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.allClasses(VirtualMachineImpl.java:355)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.allRefTypes(VirtualMachineImpl.java:382)
+	at org.eclipse.jdi.internal.ReferenceTypeImpl.nestedTypes(ReferenceTypeImpl.java:1105)
+	at org.eclipse.jdt.internal.debug.eval.ast.engine.BinaryBasedSourceGenerator.buildTypeDeclaration(BinaryBasedSourceGenerator.java:310)
+	at org.eclipse.jdt.internal.debug.eval.ast.engine.BinaryBasedSourceGenerator.buildTypeDeclaration(BinaryBasedSourceGenerator.java:145)
+	at org.eclipse.jdt.internal.debug.eval.ast.engine.BinaryBasedSourceGenerator.buildSource(BinaryBasedSourceGenerator.java:74)
+	at org.eclipse.jdt.internal.debug.eval.ast.engine.EvaluationSourceGenerator.getInstanceSourceMapper(EvaluationSourceGenerator.java:195)
+	at org.eclipse.jdt.internal.debug.eval.ast.engine.EvaluationSourceGenerator.getSource(EvaluationSourceGenerator.java:214)
+	at org.eclipse.jdt.internal.debug.eval.ast.engine.ASTEvaluationEngine.getCompiledExpression(ASTEvaluationEngine.java:309)
+	at org.eclipse.jdt.internal.debug.eval.ast.engine.ASTEvaluationEngine.getCompiledExpression(ASTEvaluationEngine.java:329)
+	at org.eclipse.jdt.internal.debug.ui.JavaDetailFormattersManager.getCompiledExpression(JavaDetailFormattersManager.java:395)
+	at org.eclipse.jdt.internal.debug.ui.JavaDetailFormattersManager.resolveFormatter(JavaDetailFormattersManager.java:158)
+	at org.eclipse.jdt.internal.debug.ui.JavaDetailFormattersManager.access$1(JavaDetailFormattersManager.java:143)
+	at org.eclipse.jdt.internal.debug.ui.JavaDetailFormattersManager$2.run(JavaDetailFormattersManager.java:138)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread$ThreadJob.run(JDIThread.java:2756)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.debug 4 120 2011-07-21 00:27:48.097
+!MESSAGE Exception processing async thread queue
+!SUBENTRY 1 org.eclipse.jdt.debug 4 120 2011-07-21 00:27:48.097
+!MESSAGE Exception processing async thread queue
+!STACK 0
+java.lang.UnsupportedOperationException
+	at org.eclipse.jdi.internal.MirrorImpl.defaultReplyErrorHandler(MirrorImpl.java:255)
+	at org.eclipse.jdi.internal.ReferenceTypeImpl.classObject(ReferenceTypeImpl.java:752)
+	at org.eclipse.jdt.internal.debug.core.model.JDIReferenceType.getClassObject(JDIReferenceType.java:109)
+	at org.eclipse.jdt.internal.debug.eval.ast.engine.AbstractRuntimeContext.classForName(AbstractRuntimeContext.java:117)
+	at org.eclipse.jdt.internal.debug.eval.ast.engine.AbstractRuntimeContext.classForName(AbstractRuntimeContext.java:150)
+	at org.eclipse.jdt.internal.debug.eval.ast.instructions.Instruction.getType(Instruction.java:204)
+	at org.eclipse.jdt.internal.debug.eval.ast.instructions.PushType.execute(PushType.java:29)
+	at org.eclipse.jdt.internal.debug.eval.ast.engine.Interpreter.execute(Interpreter.java:66)
+	at org.eclipse.jdt.internal.debug.eval.ast.engine.ASTEvaluationEngine$1$EvaluationRunnable.run(ASTEvaluationEngine.java:483)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread.runEvaluation(JDIThread.java:681)
+	at org.eclipse.jdt.internal.debug.eval.ast.engine.ASTEvaluationEngine$EvalRunnable.run(ASTEvaluationEngine.java:520)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread$ThreadJob.run(JDIThread.java:2756)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)

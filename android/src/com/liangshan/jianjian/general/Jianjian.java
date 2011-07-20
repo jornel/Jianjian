@@ -142,7 +142,7 @@ public class Jianjian {
      * @return
      */
     @V1
-    public Group<Event> getRecommends(int page, JLocation location) 
+    public Group<Event> getEvents(int page, JLocation location) 
             throws JianjianException, JianjianError, IOException{
         
         return mJianjianV1.recommends(page, location.geolat, location.geolong, location.geohacc,

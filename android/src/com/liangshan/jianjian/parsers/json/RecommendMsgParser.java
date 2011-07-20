@@ -41,28 +41,34 @@ public class RecommendMsgParser extends AbstractParser<RecommendMsg> {
         if (json.has("num_comments")) {
             message.setNumComments(json.getString("num_comments"));
         }
-        if (json.has("location")) {
-            message.setVenue(new VenueParser().parse(json.getJSONObject("location")));
-        }
-        if (json.has("photo")) {
-            String[] photoUri = new String[20];
-            photoUri[0] = json.getJSONObject("photo").getString("url");
-            message.setPhoto(photoUri);
+
+        if (json.has("photo")&&!json.isNull("photo")) {
+            String[] photoUri = new String[5];
+            if(json.getJSONObject("photo").has("url")){
+                photoUri[0] = json.getJSONObject("photo").getString("url");
+                message.setPhoto(photoUri);
+            }
         }
         if (json.has("body")) {
             String recommend_body = json.getString("body");
             if(recommend_body.contains(From_Jianjian)){
-                recommend_body = recommend_body.substring(0, recommend_body.indexOf(From_Jianjian)-1).replace("?", " ");
-                String[] entity = recommend_body.split("++");
+                
+                recommend_body = recommend_body.substring(0, recommend_body.indexOf(From_Jianjian)).replace("?", " ");
+                String[] entity = recommend_body.split("\\u002B\\u002B");
                 
                 Product pro = new Product();
                 pro.setName(entity[0]);
                 String price = entity [1];
                 String description = entity[2];
+                if (json.has("location")) {
+                    pro.setVenue(new VenueParser().parse(json.getJSONObject("location")));
+                }
                 
                 message.setProduct(pro);
                 message.setPrice(price);
                 message.setDescription(description);
+                
+                
             }             
         }
         

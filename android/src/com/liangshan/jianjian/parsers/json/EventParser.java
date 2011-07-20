@@ -29,7 +29,7 @@ public class EventParser extends AbstractParser<Event> {
         if (json.has("id")) {
             event.setEventId(json.getString("id"));
         } 
-        if (event.getType() == "checkin"){
+        if (event.getType().equalsIgnoreCase("checkin") ){
             event.setFragment(new RecommendMsgParser().parse(json.getJSONObject("status")));
         }
         

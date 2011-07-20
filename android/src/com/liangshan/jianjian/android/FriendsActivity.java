@@ -189,9 +189,9 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         
         mListAdapter = new SeparatedListAdapter(this);
         if (mStateHolder.getSortMethod() == SORT_METHOD_RECENT) {
-            sortCheckinsRecent(mStateHolder.getRecommends(), mListAdapter);
+            sortEventsRecent(mStateHolder.getRecommends(), mListAdapter);
         } else {
-            sortCheckinsDistance(mStateHolder.getRecommends(), mListAdapter);
+            sortEventsDistance(mStateHolder.getRecommends(), mListAdapter);
         }
         ListView listView = getListView();
         listView.setAdapter(mListAdapter);
@@ -270,8 +270,8 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
      * @param recommends
      * @param mListAdapter2
      */
-    private void sortCheckinsDistance(Group<RecommendMsg> recommends,
-            SeparatedListAdapter mListAdapter2) {
+    private void sortEventsDistance(Group<Event> events,
+            SeparatedListAdapter listAdapter) {
         // TODO Auto-generated method stub
         
     }
@@ -281,8 +281,8 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
      * @param recommends
      * @param mListAdapter2
      */
-    private void sortCheckinsRecent(Group<RecommendMsg> recommends,
-            SeparatedListAdapter mListAdapter2) {
+    private void sortEventsRecent(Group<Event> events,
+            SeparatedListAdapter listAdapter) {
         // TODO Auto-generated method stub
         
     }
@@ -296,12 +296,12 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
      * @param recommends
      * @param mException
      */
-    public void onTaskComplete(Group<RecommendMsg> recommends, Exception mException) {
+    public void onTaskComplete(Group<Event> events, Exception mException) {
         // TODO Auto-generated method stub
         
     }
     
-    private static class TaskRecommends extends AsyncTask<Void, Void, Group<RecommendMsg>> {
+    private static class TaskRecommends extends AsyncTask<Void, Void, Group<Event>> {
         private Jianjianroid mJianjianroid;
         private FriendsActivity mActivity;
         private Exception mException;
@@ -324,7 +324,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
             
             Group<Event> events = null;
             try {
-                events = getRecommends(mPage);
+                events = getEvents(mPage);
             } catch (Exception ex) {
                 mException = ex;
             }
@@ -335,7 +335,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         /**
          * @return
          */
-        private Group<Event> getRecommends(int page) throws JianjianException, IOException{
+        private Group<Event> getEvents(int page) throws JianjianException, IOException{
             
             // If we're the startup tab, it's likely that we won't have a geo location
             // immediately. For now we can use this ugly method of sleeping for N
@@ -350,7 +350,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
                 loc = mJianjianroid.getLastKnownLocation();
             }            
             
-            Group<Event> events = mJianjianroid.getJianjian().getRecommends(page, LocationUtils
+            Group<Event> events = mJianjianroid.getJianjian().getEvents(page, LocationUtils
                     .createJianjianLocation(loc));
             
             //Collections.sort(recommends, Comparators.getCheckinRecencyComparator());
@@ -364,16 +364,16 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         }
 
         @Override
-        public void onPostExecute(Group<RecommendMsg> recommends) {
+        public void onPostExecute(Group<Event> events) {
             if (mActivity != null) {
-                mActivity.onTaskComplete(recommends, mException);
+                mActivity.onTaskComplete(events, mException);
             }
         }
         
     }
 
     private static class StateHolder {
-        private Group<RecommendMsg> mRecMsgs;
+        private Group<Event> mEvents;
         private int mCurrentPage;
         private int mSortMethod;
         private boolean mRanOnce;
@@ -383,7 +383,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         public StateHolder() {
             mRanOnce = false;
             mIsRunningTask = false; 
-            mRecMsgs = new Group<RecommendMsg>();
+            mEvents = new Group<Event>();
             mCurrentPage = 0;
         }
         
@@ -402,12 +402,12 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
             mCurrentPage = page;
         }
         
-        public Group<RecommendMsg> getRecommends() {
-            return mRecMsgs;
+        public Group<Event> getRecommends() {
+            return mEvents;
         }
         
-        public void setRecommends(Group<RecommendMsg> recommends) {
-            mRecMsgs = recommends;
+        public void setRecommends(Group<Event> events) {
+            mEvents = events;
         }
         
         public boolean getRanOnce() {

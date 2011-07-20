@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="14" version="2.0">
+<workbench progressCount="13" version="2.0">
 <workbenchAdvisor/>
 <window height="708" width="1257" x="8" y="22">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="org.eclipse.debug.ui.DebugView"/>
-<orientation position="512" view="org.eclipse.ui.views.ContentOutline"/>
 <orientation position="512" view="org.eclipse.jdt.ui.SourceView"/>
+<orientation position="512" view="org.eclipse.ui.views.ContentOutline"/>
 </fastViewData>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -45,8 +45,6 @@
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
-<part id="4"/>
-<part id="5"/>
 </presentation>
 </folder>
 </info>
@@ -55,17 +53,9 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/RecommendItActivity.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="7" selectionOffset="24893" selectionTopPixel="9135"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Jianjian.java" partName="Jianjian.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/general/Jianjian.java" title="Jianjian.java" tooltip="android/src/com/liangshan/jianjian/general/Jianjian.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/general/Jianjian.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="10" selectionOffset="4231" selectionTopPixel="1727"/>
-</editor>
 <editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FriendsActivity.java" partName="FriendsActivity.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/FriendsActivity.java" title="FriendsActivity.java" tooltip="android/src/com/liangshan/jianjian/android/FriendsActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/FriendsActivity.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="13123" selectionTopPixel="4409"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JianjianHttpApiV1.java" partName="JianjianHttpApiV1.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java" title="JianjianHttpApiV1.java" tooltip="android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7175" selectionTopPixel="1917"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FriendsActivity.java" partName="FriendsActivity.java" path="/Users/jornel/project/android/foursquare/foursquared/main/src/com/joelapenna/foursquared/FriendsActivity.java" title="FriendsActivity.java" tooltip="foursquared1/src/com/joelapenna/foursquared/FriendsActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/foursquared1/src/com/joelapenna/foursquared/FriendsActivity.java"/>
@@ -77,14 +67,13 @@
 </editor>
 </editors>
 <views>
-<view id="com.android.ide.eclipse.ddms.views.DeviceView" partName="Devices">
-<viewState/>
-</view>
 <view id="org.eclipse.search.ui.views.SearchView" partName="Search">
 <viewState isPinned="false">
-<view IMemento.internal.id="org.eclipse.jdt.ui.JavaSearchResultPage" org.eclipse.jdt.search.resultpage.grouping="3" org.eclipse.jdt.search.resultpage.limit="1000" org.eclipse.jdt.search.resultpage.limit_enabled="TRUE" org.eclipse.jdt.search.resultpage.sorting="1" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2"/>
 <view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
 </viewState>
+</view>
+<view id="com.android.ide.eclipse.ddms.views.DeviceView" partName="Devices">
+<viewState/>
 </view>
 <view id="org.eclipse.jdt.callhierarchy.view" partName="Call Hierarchy">
 <viewState search_scope_type="1"/>
@@ -93,6 +82,12 @@
 <viewState/>
 </view>
 <view id="com.android.ide.eclipse.ddms.views.ThreadView" partName="Threads">
+<viewState/>
+</view>
+<view id="org.eclipse.debug.ui.VariableView" partName="Variables">
+<viewState/>
+</view>
+<view id="org.eclipse.debug.ui.BreakpointView" partName="Breakpoints">
 <viewState/>
 </view>
 <view id="org.eclipse.ui.views.TaskList" partName="Tasks">
@@ -106,12 +101,6 @@
 <visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
 </viewState>
-</view>
-<view id="org.eclipse.debug.ui.VariableView" partName="Variables">
-<viewState/>
-</view>
-<view id="org.eclipse.debug.ui.BreakpointView" partName="Breakpoints">
-<viewState/>
 </view>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
@@ -130,7 +119,7 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<columnWidths org.eclipse.ui.ide.locationField="0" org.eclipse.ui.ide.markerType="0" org.eclipse.ui.ide.pathField="0" org.eclipse.ui.ide.resourceField="0" org.eclipse.ui.ide.severityAndDescriptionField="0"/>
+<columnWidths org.eclipse.ui.ide.locationField="84" org.eclipse.ui.ide.markerType="114" org.eclipse.ui.ide.pathField="144" org.eclipse.ui.ide.resourceField="114" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
@@ -175,15 +164,15 @@
 <view id="org.eclipse.jdt.ui.SourceView" partName="Declaration">
 <viewState/>
 </view>
-<view id="com.android.ide.eclipse.ddms.views.AllocTrackerView" partName="Allocation Tracker">
-<viewState/>
-</view>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc">
 <viewState/>
 </view>
+<view id="com.android.ide.eclipse.ddms.views.AllocTrackerView" partName="Allocation Tracker">
+<viewState/>
+</view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
-<perspective editorAreaTrimState="1" editorAreaVisible="1" fixed="0" version="0.016">
+<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
@@ -245,42 +234,31 @@
 <perspective_action id="com.android.ide.eclipse.ddms.Perspective"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.jdt.ui.JavadocView"/>
+<view id="org.eclipse.ui.views.PropertySheet"/>
+<view id="org.eclipse.jdt.callhierarchy.view"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.debug.ui.DebugView"/>
+<view id="org.eclipse.search.ui.views.SearchView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViews>
 <view id="org.eclipse.jdt.ui.SourceView" ratio="0.3"/>
 </fastViews>
-<fastViewBars>
-<fastViewBar fastViewLocation="131072" id="bottom" orientation="256" selectedTabId="org.eclipse.search.ui.views.SearchView" style="1">
-<fastViews>
-<view id="org.eclipse.ui.views.ProblemView" ratio="0.3"/>
-<view id="org.eclipse.jdt.ui.JavadocView" ratio="0.3"/>
-<view id="org.eclipse.ui.views.PropertySheet" ratio="0.3"/>
-<view id="org.eclipse.jdt.callhierarchy.view" ratio="0.3"/>
-<view id="org.eclipse.ui.console.ConsoleView" ratio="0.3"/>
-<view id="org.eclipse.debug.ui.DebugView" ratio="0.3"/>
-<view id="org.eclipse.search.ui.views.SearchView" ratio="0.3"/>
-</fastViews>
-</fastViewBar>
-<fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@127a5a2" orientation="512" selectedTabId="org.eclipse.ui.views.ContentOutline" style="1">
-<fastViews>
-<view id="org.eclipse.ui.views.ContentOutline" ratio="0.3"/>
-</fastViews>
-</fastViewBar>
-<fastViewBar fastViewLocation="16384" id="left" orientation="512" selectedTabId="org.eclipse.jdt.ui.PackageExplorer" style="1">
-<fastViews>
-<view id="org.eclipse.jdt.ui.PackageExplorer" ratio="0.3"/>
-</fastViews>
-</fastViewBar>
-</fastViewBars>
+<fastViewBars/>
 <layout>
 <mainWindow>
 <info folder="true" part="left">
-<folder appearance="2" expanded="0">
-<page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
+<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
 <page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@7cf883" ratio="0.75" ratioLeft="762" ratioRight="254" relationship="2" relative="left">
@@ -293,18 +271,26 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.19261637" ratioLeft="240" ratioRight="1006" relationship="2" relative="left"/>
 <info folder="true" part="bottom" ratio="0.7564516" ratioLeft="469" ratioRight="151" relationship="4" relative="org.eclipse.ui.editorss">
-<folder appearance="2" expanded="0">
-<page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
-<page content="org.eclipse.jdt.ui.JavadocView" label="LabelNotFound"/>
-<page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
-<page content="org.eclipse.jdt.callhierarchy.view" label="LabelNotFound"/>
-<page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
-<page content="org.eclipse.debug.ui.DebugView" label="LabelNotFound"/>
-<page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
+<folder activePageID="org.eclipse.search.ui.views.SearchView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
+<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
+<page content="org.eclipse.jdt.callhierarchy.view" label="Call Hierarchy"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+</presentation>
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1bdcbb2" ratio="0.8210526" ratioLeft="780" ratioRight="170" relationship="2" relative="org.eclipse.ui.editorss">
@@ -321,9 +307,11 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@127a5a2" ratio="0.7497425" ratioLeft="728" ratioRight="243" relationship="2" relative="org.eclipse.ui.editorss">
-<folder appearance="2" expanded="0">
-<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
 </folder>
 </info>
 </mainWindow>
@@ -530,16 +518,8 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquare/FoursquareHttpApiV1.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquared/FriendsActivity.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquared/widget/SeparatedListAdapter.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java"/>
 </editors>
-<item historyLabel="Jianjian.java" index="2">
-<position info="not_deleted" x="4231" y="10"/>
-</item>
-<item historyLabel="JianjianHttpApiV1.java" index="3">
-<position info="not_deleted" x="6253" y="0"/>
-</item>
-<item historyLabel="FriendsActivity.java" index="1">
-<position info="not_deleted" x="12963" y="0"/>
-</item>
 <item historyLabel="FriendsActivity.java" index="0">
 <position info="not_deleted" x="22376" y="4"/>
 </item>
@@ -677,6 +657,15 @@
 </item>
 <item historyLabel="SeparatedListAdapter.java" index="10">
 <position info="not_deleted" x="4844" y="0"/>
+</item>
+<item historyLabel="FriendsActivity.java" index="1">
+<position info="not_deleted" x="13123" y="0"/>
+</item>
+<item historyLabel="JianjianHttpApiV1.java" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="JianjianHttpApiV1.java" index="11">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 <item active="true" historyLabel="FriendsActivity.java" index="1">
 <position info="not_deleted" x="13123" y="0"/>
