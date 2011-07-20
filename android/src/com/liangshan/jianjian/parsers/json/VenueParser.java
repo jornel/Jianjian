@@ -55,8 +55,8 @@ public class VenueParser extends AbstractParser<Venue> {
         if (json.has("name")) {
             obj.setName(json.getString("name"));
         } 
-        if (json.has("phone")) {
-            obj.setPhone(json.getString("phone"));
+        if (json.has("tel")) {
+            obj.setPhone(json.getString("tel"));
         } 
         /*
         if (json.has("primarycategory")) {
@@ -69,8 +69,8 @@ public class VenueParser extends AbstractParser<Venue> {
                     new SpecialParser()).parse(json.getJSONArray("specials")));
         } 
         */
-        if (json.has("state")) {
-            obj.setState(json.getString("state"));
+        if (json.has("province")) {
+            obj.setState(json.getString("province"));
         } 
         /*
         if (json.has("stats")) {

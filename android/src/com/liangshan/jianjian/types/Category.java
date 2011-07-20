@@ -10,13 +10,12 @@ import android.os.Parcelable;
  * @author ezhuche
  *
  */
-public class Fragment implements JianjianType,Parcelable {
+public class Category implements JianjianType,Parcelable {
     
-    private String mFragmentId;
-    private String mType;
-    private User mFromUser;
+    private String mCategoryId;
+    private String mName;
     
-    public Fragment(){
+    public Category(){
     }
     
 
@@ -38,27 +37,20 @@ public class Fragment implements JianjianType,Parcelable {
 
     }
     
-    public String getFragmentId() {
-        return mFragmentId;
+    public String getCategoryId() {
+        return mCategoryId;
     }
 
-    public void setFragmentId(String id) {
-        mFragmentId = id;
-    }
-
-    public String getType() {
-        return mType;
-    }
-    public void setType(String type) {
-        mType = type;
+    public void setCategoryId(String id) {
+        mCategoryId = id;
     }
     
-    public User getFromUser() {
-        return mFromUser;
+    public String getName() {
+        return mName;
     }
 
-    public void setFromUser(User user) {
-        mFromUser = user;
+    public void setFromUser(String name) {
+        mName = name;
     }
    
 }

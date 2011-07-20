@@ -10,6 +10,7 @@ import com.liangshan.jianjian.android.location.LocationUtils;
 import com.liangshan.jianjian.android.widget.SegmentedButton;
 import com.liangshan.jianjian.android.widget.SeparatedListAdapter;
 import com.liangshan.jianjian.android.widget.SegmentedButton.OnClickListenerSegmentedButton;
+import com.liangshan.jianjian.types.Fragment;
 import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.RecommendMsg;
 import com.liangshan.jianjian.util.UiUtil;
@@ -346,7 +347,8 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
             if (loc == null) {
                 try { Thread.sleep(SLEEP_TIME_IF_NO_LOCATION); } catch (InterruptedException ex) {}
                 loc = mJianjianroid.getLastKnownLocation();
-            }
+            }            
+            
             Group<RecommendMsg> recommends = mJianjianroid.getJianjian().getRecommends(page, LocationUtils
                     .createJianjianLocation(loc));
             

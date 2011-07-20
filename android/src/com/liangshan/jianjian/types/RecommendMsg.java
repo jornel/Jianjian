@@ -10,10 +10,10 @@ import android.os.Parcelable;
  * @author ezhuche
  *
  */
-public class RecommendMsg implements JianjianType,Parcelable {
+public class RecommendMsg extends Fragment {
     
-    private String mMessageId;
-    private String mVenueId;
+    //private String mMessageId;
+    private Venue mVenue;
     private String mProductId;
     private String mProductName;
     private String mPrice;
@@ -21,6 +21,9 @@ public class RecommendMsg implements JianjianType,Parcelable {
     private String mGeolat;
     private String mGeolong;
     private String[] mPhoto;
+    private Boolean mIsPrivate;
+    private int mNumComments;
+    private String mParentId;
     
     public RecommendMsg(){
     }
@@ -44,18 +47,19 @@ public class RecommendMsg implements JianjianType,Parcelable {
 
     }
     
+    /*
     public String getMessageId() {
         return mMessageId;
     }
 
     public void setMessageId(String messageId) {
         mMessageId = messageId;
+    }*/
+    public Venue getVenue() {
+        return mVenue;
     }
-    public String getVenueId() {
-        return mVenueId;
-    }
-    public void setVenueId(String venueId) {
-        mVenueId = venueId;
+    public void setVenue(Venue venue) {
+        mVenue = venue;
     }
     public String getProductId() {
         return mProductId;
@@ -98,6 +102,29 @@ public class RecommendMsg implements JianjianType,Parcelable {
     }
     public void setPhoto(String[] photo) {
         mPhoto = photo;
+    }
+    
+    public Boolean getIsPrivate() {
+        return mIsPrivate;
+    }
+    public void setIsPrivate(String isprivate) {
+        if(isprivate.equalsIgnoreCase("true")){
+            mIsPrivate = true;
+        }else {
+            mIsPrivate = false;
+        }
+    }
+    public int getNumComments() {
+        return mNumComments;
+    }
+    public void setNumComments(String num_comments) {
+        mNumComments = Integer.parseInt(num_comments);
+    }
+    public String getParentId() {
+        return mParentId;
+    }
+    public void setParentId(String id) {
+        mParentId = id;
     }
     
    
