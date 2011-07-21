@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.util.JSONUtils"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.preferences.JPreferences"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.error.JianjianCredentialsException"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.error.JianjianException"/>
 <fullyQualifiedTypeName name="java.util.zip.GZIPInputStream"/>
@@ -19,7 +17,6 @@
 <fullyQualifiedTypeName name="com.liangshan.jianjian.general.Jianjian.JLocation"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.NotificationsUtil"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.JianjianSettings"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.types.Venue"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.widget.VenuePickerAdapter"/>
 <fullyQualifiedTypeName name="android.R"/>
 <fullyQualifiedTypeName name="android.R.layout"/>
@@ -46,7 +43,6 @@
 <fullyQualifiedTypeName name="android.graphics.Bitmap"/>
 <fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.StringFormatters"/>
 <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.ImageUtil"/>
 <fullyQualifiedTypeName name="java.io.File"/>
@@ -60,4 +56,8 @@
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.app.LoadableListActivityWithViewAndHeader"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.Jianjianroid"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.widget.SegmentedButton.OnClickListenerSegmentedButton"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.types.Event"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.types.Venue"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.types.User"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.StringFormatters"/>
 </qualifiedTypeNameHistroy>

@@ -13,16 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="mListAdapter" key="selection"/>
+		<item value="mOnClickListener" key="selection"/>
 		<list key="findhistory">
+			<item value="mOnClickListener"/>
+			<item value="mVenue"/>
+			<item value="recommend"/>
 			<item value="mListAdapter"/>
 			<item value="execute"/>
 			<item value="task"/>
 			<item value="page"/>
 			<item value="friendsactivity_menu_map"/>
-			<item value="mMenuMoreSubitems"/>
-			<item value="mTakePhotoImgButton"/>
-			<item value="PHOTO_DIR"/>
 		</list>
 		<list key="replacehistory">
 			<item value="venue"/>
