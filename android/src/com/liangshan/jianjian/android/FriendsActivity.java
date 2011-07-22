@@ -7,13 +7,14 @@ import java.util.LinkedHashMap;
 import com.liangshan.jianjian.android.app.LoadableListActivityWithViewAndHeader;
 import com.liangshan.jianjian.android.error.JianjianException;
 import com.liangshan.jianjian.android.location.LocationUtils;
+import com.liangshan.jianjian.android.util.NotificationsUtil;
 import com.liangshan.jianjian.android.widget.SegmentedButton;
 import com.liangshan.jianjian.android.widget.SeparatedListAdapter;
 import com.liangshan.jianjian.android.widget.SegmentedButton.OnClickListenerSegmentedButton;
 import com.liangshan.jianjian.types.Event;
-import com.liangshan.jianjian.types.Fragment;
 import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.RecommendMsg;
+import com.liangshan.jianjian.util.Comparators;
 import com.liangshan.jianjian.util.UiUtil;
 
 import android.content.BroadcastReceiver;
@@ -296,11 +297,60 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
      * @param recommends
      * @param mException
      */
-    public void onTaskComplete(Group<Event> events, Exception mException) {
-        // TODO Auto-generated method stub
+    public void onTaskComplete(Group<Event> events, Exception ex) {
+        mStateHolder.setRanOnce(true);
+        mStateHolder.setIsRunningTask(false);
+        setProgressBarIndeterminateVisibility(false);
         
+        // Clear list for new batch.
+        mListAdapter.removeObserver();
+        mListAdapter.clear();
+        mListAdapter = new SeparatedListAdapter(this);
+        
+        if(events != null){
+            
+            mStateHolder.setRecommends(filterEventsFromJiepang(events));
+            
+            if (mStateHolder.getSortMethod() == SORT_METHOD_RECENT) {
+                sortEventsRecent(events, mListAdapter);
+            } else {
+                sortEventsDistance(events, mListAdapter);
+            }
+        } else if (ex != null) {
+            mStateHolder.setRecommends(events);
+            NotificationsUtil.ToastReasonForFailure(this, ex);
+        }
+        
+        if (mStateHolder.getRecommends().size() == 0) {
+            setEmptyView(mLayoutEmpty);
+        }
+        
+        getListView().setAdapter(mListAdapter);
     }
     
+    /**
+     * @param events
+     * @return
+     */
+    private Group<Event> filterEventsFromJiepang(Group<Event> events) {
+        
+        Group<Event> recommends = new Group<Event>();
+        
+        //remove the events which doesn't come from jianjian
+        for (Event it : events){
+            if(it.getFragment() instanceof RecommendMsg){
+                RecommendMsg re = (RecommendMsg) it.getFragment();
+                if(re.getProduct()!= null){
+                    recommends.add(it);
+                }
+            }          
+        }
+        
+        return recommends;
+    }
+
+
+
     private static class TaskRecommends extends AsyncTask<Void, Void, Group<Event>> {
         private Jianjianroid mJianjianroid;
         private FriendsActivity mActivity;
@@ -353,7 +403,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
             Group<Event> events = mJianjianroid.getJianjian().getEvents(page, LocationUtils
                     .createJianjianLocation(loc));
             
-            //Collections.sort(recommends, Comparators.getCheckinRecencyComparator());
+            Collections.sort(events, Comparators.getCheckinRecencyComparator());
             
             return events;
         }
