@@ -1,0 +1,6 @@
+1311405859790	Rename type 'CheckinTimestampSort'
+1311406923387	Rename type 'CheckinListAdapter'
+1311407031045	Rename type 'BaseCheckinAdapter'
+1311409338844	Rename type 'EventListAdapter'
+1311409546390	Rename type 'BaseEventAdapter'
+1311419423404	Rename resource 'checkin_list_item.xml'

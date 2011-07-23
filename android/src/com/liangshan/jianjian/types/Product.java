@@ -15,7 +15,6 @@ public class Product implements JianjianType,Parcelable {
     private String mProductId;
     private String mName;
     private Category mCategory;
-    private String mPrice;
     private Venue mVenue;
     private String mParentId;
     private int mNumRecommended;
@@ -65,13 +64,6 @@ public class Product implements JianjianType,Parcelable {
         mName = name;
     }
     
-    public String getPrice() {
-        return mPrice;
-    }
-
-    public void setPrice(String price) {
-        mPrice = price;
-    }
     
     public Venue getVenue() {
         return mVenue;

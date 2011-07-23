@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.error.JianjianCredentialsException"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.error.JianjianException"/>
-<fullyQualifiedTypeName name="java.util.zip.GZIPInputStream"/>
-<fullyQualifiedTypeName name="java.io.InputStream"/>
-<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
-<fullyQualifiedTypeName name="org.apache.http.HttpEntity"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.http.AbstractHttpApi"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.general.Jianjian"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.util.ParcelUtils"/>
 <fullyQualifiedTypeName name="java.net.URLEncoder"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.types.JianjianType"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.parsers.json.GroupParser"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.parsers.json.VenueParser"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.general.Jianjian.JLocation"/>
@@ -39,7 +30,6 @@
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
 <fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.id"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.string"/>
 <fullyQualifiedTypeName name="android.graphics.Bitmap"/>
 <fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
@@ -49,15 +39,25 @@
 <fullyQualifiedTypeName name="java.net.SocketTimeoutException"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.Base64"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.Base64Coder"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.types.Group"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.types.RecommendMsg"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.widget.SegmentedButton"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.app.LoadableListActivityWithViewAndHeader"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.Jianjianroid"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.widget.SegmentedButton.OnClickListenerSegmentedButton"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.types.Event"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.types.Venue"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.types.JianjianType"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.RemoteResourceManager"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.util.UiUtil"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.types.User"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.types.Event"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.StringFormatters"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.EventTimestampSort"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.types.Group"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.widget.EventListAdapter"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.general.Jianjian"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.types.RecommendMsg"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.string"/>
+<fullyQualifiedTypeName name="android.content.res.Resources"/>
+<fullyQualifiedTypeName name="android.text.format.DateFormat"/>
+<fullyQualifiedTypeName name="java.text.DateFormat"/>
 </qualifiedTypeNameHistroy>

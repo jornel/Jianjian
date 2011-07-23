@@ -6,6 +6,7 @@ package com.liangshan.jianjian.util;
 
 import com.liangshan.jianjian.android.util.StringFormatters;
 import com.liangshan.jianjian.types.Event;
+import com.liangshan.jianjian.types.RecommendMsg;
 import com.liangshan.jianjian.types.User;
 import com.liangshan.jianjian.types.Venue;
 
@@ -18,8 +19,9 @@ public class Comparators {
 
     private static Comparator<Venue> sVenueDistanceComparator = null;
     private static Comparator<User> sUserRecencyComparator = null;
-    private static Comparator<Event> sCheckinRecencyComparator = null;
-    private static Comparator<Event> sCheckinDistanceComparator = null;
+    private static Comparator<Event> sEventRecencyComparator = null;
+    private static Comparator<Event> sEventDistanceComparator = null;
+    private static Comparator<RecommendMsg> sRecommendsRecencyComparator = null;
 
     public static Comparator<Venue> getVenueDistanceComparator() {
         if (sVenueDistanceComparator == null) {
@@ -70,9 +72,9 @@ public class Comparators {
         return sVenueDistanceComparator;
     }
 
-    public static Comparator<Event> getCheckinRecencyComparator() {
-        if (sCheckinRecencyComparator == null) {
-            sCheckinRecencyComparator = new Comparator<Event>() {
+    public static Comparator<Event> getEventRecencyComparator() {
+        if (sEventRecencyComparator == null) {
+            sEventRecencyComparator = new Comparator<Event>() {
                 /*
                  * (non-Javadoc)
                  * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
@@ -88,12 +90,12 @@ public class Comparators {
                 }
             };
         }
-        return sCheckinRecencyComparator;
+        return sEventRecencyComparator;
     }
     
-    public static Comparator<Event> getCheckinDistanceComparator() {
-        if (sCheckinDistanceComparator == null) {
-            sCheckinDistanceComparator = new Comparator<Event>() {
+    public static Comparator<Event> getEventDistanceComparator() {
+        if (sEventDistanceComparator == null) {
+            sEventDistanceComparator = new Comparator<Event>() {
                 /*
                  * (non-Javadoc)
                  * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
@@ -118,7 +120,29 @@ public class Comparators {
                 }
             };
         }
-        return sCheckinDistanceComparator;
+        return sEventDistanceComparator;
+    }
+
+
+    public static Comparator<RecommendMsg> getRecommendsRecencyComparator() {
+        if (sRecommendsRecencyComparator == null) {
+            sRecommendsRecencyComparator = new Comparator<RecommendMsg>() {
+                /*
+                 * (non-Javadoc)
+                 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
+                 */
+                @Override
+                public int compare(RecommendMsg object1, RecommendMsg object2) {
+                    try {
+                        return StringFormatters.DATE_FORMAT.parse(object2.getCreateDate()).compareTo(
+                                StringFormatters.DATE_FORMAT.parse(object1.getCreateDate()));
+                    } catch (ParseException e) {
+                        return 0;
+                    }
+                }
+            };
+        }
+        return sRecommendsRecencyComparator;
     }
 
 

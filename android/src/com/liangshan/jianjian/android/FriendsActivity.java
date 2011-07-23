@@ -2,12 +2,15 @@ package com.liangshan.jianjian.android;
 
 import java.io.IOException;
 import java.util.Collections;
+import java.util.Date;
 import java.util.LinkedHashMap;
 
 import com.liangshan.jianjian.android.app.LoadableListActivityWithViewAndHeader;
 import com.liangshan.jianjian.android.error.JianjianException;
 import com.liangshan.jianjian.android.location.LocationUtils;
+import com.liangshan.jianjian.android.util.EventTimestampSort;
 import com.liangshan.jianjian.android.util.NotificationsUtil;
+import com.liangshan.jianjian.android.widget.RecommendListAdapter;
 import com.liangshan.jianjian.android.widget.SegmentedButton;
 import com.liangshan.jianjian.android.widget.SeparatedListAdapter;
 import com.liangshan.jianjian.android.widget.SegmentedButton.OnClickListenerSegmentedButton;
@@ -87,8 +90,6 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
             }
         }
         
-        setContentView(R.layout.friends_list_activity);
-        
     }
     
 
@@ -106,7 +107,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         ((Jianjianroid) getApplication()).removeLocationUpdates();
 
         if (isFinishing()) {
-            //mListAdapter.removeObserver();
+            mListAdapter.removeObserver();
             unregisterReceiver(mLoggedOutReceiver);
             mStateHolder.cancel();
         }
@@ -190,9 +191,9 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         
         mListAdapter = new SeparatedListAdapter(this);
         if (mStateHolder.getSortMethod() == SORT_METHOD_RECENT) {
-            sortEventsRecent(mStateHolder.getRecommends(), mListAdapter);
+            sortRecommendsRecent(mStateHolder.getRecommends(), mListAdapter);
         } else {
-            sortEventsDistance(mStateHolder.getRecommends(), mListAdapter);
+            sortRecommendsDistance(mStateHolder.getRecommends(), mListAdapter);
         }
         ListView listView = getListView();
         listView.setAdapter(mListAdapter);
@@ -202,10 +203,10 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 /*
-                Checkin checkin = (Checkin) parent.getAdapter().getItem(position);
-                if (checkin.getUser() != null) {
+                Event Event = (Event) parent.getAdapter().getItem(position);
+                if (Event.getUser() != null) {
                     Intent intent = new Intent(FriendsActivity.this, UserDetailsActivity.class);
-                    intent.putExtra(UserDetailsActivity.EXTRA_USER_PARCEL, checkin.getUser());
+                    intent.putExtra(UserDetailsActivity.EXTRA_USER_PARCEL, Event.getUser());
                     intent.putExtra(UserDetailsActivity.EXTRA_SHOW_ADD_FRIEND_OPTIONS, true);
                     startActivity(intent);
                 }
@@ -271,7 +272,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
      * @param recommends
      * @param mListAdapter2
      */
-    private void sortEventsDistance(Group<Event> events,
+    private void sortRecommendsDistance(Group<RecommendMsg> recommends,
             SeparatedListAdapter listAdapter) {
         // TODO Auto-generated method stub
         
@@ -282,9 +283,65 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
      * @param recommends
      * @param mListAdapter2
      */
-    private void sortEventsRecent(Group<Event> events,
+    private void sortRecommendsRecent(Group<RecommendMsg> recommends,
             SeparatedListAdapter listAdapter) {
-        // TODO Auto-generated method stub
+        
+        // Sort all by timestamp first.
+        Collections.sort(recommends, Comparators.getRecommendsRecencyComparator());
+        
+        // We'll group in different section adapters based on some time thresholds.
+        Group<RecommendMsg> recent = new Group<RecommendMsg>();
+        Group<RecommendMsg> today = new Group<RecommendMsg>();
+        Group<RecommendMsg> yesterday = new Group<RecommendMsg>();
+        Group<RecommendMsg> older = new Group<RecommendMsg>();
+        
+        EventTimestampSort timestamps = new EventTimestampSort();
+        
+        for (RecommendMsg it: recommends){
+            try { 
+                Date date = new Date(it.getCreateDate());
+                if (date.after(timestamps.getBoundaryRecent())) {
+                    recent.add(it);
+                } else if (date.after(timestamps.getBoundaryToday())) {
+                    today.add(it); 
+                } else if (date.after(timestamps.getBoundaryYesterday())) {
+                    yesterday.add(it);
+                } else {
+                    older.add(it);
+                }
+            } catch (Exception ex) {
+                older.add(it);
+            }
+        }
+        if (recent.size() > 0) {
+            RecommendListAdapter adapter = new RecommendListAdapter(this, 
+                    ((Jianjianroid) getApplication()).getRemoteResourceManager());
+            adapter.setGroup(recent);
+            listAdapter.addSection(getResources().getString(
+                    R.string.friendsactivity_title_sort_recent), adapter);
+        }
+        
+        if (today.size() > 0) {
+            RecommendListAdapter adapter = new RecommendListAdapter(this, 
+                    ((Jianjianroid) getApplication()).getRemoteResourceManager());
+            adapter.setGroup(today);
+            listAdapter.addSection(getResources().getString(
+                    R.string.friendsactivity_title_sort_today), adapter);
+        }
+        if (yesterday.size() > 0) {
+            RecommendListAdapter adapter = new RecommendListAdapter(this, 
+                    ((Jianjianroid) getApplication()).getRemoteResourceManager());
+            adapter.setGroup(yesterday);
+            listAdapter.addSection(getResources().getString(
+                    R.string.friendsactivity_title_sort_yesterday), adapter);
+        }
+        if (older.size() > 0) {
+            RecommendListAdapter adapter = new RecommendListAdapter(this, 
+                    ((Jianjianroid) getApplication()).getRemoteResourceManager());
+            adapter.setGroup(older);
+            listAdapter.addSection(getResources().getString(
+                    R.string.friendsactivity_title_sort_older), adapter);
+        }
         
     }
     
@@ -308,16 +365,18 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         mListAdapter = new SeparatedListAdapter(this);
         
         if(events != null){
+            Group<RecommendMsg> recommends = filterEventsFromJiepang(events);
             
-            mStateHolder.setRecommends(filterEventsFromJiepang(events));
+            mStateHolder.setRecommends(recommends);
             
             if (mStateHolder.getSortMethod() == SORT_METHOD_RECENT) {
-                sortEventsRecent(events, mListAdapter);
+                sortRecommendsRecent(recommends, mListAdapter);
             } else {
-                sortEventsDistance(events, mListAdapter);
+                sortRecommendsDistance(recommends, mListAdapter);
             }
         } else if (ex != null) {
-            mStateHolder.setRecommends(events);
+            Group<RecommendMsg> recommends = new Group<RecommendMsg>();
+            mStateHolder.setRecommends(recommends);
             NotificationsUtil.ToastReasonForFailure(this, ex);
         }
         
@@ -332,16 +391,24 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
      * @param events
      * @return
      */
-    private Group<Event> filterEventsFromJiepang(Group<Event> events) {
+    private Group<RecommendMsg> filterEventsFromJiepang(Group<Event> events) {
         
-        Group<Event> recommends = new Group<Event>();
+        Group<RecommendMsg> recommends = new Group<RecommendMsg>();
         
-        //remove the events which doesn't come from jianjian
+        //remove the events which doesn't come from jianjian and then set it to recommendMsg group
         for (Event it : events){
             if(it.getFragment() instanceof RecommendMsg){
                 RecommendMsg re = (RecommendMsg) it.getFragment();
                 if(re.getProduct()!= null){
-                    recommends.add(it);
+                    if(it.getCreateDate()!=null){
+                        re.setCreateDate(it.getCreateDate());
+                    }
+                    if(it.getEventId()!=null){
+                        re.setFragmentId(it.getEventId());
+                    }
+                    
+                    recommends.add(re);
+                    
                 }
             }          
         }
@@ -403,7 +470,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
             Group<Event> events = mJianjianroid.getJianjian().getEvents(page, LocationUtils
                     .createJianjianLocation(loc));
             
-            Collections.sort(events, Comparators.getCheckinRecencyComparator());
+            Collections.sort(events, Comparators.getEventRecencyComparator());
             
             return events;
         }
@@ -423,7 +490,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
     }
 
     private static class StateHolder {
-        private Group<Event> mEvents;
+        private Group<RecommendMsg> mRecommends;
         private int mCurrentPage;
         private int mSortMethod;
         private boolean mRanOnce;
@@ -433,7 +500,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         public StateHolder() {
             mRanOnce = false;
             mIsRunningTask = false; 
-            mEvents = new Group<Event>();
+            mRecommends = new Group<RecommendMsg>();
             mCurrentPage = 0;
         }
         
@@ -452,12 +519,12 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
             mCurrentPage = page;
         }
         
-        public Group<Event> getRecommends() {
-            return mEvents;
+        public Group<RecommendMsg> getRecommends() {
+            return mRecommends;
         }
         
-        public void setRecommends(Group<Event> events) {
-            mEvents = events;
+        public void setRecommends(Group<RecommendMsg> recommends) {
+            mRecommends = recommends;
         }
         
         public boolean getRanOnce() {

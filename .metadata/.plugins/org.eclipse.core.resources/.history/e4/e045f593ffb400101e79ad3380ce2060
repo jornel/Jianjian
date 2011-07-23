@@ -1,0 +1,18 @@
+/**
+ * Copyright
+ */
+
+package com.liangshan.jianjian.android.widget;
+
+
+import android.content.Context;
+
+/**
+ * @author Joe LaPenna (joe@joelapenna.com)
+ */
+public abstract class BaseEventAdapter extends BaseGroupAdapter<Checkin> {
+
+    public BaseEventAdapter(Context context) {
+        super(context);
+    }
+}

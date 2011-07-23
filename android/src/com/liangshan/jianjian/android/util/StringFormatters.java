@@ -15,6 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import com.liangshan.jianjian.types.RecommendMsg;
 import com.liangshan.jianjian.types.User;
 
 import android.content.res.Resources;
@@ -25,8 +26,8 @@ import android.text.format.DateUtils;
 
 
 /**
- * @author Joe LaPenna (joe@joelapenna.com)
- * @author Mark Wyszomierski (markww@gmail.com)
+ * @author 
+ * @author 
  *   -Added date formats for today/yesterday/older contexts.
  */
 public class StringFormatters {
@@ -70,52 +71,44 @@ public class StringFormatters {
         } else {
             return null;
         }
-    }
+    }*/
 
-    public static String getCheckinMessageLine1(Checkin checkin, boolean displayAtVenue) {
-        if (checkin.getDisplay() != null) {
-            return checkin.getDisplay();
+    public static String getRecommendMessageLine1(RecommendMsg recommend, String symbol) {
 
-        } else {
-            StringBuilder sb = new StringBuilder();
-            sb.append(getUserAbbreviatedName(checkin.getUser()));
-            if (checkin.getVenue() != null && displayAtVenue) {
-                sb.append(" @ " + checkin.getVenue().getName());
-            }
-            return sb.toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(getUserNickName(recommend.getFromUser()));
+            
+        if (recommend.getProduct() != null) {
+                sb.append(symbol + recommend.getProduct().getName());
         }
+        return sb.toString();
     }
     
-    public static String getCheckinMessageLine2(Checkin checkin) {
-        if (TextUtils.isEmpty(checkin.getShout()) == false) {
-            return checkin.getShout();
-        } else {
-            // No shout, show address instead.
-            if (checkin.getVenue() != null && checkin.getVenue().getAddress() != null) {
-                String address = checkin.getVenue().getAddress();
-                if (checkin.getVenue().getCrossstreet() != null
-                        && checkin.getVenue().getCrossstreet().length() > 0) {
-                    address += " (" + checkin.getVenue().getCrossstreet() + ")";
-                }
-                return address;
-            } else {
-                return "";
-            }
+    public static String getRecommendMessageLine2(RecommendMsg recommend, String symbol, boolean displayAtVenue) {
+        
+        StringBuilder sb = new StringBuilder();
+        if(!TextUtils.isEmpty(recommend.getPrice())){
+            sb.append(recommend.getPrice());
         }
+        if(recommend.getProduct().getVenue() != null && displayAtVenue){
+            if(!TextUtils.isEmpty(recommend.getPrice())){
+                sb.append(symbol);
+            }
+            sb.append(recommend.getProduct().getVenue().getName());
+        }
+
+        return sb.toString();
+
     }
     
-    public static String getCheckinMessageLine3(Checkin checkin) {
-        if (!TextUtils.isEmpty(checkin.getCreated())) {
-            try {
-                return getTodayTimeString(checkin.getCreated());
-            } catch (Exception ex) {
-                return checkin.getCreated();
-            }
+    public static String getRecommendMessageLine3(RecommendMsg recommend) {
+        if (!TextUtils.isEmpty(recommend.getDescription())) {            
+            return recommend.getDescription();
         } else {
             return "";
         }
     }
-    */
+    
 
     public static String getUserFullName(User user) {
         StringBuffer sb = new StringBuffer();
@@ -123,9 +116,9 @@ public class StringFormatters {
         return sb.toString();
     }    
     
-    public static String getUserAbbreviatedName(User user) {
+    public static String getUserNickName(User user) {
         StringBuffer sb = new StringBuffer();
-        sb.append(user.getUserid());//userid is the name of user
+        sb.append(user.getNick());//
         return sb.toString();
     }
 

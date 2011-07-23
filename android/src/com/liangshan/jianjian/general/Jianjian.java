@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 
 import android.graphics.Bitmap;
 
+import com.liangshan.jianjian.android.R;
 import com.liangshan.jianjian.android.error.JianjianError;
 import com.liangshan.jianjian.android.error.JianjianException;
 import com.liangshan.jianjian.general.Jianjian.JLocation;
@@ -30,6 +31,8 @@ public class Jianjian {
 
     private static final String JIANJIAN_API_DOMAIN = "api.jiepang.com";
     public static final String JIANJIAN_MOBILE_SIGNUP = "http://jiepang.com/m/signup";
+    public static final String MALE = "male";
+    public static final String FEMALE = "female";
     
     private JianjianHttpApiV1 mJianjianV1;
     //private String mPhone;

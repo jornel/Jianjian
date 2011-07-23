@@ -15,6 +15,7 @@ public class Fragment implements JianjianType,Parcelable {
     private String mFragmentId;
     private String mType;
     private User mFromUser;
+    private String mCreateDate;
     
     public Fragment(){
     }
@@ -59,6 +60,12 @@ public class Fragment implements JianjianType,Parcelable {
 
     public void setFromUser(User user) {
         mFromUser = user;
+    }
+    public String getCreateDate() {
+        return mCreateDate;
+    }
+    public void setCreateDate(String date) {
+        mCreateDate = date;
     }
    
 }

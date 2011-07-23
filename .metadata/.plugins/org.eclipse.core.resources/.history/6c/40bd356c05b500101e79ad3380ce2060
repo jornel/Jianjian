@@ -1,0 +1,20 @@
+/**
+ * Copyright
+ */
+
+package com.liangshan.jianjian.android.widget;
+
+
+import com.liangshan.jianjian.types.Event;
+
+import android.content.Context;
+
+/**
+ * @author 
+ */
+public abstract class BaseRecommendAdapter extends BaseGroupAdapter<Event> {
+
+    public BaseRecommendAdapter(Context context) {
+        super(context);
+    }
+}
