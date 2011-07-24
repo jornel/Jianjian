@@ -217,7 +217,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         });
         
         footerview = (LinearLayout) LayoutInflater.from(
-                listView.getContext()).inflate(R.layout.venue_list_footer,null);
+                listView.getContext()).inflate(R.layout.recommend_list_footer,null);
         
         footerview.setClickable(true);
         footerview.setVisibility(View.VISIBLE);

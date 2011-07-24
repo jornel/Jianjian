@@ -13088,3 +13088,19 @@ java.lang.StringIndexOutOfBoundsException: String index out of range: 0
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+!SESSION 2011-07-24 23:29:33.760 -----------------------------------------------
+eclipse.buildId=I20100608-0911
+java.version=1.6.0_26
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/jornel/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -product org.eclipse.epp.package.java.product -keyring /Users/jornel/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2011-07-24 23:30:19.775
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2011-07-24 23:42:59.503
+!MESSAGE AndroidManifest: Ignoring unknown 'LinearLayoutRelativeLayout' XML element
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2011-07-24 23:43:13.962
+!MESSAGE AndroidManifest: Ignoring unknown 'R' XML element
