@@ -1,0 +1,20 @@
+
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:paddingRight="7dip"
+  android:paddingBottom="10dip"
+  android:paddingTop="3dip"
+  style="@style/listItemStyle"
+  >
+    <ImageView 
+    android:scaleType="fitXY" 
+    android:layout_width="32dip" 
+    android:layout_height="22dip" 
+    android:src="@drawable/show_more" 
+    android:id="@+id/photo" 
+    android:gravity="center">
+    </ImageView>
+  
+</LinearLayout>

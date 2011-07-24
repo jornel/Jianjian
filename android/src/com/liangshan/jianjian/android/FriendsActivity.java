@@ -59,6 +59,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
     public static final long SLEEP_TIME_IF_NO_LOCATION = 3000L;
     private LinkedHashMap<Integer, String> mMenuMoreSubitems;
     private SeparatedListAdapter mListAdapter;
+    private LinearLayout footerview;
     
     private BroadcastReceiver mLoggedOutReceiver = new BroadcastReceiver() {
         @Override
@@ -199,6 +200,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         listView.setAdapter(mListAdapter);
         listView.setDividerHeight(0);
         
+        
         listView.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -214,11 +216,19 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
             }
         });
         
+        footerview = (LinearLayout) LayoutInflater.from(
+                listView.getContext()).inflate(R.layout.venue_list_footer,null);
+        
+        footerview.setClickable(true);
+        footerview.setVisibility(View.VISIBLE);
+        listView.addFooterView(footerview);
+        
         // Prepare our no-results view. Something odd is going on with the layout parameters though.
         // If we don't explicitly set the layout to be fill/fill after inflating, the layout jumps
         // to a wrap/wrap layout. Furthermore, sdk 3 crashes with the original layout using two
         // buttons in a horizontal LinearLayout.
         LayoutInflater inflater = LayoutInflater.from(this);
+        
         if (UiUtil.sdkVersion() > 3) {
             mLayoutEmpty = (ScrollView)inflater.inflate(
                     R.layout.friends_activity_empty, null);
