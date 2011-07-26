@@ -108,10 +108,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         ((Jianjianroid) getApplication()).removeLocationUpdates();
 
         if (isFinishing()) {
-            if(mListAdapter != null){
-                mListAdapter.removeObserver();
-            }
-            
+            mListAdapter.removeObserver();
             unregisterReceiver(mLoggedOutReceiver);
             mStateHolder.cancel();
         }
@@ -193,10 +190,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
     
     private void ensureUiListView() {
         
-        if(mListAdapter == null){
-            mListAdapter = new SeparatedListAdapter(this);
-        }
-        
+        mListAdapter = new SeparatedListAdapter(this);
         if (mStateHolder.getSortMethod() == SORT_METHOD_RECENT) {
             sortRecommendsRecent(mStateHolder.getRecommends(), mListAdapter);
         } else {
@@ -387,11 +381,9 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         setProgressBarIndeterminateVisibility(false);
         
         // Clear list for new batch.
-        //mListAdapter.removeObserver();
-        //mListAdapter.clear();
-        if(mListAdapter == null){
-            mListAdapter = new SeparatedListAdapter(this);
-        }
+        mListAdapter.removeObserver();
+        mListAdapter.clear();
+        mListAdapter = new SeparatedListAdapter(this);
         
         if(events != null){
             Group<RecommendMsg> recommends = filterEventsFromJiepang(events);
@@ -570,9 +562,11 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         }
         
         public void addRecommends(Group<RecommendMsg> recommends2) {
-            
-            if(mRecommends.addAll(recommends2)){
-                mRecommends.setHasMore(recommends2.isHasMore());
+            mRecommends.addAll(recommends2);
+            if(recommends2.isHasMore()){
+                mRecommends.setHasMore(true);
+            }else {
+                mRecommends.setHasMore(false);
             }
         }
         

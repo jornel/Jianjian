@@ -108,10 +108,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         ((Jianjianroid) getApplication()).removeLocationUpdates();
 
         if (isFinishing()) {
-            if(mListAdapter != null){
-                mListAdapter.removeObserver();
-            }
-            
+            mListAdapter.removeObserver();
             unregisterReceiver(mLoggedOutReceiver);
             mStateHolder.cancel();
         }
@@ -389,9 +386,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         // Clear list for new batch.
         //mListAdapter.removeObserver();
         //mListAdapter.clear();
-        if(mListAdapter == null){
-            mListAdapter = new SeparatedListAdapter(this);
-        }
+        mListAdapter = new SeparatedListAdapter(this);
         
         if(events != null){
             Group<RecommendMsg> recommends = filterEventsFromJiepang(events);

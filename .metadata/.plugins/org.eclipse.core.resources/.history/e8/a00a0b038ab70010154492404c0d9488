@@ -59,14 +59,13 @@ public class RecommendMsgParser extends AbstractParser<RecommendMsg> {
                 Product pro = new Product();
                 String price = "";
                 String description = "";
-                int size = entity.length;
                 if(entity[0]!= null){
                     pro.setName(entity[0]); 
                 }
-                if(size > 1 && entity[1]!= null){
+                if(entity[1]!= null){
                     price = entity [1];
                 }
-                if(size >2 && entity[2]!= null){
+                if(entity[2]!= null){
                     description = entity[2];
                 }
                            

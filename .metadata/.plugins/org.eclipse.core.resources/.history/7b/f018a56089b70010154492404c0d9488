@@ -57,17 +57,14 @@ public class RecommendMsgParser extends AbstractParser<RecommendMsg> {
                 String[] entity = recommend_body.split("\\u002B\\u002B");
                 
                 Product pro = new Product();
-                String price = "";
-                String description = "";
-                int size = entity.length;
                 if(entity[0]!= null){
                     pro.setName(entity[0]); 
                 }
-                if(size > 1 && entity[1]!= null){
-                    price = entity [1];
+                if(entity[1]!= null){
+                    String price = entity [1];
                 }
-                if(size >2 && entity[2]!= null){
-                    description = entity[2];
+                if(entity[2]!= null){
+                    String description = entity[2];
                 }
                            
                 if (json.has("location")) {

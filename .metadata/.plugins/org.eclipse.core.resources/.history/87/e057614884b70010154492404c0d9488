@@ -108,10 +108,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         ((Jianjianroid) getApplication()).removeLocationUpdates();
 
         if (isFinishing()) {
-            if(mListAdapter != null){
-                mListAdapter.removeObserver();
-            }
-            
+            mListAdapter.removeObserver();
             unregisterReceiver(mLoggedOutReceiver);
             mStateHolder.cancel();
         }
@@ -193,10 +190,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
     
     private void ensureUiListView() {
         
-        if(mListAdapter == null){
-            mListAdapter = new SeparatedListAdapter(this);
-        }
-        
+        mListAdapter = new SeparatedListAdapter(this);
         if (mStateHolder.getSortMethod() == SORT_METHOD_RECENT) {
             sortRecommendsRecent(mStateHolder.getRecommends(), mListAdapter);
         } else {
@@ -226,15 +220,6 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
                 listView.getContext()).inflate(R.layout.recommend_list_footer,null);
         
         footerview.setClickable(true);
-        footerview.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                
-                mStateHolder.startTask(FriendsActivity.this);
-            }
-            
-        });
         footerview.setVisibility(View.VISIBLE);
         listView.addFooterView(footerview);
         
@@ -387,25 +372,19 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         setProgressBarIndeterminateVisibility(false);
         
         // Clear list for new batch.
-        //mListAdapter.removeObserver();
-        //mListAdapter.clear();
-        if(mListAdapter == null){
-            mListAdapter = new SeparatedListAdapter(this);
-        }
+        mListAdapter.removeObserver();
+        mListAdapter.clear();
+        mListAdapter = new SeparatedListAdapter(this);
         
         if(events != null){
             Group<RecommendMsg> recommends = filterEventsFromJiepang(events);
             
-            if(mStateHolder.getCurrentPage() <= 1 ){
-                mStateHolder.setRecommends(recommends);
-            } else {
-                mStateHolder.addRecommends(recommends);
-            }
+            mStateHolder.setRecommends(recommends);
             
             if (mStateHolder.getSortMethod() == SORT_METHOD_RECENT) {
-                sortRecommendsRecent(mStateHolder.getRecommends(), mListAdapter);
+                sortRecommendsRecent(recommends, mListAdapter);
             } else {
-                sortRecommendsDistance(mStateHolder.getRecommends(), mListAdapter);
+                sortRecommendsDistance(recommends, mListAdapter);
             }
         } else if (ex != null) {
             if(mStateHolder.getRecommends()== null){
@@ -430,12 +409,6 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
     private Group<RecommendMsg> filterEventsFromJiepang(Group<Event> events) {
         
         Group<RecommendMsg> recommends = new Group<RecommendMsg>();
-        
-        if(events.isHasMore()){
-            recommends.setHasMore(true);
-        } else {
-            recommends.setHasMore(false);
-        }
         
         //remove the events which doesn't come from jianjian and then set it to recommendMsg group
         for (Event it : events){
@@ -525,7 +498,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         @Override
         public void onPostExecute(Group<Event> events) {
             if (mActivity != null) {
-                mActivity.onTaskComplete(events, mPage, mException);
+                mActivity.onTaskComplete(events, 1, mException);
             }
         }
         
@@ -567,13 +540,6 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         
         public void setRecommends(Group<RecommendMsg> recommends) {
             mRecommends = recommends;
-        }
-        
-        public void addRecommends(Group<RecommendMsg> recommends2) {
-            
-            if(mRecommends.addAll(recommends2)){
-                mRecommends.setHasMore(recommends2.isHasMore());
-            }
         }
         
         public boolean getRanOnce() {

@@ -108,10 +108,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         ((Jianjianroid) getApplication()).removeLocationUpdates();
 
         if (isFinishing()) {
-            if(mListAdapter != null){
-                mListAdapter.removeObserver();
-            }
-            
+            mListAdapter.removeObserver();
             unregisterReceiver(mLoggedOutReceiver);
             mStateHolder.cancel();
         }
