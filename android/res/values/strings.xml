@@ -83,7 +83,9 @@
     <string name="friendsactivity_title_sort_older">更早</string>
     
     <string name="recommendSymbol">\u0020\u0020推荐了\u0020</string>
-    <string name="venueSymbol">\u0020,\u0020在\u0020</string>  
+    <string name="venueSymbol">\u0020,\u0020在\u0020</string> 
+    <string name="more_recommends">\u0020\u0020显示更多</string> 
+     
     
     
     <!-- test user string -->

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, MainActivity!</string>
+    <string name="app_name">Jianjian</string>
+    <string name="main_name">随时随地推荐好东西给好友</string>
+    <string name="friends_activity_label">jianjian friends</string>
+    <string name="recommendit_activity_label">jianjian recommend</string>
+    <string name="take_photo_activity_label">jianjian take photo</string>
+    
+    <string name="me_activity_label">jianjian me</string>
+    <string name="tab_main_nav_friends">朋友</string>
+    <string name="tab_main_nav_products">推荐它</string>
+    <string name="tab_main_nav_me">我</string>
+    <string name="user_details_activity_general_badges">徽章</string>
+    <string name="user_details_activity_general_tips">收藏</string>
+    <string name="user_details_activity_general_points">积分</string>
+    <string name="user_details_activity_add_friends">添加好友</string>
+    <string name="user_details_activity_friend_confirm">确认加为好友</string>
+    <string name="user_details_activity_friend_add">加为好友</string>
+    <string name="user_details_activity_friends_in_common_text">%d个好友</string>
+    <string name="login_get_started">Get Started</string>
+    <string name="login_get_started_more">Got a jianjian account? We just need your email or phone# and password</string>
+    <string name="login_failed_login_toast">Unable to log in. Please check your phone number and password.</string>
+    <string name="login_label">Log-in</string>
+    <string name="login_welcome_toast">Welcome to Jianjian!</string>
+    <string name="login_dialog_message">Please wait while logging into Jianjian...</string>
+    <string name="login_dialog_title">Logging in...</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="phone_number_or_email">Username or Email</string>
+    <string name="password">Password</string>
+    <string name="need_an_account">Need an account?</string>
+    
+    <string name="product_info_separator_text">商品信息</string>
+    <string name="hint_product_name">商品名称</string>
+    <string name="hint_product_price">0.00</string>
+    <string name="hint_product_currency">元</string>
+    <string name="recommend_info_separator_text">推荐描述</string>
+    <string name="hint_recommend_description">为你的推荐说两句...</string>
+    <!-- Menu -->
+    <string name="refresh">Refresh</string>
+    <string name="preferences_logout_title">Logout</string>
+    <string name="preferences_exit_title">Exit</string>
+    <string name="loading_venue_product">加载商品地址...</string>
+    <string name="pickup_venue_product">选择商品地址</string>
+    <string name="recommenditbtn">推荐给好友</string>
+    <string name="recommendit_progress_bar_title_recommendit">加载商品</string>
+    <string name="recommend_it_activity_error_no_product_name">商品名称不能为空</string>
+    <string name="recommend_it_activity_error_no_chosen_venue">商品地址不能为空</string>
+    
+    
+    <string name="submitting_the_recommendation">正在提交推荐...</string>
+    <string name="add_recommend_it_fail">提交推荐时发生了错误，请重新试一下</string>
+    
+    <string name="venue_picker_dialog_title">选择一个地址</string>
+    <string name="more_venues">显示更多地址</string>
+    <string name="loading_more">加载中...</string>
+    <string name="venue_picker_page_refresh">刷新地址列表</string>
+    
+    <string name="upload_photo_label">上传照片</string>
+    <string name="restart_upload_label">点击照片重新上传</string>
+    <string name="fromcamera_label">从照相机</string>
+    <string name="fromgallary_label">从图片库</string>
+    <string name="confirm_label">确定</string>
+    <string name="cancel_label">取消</string>
+    <string name="no_sd_text">没有sd卡</string>
+    <string name="photoPicker_NotFound_text">没有找到照片</string>
+    <string name="no_photo_loaded">没有上传图片</string>
+    
+    <string name="no_friend_recommends">没有好友推荐消息</string>
+    <string name="no_search_results">没有结果</string>
+    
+    <string name="friendsactivity_btn_recent">最新</string>
+    <string name="friendsactivity_btn_nearby">附近</string>
+    <string name="friendsactivity_menu_map">Map</string>
+    <string name="friendsactivity_menu_leaderboard">Leaderboard</string>
+    <string name="no_friend_checkins">没有任何好友的推荐</string>
+    <string name="preferences_friend_add_title">添加好友</string>
+    <string name="preferences_friend_requests_title">查看好友请求</string>
+    
+    <string name="friendsactivity_title_sort_recent">三小时内</string>
+    <string name="friendsactivity_title_sort_today">今天</string>
+    <string name="friendsactivity_title_sort_yesterday">昨天</string>
+    <string name="friendsactivity_title_sort_older">更早</string>
+    
+    <string name="recommendSymbol">\u0020\u0020推荐了\u0020</string>
+    <string name="venueSymbol">\u0020,\u0020在\u0020</string> 
+    <string name="more_recommends">\u0020显示更多</string> 
+     
+    
+    
+    <!-- test user string -->
+    <string name="testuserid1">鲶鱼哥哥</string>
+    <string name="male">male</string>
+</resources>
