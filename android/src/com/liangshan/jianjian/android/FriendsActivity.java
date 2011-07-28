@@ -134,6 +134,9 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         switch (item.getItemId()) {
             case MENU_REFRESH:
                 //mStateHolder.startTaskUserDetails(this, mStateHolder.getUser().getId());
+                mStateHolder.setCurrentPage(0);
+                mStateHolder.setRecommends(new Group<RecommendMsg>());
+                mStateHolder.startTask(this);
                 return true;
             case MENU_EXIT:
                 android.os.Process.killProcess(android.os.Process.myPid());

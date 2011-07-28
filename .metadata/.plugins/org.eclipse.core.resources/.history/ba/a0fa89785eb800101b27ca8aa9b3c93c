@@ -167,7 +167,6 @@ public class RecommendItActivity extends Activity {
             }
         });
         
-        mTakePhotoImgButton.setImageDrawable(getResources().getDrawable(R.drawable.addphoto_checkin));
         mTakePhotoImgButton.setEnabled(true);
         mTakePhotoImgButton.setOnClickListener(new OnClickListener() {
 

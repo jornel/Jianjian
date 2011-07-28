@@ -5,12 +5,18 @@ package com.liangshan.jianjian.android;
 
 
 import java.io.File;
+import java.net.URLEncoder;
+import java.util.List;
 
+import com.liangshan.jianjian.android.error.JianjianException;
+import com.liangshan.jianjian.android.error.LocationException;
 import com.liangshan.jianjian.android.location.LocationUtils;
+import com.liangshan.jianjian.android.util.Base64;
 import com.liangshan.jianjian.android.util.ImageUtil;
 import com.liangshan.jianjian.android.util.NotificationsUtil;
+import com.liangshan.jianjian.android.util.StringFormatters;
 import com.liangshan.jianjian.general.Jianjian;
-
+import com.liangshan.jianjian.general.Jianjian.JLocation;
 import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.RecommendMsg;
 import com.liangshan.jianjian.types.Venue;
@@ -42,6 +48,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -167,7 +174,6 @@ public class RecommendItActivity extends Activity {
             }
         });
         
-        mTakePhotoImgButton.setImageDrawable(getResources().getDrawable(R.drawable.addphoto_checkin));
         mTakePhotoImgButton.setEnabled(true);
         mTakePhotoImgButton.setOnClickListener(new OnClickListener() {
 

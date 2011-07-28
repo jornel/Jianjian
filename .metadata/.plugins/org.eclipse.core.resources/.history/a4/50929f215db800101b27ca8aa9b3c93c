@@ -5,12 +5,18 @@ package com.liangshan.jianjian.android;
 
 
 import java.io.File;
+import java.net.URLEncoder;
+import java.util.List;
 
+import com.liangshan.jianjian.android.error.JianjianException;
+import com.liangshan.jianjian.android.error.LocationException;
 import com.liangshan.jianjian.android.location.LocationUtils;
+import com.liangshan.jianjian.android.util.Base64;
 import com.liangshan.jianjian.android.util.ImageUtil;
 import com.liangshan.jianjian.android.util.NotificationsUtil;
+import com.liangshan.jianjian.android.util.StringFormatters;
 import com.liangshan.jianjian.general.Jianjian;
-
+import com.liangshan.jianjian.general.Jianjian.JLocation;
 import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.RecommendMsg;
 import com.liangshan.jianjian.types.Venue;
@@ -42,6 +48,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -167,7 +174,6 @@ public class RecommendItActivity extends Activity {
             }
         });
         
-        mTakePhotoImgButton.setImageDrawable(getResources().getDrawable(R.drawable.addphoto_checkin));
         mTakePhotoImgButton.setEnabled(true);
         mTakePhotoImgButton.setOnClickListener(new OnClickListener() {
 
@@ -198,6 +204,25 @@ public class RecommendItActivity extends Activity {
             mPickupVenueTextView.setText(getResources().getString(R.string.loading_venue_product));
             mStateHolder.startTaskGetVenueList(this);            
             
+            // If passed the venue parcelable, then we are in 'edit' mode.
+            /*if (getIntent().getExtras() != null && getIntent().getExtras().containsKey(EXTRA_VENUE_TO_EDIT)) {
+                Venue venue = getIntent().getExtras().getParcelable(EXTRA_VENUE_TO_EDIT);
+                if (venue != null) {
+                    mStateHolder.setVenueBeingEdited(venue);
+                    setFields(venue);
+                
+                    setTitle(getResources().getString(R.string.add_venue_activity_label_edit_venue));
+                    
+                    mAddOrEditVenueButton.setText(getResources().getString(
+                            R.string.add_venue_activity_btn_submit_edits));
+                } else {
+                    Log.e(TAG, "Null venue parcelable supplied at startup, will finish immediately.");
+                    finish();
+                }
+                
+            } else {
+                //mStateHolder.startTaskAddressLookup(this);
+            }*/
         }
     }
     

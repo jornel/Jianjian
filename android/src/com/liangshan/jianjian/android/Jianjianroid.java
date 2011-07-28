@@ -143,7 +143,7 @@ public class Jianjianroid extends Application {
      * @return
      */
     public boolean isReady() {
-        // TODO Auto-generated method stub
+        
         return getJianjian().hasLoginAndPassword() && !TextUtils.isEmpty(getUserId());
     }
     
