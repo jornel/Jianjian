@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package com.liangshan.jianjian.android;
+
+import android.app.Activity;
+
+/**
+ * @author jornel
+ *
+ */
+public class RecommendMsgActivity extends Activity {
+    private static final String TAG = "VenueActivity";
+
+    private static final boolean DEBUG = JianjianSettings.DEBUG;
+
+}

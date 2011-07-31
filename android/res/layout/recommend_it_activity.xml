@@ -5,7 +5,7 @@
     android:id="@+id/scrollView"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/listview_background">
+    android:background="@drawable/jianjian_background">
         
     <LinearLayout
       android:layout_width="fill_parent"

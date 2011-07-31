@@ -60,6 +60,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
     private LinkedHashMap<Integer, String> mMenuMoreSubitems;
     private SeparatedListAdapter mListAdapter;
     private LinearLayout footerview;
+    private ListView listView;
     
     private BroadcastReceiver mLoggedOutReceiver = new BroadcastReceiver() {
         @Override
@@ -135,6 +136,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
             case MENU_REFRESH:
                 //mStateHolder.startTaskUserDetails(this, mStateHolder.getUser().getId());
                 mStateHolder.setCurrentPage(0);
+                mStateHolder.setCurrentListItem(0);
                 mStateHolder.setRecommends(new Group<RecommendMsg>());
                 mStateHolder.startTask(this);
                 return true;
@@ -196,16 +198,16 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
     
     private void ensureUiListView() {
         
-        if(mListAdapter == null){
+        //if(mListAdapter == null){
             mListAdapter = new SeparatedListAdapter(this);
-        }
+        //}
         
         if (mStateHolder.getSortMethod() == SORT_METHOD_RECENT) {
             sortRecommendsRecent(mStateHolder.getRecommends(), mListAdapter);
         } else {
             sortRecommendsDistance(mStateHolder.getRecommends(), mListAdapter);
         }
-        ListView listView = getListView();
+        listView = getListView();
         listView.setAdapter(mListAdapter);
         listView.setDividerHeight(0);
         
@@ -225,6 +227,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
             }
         });
         
+        
         footerview = (LinearLayout) LayoutInflater.from(
                 listView.getContext()).inflate(R.layout.recommend_list_footer,null);
         
@@ -233,13 +236,16 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
 
             @Override
             public void onClick(View v) {
+                mStateHolder.setCurrentListItem(listView.getCount());
                 
                 mStateHolder.startTask(FriendsActivity.this);
             }
             
         });
         footerview.setVisibility(View.VISIBLE);
-        listView.addFooterView(footerview);
+        if(!mStateHolder.getRanOnce()){
+            listView.addFooterView(footerview);
+        }
         
         // Prepare our no-results view. Something odd is going on with the layout parameters though.
         // If we don't explicitly set the layout to be fill/fill after inflating, the layout jumps
@@ -390,11 +396,11 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         setProgressBarIndeterminateVisibility(false);
         
         // Clear list for new batch.
-        //mListAdapter.removeObserver();
-        //mListAdapter.clear();
-        if(mListAdapter == null){
+        mListAdapter.removeObserver();
+        mListAdapter.clear();
+        //if(mListAdapter == null){
             mListAdapter = new SeparatedListAdapter(this);
-        }
+        //}
         
         if(events != null){
             Group<RecommendMsg> recommends = filterEventsFromJiepang(events);
@@ -424,6 +430,9 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         }
         
         getListView().setAdapter(mListAdapter);
+        //-1 footerview
+        getListView().setSelection(mStateHolder.getCurrentListItem()-2);
+        //getListView().setSelection(3);
     }
     
     /**
@@ -537,6 +546,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
     private static class StateHolder {
         private Group<RecommendMsg> mRecommends;
         private int mCurrentPage;
+        private int mCurrentListItem;
         private int mSortMethod;
         private boolean mRanOnce;
         private boolean mIsRunningTask;
@@ -547,8 +557,19 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
             mIsRunningTask = false; 
             mRecommends = new Group<RecommendMsg>();
             mCurrentPage = 0;
+            mCurrentListItem = 0;
         }
         
+        /**
+         * @param count
+         */
+        public void setCurrentListItem(int count) {
+            mCurrentListItem = count;
+        }
+        public int getCurrentListItem() {
+            return mCurrentListItem;
+        }
+
         public int getSortMethod() {
             return mSortMethod;
         }

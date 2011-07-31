@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package com.liangshan.jianjian.android;
+
+import android.app.Activity;
+
+/**
+ * @author jornel
+ *
+ */
+public class RecommendMsgActivity extends Activity {
+
+}
