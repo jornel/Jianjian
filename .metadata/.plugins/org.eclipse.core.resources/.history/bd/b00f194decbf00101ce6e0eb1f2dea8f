@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent"
-  android:orientation="vertical"
-  android:background="@drawable/listview_item_manual" 
-  >
-
-  <LinearLayout 
+  android:background="@drawable/listview_item_manual">
+  
+    <LinearLayout 
     android:layout_height="wrap_content" 
     android:background="@color/blue_start" 
     android:paddingBottom="10dip" 
@@ -43,36 +42,7 @@
       android:maxLines="1"
       android:textAppearance="@style/TextViewStyleUserDetailsActivityTitle" />  
      
-     <TextView 
-       android:id="@+id/userDetailsActivityHometownOrLastSeen" 
-       android:layout_width="fill_parent" 
-       android:layout_height="wrap_content"
-       android:text="Last Seen"
-       android:singleLine="true"
-       android:maxLines="1"
-       android:textAppearance="@style/TextViewStyleUserDetailsActivityLastSeen" />
     </LinearLayout>
   </LinearLayout>
-
-  <LinearLayout 
-    android:layout_width="fill_parent" 
-    android:layout_height="8dip"
-    android:background="@color/color_bright_green" >
-  </LinearLayout>
-  <LinearLayout
-    android:id="@+id/userActivityDetailsProgress"
-    android:layout_width="fill_parent" 
-    android:layout_height="fill_parent"
-    android:gravity="center" android:visibility="gone">
     
-    <ProgressBar
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content" />
-        
-  </LinearLayout>
-  
-  <ScrollView
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
-  </ScrollView>  
 </LinearLayout>

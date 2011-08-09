@@ -223,10 +223,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int venue_none=0x7f020035;
     }
     public static final class id {
-        public static final int ButtonArea=0x7f08002d;
-        public static final int camerabutton=0x7f08002f;
-        public static final int cancelbutton=0x7f080033;
-        public static final int confirmbutton=0x7f080032;
+        public static final int ButtonArea=0x7f080031;
+        public static final int camerabutton=0x7f080033;
+        public static final int cancelbutton=0x7f080037;
+        public static final int confirmbutton=0x7f080036;
         public static final int currencySpinner=0x7f08001b;
         public static final int currencyText=0x7f080020;
         public static final int emptyProgress=0x7f080000;
@@ -238,10 +238,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int friendsActivityEmptyImageView=0x7f080003;
         public static final int friendsActivityEmptyInner=0x7f080002;
         public static final int friendsActivityEmptyTextView=0x7f080004;
-        public static final int gallarybutton=0x7f080030;
+        public static final int gallarybutton=0x7f080034;
         public static final int header=0x7f080009;
         public static final int infoLabel=0x7f080013;
-        public static final int ivIcon=0x7f08002a;
+        public static final int ivIcon=0x7f08002e;
         public static final int list_header_title=0x7f080007;
         public static final int listview_item=0x7f080055;
         public static final int loadableListHolder=0x7f08000a;
@@ -253,8 +253,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int passwordEditText=0x7f08000d;
         public static final int phoneEditText=0x7f08000c;
         public static final int photo=0x7f080023;
-        public static final int photoImage=0x7f080031;
-        public static final int photoframeText=0x7f08002e;
+        public static final int photoImage=0x7f080035;
+        public static final int photoframeText=0x7f080032;
         public static final int pickupVenueIcon=0x7f080016;
         public static final int pickupVenueLayout=0x7f080015;
         public static final int pickupVenueTextView=0x7f080017;
@@ -270,18 +270,18 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int secondLine=0x7f080026;
         public static final int segmented=0x7f08000b;
         public static final int tabBackground=0x7f080010;
-        public static final int tabMainNav=0x7f080029;
+        public static final int tabMainNav=0x7f08002d;
         public static final int takePhotoImgButton=0x7f08001e;
         public static final int thirdLine=0x7f080027;
         public static final int timeTextView=0x7f080028;
-        public static final int titleBackground=0x7f08002c;
+        public static final int titleBackground=0x7f080030;
         public static final int titlebar=0x7f080012;
-        public static final int tvTitle=0x7f08002b;
-        public static final int userActivityDetailsProgress=0x7f080038;
+        public static final int tvTitle=0x7f08002f;
+        public static final int userActivityDetailsProgress=0x7f08002c;
         public static final int userDetailsActivityAddFriends=0x7f080046;
         public static final int userDetailsActivityAddFriendsChevron=0x7f080048;
         public static final int userDetailsActivityAddFriendsText=0x7f080047;
-        public static final int userDetailsActivityFriendButton=0x7f080037;
+        public static final int userDetailsActivityFriendButton=0x7f080038;
         public static final int userDetailsActivityFriends=0x7f080043;
         public static final int userDetailsActivityFriendsChevron=0x7f080045;
         public static final int userDetailsActivityFriendsText=0x7f080044;
@@ -295,9 +295,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int userDetailsActivityGeneralPointsIcon=0x7f080041;
         public static final int userDetailsActivityGeneralPointsTitle=0x7f080040;
         public static final int userDetailsActivityGeneralPointsValue=0x7f080042;
-        public static final int userDetailsActivityHometownOrLastSeen=0x7f080036;
-        public static final int userDetailsActivityPhoto=0x7f080034;
-        public static final int userDetailsActivityUsername=0x7f080035;
+        public static final int userDetailsActivityHometownOrLastSeen=0x7f08002b;
+        public static final int userDetailsActivityPhoto=0x7f080029;
+        public static final int userDetailsActivityUsername=0x7f08002a;
         public static final int vacantText=0x7f080021;
         public static final int venueMorePickerName=0x7f080052;
         public static final int venueMoreShow=0x7f080049;

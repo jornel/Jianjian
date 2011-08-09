@@ -534,3 +534,25 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86 -product org.eclipse.epp
 
 !ENTRY org.eclipse.core.net 1 0 2011-07-31 09:01:10.495
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2011-08-06 12:59:03.312 -----------------------------------------------
+eclipse.buildId=I20100608-0911
+java.version=1.6.0_26
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/jornel/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -product org.eclipse.epp.package.java.product -keyring /Users/jornel/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2011-08-06 12:59:32.018
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2011-08-06 13:21:58.896
+!MESSAGE AndroidManifest: Ignoring unknown 'TextVie' XML element
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2011-08-06 13:21:59.054
+!MESSAGE AndroidManifest: Ignoring unknown 'TextV' XML element
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2011-08-06 13:21:59.221
+!MESSAGE AndroidManifest: Ignoring unknown 'Tex' XML element
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2011-08-06 13:21:59.384
+!MESSAGE AndroidManifest: Ignoring unknown 'T' XML element

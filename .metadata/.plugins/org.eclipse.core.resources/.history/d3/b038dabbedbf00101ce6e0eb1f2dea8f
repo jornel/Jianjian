@@ -51,28 +51,13 @@
        android:singleLine="true"
        android:maxLines="1"
        android:textAppearance="@style/TextViewStyleUserDetailsActivityLastSeen" />
+       
+     <Button
+       android:id="@+id/userDetailsActivityFriendButton" 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:text="ADD AS FRIEND"
+       style="@style/friendButton"/>
     </LinearLayout>
   </LinearLayout>
-
-  <LinearLayout 
-    android:layout_width="fill_parent" 
-    android:layout_height="8dip"
-    android:background="@color/color_bright_green" >
-  </LinearLayout>
-  <LinearLayout
-    android:id="@+id/userActivityDetailsProgress"
-    android:layout_width="fill_parent" 
-    android:layout_height="fill_parent"
-    android:gravity="center" android:visibility="gone">
-    
-    <ProgressBar
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content" />
-        
-  </LinearLayout>
-  
-  <ScrollView
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
-  </ScrollView>  
 </LinearLayout>
