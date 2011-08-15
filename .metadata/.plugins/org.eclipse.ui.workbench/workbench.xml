@@ -4,8 +4,8 @@
 <window height="705" width="1257" x="8" y="22">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="org.eclipse.debug.ui.DebugView"/>
-<orientation position="512" view="org.eclipse.jdt.ui.SourceView"/>
 <orientation position="512" view="org.eclipse.ui.views.ContentOutline"/>
+<orientation position="512" view="org.eclipse.jdt.ui.SourceView"/>
 </fastViewData>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -19,7 +19,7 @@
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="100" y="22"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="62" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="84" y="22"/>
-<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="54" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="120" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="54" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
@@ -50,7 +50,6 @@
 <part id="6"/>
 <part id="7"/>
 <part id="8"/>
-<part id="9"/>
 </presentation>
 </folder>
 </info>
@@ -78,15 +77,12 @@
 <editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="venue_activity.xml" partName="venue_activity.xml" path="/Users/jornel/project/four2011522/foursquared/main/res/layout/venue_activity.xml" title="venue_activity.xml" tooltip="foursquared2/res/layout/venue_activity.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/foursquared2/res/layout/venue_activity.xml"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RecommendMsgActivity.java" partName="RecommendMsgActivity.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/RecommendMsgActivity.java" title="RecommendMsgActivity.java" tooltip="android/src/com/liangshan/jianjian/android/RecommendMsgActivity.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RecommendMsgActivity.java" partName="RecommendMsgActivity.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/RecommendMsgActivity.java" title="RecommendMsgActivity.java" tooltip="android/src/com/liangshan/jianjian/android/RecommendMsgActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/RecommendMsgActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="51" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1138" selectionTopPixel="244"/>
 </editor>
-<editor activePart="true" focus="true" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="recommendmsg_activity.xml" partName="recommendmsg_activity.xml" path="/Users/jornel/project/jianjian/android/res/layout/recommendmsg_activity.xml" title="recommendmsg_activity.xml" tooltip="android/res/layout/recommendmsg_activity.xml" workbook="DefaultEditorWorkbook">
+<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="recommendmsg_activity.xml" partName="recommendmsg_activity.xml" path="/Users/jornel/project/jianjian/android/res/layout/recommendmsg_activity.xml" title="recommendmsg_activity.xml" tooltip="android/res/layout/recommendmsg_activity.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/res/layout/recommendmsg_activity.xml"/>
-</editor>
-<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="recommend_it_activity.xml" partName="recommend_it_activity.xml" path="/Users/jornel/project/jianjian/android/res/layout/recommend_it_activity.xml" title="recommend_it_activity.xml" tooltip="android/res/layout/recommend_it_activity.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/res/layout/recommend_it_activity.xml"/>
 </editor>
 <editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="user_details_activity.xml" partName="user_details_activity.xml" path="/Users/jornel/project/jianjian/android/res/layout/user_details_activity.xml" title="user_details_activity.xml" tooltip="android/res/layout/user_details_activity.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/res/layout/user_details_activity.xml"/>
@@ -192,7 +188,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="com.android.ide.eclipse.editors.layout.LayoutEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -285,8 +281,8 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.25601926" ratioLeft="319" ratioRight="927" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.61750406" ratioLeft="381" ratioRight="236" relationship="4" relative="org.eclipse.ui.editorss">
+<info part="org.eclipse.ui.editorss" ratio="0.19422151" ratioLeft="242" ratioRight="1004" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.72123176" ratioLeft="445" ratioRight="172" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.views.PropertySheet" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
@@ -524,83 +520,75 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared2/src/com/joelapenna/foursquared/VenueActivity.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/RecommendMsgActivity.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/android/res/layout/recommendmsg_activity.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/android/res/layout/take_photo_activity.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/android/res/layout/friends_list_activity.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/android/res/layout/loadable_list_activity.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/android/res/layout/recommend_it_activity.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/RecommendMsgActivity.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/android/res/layout/user_details_activity.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" path="/android/res/drawable/listview_item_manual.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/android/res/layout/recommend_it_activity.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/RecommendMsgActivity.java"/>
 </editors>
-<item historyLabel="RecommendMsgActivity.java" index="1">
-<position info="not_deleted" x="1120" y="0"/>
-</item>
-<item historyLabel="VenueActivity.java" index="0">
-<position info="not_deleted" x="4939" y="40"/>
-</item>
-<item historyLabel="RecommendMsgActivity.java" index="1">
-<position info="not_deleted" x="1006" y="0"/>
-</item>
-<item historyLabel="VenueActivity.java" index="0">
-<position info="not_deleted" x="4939" y="40"/>
-</item>
-<item historyLabel="RecommendMsgActivity.java" index="1">
+<item historyLabel="loadable_list_activity.xml" index="3"/>
+<item historyLabel="recommend_it_activity.xml" index="4"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="take_photo_activity.xml" index="2"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="RecommendMsgActivity.java" index="0">
 <position info="not_deleted" x="1004" y="0"/>
 </item>
-<item historyLabel="recommendmsg_activity.xml" index="2"/>
-<item historyLabel="take_photo_activity.xml" index="3"/>
-<item historyLabel="recommendmsg_activity.xml" index="2"/>
-<item historyLabel="take_photo_activity.xml" index="3"/>
-<item historyLabel="recommendmsg_activity.xml" index="2"/>
-<item historyLabel="friends_list_activity.xml" index="4"/>
-<item historyLabel="loadable_list_activity.xml" index="5"/>
-<item historyLabel="recommend_it_activity.xml" index="6"/>
-<item historyLabel="loadable_list_activity.xml" index="5"/>
-<item historyLabel="recommend_it_activity.xml" index="6"/>
-<item historyLabel="recommendmsg_activity.xml" index="2"/>
-<item historyLabel="take_photo_activity.xml" index="3"/>
-<item historyLabel="recommendmsg_activity.xml" index="2"/>
-<item historyLabel="RecommendMsgActivity.java" index="1">
-<position info="not_deleted" x="1004" y="0"/>
-</item>
-<item historyLabel="recommendmsg_activity.xml" index="2"/>
-<item historyLabel="RecommendMsgActivity.java" index="1">
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="RecommendMsgActivity.java" index="0">
 <position info="not_deleted" x="51" y="0"/>
 </item>
-<item historyLabel="recommendmsg_activity.xml" index="2"/>
-<item historyLabel="recommend_it_activity.xml" index="6"/>
-<item historyLabel="recommendmsg_activity.xml" index="2"/>
-<item historyLabel="RecommendMsgActivity.java" index="7">
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="recommend_it_activity.xml" index="4"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="RecommendMsgActivity.java" index="5">
 <position info="not_deleted" x="51" y="0"/>
 </item>
-<item historyLabel="recommendmsg_activity.xml" index="2"/>
-<item historyLabel="user_details_activity.xml" index="8"/>
-<item historyLabel="recommendmsg_activity.xml" index="2"/>
-<item historyLabel="user_details_activity.xml" index="8"/>
-<item historyLabel="recommendmsg_activity.xml" index="2"/>
-<item historyLabel="user_details_activity.xml" index="8"/>
-<item historyLabel="recommendmsg_activity.xml" index="2"/>
-<item historyLabel="listview_item_manual.xml" index="9"/>
-<item historyLabel="recommendmsg_activity.xml" index="2"/>
-<item historyLabel="user_details_activity.xml" index="8"/>
-<item historyLabel="recommendmsg_activity.xml" index="2"/>
-<item historyLabel="user_details_activity.xml" index="8"/>
-<item historyLabel="recommendmsg_activity.xml" index="2"/>
-<item historyLabel="user_details_activity.xml" index="8"/>
-<item historyLabel="recommendmsg_activity.xml" index="2"/>
-<item historyLabel="listview_item_manual.xml" index="9"/>
-<item historyLabel="recommendmsg_activity.xml" index="2"/>
-<item historyLabel="user_details_activity.xml" index="8"/>
-<item historyLabel="recommendmsg_activity.xml" index="2"/>
-<item historyLabel="user_details_activity.xml" index="8"/>
-<item historyLabel="recommendmsg_activity.xml" index="2"/>
-<item historyLabel="user_details_activity.xml" index="8"/>
-<item historyLabel="recommendmsg_activity.xml" index="2"/>
-<item historyLabel="user_details_activity.xml" index="8"/>
-<item active="true" historyLabel="recommendmsg_activity.xml" index="2"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="user_details_activity.xml" index="6"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="user_details_activity.xml" index="6"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="user_details_activity.xml" index="6"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="listview_item_manual.xml" index="7"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="user_details_activity.xml" index="6"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="user_details_activity.xml" index="6"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="user_details_activity.xml" index="6"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="listview_item_manual.xml" index="7"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="user_details_activity.xml" index="6"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="user_details_activity.xml" index="6"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="user_details_activity.xml" index="6"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="user_details_activity.xml" index="6"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="recommend_it_activity.xml" index="8"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="recommend_it_activity.xml" index="8"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="recommend_it_activity.xml" index="8"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="recommend_it_activity.xml" index="8"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="recommend_it_activity.xml" index="8"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item historyLabel="recommend_it_activity.xml" index="8"/>
+<item historyLabel="recommendmsg_activity.xml" index="1"/>
+<item active="true" historyLabel="RecommendMsgActivity.java" index="9">
+<position info="not_deleted" x="51" y="0"/>
+</item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
