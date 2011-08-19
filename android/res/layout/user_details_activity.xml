@@ -195,6 +195,38 @@
           </RelativeLayout>
           
       </LinearLayout>
+      
+      <RelativeLayout 
+        android:id="@+id/userDetailsActivityRecommends"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content"
+        android:padding="7dip"
+        android:visibility="gone"
+        android:background="@drawable/listview_item_manual" >
+      
+        <TextView 
+          android:id="@+id/userDetailsActivityRecommendsText"
+          android:layout_width="wrap_content" 
+          android:layout_height="wrap_content"
+          android:text="478 Check-ins"
+          android:paddingTop="7dip"
+          android:paddingBottom="7dip"
+          android:textAppearance="@style/TextViewStyleVenueActivityBold"
+          android:layout_alignParentLeft="true"
+          android:layout_alignParentTop="true" />
+
+        <ImageView
+          android:id="@+id/userDetailsActivityRecommendsChevron"
+          android:layout_width="9dip"
+          android:layout_height="13dip"
+          android:src="@drawable/arrow_grey"
+          android:scaleType="fitCenter"  
+          android:layout_marginLeft="3dip"
+          android:layout_marginRight="3dip"
+          android:layout_centerVertical="true"
+          android:layout_alignParentRight="true" />
+
+      </RelativeLayout>
         
       <RelativeLayout android:id="@+id/userDetailsActivityFriends"
 	      android:layout_width="fill_parent" 

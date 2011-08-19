@@ -216,6 +216,9 @@ public class UserDetailsActivity extends Activity {
         View viewFriends = findViewById(R.id.userDetailsActivityFriends);
         TextView tvFriends = (TextView)findViewById(R.id.userDetailsActivityFriendsText);
         ImageView ivFriends = (ImageView)findViewById(R.id.userDetailsActivityFriendsChevron);
+        View viewRecommends = findViewById(R.id.userDetailsActivityRecommends);
+        TextView tvRecommends = (TextView)findViewById(R.id.userDetailsActivityRecommendsText);
+        ImageView ivRecommendsChevron = (ImageView)findViewById(R.id.userDetailsActivityRecommendsChevron);
         
         
         //set the initial value
@@ -229,6 +232,7 @@ public class UserDetailsActivity extends Activity {
         ivBadgesChevron.setVisibility(View.INVISIBLE);
         btnFriend.setVisibility(View.INVISIBLE);
         
+        viewRecommends.setFocusable(false);
         viewAddFriends.setFocusable(false);
         viewFriends.setFocusable(false);
         viewAddFriends.setVisibility(View.GONE);
