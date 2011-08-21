@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package com.liangshan.jianjian.android;
+
+import com.joelapenna.foursquared.Foursquared;
+import com.liangshan.jianjian.android.app.LoadableListActivity;
+
+/**
+ * @author jornel
+ *
+ */
+public class UserHistoryActivity extends LoadableListActivity {
+    static final String TAG = "UserHistoryActivity";
+
+    public static final String EXTRA_USER_NAME = Jianjianroid.PACKAGE_NAME
+            + ".UserHistoryActivity.EXTRA_USER_NAME";
+
+}

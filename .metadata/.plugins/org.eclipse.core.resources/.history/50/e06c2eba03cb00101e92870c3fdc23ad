@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+package com.liangshan.jianjian.android;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+
+import com.liangshan.jianjian.android.app.LoadableListActivity;
+
+/**
+ * @author jornel
+ *
+ */
+public class UserHistoryActivity extends LoadableListActivity {
+    static final String TAG = "UserHistoryActivity";
+
+    public static final String EXTRA_USER_NAME = Jianjianroid.PACKAGE_NAME
+            + ".UserHistoryActivity.EXTRA_USER_NAME";
+    
+    private BroadcastReceiver mLoggedOutReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            finish();
+        }
+    };
+
+}

@@ -237,8 +237,11 @@ public class UserDetailsActivity extends Activity {
         viewFriends.setFocusable(false);
         viewAddFriends.setVisibility(View.GONE);
         viewFriends.setVisibility(View.GONE);
+        viewRecommends.setVisibility(View.GONE);
         ivFriends.setVisibility(View.INVISIBLE);
+        ivRecommendsChevron.setVisibility(View.INVISIBLE);
         tvFriends.setText("");
+        tvRecommends.setText("");
 
         if (mStateHolder.getLoadType() >= LOAD_TYPE_USER_PARTIAL) { 
             User user = mStateHolder.getUser();
@@ -310,8 +313,24 @@ public class UserDetailsActivity extends Activity {
                 // The rest of the items depend on if we're viewing ourselves or not.
                 if (mStateHolder.getIsLoggedInUser()) {
                     viewAddFriends.setVisibility(View.VISIBLE);
+                    viewRecommends.setVisibility(View.VISIBLE);
                     
+                    //show the own number of recommends
                     
+                    tvRecommends.setText(getResources().getString(
+                                    R.string.user_details_activity_recommends_text, user.getRecMsgCount()));
+                    if (user.getRecMsgCount() > 0) {
+                        viewRecommends.setOnClickListener(new OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                               startRecommendsActivity();
+                            }
+                        });
+                        viewRecommends.setFocusable(true);
+                        ivRecommendsChevron.setVisibility(View.VISIBLE);
+                    }
+                    
+                    //show the own friends
                     if(user.getFriendCount() > 0){
                         viewFriends.setVisibility(View.VISIBLE); 
                         tvFriends.setText(
@@ -458,6 +477,16 @@ public class UserDetailsActivity extends Activity {
         } else {
             ivPhoto.setImageResource(R.drawable.blank_girl);
         }
+    }
+    
+    /**
+     * 
+     */
+    private void startRecommendsActivity() {
+        
+        Intent intent = new Intent(UserDetailsActivity.this, UserHistoryActivity.class);
+        intent.putExtra(UserHistoryActivity.EXTRA_USER_NAME, mStateHolder.getUser().getUsername());
+        startActivity(intent); 
     }
     
     /**

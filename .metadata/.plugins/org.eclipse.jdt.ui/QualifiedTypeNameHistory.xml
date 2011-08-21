@@ -53,11 +53,11 @@
 <fullyQualifiedTypeName name="com.liangshan.jianjian.types.Group"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.widget.EventListAdapter"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.general.Jianjian"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.types.RecommendMsg"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.string"/>
 <fullyQualifiedTypeName name="android.content.res.Resources"/>
 <fullyQualifiedTypeName name="android.text.format.DateFormat"/>
 <fullyQualifiedTypeName name="java.text.DateFormat"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.drawable"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R"/>
 </qualifiedTypeNameHistroy>

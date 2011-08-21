@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package com.liangshan.jianjian.android;
+
+import com.liangshan.jianjian.android.app.LoadableListActivity;
+
+/**
+ * @author jornel
+ *
+ */
+public class UserHistoryActivity extends LoadableListActivity {
+
+}

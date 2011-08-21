@@ -63,6 +63,9 @@ public class UserParser extends AbstractParser<User> {
         if (json.has("badges_num")) {
             user.setBadgesCount(json.getInt("badges_num"));
         }
+        if (json.has("checkin_num")) {
+            user.setRecMsgCount(json.getInt("checkin_num"));
+        }
         
         
  
