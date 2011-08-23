@@ -243,7 +243,7 @@ public class UserDetailsActivity extends Activity {
         tvFriends.setText("");
         tvRecommends.setText("");
 
-        if (mStateHolder.getLoadType() >= LOAD_TYPE_USER_PARTIAL) { 
+        if (mStateHolder.getLoadType() >= LOAD_TYPE_USER_PARTIAL) { // full load and partial load
             User user = mStateHolder.getUser();
             ensureUiPhoto(user);
            
@@ -260,10 +260,10 @@ public class UserDetailsActivity extends Activity {
             if (mStateHolder.getIsLoggedInUser() || 
                     UserUtils.isFriend(user) || 
                     UserUtils.isFriendStatusPendingThem(user) ||
-                    UserUtils.isFriendStatusFollowingThem(user)) {
+                    UserUtils.isFriendStatusFollowingThem(user)) {//for the owner and friends, don't show the btn
                 
                      btnFriend.setVisibility(View.INVISIBLE);
-            }else if (UserUtils.isFriendStatusPendingYou(user)) {
+            }else if (UserUtils.isFriendStatusPendingYou(user)) {// show the comfirm btn for the request 
                 btnFriend.setVisibility(View.VISIBLE);
                 btnFriend.setText(getString(R.string.user_details_activity_friend_confirm));
                 btnFriend.setOnClickListener(new OnClickListener() {
@@ -272,7 +272,7 @@ public class UserDetailsActivity extends Activity {
                         mStateHolder.startTaskFriend(UserDetailsActivity.this, StateHolder.TASK_FRIEND_ACCEPT);
                     }
                 });
-            }else {
+            }else {// show the btn to add the friend
                 btnFriend.setVisibility(View.VISIBLE);
                 btnFriend.setText(getString(R.string.user_details_activity_friend_add));
                 btnFriend.setOnClickListener(new OnClickListener() {
@@ -284,13 +284,13 @@ public class UserDetailsActivity extends Activity {
                 });
             }
             
-            if (mStateHolder.getLoadType() >= LOAD_TYPE_USER_FULL) {
+            if (mStateHolder.getLoadType() >= LOAD_TYPE_USER_FULL) {//just for the full load(most cases are full in jianjian)
                 
                 viewProgressBar.setVisibility(View.GONE);
                 tvBadges.setText(String.valueOf(user.getBadgesCount()));
                 tvPoints.setText(String.valueOf(user.getPoints()));
                 
-                if (user.getBadgesCount() > 0) {
+                if (user.getBadgesCount() > 0) {// show the badges, no sense in jianjian
                     viewBadges.setOnClickListener(new OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -303,7 +303,7 @@ public class UserDetailsActivity extends Activity {
                     
                 }
                 
-                if (user.getPoints() >= 0) {
+                if (user.getPoints() >= 0) { // show the points, a little sense in jianjian
                     
                     viewPoints.setFocusable(true);
                     
