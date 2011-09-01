@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="25" version="2.0">
+<workbench progressCount="13" version="2.0">
 <workbenchAdvisor/>
 <window height="705" width="1257" x="8" y="22">
 <fastViewData fastViewLocation="1024">
@@ -28,14 +28,14 @@
 <coolItem id="com.android.ide.eclipse.editors.layout.LayoutEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.browser.editor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
-<page aggregateWorkingSetId="Aggregate for window 1292594530786" focus="true" label="Workspace - Java">
+<page aggregateWorkingSetId="Aggregate for window 1292594530786" focus="true" label="Workspace - Debug">
 <editors>
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
@@ -48,44 +48,47 @@
 <part id="4"/>
 <part id="5"/>
 <part id="6"/>
+<part id="7"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FriendsActivity.java" partName="FriendsActivity.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/FriendsActivity.java" title="FriendsActivity.java" tooltip="android/src/com/liangshan/jianjian/android/FriendsActivity.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/FriendsActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="19957" selectionTopPixel="7193"/>
-</editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserDetailsActivity.java" partName="UserDetailsActivity.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/UserDetailsActivity.java" title="UserDetailsActivity.java" tooltip="android/src/com/liangshan/jianjian/android/UserDetailsActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/UserDetailsActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="20316" selectionTopPixel="7188"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserDetailsActivity.java" partName="UserDetailsActivity.java" path="/Users/jornel/project/android/foursquare/foursquared/main/src/com/joelapenna/foursquared/UserDetailsActivity.java" title="UserDetailsActivity.java" tooltip="foursquared1/src/com/joelapenna/foursquared/UserDetailsActivity.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/foursquared1/src/com/joelapenna/foursquared/UserDetailsActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="19" selectionOffset="27000" selectionTopPixel="7822"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserHistoryActivity.java" partName="UserHistoryActivity.java" path="/Users/jornel/project/android/foursquare/foursquared/main/src/com/joelapenna/foursquared/UserHistoryActivity.java" title="UserHistoryActivity.java" tooltip="foursquared1/src/com/joelapenna/foursquared/UserHistoryActivity.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/foursquared1/src/com/joelapenna/foursquared/UserHistoryActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="18" selectionOffset="1290" selectionTopPixel="204"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="23406" selectionTopPixel="8445"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserHistoryActivity.java" partName="UserHistoryActivity.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/UserHistoryActivity.java" title="UserHistoryActivity.java" tooltip="android/src/com/liangshan/jianjian/android/UserHistoryActivity.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/UserHistoryActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1462" selectionTopPixel="424"/>
+<editorState selectionHorizontalPixel="0" selectionLength="65" selectionOffset="4876" selectionTopPixel="2220"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RecommendListAdapter.java" partName="RecommendListAdapter.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/android/widget/RecommendListAdapter.java" title="RecommendListAdapter.java" tooltip="android/src/com/liangshan/jianjian/android/widget/RecommendListAdapter.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/android/widget/RecommendListAdapter.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4" selectionTopPixel="10"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Jianjian.java" partName="Jianjian.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/general/Jianjian.java" title="Jianjian.java" tooltip="android/src/com/liangshan/jianjian/general/Jianjian.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/general/Jianjian.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="8" selectionOffset="2459" selectionTopPixel="885"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HistoryListAdapter.java" partName="HistoryListAdapter.java" path="/Users/jornel/project/android/foursquare/foursquared/main/src/com/joelapenna/foursquared/widget/HistoryListAdapter.java" title="HistoryListAdapter.java" tooltip="foursquared1/src/com/joelapenna/foursquared/widget/HistoryListAdapter.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/foursquared1/src/com/joelapenna/foursquared/widget/HistoryListAdapter.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="18" selectionOffset="864" selectionTopPixel="368"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JianjianHttpApiV1.java" partName="JianjianHttpApiV1.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java" title="JianjianHttpApiV1.java" tooltip="android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8760" selectionTopPixel="2688"/>
+</editor>
+<editor id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="AndroidManifest.xml" partName="AndroidManifest.xml" path="/Users/jornel/project/jianjian/android/AndroidManifest.xml" title="AndroidManifest.xml" tooltip="android/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/AndroidManifest.xml"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" partName="foursquared1 Manifest" path="/Users/jornel/project/android/foursquare/foursquared/main/AndroidManifest.xml" title="foursquared1 Manifest" tooltip="foursquared1/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/foursquared1/AndroidManifest.xml"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AbstractHttpApi.java" partName="AbstractHttpApi.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/http/AbstractHttpApi.java" title="AbstractHttpApi.java" tooltip="android/src/com/liangshan/jianjian/http/AbstractHttpApi.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/http/AbstractHttpApi.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6409" selectionTopPixel="1569"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JSONUtils.java" partName="JSONUtils.java" path="/Users/jornel/project/jianjian/android/src/com/liangshan/jianjian/util/JSONUtils.java" title="JSONUtils.java" tooltip="android/src/com/liangshan/jianjian/util/JSONUtils.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/android/src/com/liangshan/jianjian/util/JSONUtils.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1601" selectionTopPixel="464"/>
 </editor>
 </editors>
 <views>
 <view id="org.eclipse.search.ui.views.SearchView" partName="Search">
 <viewState isPinned="false">
-<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
 <view IMemento.internal.id="org.eclipse.jdt.ui.JavaSearchResultPage" org.eclipse.jdt.search.resultpage.grouping="3" org.eclipse.jdt.search.resultpage.limit="1000" org.eclipse.jdt.search.resultpage.limit_enabled="TRUE" org.eclipse.jdt.search.resultpage.sorting="1" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2"/>
+<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
 </viewState>
 </view>
 <view id="com.android.ide.eclipse.ddms.views.DeviceView" partName="Devices">
@@ -132,7 +135,7 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<columnWidths org.eclipse.ui.ide.locationField="0" org.eclipse.ui.ide.markerType="0" org.eclipse.ui.ide.pathField="0" org.eclipse.ui.ide.resourceField="0" org.eclipse.ui.ide.severityAndDescriptionField="0"/>
+<columnWidths org.eclipse.ui.ide.locationField="84" org.eclipse.ui.ide.markerType="114" org.eclipse.ui.ide.pathField="144" org.eclipse.ui.ide.resourceField="114" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
@@ -181,7 +184,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.debug.ui.DebugView" activePerspective="org.eclipse.debug.ui.DebugPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -222,7 +225,7 @@
 <show_view_action id="org.eclipse.pde.runtime.LogView"/>
 <show_view_action id="org.eclipse.ant.ui.views.AntView"/>
 <show_view_action id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
-<show_in_time id="org.eclipse.jdt.ui.PackageExplorer" time="1313827527845"/>
+<show_in_time id="org.eclipse.jdt.ui.PackageExplorer" time="1314861657583"/>
 <new_wizard_action id="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
 <new_wizard_action id="org.eclipse.jdt.ui.wizards.NewPackageCreationWizard"/>
 <new_wizard_action id="org.eclipse.jdt.ui.wizards.NewClassCreationWizard"/>
@@ -245,10 +248,10 @@
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <view id="org.eclipse.jdt.ui.PackageExplorer"/>
-<view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.ui.views.PropertySheet"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViews>
 <view id="org.eclipse.jdt.ui.SourceView" ratio="0.3"/>
 </fastViews>
@@ -275,9 +278,9 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.217496" ratioLeft="271" ratioRight="975" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.72123176" ratioLeft="445" ratioRight="172" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<info part="org.eclipse.ui.editorss" ratio="0.26003212" ratioLeft="324" ratioRight="922" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.7698541" ratioLeft="475" ratioRight="142" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.PropertySheet" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
@@ -406,7 +409,7 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1475cbd" ratio="0.5" ratioLeft="622" ratioRight="622" relationship="2" relative="org.eclipse.debug.internal.ui.ConsoleFolderView">
-<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.search.ui.views.SearchView" appearance="2" expanded="2">
 <page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -536,164 +539,163 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/UserDetailsActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquared/UserDetailsActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquared/UserHistoryActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquared/app/LoadableListActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/app/LoadableListActivity.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/UserHistoryActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/RecommendItActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/foursquared1/src/com/joelapenna/foursquared/widget/HistoryListAdapter.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/widget/RecommendListAdapter.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" path="/foursquared1/res/values/strings.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/general/JianjianHttpApiV1.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/android/UserDetailsActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" path="/android/AndroidManifest.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/http/HttpApi.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/http/HttpApiWithBasicAuth.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/http/AbstractHttpApi.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/util/JSONUtils.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/android/src/com/liangshan/jianjian/general/Jianjian.java"/>
 </editors>
-<item historyLabel="UserDetailsActivity.java" index="0">
-<position info="not_deleted" x="13924" y="0"/>
+<item historyLabel="HttpApi.java" index="4">
+<position info="not_deleted" x="667" y="13"/>
 </item>
-<item historyLabel="UserDetailsActivity.java" index="0">
-<position info="not_deleted" x="13622" y="23"/>
+<item historyLabel="HttpApiWithBasicAuth.java" index="5">
+<position info="not_deleted" x="2740" y="18"/>
 </item>
-<item historyLabel="UserDetailsActivity.java" index="0">
-<position info="not_deleted" x="17151" y="0"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="5695" y="18"/>
 </item>
-<item historyLabel="UserDetailsActivity.java" index="0">
-<position info="not_deleted" x="20620" y="20"/>
+<item historyLabel="JianjianHttpApiV1.java" index="1">
+<position info="not_deleted" x="8760" y="0"/>
 </item>
-<item historyLabel="UserDetailsActivity.java" index="0">
-<position info="not_deleted" x="20502" y="28"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6222" y="0"/>
 </item>
-<item historyLabel="UserDetailsActivity.java" index="0">
-<position info="not_deleted" x="20303" y="0"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6289" y="0"/>
 </item>
-<item historyLabel="UserDetailsActivity.java" index="1">
-<position info="not_deleted" x="26939" y="221"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6341" y="0"/>
 </item>
-<item historyLabel="UserDetailsActivity.java" index="0">
-<position info="not_deleted" x="20303" y="0"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6442" y="7"/>
 </item>
-<item historyLabel="UserDetailsActivity.java" index="0">
-<position info="not_deleted" x="145" y="0"/>
+<item historyLabel="JSONUtils.java" index="7">
+<position info="not_deleted" x="875" y="7"/>
 </item>
-<item historyLabel="UserDetailsActivity.java" index="1">
-<position info="not_deleted" x="27000" y="19"/>
+<item historyLabel="JSONUtils.java" index="7">
+<position info="not_deleted" x="1601" y="0"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="2">
-<position info="not_deleted" x="1030" y="20"/>
+<item historyLabel="JSONUtils.java" index="7">
+<position info="not_deleted" x="1777" y="0"/>
 </item>
-<item historyLabel="LoadableListActivity.java" index="3">
-<position info="not_deleted" x="558" y="0"/>
+<item historyLabel="JSONUtils.java" index="7">
+<position info="not_deleted" x="1832" y="0"/>
 </item>
-<item historyLabel="LoadableListActivity.java" index="4">
-<position info="not_deleted" x="1129" y="0"/>
+<item historyLabel="HttpApiWithBasicAuth.java" index="5">
+<position info="not_deleted" x="2740" y="18"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="2">
-<position info="not_deleted" x="1030" y="20"/>
+<item historyLabel="JSONUtils.java" index="7">
+<position info="not_deleted" x="1832" y="0"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="5">
-<position info="not_deleted" x="1064" y="0"/>
+<item historyLabel="HttpApi.java" index="4">
+<position info="not_deleted" x="667" y="13"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="2">
-<position info="not_deleted" x="1053" y="181"/>
+<item historyLabel="JSONUtils.java" index="7">
+<position info="not_deleted" x="1832" y="0"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="5">
-<position info="not_deleted" x="52" y="0"/>
+<item historyLabel="JianjianHttpApiV1.java" index="1">
+<position info="not_deleted" x="5316" y="8"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="2">
-<position info="not_deleted" x="1329" y="197"/>
+<item historyLabel="Jianjian.java" index="8">
+<position info="not_deleted" x="2640" y="122"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="5">
-<position info="not_deleted" x="1064" y="0"/>
+<item historyLabel="Jianjian.java" index="8">
+<position info="not_deleted" x="2459" y="8"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="2">
-<position info="not_deleted" x="1528" y="217"/>
+<item historyLabel="Jianjian.java" index="8">
+<position info="not_deleted" x="2459" y="8"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="5">
-<position info="not_deleted" x="960" y="0"/>
+<item historyLabel="UserDetailsActivity.java" index="2">
+<position info="not_deleted" x="23406" y="0"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="2">
-<position info="not_deleted" x="1754" y="52"/>
+<item historyLabel="UserHistoryActivity.java" index="0">
+<position info="not_deleted" x="1775" y="0"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="5">
-<position info="not_deleted" x="960" y="0"/>
+<item historyLabel="Jianjian.java" index="8">
+<position info="not_deleted" x="2459" y="8"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="2">
-<position info="not_deleted" x="1754" y="52"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6442" y="7"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="5">
-<position info="not_deleted" x="221" y="0"/>
+<item historyLabel="AndroidManifest.xml" index="3"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6442" y="7"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="2">
-<position info="not_deleted" x="1754" y="52"/>
+<item historyLabel="JianjianHttpApiV1.java" index="1">
+<position info="not_deleted" x="8582" y="0"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="5">
-<position info="not_deleted" x="221" y="0"/>
+<item historyLabel="UserHistoryActivity.java" index="0">
+<position info="not_deleted" x="4876" y="65"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="2">
-<position info="not_deleted" x="2411" y="375"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6222" y="0"/>
 </item>
-<item historyLabel="LoadableListActivity.java" index="3">
-<position info="not_deleted" x="558" y="0"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6289" y="0"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="2">
-<position info="not_deleted" x="2411" y="375"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6341" y="0"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="5">
-<position info="not_deleted" x="1462" y="0"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6409" y="0"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="2">
-<position info="not_deleted" x="1819" y="8"/>
+<item historyLabel="JianjianHttpApiV1.java" index="1">
+<position info="not_deleted" x="8760" y="0"/>
 </item>
-<item historyLabel="UserDetailsActivity.java" index="1">
-<position info="not_deleted" x="27000" y="19"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6222" y="0"/>
 </item>
-<item historyLabel="RecommendItActivity.java" index="6">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6289" y="0"/>
 </item>
-<item historyLabel="UserDetailsActivity.java" index="1">
-<position info="not_deleted" x="27000" y="19"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6341" y="0"/>
 </item>
-<item historyLabel="UserDetailsActivity.java" index="0">
-<position info="not_deleted" x="20316" y="0"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6409" y="0"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="2">
-<position info="not_deleted" x="1290" y="18"/>
+<item historyLabel="JSONUtils.java" index="7">
+<position info="not_deleted" x="1601" y="0"/>
 </item>
-<item historyLabel="HistoryListAdapter.java" index="7">
-<position info="not_deleted" x="864" y="18"/>
+<item historyLabel="JSONUtils.java" index="7">
+<position info="not_deleted" x="1777" y="0"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="2">
-<position info="not_deleted" x="1290" y="18"/>
+<item historyLabel="JSONUtils.java" index="7">
+<position info="not_deleted" x="1832" y="0"/>
 </item>
-<item historyLabel="RecommendListAdapter.java" index="8">
-<position info="not_deleted" x="4" y="0"/>
+<item historyLabel="JianjianHttpApiV1.java" index="1">
+<position info="not_deleted" x="8579" y="0"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="2">
-<position info="not_deleted" x="1290" y="18"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6222" y="0"/>
 </item>
-<item historyLabel="RecommendListAdapter.java" index="8">
-<position info="not_deleted" x="4" y="0"/>
+<item historyLabel="JSONUtils.java" index="7">
+<position info="not_deleted" x="1601" y="0"/>
 </item>
-<item historyLabel="UserHistoryActivity.java" index="2">
-<position info="not_deleted" x="1290" y="18"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6222" y="0"/>
 </item>
-<item historyLabel="HistoryListAdapter.java" index="7">
-<position info="not_deleted" x="864" y="18"/>
+<item historyLabel="JianjianHttpApiV1.java" index="1">
+<position info="not_deleted" x="8760" y="0"/>
 </item>
-<item historyLabel="RecommendListAdapter.java" index="8">
-<position info="not_deleted" x="4" y="0"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6222" y="0"/>
 </item>
-<item historyLabel="HistoryListAdapter.java" index="7">
-<position info="not_deleted" x="864" y="18"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6289" y="0"/>
 </item>
-<item historyLabel="RecommendListAdapter.java" index="8">
-<position info="not_deleted" x="4" y="0"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6341" y="0"/>
 </item>
-<item historyLabel="strings.xml" index="9"/>
-<item historyLabel="RecommendListAdapter.java" index="8">
-<position info="not_deleted" x="4" y="0"/>
+<item historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6318" y="0"/>
 </item>
-<item active="true" historyLabel="HistoryListAdapter.java" index="7">
-<position info="not_deleted" x="864" y="18"/>
+<item active="true" historyLabel="AbstractHttpApi.java" index="6">
+<position info="not_deleted" x="6409" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -705,12 +707,13 @@
 <trimItem IMemento.internal.id="left"/>
 </trimArea>
 <trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@127a5a2"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@90b343"/>
 <trimItem IMemento.internal.id="org.eclipse.debug.internal.ui.ToolsFolderView"/>
 <trimItem IMemento.internal.id="org.eclipse.debug.internal.ui.ConsoleFolderView"/>
 <trimItem IMemento.internal.id="org.eclipse.debug.internal.ui.OutlineFolderView"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@127a5a2"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@1475cbd"/>
 </trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
@@ -724,50 +727,29 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HistoryListAdapter.java" tooltip="foursquared1/src/com/joelapenna/foursquared/widget/HistoryListAdapter.java">
-<persistable path="/foursquared1/src/com/joelapenna/foursquared/widget/HistoryListAdapter.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JSONUtils.java" tooltip="android/src/com/liangshan/jianjian/util/JSONUtils.java">
+<persistable path="/android/src/com/liangshan/jianjian/util/JSONUtils.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RecommendListAdapter.java" tooltip="android/src/com/liangshan/jianjian/android/widget/RecommendListAdapter.java">
-<persistable path="/android/src/com/liangshan/jianjian/android/widget/RecommendListAdapter.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AbstractHttpApi.java" tooltip="android/src/com/liangshan/jianjian/http/AbstractHttpApi.java">
+<persistable path="/android/src/com/liangshan/jianjian/http/AbstractHttpApi.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserHistoryActivity.java" tooltip="android/src/com/liangshan/jianjian/android/UserHistoryActivity.java">
-<persistable path="/android/src/com/liangshan/jianjian/android/UserHistoryActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HttpApiWithBasicAuth.java" tooltip="android/src/com/liangshan/jianjian/http/HttpApiWithBasicAuth.java">
+<persistable path="/android/src/com/liangshan/jianjian/http/HttpApiWithBasicAuth.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LoadableListActivity.java" tooltip="android/src/com/liangshan/jianjian/android/app/LoadableListActivity.java">
-<persistable path="/android/src/com/liangshan/jianjian/android/app/LoadableListActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HttpApi.java" tooltip="android/src/com/liangshan/jianjian/http/HttpApi.java">
+<persistable path="/android/src/com/liangshan/jianjian/http/HttpApi.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LoadableListActivity.java" tooltip="foursquared1/src/com/joelapenna/foursquared/app/LoadableListActivity.java">
-<persistable path="/foursquared1/src/com/joelapenna/foursquared/app/LoadableListActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="foursquared1/AndroidManifest.xml">
+<persistable path="/foursquared1/AndroidManifest.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserHistoryActivity.java" tooltip="foursquared1/src/com/joelapenna/foursquared/UserHistoryActivity.java">
-<persistable path="/foursquared1/src/com/joelapenna/foursquared/UserHistoryActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="AndroidManifest.xml" tooltip="android/AndroidManifest.xml">
+<persistable path="/android/AndroidManifest.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="strings.xml" tooltip="android/res/values/strings.xml">
-<persistable path="/android/res/values/strings.xml"/>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="ThreadGroup.class" tooltip="java.lang.ThreadGroup">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=ApiDemos/\/Users\/jornel\/develop\/android-sdk-mac_86\/platforms\/android-8\/android.jar&lt;java.lang(ThreadGroup.class"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="strings.xml" tooltip="foursquared1/res/values/strings.xml">
-<persistable path="/foursquared1/res/values/strings.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserParser.java" tooltip="android/src/com/liangshan/jianjian/parsers/json/UserParser.java">
-<persistable path="/android/src/com/liangshan/jianjian/parsers/json/UserParser.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="User.java" tooltip="android/src/com/liangshan/jianjian/types/User.java">
-<persistable path="/android/src/com/liangshan/jianjian/types/User.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Jianjian.java" tooltip="android/src/com/liangshan/jianjian/general/Jianjian.java">
-<persistable path="/android/src/com/liangshan/jianjian/general/Jianjian.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="user_details_activity.xml" tooltip="foursquared1/res/layout/user_details_activity.xml">
-<persistable path="/foursquared1/res/layout/user_details_activity.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserDetailsActivity.java" tooltip="foursquared1/src/com/joelapenna/foursquared/UserDetailsActivity.java">
-<persistable path="/foursquared1/src/com/joelapenna/foursquared/UserDetailsActivity.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserDetailsActivity.java" tooltip="android/src/com/liangshan/jianjian/android/UserDetailsActivity.java">
-<persistable path="/android/src/com/liangshan/jianjian/android/UserDetailsActivity.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="VenuePickerDialog.java" tooltip="android/src/com/liangshan/jianjian/android/VenuePickerDialog.java">
-<persistable path="/android/src/com/liangshan/jianjian/android/VenuePickerDialog.java"/>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="InvocationTargetException.class" tooltip="java.lang.reflect.InvocationTargetException">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=ApiDemos/\/Users\/jornel\/develop\/android-sdk-mac_86\/platforms\/android-8\/android.jar&lt;java.lang.reflect(InvocationTargetException.class"/>
 </file>
 </mruList>
 </workbench>

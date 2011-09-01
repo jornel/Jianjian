@@ -153,6 +153,18 @@ public class Jianjian {
     }
     
     /**
+     * @param string
+     * @param object
+     * @return
+     */
+    @V1
+    public Group<Event> history(String sinceid, int page) 
+            throws JianjianException, JianjianError, IOException{
+        return mJianjianV1.history(sinceid, page);
+
+    }
+    
+    /**
      * @param mUserId
      * @return
      */
@@ -225,6 +237,8 @@ public class Jianjian {
     public @interface V1 {
 
     }
+
+
 
 
 

@@ -74,8 +74,12 @@ public class JianjianHttpApiV1 {
     private static final String URL_API_CHECK_IN = "/statuses/checkin";
 
     private static final String URL_API_EVENT_LIST = "/events/list";
+    
+    private static final String URL_API_HISTORY_LIST = "/statuses/list";
 
     private static final String EVENT_LIST_PAGE_COUNT = "20";
+    
+    private static final String HISTORY_LIST_PAGE_COUNT = "50";
 
     //private static final String DATATYPE = ".json";
     
@@ -208,6 +212,30 @@ public class JianjianHttpApiV1 {
                 new BasicNameValuePair("lang", "CHS"), //
                 new BasicNameValuePair("page", String.valueOf(page)), //
                 new BasicNameValuePair("count", EVENT_LIST_PAGE_COUNT) //
+                );
+        
+        return (Group<Event>) mHttpApi.doHttpRequest(httpGet,
+                new GroupParser(new EventParser()));
+    }
+    
+    /**
+     * @param count
+     * @param sinceid
+     * @param page
+     * @return
+     */
+    @SuppressWarnings("unchecked")
+    public Group<Event> history(String sinceid, int page) throws JianjianException,
+            JianjianError, IOException{
+        if(page == 0){ page = 1; }
+        
+        HttpGet httpGet = mHttpApi.createHttpGet(fullUrl(URL_API_HISTORY_LIST), //
+                new BasicNameValuePair("source", "jianjian"), //
+                new BasicNameValuePair("lang", "CHS"), //
+                new BasicNameValuePair("id", "766209172"),
+                new BasicNameValuePair("type", "checkin"),
+                new BasicNameValuePair("page", String.valueOf(page)), //
+                new BasicNameValuePair("count", HISTORY_LIST_PAGE_COUNT) //
                 );
         
         return (Group<Event>) mHttpApi.doHttpRequest(httpGet,
@@ -436,6 +464,8 @@ public class JianjianHttpApiV1 {
       }
          return output;
     }
+
+
 
 
 

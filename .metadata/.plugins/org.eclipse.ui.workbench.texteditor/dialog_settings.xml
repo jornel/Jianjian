@@ -3,26 +3,26 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="263" key="DIALOG_WIDTH"/>
 		<item value="71" key="DIALOG_Y_ORIGIN"/>
-		<item value="1003" key="DIALOG_X_ORIGIN"/>
 		<item value="395" key="DIALOG_HEIGHT"/>
+		<item value="1003" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="UserDetailsFriends" key="selection"/>
+		<item value="History" key="selection"/>
 		<list key="findhistory">
+			<item value="history"/>
+			<item value="user_history_activity_no_info"/>
+			<item value="user_history_activity_title"/>
 			<item value="UserDetailsFriends"/>
 			<item value="user_details_activity_checkins_text_single"/>
 			<item value="ivCheckinsChevron"/>
 			<item value="tvCheckins"/>
 			<item value="viewCheckins"/>
-			<item value="ranonce"/>
-			<item value="mRanOnce"/>
-			<item value="mTakePhotoImgButton"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Event"/>

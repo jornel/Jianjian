@@ -9,9 +9,16 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.AdapterView.OnItemClickListener;
 
 import com.liangshan.jianjian.android.app.LoadableListActivity;
+import com.liangshan.jianjian.android.widget.HistoryListAdapter;
 import com.liangshan.jianjian.general.Jianjian;
+import com.liangshan.jianjian.types.Event;
 import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.RecommendMsg;
 
@@ -24,6 +31,9 @@ public class UserHistoryActivity extends LoadableListActivity {
 
     public static final String EXTRA_USER_NAME = Jianjianroid.PACKAGE_NAME
             + ".UserHistoryActivity.EXTRA_USER_NAME";
+    
+    private StateHolder mStateHolder;
+    private HistoryListAdapter mListAdapter;
     
     private BroadcastReceiver mLoggedOutReceiver = new BroadcastReceiver() {
         @Override
@@ -38,24 +48,83 @@ public class UserHistoryActivity extends LoadableListActivity {
         registerReceiver(mLoggedOutReceiver, new IntentFilter(Jianjianroid.INTENT_ACTION_LOGGED_OUT));
         
         Object retained = getLastNonConfigurationInstance();
+        
+        if (retained != null && retained instanceof StateHolder) {
+            mStateHolder = (StateHolder) retained;
+            mStateHolder.setActivityForTask(this);
+        } else {
+            if (getIntent().hasExtra(EXTRA_USER_NAME)) {
+                mStateHolder = new StateHolder(getIntent().getStringExtra(EXTRA_USER_NAME));
+                mStateHolder.startTaskHistory(this);
+            } else {
+                Log.e(TAG, TAG + " requires username as intent extra.");
+                finish();
+                return;
+            }
+        }
+        
+        ensureUi();
     }
+
+
 
     @Override
     public void onPause() {
         super.onPause();
         
         if (isFinishing()) {
-            //mStateHolder.cancelTasks();
+            mStateHolder.cancelTasks();
             unregisterReceiver(mLoggedOutReceiver);
         }
     }
     
     @Override
     public Object onRetainNonConfigurationInstance() {
-        //mStateHolder.setActivityForTaskFriends(null);
-        //return mStateHolder;
-        return null;
+        mStateHolder.setActivityForTask(null);
+        return mStateHolder;
+    }
     
+    /**
+     * 
+     */
+    private void ensureUi() {
+        mListAdapter = new HistoryListAdapter(
+                this, ((Jianjianroid) getApplication()).getRemoteResourceManager());
+        mListAdapter.setGroup(mStateHolder.getHistory());
+        
+        ListView listView = getListView();
+        listView.setAdapter(mListAdapter);
+        listView.setSmoothScrollbarEnabled(true);
+        listView.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long arg3) {
+                Object obj = (Object)mListAdapter.getItem(position);
+                if (obj != null) {
+                    startRecommendMsgActivity((RecommendMsg)obj);
+                }
+            }
+        });
+        
+        if (mStateHolder.getIsRunningHistoryTask()) {
+            setLoadingView();
+        } else if (mStateHolder.getFetchedOnce() && mStateHolder.getHistory().size() == 0) {
+            setEmptyView();
+        }
+
+        setTitle(getString(R.string.user_history_activity_title, mStateHolder.getUsername()));
+        
+    }
+    
+    private void startRecommendMsgActivity(RecommendMsg recommend) {
+        // TODO Auto-generated method stub
+        
+    }
+
+
+
+    @Override
+    public int getNoSearchResultsStringId() {
+        return R.string.user_history_activity_no_info;
     }
     
     private void onHistoryTaskComplete(Group<RecommendMsg> group, Exception ex) {
@@ -86,8 +155,9 @@ public class UserHistoryActivity extends LoadableListActivity {
                 Jianjian jianjian = jianjianroid.getJianjian();
                 
                 // Prune out shouts for now.
+                
+                Group<Event> history = jianjian.history(null, 1);
                 /*
-                Group<RecommendMsg> history = jianjian.history("50", null);
                 Group<RecommendMsg> venuesOnly = new Group<RecommendMsg>();
                 for (RecommendMsg it : history) {
                     if (it.getVenue() != null) {
