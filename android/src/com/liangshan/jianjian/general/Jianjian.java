@@ -153,14 +153,15 @@ public class Jianjian {
     }
     
     /**
+     * @param object 
      * @param string
      * @param object
      * @return
      */
     @V1
-    public Group<Event> history(String sinceid, int page) 
+    public Group<RecommendMsg> history(String userid, String sinceid, int page) 
             throws JianjianException, JianjianError, IOException{
-        return mJianjianV1.history(sinceid, page);
+        return mJianjianV1.history(userid, sinceid, page);
 
     }
     

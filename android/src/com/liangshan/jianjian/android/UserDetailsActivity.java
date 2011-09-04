@@ -486,6 +486,7 @@ public class UserDetailsActivity extends Activity {
         
         Intent intent = new Intent(UserDetailsActivity.this, UserHistoryActivity.class);
         intent.putExtra(UserHistoryActivity.EXTRA_USER_NAME, mStateHolder.getUser().getUsername());
+        intent.putExtra(UserHistoryActivity.EXTRA_USER_ID, mStateHolder.getUser().getUserid());
         startActivity(intent); 
     }
     

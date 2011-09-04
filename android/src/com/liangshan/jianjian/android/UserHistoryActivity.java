@@ -18,7 +18,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import com.liangshan.jianjian.android.app.LoadableListActivity;
 import com.liangshan.jianjian.android.widget.HistoryListAdapter;
 import com.liangshan.jianjian.general.Jianjian;
-import com.liangshan.jianjian.types.Event;
 import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.RecommendMsg;
 
@@ -31,6 +30,9 @@ public class UserHistoryActivity extends LoadableListActivity {
 
     public static final String EXTRA_USER_NAME = Jianjianroid.PACKAGE_NAME
             + ".UserHistoryActivity.EXTRA_USER_NAME";
+
+    public static final String EXTRA_USER_ID = Jianjianroid.PACKAGE_NAME
+            + ".UserHistoryActivity.EXTRA_USER_ID";
     
     private StateHolder mStateHolder;
     private HistoryListAdapter mListAdapter;
@@ -54,7 +56,7 @@ public class UserHistoryActivity extends LoadableListActivity {
             mStateHolder.setActivityForTask(this);
         } else {
             if (getIntent().hasExtra(EXTRA_USER_NAME)) {
-                mStateHolder = new StateHolder(getIntent().getStringExtra(EXTRA_USER_NAME));
+                mStateHolder = new StateHolder(getIntent().getStringExtra(EXTRA_USER_NAME),getIntent().getStringExtra(EXTRA_USER_ID));
                 mStateHolder.startTaskHistory(this);
             } else {
                 Log.e(TAG, TAG + " requires username as intent extra.");
@@ -156,7 +158,7 @@ public class UserHistoryActivity extends LoadableListActivity {
                 
                 // Prune out shouts for now.
                 
-                Group<Event> history = jianjian.history(null, 1);
+                Group<RecommendMsg> history = jianjian.history(mActivity.mStateHolder.getUserid(),null, 1);
                 /*
                 Group<RecommendMsg> venuesOnly = new Group<RecommendMsg>();
                 for (RecommendMsg it : history) {
@@ -194,13 +196,15 @@ public class UserHistoryActivity extends LoadableListActivity {
     
     private static class StateHolder {
         private String mUsername;
+        private String mUserid;
         private Group<RecommendMsg> mHistory;
         private HistoryTask mTaskHistory;
         private boolean mIsRunningHistoryTask;
         private boolean mFetchedOnce;
         
-        public StateHolder(String username) {
+        public StateHolder(String username,String userid) {
             mUsername = username;
+            mUserid = userid;
             mIsRunningHistoryTask = false;
             mFetchedOnce = false;
             mHistory = new Group<RecommendMsg>();
@@ -208,6 +212,10 @@ public class UserHistoryActivity extends LoadableListActivity {
         
         public String getUsername() {
             return mUsername;
+        }
+        
+        public String getUserid() {
+            return mUserid;
         }
         
         public Group<RecommendMsg> getHistory() {
