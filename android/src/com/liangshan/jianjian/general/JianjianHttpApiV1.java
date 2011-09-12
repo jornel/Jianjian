@@ -79,7 +79,7 @@ public class JianjianHttpApiV1 {
 
     private static final String EVENT_LIST_PAGE_COUNT = "20";
     
-    private static final String HISTORY_LIST_PAGE_COUNT = "50";
+    private static final String HISTORY_LIST_PAGE_COUNT = "2";
 
     //private static final String DATATYPE = ".json";
     

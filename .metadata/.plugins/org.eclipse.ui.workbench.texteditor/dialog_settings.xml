@@ -13,16 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="History" key="selection"/>
+		<item value="filter" key="selection"/>
 		<list key="findhistory">
+			<item value="filter"/>
+			<item value="log"/>
+			<item value="event"/>
+			<item value="EXTRA_USER_NAME"/>
+			<item value="id"/>
 			<item value="history"/>
 			<item value="user_history_activity_no_info"/>
 			<item value="user_history_activity_title"/>
-			<item value="UserDetailsFriends"/>
-			<item value="user_details_activity_checkins_text_single"/>
-			<item value="ivCheckinsChevron"/>
-			<item value="tvCheckins"/>
-			<item value="viewCheckins"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Event"/>

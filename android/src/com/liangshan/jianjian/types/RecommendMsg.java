@@ -20,6 +20,7 @@ public class RecommendMsg extends Fragment {
     private Boolean mIsPrivate;
     private int mNumComments;
     private String mParentId;
+    private String mUserId;
     
     public RecommendMsg(){
     }
@@ -99,6 +100,14 @@ public class RecommendMsg extends Fragment {
     public void setParentId(String id) {
         mParentId = id;
     }
+    
+    public String getUserId() {
+        return mUserId;
+    }
+    public void setUserId(String id) {
+        mUserId = id;
+    }
+    
     
    
 

@@ -3,6 +3,8 @@
  */
 package com.liangshan.jianjian.android;
 
+import java.util.logging.Level;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -159,20 +161,34 @@ public class UserHistoryActivity extends LoadableListActivity {
                 // Prune out shouts for now.
                 
                 Group<RecommendMsg> history = jianjian.history(mActivity.mStateHolder.getUserid(),null, 1);
-                /*
-                Group<RecommendMsg> venuesOnly = new Group<RecommendMsg>();
-                for (RecommendMsg it : history) {
-                    if (it.getVenue() != null) {
-                        venuesOnly.add(it);
-                    }
-                }
-                
-                return venuesOnly;*/
-                return null;
+
+                //Log.i(TAG, "get history======");
+                return filterRecFromJiepang(history);
             } catch (Exception e) {
                 mReason = e;
             }
             return null;
+        }
+
+        /**
+         * @param history
+         * @return
+         */
+        private Group<RecommendMsg> filterRecFromJiepang(Group<RecommendMsg> history) {
+            
+            Group<RecommendMsg> recommends = new Group<RecommendMsg>();
+            if(history.isHasMore()){
+                recommends.setHasMore(true);
+            } else {
+                recommends.setHasMore(false);
+            }
+            for(RecommendMsg it:history){
+                if(it.getProduct()== null){                  
+                    recommends.add(it);                   
+                }
+            }
+            
+            return recommends;
         }
 
         @Override

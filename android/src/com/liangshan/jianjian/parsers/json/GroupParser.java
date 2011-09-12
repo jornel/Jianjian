@@ -46,6 +46,8 @@ public class GroupParser extends AbstractParser<Group> {
                 group.setHasMore(Boolean.valueOf(json.getString(key)));
             } else if (key.equals("province")){
                 continue;
+            } else if (key.equals("num_items")){
+                continue;
             }else {
                 Object obj = json.get(key);
                 if (obj instanceof JSONArray) {  

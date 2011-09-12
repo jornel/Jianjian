@@ -26,9 +26,15 @@ public class RecommendMsgParser extends AbstractParser<RecommendMsg> {
             message.setFragmentId(json.getString("id"));
         } 
         
+        if (json.has("created_on")) {
+            message.setCreateDate(json.getString("created_on"));
+        }
         if (json.has("user")) {
             message.setFromUser(new UserParser().parse(json.getJSONObject("user")));
-        } 
+        }
+        if (json.has("user_id")) {
+            message.setUserId(json.getString("user_id"));
+        }
         
         if (json.has("is_private")) {
             message.setIsPrivate(json.getString("is_private"));

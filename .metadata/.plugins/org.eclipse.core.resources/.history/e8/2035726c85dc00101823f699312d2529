@@ -1,0 +1,107 @@
+/**
+ * 
+ */
+package com.liangshan.jianjian.types;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/**
+ * @author ezhuche
+ *
+ */
+public class RecommendMsg extends Fragment {
+    
+    
+    private Product mProduct;
+    private String mPrice;
+    private String mDescription;
+    private String[] mPhoto;
+    private Boolean mIsPrivate;
+    private int mNumComments;
+    private String mParentId;
+    private String mUserId;
+    
+    public RecommendMsg(){
+    }
+    
+
+    /* (non-Javadoc)
+     * @see android.os.Parcelable#describeContents()
+     */
+    @Override
+    public int describeContents() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    /* (non-Javadoc)
+     * @see android.os.Parcelable#writeToParcel(android.os.Parcel, int)
+     */
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        // TODO Auto-generated method stub
+
+    }
+    
+    /*
+    public String getMessageId() {
+        return mMessageId;
+    }
+
+    public void setMessageId(String messageId) {
+        mMessageId = messageId;
+    }*/
+
+    public Product getProduct() {
+        return mProduct;
+    }
+    public void setProduct(Product pro) {
+        mProduct = pro;
+    }
+    public String getPrice() {
+        return mPrice;
+    }
+    public void setPrice(String price) {
+        mPrice = price;
+    }
+    public String getDescription() {
+        return mDescription;
+    }
+    public void setDescription(String description) {
+        mDescription = description;
+    }
+    public String[] getPhoto() {
+        return mPhoto;
+    }
+    public void setPhoto(String[] photo) {
+        mPhoto = photo;
+    }
+    
+    public Boolean getIsPrivate() {
+        return mIsPrivate;
+    }
+    public void setIsPrivate(String isprivate) {
+        if(isprivate.equalsIgnoreCase("true")){
+            mIsPrivate = true;
+        }else {
+            mIsPrivate = false;
+        }
+    }
+    public int getNumComments() {
+        return mNumComments;
+    }
+    public void setNumComments(String num_comments) {
+        mNumComments = Integer.parseInt(num_comments);
+    }
+    public String getParentId() {
+        return mParentId;
+    }
+    public void setParentId(String id) {
+        mParentId = id;
+    }
+    
+   
+
+
+}
