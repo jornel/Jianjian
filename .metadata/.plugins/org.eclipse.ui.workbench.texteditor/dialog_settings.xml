@@ -13,16 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="filter" key="selection"/>
+		<item value="History" key="selection"/>
 		<list key="findhistory">
-			<item value="filter"/>
-			<item value="log"/>
-			<item value="event"/>
-			<item value="EXTRA_USER_NAME"/>
-			<item value="id"/>
 			<item value="history"/>
-			<item value="user_history_activity_no_info"/>
-			<item value="user_history_activity_title"/>
+			<item value="viewFriends"/>
+			<item value="viewRecommends"/>
+			<item value="getFetchedOnce"/>
+			<item value="setCurrentPage"/>
+			<item value="footerview"/>
+			<item value="RecommendListAdapter"/>
+			<item value="filter"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Event"/>

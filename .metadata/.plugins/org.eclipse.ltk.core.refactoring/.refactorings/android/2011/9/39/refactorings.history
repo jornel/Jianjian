@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;HistoryListAdapter.java&apos; to &apos;android/src/com.liangshan.jianjian.android.widget&apos;&#x0A;- Original project: &apos;android&apos;&#x0A;- Destination element: &apos;android/src/com.liangshan.jianjian.android.widget&apos;&#x0A;- Original element: &apos;com.liangshan.jianjian.android.widget.HistoryListAdapter.java&apos;" description="Copy compilation unit" destination="/src&lt;com.liangshan.jianjian.android.widget" element1="/src&lt;com.liangshan.jianjian.android.widget{HistoryListAdapter.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1316331189909" units="1" version="1.0"/>
+</session>

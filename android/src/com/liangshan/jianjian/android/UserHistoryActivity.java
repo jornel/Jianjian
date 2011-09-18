@@ -12,12 +12,15 @@ import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.liangshan.jianjian.android.app.LoadableListActivity;
+import com.liangshan.jianjian.android.util.NotificationsUtil;
 import com.liangshan.jianjian.android.widget.HistoryListAdapter;
 import com.liangshan.jianjian.general.Jianjian;
 import com.liangshan.jianjian.types.Group;
@@ -38,6 +41,7 @@ public class UserHistoryActivity extends LoadableListActivity {
     
     private StateHolder mStateHolder;
     private HistoryListAdapter mListAdapter;
+    private LinearLayout footerview;
     
     private BroadcastReceiver mLoggedOutReceiver = new BroadcastReceiver() {
         @Override
@@ -109,6 +113,25 @@ public class UserHistoryActivity extends LoadableListActivity {
             }
         });
         
+        //if(mStateHolder.getCurrentPage()<=1){
+            footerview = (LinearLayout) LayoutInflater.from(
+                    getListView().getContext()).inflate(R.layout.recommend_list_footer,null);
+            footerview.setClickable(true);
+            footerview.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View v) {
+                    mStateHolder.setCurrentListItem(getListView().getCount());
+                    
+                    mStateHolder.startTaskHistory(UserHistoryActivity.this);
+                }
+                
+            });
+            
+            getListView().addFooterView(footerview);
+            
+        //}
+        
         if (mStateHolder.getIsRunningHistoryTask()) {
             setLoadingView();
         } else if (mStateHolder.getFetchedOnce() && mStateHolder.getHistory().size() == 0) {
@@ -131,7 +154,49 @@ public class UserHistoryActivity extends LoadableListActivity {
         return R.string.user_history_activity_no_info;
     }
     
-    private void onHistoryTaskComplete(Group<RecommendMsg> group, Exception ex) {
+    private void onHistoryTaskComplete(Group<RecommendMsg> group, int page, Exception ex) {
+        mStateHolder.setCurrentPage(page);
+        
+        mListAdapter.removeObserver();
+        mListAdapter.clear();
+        mListAdapter = new HistoryListAdapter(
+                this, ((Jianjianroid) getApplication()).getRemoteResourceManager());
+        
+        if (group != null) {
+            if(mStateHolder.getCurrentPage() <= 1 ){
+                mStateHolder.setHistory(group);
+            } else {
+                mStateHolder.addHistory(group);
+            }
+            
+            mListAdapter.setGroup(mStateHolder.getHistory());
+            
+        } 
+        else if(mStateHolder.getCurrentPage()<=1){
+            mStateHolder.setHistory(new Group<RecommendMsg>());
+            mListAdapter.setGroup(mStateHolder.getHistory());
+            
+            
+            NotificationsUtil.ToastReasonForFailure(this, ex);
+        } else if(mStateHolder.getCurrentPage()>1){
+            NotificationsUtil.ToastReasonForFailure(this, ex);
+        }
+        
+        mStateHolder.setIsRunningHistoryTask(false);
+        mStateHolder.setFetchedOnce(true);
+        
+
+        if(!mStateHolder.getHistory().isHasMore()){
+            getListView().removeFooterView(footerview);
+        }
+        
+        
+        if (mStateHolder.getHistory().size() == 0) {
+            setEmptyView();
+        }
+        
+        getListView().setAdapter(mListAdapter);
+        getListView().setSelection(mStateHolder.getCurrentListItem()-2);
 
     }
     
@@ -142,9 +207,11 @@ public class UserHistoryActivity extends LoadableListActivity {
         
         private UserHistoryActivity mActivity;
         private Exception mReason;
+        private int mPage;
 
-        public HistoryTask(UserHistoryActivity activity) {
+        public HistoryTask(UserHistoryActivity activity, int page) {
             mActivity = activity;
+            mPage = page;
         }
         
         @Override
@@ -160,7 +227,7 @@ public class UserHistoryActivity extends LoadableListActivity {
                 
                 // Prune out shouts for now.
                 
-                Group<RecommendMsg> history = jianjian.history(mActivity.mStateHolder.getUserid(),null, 1);
+                Group<RecommendMsg> history = jianjian.history(mActivity.mStateHolder.getUserid(),null, mPage);
 
                 //Log.i(TAG, "get history======");
                 return filterRecFromJiepang(history);
@@ -183,7 +250,7 @@ public class UserHistoryActivity extends LoadableListActivity {
                 recommends.setHasMore(false);
             }
             for(RecommendMsg it:history){
-                if(it.getProduct()== null){                  
+                if(it.getProduct()!= null){                  
                     recommends.add(it);                   
                 }
             }
@@ -194,14 +261,14 @@ public class UserHistoryActivity extends LoadableListActivity {
         @Override
         protected void onPostExecute(Group<RecommendMsg> recommends) {
             if (mActivity != null) {
-                mActivity.onHistoryTaskComplete(recommends, mReason);
+                mActivity.onHistoryTaskComplete(recommends, mPage,mReason);
             }
         }
 
         @Override
         protected void onCancelled() {
             if (mActivity != null) {
-                mActivity.onHistoryTaskComplete(null, mReason);
+                mActivity.onHistoryTaskComplete(null, mPage, mReason);
             }
         }
         
@@ -217,6 +284,8 @@ public class UserHistoryActivity extends LoadableListActivity {
         private HistoryTask mTaskHistory;
         private boolean mIsRunningHistoryTask;
         private boolean mFetchedOnce;
+        private int mCurrentListItem;
+        private int mCurrentPage;
         
         public StateHolder(String username,String userid) {
             mUsername = username;
@@ -224,6 +293,23 @@ public class UserHistoryActivity extends LoadableListActivity {
             mIsRunningHistoryTask = false;
             mFetchedOnce = false;
             mHistory = new Group<RecommendMsg>();
+            mCurrentListItem = 0;
+            mCurrentPage = 0;
+        }
+        
+        public void setCurrentListItem(int count) {
+            mCurrentListItem = count;
+        }
+        public int getCurrentListItem() {
+            return mCurrentListItem;
+        }
+        
+        public int getCurrentPage() {
+            return mCurrentPage;
+        }
+        
+        public void setCurrentPage(int page) {
+            mCurrentPage = page;
         }
         
         public String getUsername() {
@@ -237,15 +323,24 @@ public class UserHistoryActivity extends LoadableListActivity {
         public Group<RecommendMsg> getHistory() {
             return mHistory;
         }
+        public void addHistory(Group<RecommendMsg> recommends2) {
+            
+            if(mHistory.addAll(recommends2)){
+                mHistory.setHasMore(recommends2.isHasMore());
+            }
+        }
         
         public void setHistory(Group<RecommendMsg> history) {
             mHistory = history;
         }
         
         public void startTaskHistory(UserHistoryActivity activity) {
-            mIsRunningHistoryTask = true;
-            mTaskHistory = new HistoryTask(activity);
-            mTaskHistory.execute();
+            if(mIsRunningHistoryTask != true){
+                mIsRunningHistoryTask = true;
+                mTaskHistory = new HistoryTask(activity, mCurrentPage+1);
+                mTaskHistory.execute();
+            }
+
         }
         
         public void setActivityForTask(UserHistoryActivity activity) {

@@ -311,7 +311,7 @@ public class UserDetailsActivity extends Activity {
                 
                 
                 // The rest of the items depend on if we're viewing ourselves or not.
-                if (mStateHolder.getIsLoggedInUser()) {
+                if (mStateHolder.getIsLoggedInUser()) {//myself
                     viewAddFriends.setVisibility(View.VISIBLE);
                     viewRecommends.setVisibility(View.VISIBLE);
                     
@@ -340,7 +340,13 @@ public class UserDetailsActivity extends Activity {
                         viewFriends.setFocusable(true);
                         ivFriends.setVisibility(View.VISIBLE);
                         
-                      //todo start friends activity
+                        viewFriends.setOnClickListener(new OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                startFriendsInCommonActivity();
+                            }
+                        });
+                        
                     }
                     
                     //start add friends activity
@@ -352,7 +358,7 @@ public class UserDetailsActivity extends Activity {
                         }
                     });
                     viewAddFriends.setFocusable(true);
-                } else {
+                } else {//see the other users
                     viewFriends.setVisibility(View.VISIBLE); 
                     
                     if(user.getFriendCount() > 0){
@@ -503,7 +509,9 @@ public class UserDetailsActivity extends Activity {
      */
     private void startFriendsInCommonActivity() {
         // TODO Auto-generated method stub
-        
+        Intent intent = new Intent(UserDetailsActivity.this, UserFriendsListActivity.class);
+        intent.putExtra(UserFriendsListActivity.EXTRA_USER_ID, mStateHolder.getUser().getUserid());
+        intent.putExtra(UserFriendsListActivity.EXTRA_USER_NAME, mStateHolder.getUser().getUsername());
     }
     
     private void onFriendTaskComplete(User user, int action, Exception ex) {

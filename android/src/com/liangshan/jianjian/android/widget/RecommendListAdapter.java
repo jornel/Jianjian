@@ -122,10 +122,10 @@ public class RecommendListAdapter extends BaseRecommendAdapter implements Observ
         String recommendSymbol = res.getString(R.string.recommendSymbol);
         String venueSymbol = res.getString(R.string.venueSymbol);
 
-        String checkinMsgLine1 = StringFormatters.getRecommendMessageLine1(recommend, recommendSymbol);
-        String checkinMsgLine2 = StringFormatters.getRecommendMessageLine2(recommend, venueSymbol, true);
-        String checkinMsgLine3 = StringFormatters.getRecommendMessageLine3(recommend);
-        String checkinMsgLine4 = mCachedTimestamps.get(recommend.getFragmentId());
+        String checkinMsgLine1 = StringFormatters.getRecommendMessageLine1(recommend, recommendSymbol);//某人 推荐了 某商品
+        String checkinMsgLine2 = StringFormatters.getRecommendMessageLine2(recommend, venueSymbol, true);//n 元，在某地
+        String checkinMsgLine3 = StringFormatters.getRecommendMessageLine3(recommend);//描述
+        String checkinMsgLine4 = mCachedTimestamps.get(recommend.getFragmentId());//推荐时间
         
         
         holder.firstLine.setText(checkinMsgLine1);

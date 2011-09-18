@@ -4,7 +4,6 @@
 <fullyQualifiedTypeName name="com.liangshan.jianjian.parsers.json.GroupParser"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.parsers.json.VenueParser"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.general.Jianjian.JLocation"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.NotificationsUtil"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.JianjianSettings"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.widget.VenuePickerAdapter"/>
 <fullyQualifiedTypeName name="android.R"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.R"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.widget.HistoryListAdapter"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.types.Event"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.NotificationsUtil"/>
 </qualifiedTypeNameHistroy>

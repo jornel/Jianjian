@@ -6,6 +6,7 @@ package com.liangshan.jianjian.android.widget;
 
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -23,6 +24,8 @@ import java.util.Observer;
 
 import com.liangshan.jianjian.android.R;
 import com.liangshan.jianjian.android.util.RemoteResourceManager;
+import com.liangshan.jianjian.android.util.StringFormatters;
+import com.liangshan.jianjian.general.Jianjian;
 import com.liangshan.jianjian.types.RecommendMsg;
 import com.liangshan.jianjian.types.User;
 
@@ -78,10 +81,29 @@ public class HistoryListAdapter extends BaseRecommendAdapter
 
         RecommendMsg recommend = (RecommendMsg) getItem(position);
         
+        Resources res = convertView.getContext().getResources();
+        String venueSymbol = res.getString(R.string.venueSymbol);
         
+        holder.firstLine.setText(recommend.getProduct().getName());//product name
+        holder.secondLine.setText(StringFormatters.getRecommendMessageLine2(recommend, venueSymbol, true));//x Ôª£¬ÔÚÄ³µØ
+        holder.thirdLine.setText(StringFormatters.getRecommendMessageLine3(recommend));
+        holder.timeTextView.setText( 
+                StringFormatters.getRelativeTimeSpanString(recommend.getCreateDate()));
+        
+        try {
+            Uri photoUri = Uri.parse(recommend.getPhoto()[0]);
+            Bitmap bitmap = BitmapFactory.decodeStream(mRrm.getInputStream(photoUri));
+            holder.photo.setImageBitmap(bitmap);
+        } catch (Exception e) {
+            holder.photo.setImageResource(R.drawable.category_none);
+        }
 
         
         return convertView;
+    }
+    
+    public void clear() {
+        notifyDataSetInvalidated();
     }
     
     private class RemoteResourceManagerObserver implements Observer {
