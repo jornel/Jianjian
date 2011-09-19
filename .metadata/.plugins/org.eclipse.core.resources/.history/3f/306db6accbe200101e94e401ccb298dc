@@ -166,18 +166,6 @@ public class Jianjian {
     }
     
     /**
-     * @param userid
-     * @param object
-     * @param mPage
-     * @return
-     */
-    @V1
-    public Group<User> friendlist(String userid, Object object, int mPage) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-    
-    /**
      * @param mUserId
      * @return
      */
@@ -250,8 +238,6 @@ public class Jianjian {
     public @interface V1 {
 
     }
-
-
 
 
 

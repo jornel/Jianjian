@@ -3,6 +3,8 @@
  */
 package com.liangshan.jianjian.android;
 
+import java.util.logging.Level;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -19,27 +21,26 @@ import android.widget.AdapterView.OnItemClickListener;
 
 import com.liangshan.jianjian.android.app.LoadableListActivity;
 import com.liangshan.jianjian.android.util.NotificationsUtil;
-import com.liangshan.jianjian.android.widget.FriendsListAdapter;
+import com.liangshan.jianjian.android.widget.HistoryListAdapter;
 import com.liangshan.jianjian.general.Jianjian;
 import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.RecommendMsg;
-import com.liangshan.jianjian.types.User;
 
 /**
  * @author jornel
  *
  */
 public class UserFriendsListActivity extends LoadableListActivity {
-    static final String TAG = "UserFriendsActivity";
+    static final String TAG = "UserHistoryActivity";
 
     public static final String EXTRA_USER_NAME = Jianjianroid.PACKAGE_NAME
-            + ".UserFriendsActivity.EXTRA_USER_NAME";
+            + ".UserHistoryActivity.EXTRA_USER_NAME";
 
     public static final String EXTRA_USER_ID = Jianjianroid.PACKAGE_NAME
-            + ".UserFriendsActivity.EXTRA_USER_ID";
+            + ".UserHistoryActivity.EXTRA_USER_ID";
     
     private StateHolder mStateHolder;
-    private FriendsListAdapter mListAdapter;
+    private HistoryListAdapter mListAdapter;
     private LinearLayout footerview;
     
     private BroadcastReceiver mLoggedOutReceiver = new BroadcastReceiver() {
@@ -62,7 +63,7 @@ public class UserFriendsListActivity extends LoadableListActivity {
         } else {
             if (getIntent().hasExtra(EXTRA_USER_NAME)) {
                 mStateHolder = new StateHolder(getIntent().getStringExtra(EXTRA_USER_NAME),getIntent().getStringExtra(EXTRA_USER_ID));
-                mStateHolder.startTaskFriends(this);
+                mStateHolder.startTaskHistory(this);
             } else {
                 Log.e(TAG, TAG + " requires username as intent extra.");
                 finish();
@@ -95,9 +96,9 @@ public class UserFriendsListActivity extends LoadableListActivity {
      * 
      */
     private void ensureUi() {
-        mListAdapter = new FriendsListAdapter(
+        mListAdapter = new HistoryListAdapter(
                 this, ((Jianjianroid) getApplication()).getRemoteResourceManager());
-        mListAdapter.setGroup(mStateHolder.getFriends());
+        mListAdapter.setGroup(mStateHolder.getHistory());
         
         ListView listView = getListView();
         listView.setAdapter(mListAdapter);
@@ -122,7 +123,7 @@ public class UserFriendsListActivity extends LoadableListActivity {
                 public void onClick(View v) {
                     mStateHolder.setCurrentListItem(getListView().getCount());
                     
-                    mStateHolder.startTaskFriends(UserFriendsListActivity.this);
+                    mStateHolder.startTaskHistory(UserFriendsListActivity.this);
                 }
                 
             });
@@ -131,9 +132,9 @@ public class UserFriendsListActivity extends LoadableListActivity {
             
         //}
         
-        if (mStateHolder.getIsRunningFriendsTask()) {
+        if (mStateHolder.getIsRunningHistoryTask()) {
             setLoadingView();
-        } else if (mStateHolder.getFetchedOnce() && mStateHolder.getFriends().size() == 0) {
+        } else if (mStateHolder.getFetchedOnce() && mStateHolder.getHistory().size() == 0) {
             setEmptyView();
         }
 
@@ -153,27 +154,27 @@ public class UserFriendsListActivity extends LoadableListActivity {
         return R.string.user_history_activity_no_info;
     }
     
-    private void onFriendsTaskComplete(Group<User> group, int page, Exception ex) {
+    private void onHistoryTaskComplete(Group<RecommendMsg> group, int page, Exception ex) {
         mStateHolder.setCurrentPage(page);
         
         mListAdapter.removeObserver();
         mListAdapter.clear();
-        mListAdapter = new FriendsListAdapter(
+        mListAdapter = new HistoryListAdapter(
                 this, ((Jianjianroid) getApplication()).getRemoteResourceManager());
         
         if (group != null) {
             if(mStateHolder.getCurrentPage() <= 1 ){
-                mStateHolder.setFriends(group);
+                mStateHolder.setHistory(group);
             } else {
-                mStateHolder.addFriends(group);
+                mStateHolder.addHistory(group);
             }
             
-            mListAdapter.setGroup(mStateHolder.getFriends());
+            mListAdapter.setGroup(mStateHolder.getHistory());
             
         } 
         else if(mStateHolder.getCurrentPage()<=1){
-            mStateHolder.setFriends(new Group<User>());
-            mListAdapter.setGroup(mStateHolder.getFriends());
+            mStateHolder.setHistory(new Group<RecommendMsg>());
+            mListAdapter.setGroup(mStateHolder.getHistory());
             
             
             NotificationsUtil.ToastReasonForFailure(this, ex);
@@ -181,16 +182,16 @@ public class UserFriendsListActivity extends LoadableListActivity {
             NotificationsUtil.ToastReasonForFailure(this, ex);
         }
         
-        mStateHolder.setIsRunningFriendsTask(false);
+        mStateHolder.setIsRunningHistoryTask(false);
         mStateHolder.setFetchedOnce(true);
         
 
-        if(!mStateHolder.getFriends().isHasMore()){
+        if(!mStateHolder.getHistory().isHasMore()){
             getListView().removeFooterView(footerview);
         }
         
         
-        if (mStateHolder.getFriends().size() == 0) {
+        if (mStateHolder.getHistory().size() == 0) {
             setEmptyView();
         }
         
@@ -202,13 +203,13 @@ public class UserFriendsListActivity extends LoadableListActivity {
     /**
      * Gets friends of the current user we're working for.
      */
-    private static class FriendsTask extends AsyncTask<String, Void, Group<User>> {
+    private static class HistoryTask extends AsyncTask<String, Void, Group<RecommendMsg>> {
         
         private UserFriendsListActivity mActivity;
         private Exception mReason;
         private int mPage;
 
-        public FriendsTask(UserFriendsListActivity activity, int page) {
+        public HistoryTask(UserFriendsListActivity activity, int page) {
             mActivity = activity;
             mPage = page;
         }
@@ -219,35 +220,55 @@ public class UserFriendsListActivity extends LoadableListActivity {
         }
 
         @Override
-        protected Group<User> doInBackground(String... params) {
+        protected Group<RecommendMsg> doInBackground(String... params) {
             try {
                 Jianjianroid jianjianroid = (Jianjianroid) mActivity.getApplication();
                 Jianjian jianjian = jianjianroid.getJianjian();
                 
                 // Prune out shouts for now.
                 
-                Group<User> friends = jianjian.friendlist(mActivity.mStateHolder.getUserid(),null, mPage);
+                Group<RecommendMsg> history = jianjian.history(mActivity.mStateHolder.getUserid(),null, mPage);
 
-                //Log.i(TAG, "get Friends======");
-                return friends;
+                //Log.i(TAG, "get history======");
+                return filterRecFromJiepang(history);
             } catch (Exception e) {
                 mReason = e;
             }
             return null;
         }
 
+        /**
+         * @param history
+         * @return
+         */
+        private Group<RecommendMsg> filterRecFromJiepang(Group<RecommendMsg> history) {
+            
+            Group<RecommendMsg> recommends = new Group<RecommendMsg>();
+            if(history.isHasMore()){
+                recommends.setHasMore(true);
+            } else {
+                recommends.setHasMore(false);
+            }
+            for(RecommendMsg it:history){
+                if(it.getProduct()!= null){                  
+                    recommends.add(it);                   
+                }
+            }
+            
+            return recommends;
+        }
 
         @Override
-        protected void onPostExecute(Group<User> friends) {
+        protected void onPostExecute(Group<RecommendMsg> recommends) {
             if (mActivity != null) {
-                mActivity.onFriendsTaskComplete(friends, mPage,mReason);
+                mActivity.onHistoryTaskComplete(recommends, mPage,mReason);
             }
         }
 
         @Override
         protected void onCancelled() {
             if (mActivity != null) {
-                mActivity.onFriendsTaskComplete(null, mPage, mReason);
+                mActivity.onHistoryTaskComplete(null, mPage, mReason);
             }
         }
         
@@ -259,9 +280,9 @@ public class UserFriendsListActivity extends LoadableListActivity {
     private static class StateHolder {
         private String mUsername;
         private String mUserid;
-        private Group<User> mFriends;
-        private FriendsTask mTaskFriends;
-        private boolean mIsRunningFriendsTask;
+        private Group<RecommendMsg> mHistory;
+        private HistoryTask mTaskHistory;
+        private boolean mIsRunningHistoryTask;
         private boolean mFetchedOnce;
         private int mCurrentListItem;
         private int mCurrentPage;
@@ -269,9 +290,9 @@ public class UserFriendsListActivity extends LoadableListActivity {
         public StateHolder(String username,String userid) {
             mUsername = username;
             mUserid = userid;
-            mIsRunningFriendsTask = false;
+            mIsRunningHistoryTask = false;
             mFetchedOnce = false;
-            mFriends = new Group<User>();
+            mHistory = new Group<RecommendMsg>();
             mCurrentListItem = 0;
             mCurrentPage = 0;
         }
@@ -299,41 +320,41 @@ public class UserFriendsListActivity extends LoadableListActivity {
             return mUserid;
         }
         
-        public Group<User> getFriends() {
-            return mFriends;
+        public Group<RecommendMsg> getHistory() {
+            return mHistory;
         }
-        public void addFriends(Group<User> recommends2) {
+        public void addHistory(Group<RecommendMsg> recommends2) {
             
-            if(mFriends.addAll(recommends2)){
-                mFriends.setHasMore(recommends2.isHasMore());
+            if(mHistory.addAll(recommends2)){
+                mHistory.setHasMore(recommends2.isHasMore());
             }
         }
         
-        public void setFriends(Group<User> Friends) {
-            mFriends = Friends;
+        public void setHistory(Group<RecommendMsg> history) {
+            mHistory = history;
         }
         
-        public void startTaskFriends(UserFriendsListActivity activity) {
-            if(mIsRunningFriendsTask != true){
-                mIsRunningFriendsTask = true;
-                mTaskFriends = new FriendsTask(activity, mCurrentPage+1);
-                mTaskFriends.execute();
+        public void startTaskHistory(UserFriendsListActivity activity) {
+            if(mIsRunningHistoryTask != true){
+                mIsRunningHistoryTask = true;
+                mTaskHistory = new HistoryTask(activity, mCurrentPage+1);
+                mTaskHistory.execute();
             }
 
         }
         
         public void setActivityForTask(UserFriendsListActivity activity) {
-            if (mTaskFriends != null) {
-                mTaskFriends.setActivity(activity);
+            if (mTaskHistory != null) {
+                mTaskHistory.setActivity(activity);
             }
         }
         
-        public void setIsRunningFriendsTask(boolean isRunning) {
-            mIsRunningFriendsTask = isRunning;
+        public void setIsRunningHistoryTask(boolean isRunning) {
+            mIsRunningHistoryTask = isRunning;
         }
 
-        public boolean getIsRunningFriendsTask() {
-            return mIsRunningFriendsTask;
+        public boolean getIsRunningHistoryTask() {
+            return mIsRunningHistoryTask;
         }
         
         public void setFetchedOnce(boolean fetchedOnce) {
@@ -345,9 +366,9 @@ public class UserFriendsListActivity extends LoadableListActivity {
         }
         
         public void cancelTasks() {
-            if (mTaskFriends != null) {
-                mTaskFriends.setActivity(null);
-                mTaskFriends.cancel(true);
+            if (mTaskHistory != null) {
+                mTaskHistory.setActivity(null);
+                mTaskHistory.cancel(true);
             }
         }
         
