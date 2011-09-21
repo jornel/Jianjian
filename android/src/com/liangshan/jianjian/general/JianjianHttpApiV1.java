@@ -69,6 +69,7 @@ public class JianjianHttpApiV1 {
     private static final String URL_API_VENUE_LIST = "/locations/search";
     
     
+    
     private static final String URL_API_USER_SHOW_TMP = "http://api.jiepang.com/users/show.json";
 
     private static final String URL_API_CHECK_IN = "/statuses/checkin";
@@ -76,10 +77,16 @@ public class JianjianHttpApiV1 {
     private static final String URL_API_EVENT_LIST = "/events/list";
     
     private static final String URL_API_HISTORY_LIST = "/statuses/list";
+    
+    private static final String URL_API_FRIEND_LIST = "/friends/list";
 
     private static final String EVENT_LIST_PAGE_COUNT = "20";
     
     private static final String HISTORY_LIST_PAGE_COUNT = "10";
+
+    private static final String FRIEND_LIST_PAGE_COUNT = "20";
+
+    
 
     //private static final String DATATYPE = ".json";
     
@@ -241,6 +248,28 @@ public class JianjianHttpApiV1 {
         
         return (Group<RecommendMsg>) mHttpApi.doHttpRequest(httpGet,
                 new GroupParser(new RecommendMsgParser()));
+    }
+    
+    /**
+     * @param userid
+     * @param mPage
+     * @return
+     */
+    @SuppressWarnings("unchecked")
+    public Group<User> friendlist(String userid, int page) throws JianjianException,
+    JianjianError, IOException{
+        if(page == 0){ page = 1; }
+        
+        HttpGet httpGet = mHttpApi.createHttpGet(fullUrl(URL_API_FRIEND_LIST), //
+                new BasicNameValuePair("source", "jianjian"), //
+                new BasicNameValuePair("lang", "CHS"), //
+                new BasicNameValuePair("id", userid),
+                new BasicNameValuePair("page", String.valueOf(page)), //
+                new BasicNameValuePair("count", FRIEND_LIST_PAGE_COUNT) //
+                );
+        
+        return (Group<User>) mHttpApi.doHttpRequest(httpGet,
+                new GroupParser(new UserParser()));
     }
     
     /**

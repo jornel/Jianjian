@@ -21,6 +21,7 @@
     <string name="user_details_activity_recommends_text">%d个推荐</string>
     <string name="user_history_activity_title">%s 的历史推荐</string>
     <string name="user_history_activity_no_info">没有推荐记录</string>
+    <string name="user_friend_activity_title">%s 的好友</string>
     
     <string name="login_get_started">Get Started</string>
     <string name="login_get_started_more">Got a jianjian account? We just need your email or phone# and password</string>

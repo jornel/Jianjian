@@ -508,10 +508,11 @@ public class UserDetailsActivity extends Activity {
      * 
      */
     private void startFriendsInCommonActivity() {
-        // TODO Auto-generated method stub
+        
         Intent intent = new Intent(UserDetailsActivity.this, UserFriendsListActivity.class);
         intent.putExtra(UserFriendsListActivity.EXTRA_USER_ID, mStateHolder.getUser().getUserid());
         intent.putExtra(UserFriendsListActivity.EXTRA_USER_NAME, mStateHolder.getUser().getUsername());
+        startActivity(intent); 
     }
     
     private void onFriendTaskComplete(User user, int action, Exception ex) {

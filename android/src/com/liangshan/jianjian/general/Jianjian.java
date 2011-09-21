@@ -172,9 +172,9 @@ public class Jianjian {
      * @return
      */
     @V1
-    public Group<User> friendlist(String userid, Object object, int mPage) {
-        // TODO Auto-generated method stub
-        return null;
+    public Group<User> friendlist(String userid, int mPage) 
+            throws JianjianException, JianjianError, IOException{
+        return mJianjianV1.friendlist(userid, mPage);
     }
     
     /**

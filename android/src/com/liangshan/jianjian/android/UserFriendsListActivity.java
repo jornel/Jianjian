@@ -22,7 +22,6 @@ import com.liangshan.jianjian.android.util.NotificationsUtil;
 import com.liangshan.jianjian.android.widget.FriendsListAdapter;
 import com.liangshan.jianjian.general.Jianjian;
 import com.liangshan.jianjian.types.Group;
-import com.liangshan.jianjian.types.RecommendMsg;
 import com.liangshan.jianjian.types.User;
 
 /**
@@ -107,7 +106,7 @@ public class UserFriendsListActivity extends LoadableListActivity {
             public void onItemClick(AdapterView<?> adapter, View view, int position, long arg3) {
                 Object obj = (Object)mListAdapter.getItem(position);
                 if (obj != null) {
-                    startRecommendMsgActivity((RecommendMsg)obj);
+                    startFriendDetailActivity((User)obj);
                 }
             }
         });
@@ -137,11 +136,11 @@ public class UserFriendsListActivity extends LoadableListActivity {
             setEmptyView();
         }
 
-        setTitle(getString(R.string.user_history_activity_title, mStateHolder.getUsername()));
+        setTitle(getString(R.string.user_friend_activity_title, mStateHolder.getUsername()));
         
     }
     
-    private void startRecommendMsgActivity(RecommendMsg recommend) {
+    private void startFriendDetailActivity(User user) {
         // TODO Auto-generated method stub
         
     }
@@ -186,7 +185,7 @@ public class UserFriendsListActivity extends LoadableListActivity {
         
 
         if(!mStateHolder.getFriends().isHasMore()){
-            getListView().removeFooterView(footerview);
+            footerview.setVisibility(View.INVISIBLE);
         }
         
         
@@ -226,7 +225,7 @@ public class UserFriendsListActivity extends LoadableListActivity {
                 
                 // Prune out shouts for now.
                 
-                Group<User> friends = jianjian.friendlist(mActivity.mStateHolder.getUserid(),null, mPage);
+                Group<User> friends = jianjian.friendlist(mActivity.mStateHolder.getUserid(),mPage);
 
                 //Log.i(TAG, "get Friends======");
                 return friends;
@@ -302,10 +301,10 @@ public class UserFriendsListActivity extends LoadableListActivity {
         public Group<User> getFriends() {
             return mFriends;
         }
-        public void addFriends(Group<User> recommends2) {
+        public void addFriends(Group<User> friends2) {
             
-            if(mFriends.addAll(recommends2)){
-                mFriends.setHasMore(recommends2.isHasMore());
+            if(mFriends.addAll(friends2)){
+                mFriends.setHasMore(friends2.isHasMore());
             }
         }
         
