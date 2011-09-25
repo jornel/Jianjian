@@ -17,8 +17,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import java.util.HashSet;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Set;
 
 import com.liangshan.jianjian.android.R;
 import com.liangshan.jianjian.android.util.RemoteResourceManager;
@@ -36,6 +38,7 @@ public class FriendsListAdapter extends BaseGroupAdapter<User>
     private RemoteResourceManager mRrm;
     private Handler mHandler;
     private RemoteResourceManagerObserver mResourcesObserver;
+    private Set<String> mLaunchedPhotoFetches;
     
 
     public FriendsListAdapter(Context context, RemoteResourceManager rrm) {
@@ -44,6 +47,7 @@ public class FriendsListAdapter extends BaseGroupAdapter<User>
         mHandler = new Handler();
         mRrm = rrm;
         mResourcesObserver = new RemoteResourceManagerObserver();
+        mLaunchedPhotoFetches = new HashSet<String>();
 
         mRrm.addObserver(mResourcesObserver);
     }
@@ -75,9 +79,10 @@ public class FriendsListAdapter extends BaseGroupAdapter<User>
         User friend = (User) getItem(position);
         
         holder.nick.setText(friend.getNick());
+        Uri photoUri = Uri.parse(friend.getPhoto());
         
         try {
-            Uri photoUri = Uri.parse(friend.getPhoto());
+            
             Bitmap bitmap = BitmapFactory.decodeStream(mRrm.getInputStream(photoUri));
             holder.photo.setImageBitmap(bitmap);
         } catch (Exception e) {
@@ -86,6 +91,11 @@ public class FriendsListAdapter extends BaseGroupAdapter<User>
                 
             } else {
                 holder.photo.setImageResource(R.drawable.blank_boy);
+            }
+            
+            if (!mLaunchedPhotoFetches.contains(friend.getUserid())) {
+                mLaunchedPhotoFetches.add(friend.getUserid());
+                mRrm.request(photoUri);
             }
         }
 

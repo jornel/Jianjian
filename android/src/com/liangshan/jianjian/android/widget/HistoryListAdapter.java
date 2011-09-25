@@ -1,5 +1,5 @@
 /**
- * Copyright 2010 Mark Wyszomierski
+ * Copyright 2011
  */
 
 package com.liangshan.jianjian.android.widget;
@@ -19,8 +19,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Set;
 
 import com.liangshan.jianjian.android.R;
 import com.liangshan.jianjian.android.util.RemoteResourceManager;
@@ -40,6 +42,7 @@ public class HistoryListAdapter extends BaseRecommendAdapter
     private RemoteResourceManager mRrm;
     private Handler mHandler;
     private RemoteResourceManagerObserver mResourcesObserver;
+    private Set<String> mLaunchedPhotoFetches;
     
 
     public HistoryListAdapter(Context context, RemoteResourceManager rrm) {
@@ -48,6 +51,7 @@ public class HistoryListAdapter extends BaseRecommendAdapter
         mHandler = new Handler();
         mRrm = rrm;
         mResourcesObserver = new RemoteResourceManagerObserver();
+        mLaunchedPhotoFetches = new HashSet<String>();
 
         mRrm.addObserver(mResourcesObserver);
     }
@@ -90,12 +94,19 @@ public class HistoryListAdapter extends BaseRecommendAdapter
         holder.timeTextView.setText( 
                 StringFormatters.getRelativeTimeSpanString(recommend.getCreateDate()));
         
+        Uri photoUri = null;
+
+        
         try {
-            Uri photoUri = Uri.parse(recommend.getPhoto()[0]);
+            photoUri = Uri.parse(recommend.getPhoto()[0]);
             Bitmap bitmap = BitmapFactory.decodeStream(mRrm.getInputStream(photoUri));
             holder.photo.setImageBitmap(bitmap);
         } catch (Exception e) {
             holder.photo.setImageResource(R.drawable.category_none);
+            if (photoUri != null && !mLaunchedPhotoFetches.contains(recommend.getFragmentId())) {
+                mLaunchedPhotoFetches.add(recommend.getFragmentId());
+                mRrm.request(photoUri);
+            }
         }
 
         
