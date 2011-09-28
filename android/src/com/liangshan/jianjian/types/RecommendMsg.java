@@ -39,10 +39,7 @@ public class RecommendMsg extends Fragment implements JianjianType,Parcelable{
         mNumComments = in.readInt();
         mParentId = ParcelUtils.readStringFromParcel(in);
         mUserId = ParcelUtils.readStringFromParcel(in);
-               
-        if (in.readInt() == 1) {
-            mProduct = in.readParcelable(Product.class.getClassLoader());
-        }
+        
         int photosize = in.readInt();
         if(photosize != 0){
             mPhoto = new ArrayList<String>();
@@ -50,6 +47,11 @@ public class RecommendMsg extends Fragment implements JianjianType,Parcelable{
                 mPhoto.add(ParcelUtils.readStringFromParcel(in));
             }
         }
+               
+        //if (in.readInt() == 1) {
+        //    mProduct = in.readParcelable(Product.class.getClassLoader());
+        //}
+
 
             
     }
@@ -81,14 +83,9 @@ public class RecommendMsg extends Fragment implements JianjianType,Parcelable{
         out.writeInt(mNumComments);
         ParcelUtils.writeStringToParcel(out, mParentId);
         ParcelUtils.writeStringToParcel(out, mUserId);
-        if(mProduct != null){
-            out.writeInt(1);
-            out.writeParcelable(mProduct, flags);
-        } else {
-            out.writeInt(0);
-        }
         
-        if ( mPhoto.size() != 0) {
+        int photosize = mPhoto.size();
+        if ( photosize != 0) {
             out.writeInt(mPhoto.size());
             for (int i = 0; i < mPhoto.size(); i++) {
                 ParcelUtils.writeStringToParcel(out,mPhoto.get(i));
@@ -96,6 +93,13 @@ public class RecommendMsg extends Fragment implements JianjianType,Parcelable{
         } else {
             out.writeInt(0);
         }
+        //if(mProduct != null){
+        //    out.writeInt(1);
+        //    out.writeParcelable(mProduct, flags);
+        //} else {
+        //    out.writeInt(0);
+        //}
+
 
     }
     

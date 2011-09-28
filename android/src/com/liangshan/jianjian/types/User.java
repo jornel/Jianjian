@@ -55,11 +55,11 @@ public class User implements Parcelable, JianjianType {
         mFriendstatus = ParcelUtils.readStringFromParcel(in);
 
         
-        if (in.readInt() == 1) {
-            mLastRecMsg = in.readParcelable(RecommendMsg.class.getClassLoader());
-        }
+        //if (in.readInt() == 1) {
+        //    mLastRecMsg = in.readParcelable(RecommendMsg.class.getClassLoader());
+        //}
         mFriendsInCommon = new ArrayList<User>();
-        for (int i = 0; i < mFriendCount; i++) {
+        for (int i = 0; i < in.readInt(); i++) {
             User user = in.readParcelable(User.class.getClassLoader());
             mFriendsInCommon.add(user);
         }
@@ -104,12 +104,12 @@ public class User implements Parcelable, JianjianType {
         ParcelUtils.writeStringToParcel(out, mCity);
         ParcelUtils.writeStringToParcel(out, mFriendstatus);
         
-        if (mLastRecMsg != null) {
-            out.writeInt(1);
-            out.writeParcelable(mLastRecMsg, flags);
-        } else {
-            out.writeInt(0);
-        }
+        //if (mLastRecMsg != null) {
+        //    out.writeInt(1);
+        //    out.writeParcelable(mLastRecMsg, flags);
+        //} else {
+        //    out.writeInt(0);
+        //}
         
         if (mFriendsInCommon != null) {
             out.writeInt(mFriendsInCommon.size());
