@@ -98,7 +98,7 @@ public class HistoryListAdapter extends BaseRecommendAdapter
 
         
         try {
-            photoUri = Uri.parse(recommend.getPhoto()[0]);
+            photoUri = Uri.parse(recommend.getPhoto().get(0));
             Bitmap bitmap = BitmapFactory.decodeStream(mRrm.getInputStream(photoUri));
             holder.photo.setImageBitmap(bitmap);
         } catch (Exception e) {

@@ -3,6 +3,11 @@
  */
 package com.liangshan.jianjian.types;
 
+
+import java.util.ArrayList;
+
+import com.liangshan.jianjian.util.ParcelUtils;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -10,48 +15,98 @@ import android.os.Parcelable;
  * @author ezhuche
  *
  */
-public class RecommendMsg extends Fragment {
+public class RecommendMsg extends Fragment implements JianjianType,Parcelable{
     
     
-    private Product mProduct;
+    
     private String mPrice;
     private String mDescription;
-    private String[] mPhoto;
     private Boolean mIsPrivate;
     private int mNumComments;
     private String mParentId;
-    private String mUserId;
+    private String mUserId;    
+    private Product mProduct;
+    private ArrayList<String> mPhoto;
     
     public RecommendMsg(){
     }
     
+    public RecommendMsg(Parcel in) {
+        super(in);
+        mPrice = ParcelUtils.readStringFromParcel(in);
+        mDescription = ParcelUtils.readStringFromParcel(in);
+        mIsPrivate = in.readInt() == 1;
+        mNumComments = in.readInt();
+        mParentId = ParcelUtils.readStringFromParcel(in);
+        mUserId = ParcelUtils.readStringFromParcel(in);
+               
+        if (in.readInt() == 1) {
+            mProduct = in.readParcelable(Product.class.getClassLoader());
+        }
+        int photosize = in.readInt();
+        if(photosize != 0){
+            mPhoto = new ArrayList<String>();
+            for (int i = 0; i < photosize; i++) {
+                mPhoto.add(ParcelUtils.readStringFromParcel(in));
+            }
+        }
 
-    /* (non-Javadoc)
-     * @see android.os.Parcelable#describeContents()
-     */
-    @Override
-    public int describeContents() {
-        // TODO Auto-generated method stub
-        return 0;
+            
     }
+    
+    public static final RecommendMsg.Creator<RecommendMsg> CREATOR = new Parcelable.Creator<RecommendMsg>() {
+        public RecommendMsg createFromParcel(Parcel in) {
+            return new RecommendMsg(in);
+        }
+
+        @Override
+        public RecommendMsg[] newArray(int size) {
+            return new RecommendMsg[size];
+        }
+    };
 
     /* (non-Javadoc)
      * @see android.os.Parcelable#writeToParcel(android.os.Parcel, int)
      */
     @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        // TODO Auto-generated method stub
+    public void writeToParcel(Parcel out, int flags) {
+        super.writeToParcel(out, flags);
+        ParcelUtils.writeStringToParcel(out, mPrice);
+        ParcelUtils.writeStringToParcel(out, mDescription);
+        if(mIsPrivate == true){
+            out.writeInt(1);
+        } else {
+            out.writeInt(0);
+        }
+        out.writeInt(mNumComments);
+        ParcelUtils.writeStringToParcel(out, mParentId);
+        ParcelUtils.writeStringToParcel(out, mUserId);
+        if(mProduct != null){
+            out.writeInt(1);
+            out.writeParcelable(mProduct, flags);
+        } else {
+            out.writeInt(0);
+        }
+        
+        if ( mPhoto.size() != 0) {
+            out.writeInt(mPhoto.size());
+            for (int i = 0; i < mPhoto.size(); i++) {
+                ParcelUtils.writeStringToParcel(out,mPhoto.get(i));
+            }
+        } else {
+            out.writeInt(0);
+        }
 
     }
     
-    /*
-    public String getMessageId() {
-        return mMessageId;
+    /* (non-Javadoc)
+     * @see android.os.Parcelable#describeContents()
+     */
+    @Override
+    public int describeContents() {
+        return 0;
     }
-
-    public void setMessageId(String messageId) {
-        mMessageId = messageId;
-    }*/
+    
 
     public Product getProduct() {
         return mProduct;
@@ -71,10 +126,10 @@ public class RecommendMsg extends Fragment {
     public void setDescription(String description) {
         mDescription = description;
     }
-    public String[] getPhoto() {
+    public ArrayList<String> getPhoto() {
         return mPhoto;
     }
-    public void setPhoto(String[] photo) {
+    public void setPhoto(ArrayList<String> photo) {
         mPhoto = photo;
     }
     

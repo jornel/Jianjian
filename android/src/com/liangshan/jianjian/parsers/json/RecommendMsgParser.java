@@ -3,6 +3,8 @@
  */
 package com.liangshan.jianjian.parsers.json;
 
+import java.util.ArrayList;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -49,9 +51,9 @@ public class RecommendMsgParser extends AbstractParser<RecommendMsg> {
         }
 
         if (json.has("photo")&&!json.isNull("photo")) {
-            String[] photoUri = new String[5];
+            ArrayList<String> photoUri = new ArrayList<String>();
             if(json.getJSONObject("photo").has("url")){
-                photoUri[0] = json.getJSONObject("photo").getString("url");
+                photoUri.add(json.getJSONObject("photo").getString("url"));
                 message.setPhoto(photoUri);
             }
         }

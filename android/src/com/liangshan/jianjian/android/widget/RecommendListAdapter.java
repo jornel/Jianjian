@@ -105,7 +105,7 @@ public class RecommendListAdapter extends BaseRecommendAdapter implements Observ
          
 
         try {
-            Uri photoUri = Uri.parse(recommend.getPhoto()[0]);
+            Uri photoUri = Uri.parse(recommend.getPhoto().get(0));
             Bitmap bitmap = BitmapFactory.decodeStream(mRrm.getInputStream(photoUri));
             holder.photo.setImageBitmap(bitmap);
         } catch (Exception e) {
@@ -159,7 +159,7 @@ public class RecommendListAdapter extends BaseRecommendAdapter implements Observ
             Uri photoUri;
             
             try {
-                photoUri = Uri.parse(it.getPhoto()[0]);
+                photoUri = Uri.parse(it.getPhoto().get(0));
 
             } catch (Exception e) {
                 photoUri = Uri.parse(it.getFromUser().getPhoto());

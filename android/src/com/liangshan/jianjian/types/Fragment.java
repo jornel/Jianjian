@@ -3,6 +3,8 @@
  */
 package com.liangshan.jianjian.types;
 
+import com.liangshan.jianjian.util.ParcelUtils;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -20,13 +22,23 @@ public class Fragment implements JianjianType,Parcelable {
     public Fragment(){
     }
     
+    public Fragment(Parcel in) {
+        mFragmentId = ParcelUtils.readStringFromParcel(in);
+        mType = ParcelUtils.readStringFromParcel(in);
+        mCreateDate = ParcelUtils.readStringFromParcel(in);
+                
+        if (in.readInt() == 1) {
+            mFromUser = in.readParcelable(User.class.getClassLoader()) ;
+        }
+        
+    }
+    
 
     /* (non-Javadoc)
      * @see android.os.Parcelable#describeContents()
      */
     @Override
     public int describeContents() {
-        // TODO Auto-generated method stub
         return 0;
     }
 
@@ -34,8 +46,16 @@ public class Fragment implements JianjianType,Parcelable {
      * @see android.os.Parcelable#writeToParcel(android.os.Parcel, int)
      */
     @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        // TODO Auto-generated method stub
+    public void writeToParcel(Parcel out, int flags) {
+        ParcelUtils.writeStringToParcel(out, mFragmentId);
+        ParcelUtils.writeStringToParcel(out, mType);
+        ParcelUtils.writeStringToParcel(out, mCreateDate);
+        if (mFromUser != null) {
+            out.writeInt(1);
+            out.writeParcelable(mFromUser, flags);
+        } else {
+            out.writeInt(0);
+        }
 
     }
     

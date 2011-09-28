@@ -215,15 +215,14 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         listView.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                /*
-                Event Event = (Event) parent.getAdapter().getItem(position);
-                if (Event.getUser() != null) {
-                    Intent intent = new Intent(FriendsActivity.this, UserDetailsActivity.class);
-                    intent.putExtra(UserDetailsActivity.EXTRA_USER_PARCEL, Event.getUser());
-                    intent.putExtra(UserDetailsActivity.EXTRA_SHOW_ADD_FRIEND_OPTIONS, true);
+                
+                RecommendMsg recommend = (RecommendMsg) parent.getAdapter().getItem(position);
+                if (recommend != null) {
+                    Intent intent = new Intent(FriendsActivity.this, RecommendDetailsActivity.class);
+                    intent.putExtra(RecommendDetailsActivity.EXTRA_RecommendMsg_PARCEL, recommend);
                     startActivity(intent);
                 }
-                */
+                
             }
         });
         
