@@ -3,6 +3,8 @@
  */
 package com.liangshan.jianjian.types;
 
+import com.liangshan.jianjian.util.ParcelUtils;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -17,6 +19,21 @@ public class Category implements JianjianType,Parcelable {
     
     public Category(){
     }
+    public Category(Parcel in){
+        mCategoryId = ParcelUtils.readStringFromParcel(in);
+        mName = ParcelUtils.readStringFromParcel(in);
+    }
+    
+    public static final Category.Creator<Category> CREATOR = new Parcelable.Creator<Category>() {
+        public Category createFromParcel(Parcel in) {
+            return new Category(in);
+        }
+
+        @Override
+        public Category[] newArray(int size) {
+            return new Category[size];
+        }
+    };
     
 
     /* (non-Javadoc)
@@ -24,7 +41,6 @@ public class Category implements JianjianType,Parcelable {
      */
     @Override
     public int describeContents() {
-        // TODO Auto-generated method stub
         return 0;
     }
 
@@ -32,8 +48,9 @@ public class Category implements JianjianType,Parcelable {
      * @see android.os.Parcelable#writeToParcel(android.os.Parcel, int)
      */
     @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        // TODO Auto-generated method stub
+    public void writeToParcel(Parcel out, int flags) {
+        ParcelUtils.writeStringToParcel(out, mCategoryId);
+        ParcelUtils.writeStringToParcel(out, mName);
 
     }
     

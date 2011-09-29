@@ -59,6 +59,30 @@ public class Venue implements JianjianType, Parcelable {
             return new Venue[size];
         }
     };
+      
+    
+    @Override
+    public void writeToParcel(Parcel out, int flags) {
+        ParcelUtils.writeStringToParcel(out, mAddress);
+        ParcelUtils.writeStringToParcel(out, mCity);
+        ParcelUtils.writeStringToParcel(out, mCityid);
+        ParcelUtils.writeStringToParcel(out, mCrossstreet);
+        ParcelUtils.writeStringToParcel(out, mDistance);
+        ParcelUtils.writeStringToParcel(out, mGeolat);
+        ParcelUtils.writeStringToParcel(out, mGeolong);
+        out.writeInt(mHasTodo ? 1 : 0);
+        ParcelUtils.writeStringToParcel(out, mId);
+        ParcelUtils.writeStringToParcel(out, mName);
+        ParcelUtils.writeStringToParcel(out, mPhone);
+        ParcelUtils.writeStringToParcel(out, mState);
+      
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+    
     
     public String getAddress() {
         return mAddress;
@@ -158,27 +182,4 @@ public class Venue implements JianjianType, Parcelable {
     }
 
 
-    
-    
-    @Override
-    public void writeToParcel(Parcel out, int flags) {
-        ParcelUtils.writeStringToParcel(out, mAddress);
-        ParcelUtils.writeStringToParcel(out, mCity);
-        ParcelUtils.writeStringToParcel(out, mCityid);
-        ParcelUtils.writeStringToParcel(out, mCrossstreet);
-        ParcelUtils.writeStringToParcel(out, mDistance);
-        ParcelUtils.writeStringToParcel(out, mGeolat);
-        ParcelUtils.writeStringToParcel(out, mGeolong);
-        out.writeInt(mHasTodo ? 1 : 0);
-        ParcelUtils.writeStringToParcel(out, mId);
-        ParcelUtils.writeStringToParcel(out, mName);
-        ParcelUtils.writeStringToParcel(out, mPhone);
-        ParcelUtils.writeStringToParcel(out, mState);
-      
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
 }
