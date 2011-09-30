@@ -119,9 +119,11 @@ public class RecommendDetailsActivity extends Activity {
         
         TextView tvUsername = (TextView)findViewById(R.id.recommendDetailsActivityUsername);
         TextView tvProduct = (TextView)findViewById(R.id.recommendDetailsActivityProduct);
-        TextView tvVenue = (TextView)findViewById(R.id.recommendDetailsActivityVenue);
+        TextView tvVenue = (TextView)findViewById(R.id.recommendDetailsActivityGeneralVenueValue);
         TextView tvPrice = (TextView)findViewById(R.id.recommendDetailsActivityPrice);
         TextView tvDate = (TextView)findViewById(R.id.recommendDetailsActivityDate);
+        TextView tvDescription = (TextView)findViewById(R.id.recommendDetailsActivityDescription);
+        
         User user = mStateHolder.getRecUser();
         Product product = mStateHolder.getProduct();
         if(user.getNick()!=null){
@@ -141,7 +143,11 @@ public class RecommendDetailsActivity extends Activity {
         String date = mStateHolder.getRecommendMsg().getCreateDate();
         if(date != null){
             tvDate.setText(StringFormatters.getOlderTimeString(date));
-        }        
+        }
+        String description = mStateHolder.getRecommendMsg().getDescription();
+        if(description != null){
+            tvDescription.setText(description);
+        }
         
         ensureUiPhoto();
        

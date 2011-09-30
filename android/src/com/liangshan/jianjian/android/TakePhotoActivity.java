@@ -56,7 +56,9 @@ public class TakePhotoActivity extends Activity {
     /*拍照的照片存储位置*/  
     private static final File PHOTO_DIR = new File(Environment.getExternalStorageDirectory() + "/DCIM/Camera");
     //private static final File PHOTO_DIR = new File(Environment.getExternalStorageDirectory() + "/DCIM/100ANDRO");
-    protected static final String EXTRA_PHOTO_RETURNED = "UPLOADED_PHOTO";  
+    protected static final String EXTRA_PHOTO_RETURNED = "UPLOADED_PHOTO";
+    private static final int Photo_Output_X = 500;
+    private static final int Photo_Output_Y = 500;
   
     private File mCurrentPhotoFile;//照相机拍照得到的图片  
     
@@ -281,8 +283,8 @@ public class TakePhotoActivity extends Activity {
         intent.putExtra("crop", "true");  
         intent.putExtra("aspectX", 1);  
         intent.putExtra("aspectY", 1);  
-        intent.putExtra("outputX", 200);  
-        intent.putExtra("outputY", 200);  
+        intent.putExtra("outputX", Photo_Output_X);  
+        intent.putExtra("outputY", Photo_Output_Y);  
         intent.putExtra("return-data", true);  
         return intent;  
     }  
@@ -319,8 +321,8 @@ public class TakePhotoActivity extends Activity {
         intent.putExtra("crop", "true");  
         intent.putExtra("aspectX", 1);  
         intent.putExtra("aspectY", 1);  
-        intent.putExtra("outputX", 200);  
-        intent.putExtra("outputY", 200);  
+        intent.putExtra("outputX", Photo_Output_X);  
+        intent.putExtra("outputY", Photo_Output_Y);  
         intent.putExtra("return-data", true);  
         return intent;  
     } 

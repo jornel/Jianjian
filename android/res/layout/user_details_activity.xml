@@ -134,7 +134,7 @@
             android:layout_width="wrap_content" 
             android:layout_height="wrap_content"
             android:text="8"
-            android:textAppearance="@style/TextViewStyleUserDetailsActivityGeneralValue"
+            android:textAppearance="@style/TextViewStyleRecommendDetailsActivityVenueValue"
 	        android:layout_below="@id/userDetailsActivityGeneralBadgesTitle"
 	        android:layout_toRightOf="@id/userDetailsActivityGeneralBadgesIcon" />
                 
