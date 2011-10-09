@@ -174,7 +174,7 @@ public class UserDetailsActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case MENU_REFRESH:
-                //mStateHolder.startTaskUserDetails(this, mStateHolder.getUser().getId());
+                mStateHolder.startTaskUserDetails(this, mStateHolder.getUser().getUserid());
                 return true;
             case MENU_LOGOUT:
                 mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -423,7 +423,7 @@ public class UserDetailsActivity extends Activity {
         
         ImageView ivPhoto = (ImageView)findViewById(R.id.userDetailsActivityPhoto);
         
-        if (user == null || user.getPhoto() == null) {
+        if (user == null || user.getPhoto() == null || user.getPhoto() =="") {
             ivPhoto.setImageResource(R.drawable.blank_boy);
             return;
         }
@@ -432,8 +432,7 @@ public class UserDetailsActivity extends Activity {
         
         if (mRrm.exists(uriPhoto)) {
             try {
-                Bitmap bitmap = BitmapFactory.decodeStream(mRrm.getInputStream(Uri.parse(user
-                        .getPhoto())));
+                Bitmap bitmap = BitmapFactory.decodeStream(mRrm.getInputStream(uriPhoto));
                 ivPhoto.setImageBitmap(bitmap);
             } catch (IOException e) {
                 setUserPhotoMissing(ivPhoto, user);

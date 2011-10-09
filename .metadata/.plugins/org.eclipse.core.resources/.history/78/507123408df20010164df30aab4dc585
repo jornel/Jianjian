@@ -1,0 +1,28 @@
+/**
+ * 
+ */
+package com.liangshan.jianjian.parsers.json;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.liangshan.jianjian.types.Comment;
+
+/**
+ * @author jornel
+ *
+ */
+public class CommentParser extends AbstractParser<Comment> {
+
+    /* (non-Javadoc)
+     * @see com.liangshan.jianjian.parsers.json.AbstractParser#parse(org.json.JSONObject)
+     */
+    @Override
+    public Comment parse(JSONObject json) throws JSONException {
+        Comment comments = new Comment();
+        
+        
+        return comments;
+    }
+
+}

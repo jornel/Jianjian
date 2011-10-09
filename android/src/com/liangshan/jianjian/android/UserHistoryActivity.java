@@ -187,7 +187,7 @@ public class UserHistoryActivity extends LoadableListActivity {
         
 
         if(!mStateHolder.getHistory().isHasMore()){
-            getListView().removeFooterView(footerview);
+            footerview.setVisibility(View.GONE);
         }
         
         

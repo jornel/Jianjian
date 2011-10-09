@@ -9,6 +9,9 @@ import java.util.Observer;
 
 import com.liangshan.jianjian.android.util.RemoteResourceManager;
 import com.liangshan.jianjian.android.util.StringFormatters;
+import com.liangshan.jianjian.general.Jianjian;
+import com.liangshan.jianjian.types.Comment;
+import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.Product;
 import com.liangshan.jianjian.types.RecommendMsg;
 import com.liangshan.jianjian.types.User;
@@ -21,6 +24,7 @@ import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -71,24 +75,27 @@ public class RecommendDetailsActivity extends Activity {
                 Log.i(TAG, "Starting " + TAG + " with full recommend parcel.");
                 RecommendMsg recommend = getIntent().getExtras().getParcelable(EXTRA_RecommendMsg_PARCEL);
                 mStateHolder.setRecommendMsg(recommend);
+                if(mStateHolder.getRecommendMsg().getFromUser()!= null){
+                    mStateHolder.setRecUser(mStateHolder.getRecommendMsg().getFromUser());
+                }
+                if(mStateHolder.getRecommendMsg().getProduct()!=null){
+                    mStateHolder.setProduct(mStateHolder.getRecommendMsg().getProduct());
+                }
+                mStateHolder.startTaskShowComments(this);
             } else {
                 Log.i(TAG, "Starting " + TAG + " as default recommend msg.");
                 RecommendMsg recommend = new RecommendMsg();
                 mStateHolder.setRecommendMsg(recommend);
             }
         }
-        if(mStateHolder.getRecommendMsg().getFromUser()!= null){
-            mStateHolder.setRecUser(mStateHolder.getRecommendMsg().getFromUser());
-        }
-        if(mStateHolder.getRecommendMsg().getProduct()!=null){
-            mStateHolder.setProduct(mStateHolder.getRecommendMsg().getProduct());
-        }
+
         mHandler = new Handler();
         mRrm = ((Jianjianroid) getApplication()).getRemoteResourceManager();
         mResourcesObserver = new RemoteResourceManagerObserver();
         mRrm.addObserver(mResourcesObserver);
         
         ensureUi();
+        
         
     }
     
@@ -134,19 +141,27 @@ public class RecommendDetailsActivity extends Activity {
         }
         if(product.getVenue()!=null){
             tvVenue.setText(product.getVenue().getName());
+        }else{
+            tvVenue.setVisibility(View.GONE);
         }
         String price = mStateHolder.getRecommendMsg().getPrice();
         String price2 = getString(R.string.hint_product_currency);
         if(price != null && price != ""&& !price.trim().equals(price2)){
             tvPrice.setText(price);
+        }else{
+            tvPrice.setVisibility(View.GONE);
         }
         String date = mStateHolder.getRecommendMsg().getCreateDate();
         if(date != null){
             tvDate.setText(StringFormatters.getOlderTimeString(date));
+        }else{
+            tvDate.setVisibility(View.GONE);
         }
         String description = mStateHolder.getRecommendMsg().getDescription();
         if(description != null){
             tvDescription.setText(description);
+        }else{
+            tvDescription.setVisibility(View.GONE);
         }
         
         ensureUiPhoto();
@@ -162,7 +177,7 @@ public class RecommendDetailsActivity extends Activity {
         
         User user = mStateHolder.getRecommendMsg().getFromUser();
         
-        if (user == null || user.getPhoto() == null) {
+        if (user == null || user.getPhoto() == null || user.getPhoto()=="") {
             ivUserPhoto.setImageResource(R.drawable.blank_boy);
             ensureUiProductPhoto();
             return;
@@ -192,8 +207,9 @@ public class RecommendDetailsActivity extends Activity {
         ImageView ivRecommendImage = (ImageView)findViewById(R.id.recommendImage);
         
         if(mStateHolder.getRecommendMsg().getPhoto()==null 
-                || mStateHolder.getRecommendMsg().getPhoto().get(0) == null){
-            ivRecommendImage.setVisibility(View.INVISIBLE);
+                || mStateHolder.getRecommendMsg().getPhoto().get(0) == null
+                || mStateHolder.getRecommendMsg().getPhoto().get(0) == ""){
+            ivRecommendImage.setVisibility(View.GONE);
             return;
         }
         String image = mStateHolder.getRecommendMsg().getPhoto().get(0);
@@ -205,7 +221,7 @@ public class RecommendDetailsActivity extends Activity {
                 Bitmap bitmap = BitmapFactory.decodeStream(mRrm.getInputStream(uriImage));
                 ivRecommendImage.setImageBitmap(bitmap);
             } catch (IOException e) {
-                ivRecommendImage.setVisibility(View.INVISIBLE);
+                ivRecommendImage.setVisibility(View.GONE);
             }
         } else {
             mRrm.request(uriImage);
@@ -245,17 +261,87 @@ public class RecommendDetailsActivity extends Activity {
         }
     };
     
+    /**
+     * @param friends
+     * @param mReason
+     */
+    public void onShowCommentsTaskComplete(Group<Comment> comments, Exception mReason) {
+        // TODO Auto-generated method stub
+        
+    }
+    
+    private static class ShowCommentsTask extends AsyncTask<String, Void, Group<Comment>> {
+        
+        private RecommendDetailsActivity mActivity;
+        private Exception mReason;
+
+        public ShowCommentsTask(RecommendDetailsActivity activity) {
+            mActivity = activity;
+        }
+        
+        @Override
+        protected void onPreExecute() {
+        }
+
+        @Override
+        protected Group<Comment> doInBackground(String... params) {
+            try {
+                Jianjianroid jianjianroid = (Jianjianroid) mActivity.getApplication();
+                Jianjian jianjian = jianjianroid.getJianjian();
+                
+                Group<Comment> comments = jianjian.commentlist(mActivity.mStateHolder.getRecommendMsg().getFragmentId());
+
+                //Log.i(TAG, "get Friends======");
+                return comments;
+            } catch (Exception e) {
+                mReason = e;
+            }
+            return null;
+        }
+
+
+        @Override
+        protected void onPostExecute(Group<Comment> comments) {
+            if (mActivity != null) {
+                mActivity.onShowCommentsTaskComplete(comments, mReason);
+            }
+        }
+
+        @Override
+        protected void onCancelled() {
+            if (mActivity != null) {
+                mActivity.onShowCommentsTaskComplete(null, mReason);
+            }
+        }
+        
+        public void setActivity(RecommendDetailsActivity activity) {
+            mActivity = activity;
+        }
+    }
+    
     private static class StateHolder {
         private RecommendMsg mRecommend;
         private User mRecUser;
         private Product mProduct;
+        private ShowCommentsTask mTaskShowComments;
+        private boolean mIsRunningShowCommentsTask;
 
         /**
          * @param recommendDetailsActivity
          */
         public void setActivityForTasks(RecommendDetailsActivity recommendDetailsActivity) {
-            // TODO Auto-generated method stub
+            if (mTaskShowComments != null) {
+                mTaskShowComments.setActivity(recommendDetailsActivity);
+            }
             
+        }
+        
+        public void startTaskShowComments(RecommendDetailsActivity activity) {
+            if(mIsRunningShowCommentsTask != true){
+                mIsRunningShowCommentsTask = true;
+                mTaskShowComments = new ShowCommentsTask(activity);
+                mTaskShowComments.execute();
+            }
         }
         
         public Product getProduct() {
@@ -293,7 +379,10 @@ public class RecommendDetailsActivity extends Activity {
             return mRecommend;            
         }
         
+        
     }
+
+
 
 
 

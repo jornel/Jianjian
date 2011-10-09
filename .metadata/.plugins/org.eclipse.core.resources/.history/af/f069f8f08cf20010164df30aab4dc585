@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.liangshan.jianjian.parsers.json;
+
+/**
+ * @author jornel
+ *
+ */
+public class CommentParser<Comment> extends AbstractParser<T> {
+
+}

@@ -26,19 +26,23 @@
         android:src="@drawable/titlebar_logo_unpressed">
       </ImageView>
     </LinearLayout-->
+    
+          <!-- A paddingTop of zero will remove the strip below the tabs. -->
+      <FrameLayout
+        android:id="@android:id/tabcontent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="top" 
+        android:layout_weight="1"/>
       	
     
     <TabWidget
       android:id="@android:id/tabs"
       android:layout_width="fill_parent"
-      android:layout_height="wrap_content" />
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom" />
       
-      <!-- A paddingTop of zero will remove the strip below the tabs. -->
-      <FrameLayout
-        android:id="@android:id/tabcontent"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:paddingTop="5dip" />
+
         
   </LinearLayout>
 </TabHost>

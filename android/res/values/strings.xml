@@ -90,6 +90,12 @@
     <string name="recommendSymbol">\u0020\u0020推荐了\u0020</string>
     <string name="venueSymbol">\u0020,\u0020在\u0020</string> 
     <string name="more_recommends">\u0020\u0020显示更多</string> 
+    
+    <string name="reply_label">评论</string>
+    <string name="hint_reply_edit">有些话要说</string>
+    <string name="comments">评论</string>
+    <string name="empty_comment">还没有人评论</string>
+    
      
     
     

@@ -41,11 +41,13 @@ import com.liangshan.jianjian.android.util.Base64Coder;
 import com.liangshan.jianjian.http.AbstractHttpApi;
 import com.liangshan.jianjian.http.HttpApi;
 import com.liangshan.jianjian.http.HttpApiWithBasicAuth;
+import com.liangshan.jianjian.parsers.json.CommentParser;
 import com.liangshan.jianjian.parsers.json.EventParser;
 import com.liangshan.jianjian.parsers.json.GroupParser;
 import com.liangshan.jianjian.parsers.json.RecommendMsgParser;
 import com.liangshan.jianjian.parsers.json.UserParser;
 import com.liangshan.jianjian.parsers.json.VenueParser;
+import com.liangshan.jianjian.types.Comment;
 import com.liangshan.jianjian.types.Event;
 import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.RecommendMsg;
@@ -79,12 +81,16 @@ public class JianjianHttpApiV1 {
     private static final String URL_API_HISTORY_LIST = "/statuses/list";
     
     private static final String URL_API_FRIEND_LIST = "/friends/list";
+    
+    private static final String URL_API_COMMENT_LIST = "/comments/list";
 
     private static final String EVENT_LIST_PAGE_COUNT = "20";
     
     private static final String HISTORY_LIST_PAGE_COUNT = "10";
 
     private static final String FRIEND_LIST_PAGE_COUNT = "20";
+
+
 
     
 
@@ -270,6 +276,23 @@ public class JianjianHttpApiV1 {
         
         return (Group<User>) mHttpApi.doHttpRequest(httpGet,
                 new GroupParser(new UserParser()));
+    }
+    
+    /**
+     * @param messageId
+     * @return
+     */
+    @SuppressWarnings("unchecked")
+    public Group<Comment> commentlist(String messageId) throws JianjianException,
+    JianjianError, IOException{
+        HttpGet httpGet = mHttpApi.createHttpGet(fullUrl(URL_API_COMMENT_LIST), //
+                new BasicNameValuePair("source", "jianjian"), //
+                new BasicNameValuePair("lang", "CHS"), //
+                new BasicNameValuePair("id", messageId) //
+                );
+        
+        return (Group<Comment>) mHttpApi.doHttpRequest(httpGet,
+                new GroupParser(new CommentParser()));
     }
     
     /**
@@ -494,6 +517,8 @@ public class JianjianHttpApiV1 {
       }
          return output;
     }
+
+
 
 
 

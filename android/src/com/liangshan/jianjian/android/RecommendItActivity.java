@@ -154,6 +154,8 @@ public class RecommendItActivity extends Activity {
                     return;
                 }
                 
+                
+                
                 mStateHolder.startTaskAddandRecommendIt(
                         RecommendItActivity.this, 
                         new String[]{

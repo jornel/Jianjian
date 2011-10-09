@@ -79,7 +79,7 @@ public class LoginActivity extends Activity {
     @Override
     public void onPause() {
         super.onPause();
-        //((Jianjianroid) getApplication()).removeLocationUpdates();
+        ((Jianjianroid) getApplication()).removeLocationUpdates();
     }
 
     @Override

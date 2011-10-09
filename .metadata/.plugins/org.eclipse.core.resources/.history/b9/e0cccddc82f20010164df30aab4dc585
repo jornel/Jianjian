@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+package com.liangshan.jianjian.types;
+
+import android.os.Parcelable;
+
+/**
+ * @author jornel
+ *
+ */
+public class Comment extends Fragment implements JianjianType, Parcelable {
+    private String mBody;
+    
+    
+    
+
+}

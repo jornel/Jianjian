@@ -130,7 +130,7 @@ public class TakePhotoActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
+               
                 doPickPhotoFromGallery();
             }
             
@@ -285,6 +285,7 @@ public class TakePhotoActivity extends Activity {
         intent.putExtra("aspectY", 1);  
         intent.putExtra("outputX", Photo_Output_X);  
         intent.putExtra("outputY", Photo_Output_Y);  
+        intent.putExtra("scale", true); 
         intent.putExtra("return-data", true);  
         return intent;  
     }  
@@ -322,7 +323,8 @@ public class TakePhotoActivity extends Activity {
         intent.putExtra("aspectX", 1);  
         intent.putExtra("aspectY", 1);  
         intent.putExtra("outputX", Photo_Output_X);  
-        intent.putExtra("outputY", Photo_Output_Y);  
+        intent.putExtra("outputY", Photo_Output_Y); 
+        intent.putExtra("scale", true); 
         intent.putExtra("return-data", true);  
         return intent;  
     } 

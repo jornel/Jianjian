@@ -14,6 +14,7 @@ import com.liangshan.jianjian.android.R;
 import com.liangshan.jianjian.android.error.JianjianError;
 import com.liangshan.jianjian.android.error.JianjianException;
 import com.liangshan.jianjian.general.Jianjian.JLocation;
+import com.liangshan.jianjian.types.Comment;
 import com.liangshan.jianjian.types.Event;
 import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.RecommendMsg;
@@ -178,6 +179,16 @@ public class Jianjian {
     }
     
     /**
+     * @param fragmentId
+     * @return
+     */
+    @V1
+    public Group<Comment> commentlist(String messageId) 
+            throws JianjianException, JianjianError, IOException{
+        return mJianjianV1.commentlist(messageId);
+    }
+    
+    /**
      * @param mUserId
      * @return
      */
@@ -250,6 +261,8 @@ public class Jianjian {
     public @interface V1 {
 
     }
+
+
 
 
 

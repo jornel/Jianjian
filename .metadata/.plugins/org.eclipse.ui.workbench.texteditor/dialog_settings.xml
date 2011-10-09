@@ -13,16 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="Group" key="selection"/>
+		<item value="GONE" key="selection"/>
 		<list key="findhistory">
-			<item value="group"/>
-			<item value="request"/>
-			<item value="user_friend_activity_title"/>
-			<item value="startFriendsInCommonActivity"/>
-			<item value="recommend"/>
-			<item value="startRecommendMsgActivity"/>
-			<item value="history"/>
-			<item value="viewFriends"/>
+			<item value="gone"/>
+			<item value="footerview"/>
+			<item value="FooterView"/>
+			<item value="setActivityForTask"/>
+			<item value="setActivity"/>
+			<item value="SeparatorTextViewStyle"/>
+			<item value="TextViewStyleHeaderDividerSeparatorTextViewStyle"/>
+			<item value="TextViewStyleHeaderDivider"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Friends"/>

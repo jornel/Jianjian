@@ -59,7 +59,8 @@
         </activity>
         
         <activity android:name=".LoginActivity"
-                  android:launchMode="singleInstance">
+                  android:launchMode="singleInstance"
+                  android:windowSoftInputMode="adjustUnspecified|stateHidden">
         </activity>
         
         
@@ -127,7 +128,8 @@
             </intent-filter>
         </activity>
                 <activity
-                  android:name="RecommendDetailsActivity">
+                  android:name="RecommendDetailsActivity"
+                  android:windowSoftInputMode="adjustUnspecified|stateHidden" >
             <intent-filter>
                 <action
                   android:name="android.intent.action.MAIN" />
