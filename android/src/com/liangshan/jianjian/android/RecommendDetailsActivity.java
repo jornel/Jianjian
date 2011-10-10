@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 
+import com.liangshan.jianjian.android.util.NotificationsUtil;
 import com.liangshan.jianjian.android.util.RemoteResourceManager;
 import com.liangshan.jianjian.android.util.StringFormatters;
 import com.liangshan.jianjian.general.Jianjian;
@@ -75,13 +76,10 @@ public class RecommendDetailsActivity extends Activity {
                 Log.i(TAG, "Starting " + TAG + " with full recommend parcel.");
                 RecommendMsg recommend = getIntent().getExtras().getParcelable(EXTRA_RecommendMsg_PARCEL);
                 mStateHolder.setRecommendMsg(recommend);
-                if(mStateHolder.getRecommendMsg().getFromUser()!= null){
-                    mStateHolder.setRecUser(mStateHolder.getRecommendMsg().getFromUser());
-                }
-                if(mStateHolder.getRecommendMsg().getProduct()!=null){
-                    mStateHolder.setProduct(mStateHolder.getRecommendMsg().getProduct());
-                }
+                mStateHolder.setRecUser(mStateHolder.getRecommendMsg().getFromUser());
+                mStateHolder.setProduct(mStateHolder.getRecommendMsg().getProduct());
                 mStateHolder.startTaskShowComments(this);
+                
             } else {
                 Log.i(TAG, "Starting " + TAG + " as default recommend msg.");
                 RecommendMsg recommend = new RecommendMsg();
@@ -104,7 +102,7 @@ public class RecommendDetailsActivity extends Activity {
         super.onPause();
         
         if (isFinishing()) {
-            //mStateHolder.cancelTasks();
+            mStateHolder.cancelTasks();
             mHandler.removeCallbacks(mRunnableUpdateUserPhoto);
 
             RemoteResourceManager rrm = ((Jianjianroid) getApplication()).getRemoteResourceManager();
@@ -130,6 +128,8 @@ public class RecommendDetailsActivity extends Activity {
         TextView tvPrice = (TextView)findViewById(R.id.recommendDetailsActivityPrice);
         TextView tvDate = (TextView)findViewById(R.id.recommendDetailsActivityDate);
         TextView tvDescription = (TextView)findViewById(R.id.recommendDetailsActivityDescription);
+        
+        
         
         User user = mStateHolder.getRecUser();
         Product product = mStateHolder.getProduct();
@@ -265,8 +265,22 @@ public class RecommendDetailsActivity extends Activity {
      * @param friends
      * @param mReason
      */
-    public void onShowCommentsTaskComplete(Group<Comment> comments, Exception mReason) {
-        // TODO Auto-generated method stub
+    public void onShowCommentsTaskComplete(Group<Comment> comments, Exception ex) {
+        
+        TextView tvEmptyComment = (TextView)findViewById(R.id.emptyComment);
+        
+        if(comments != null){
+            mStateHolder.setComments(comments);
+            
+            
+        }else if(ex != null){
+            tvEmptyComment.setVisibility(View.VISIBLE);
+            NotificationsUtil.ToastReasonForFailure(this, ex);
+        }else if(comments == null|| comments.size()==0){
+            tvEmptyComment.setVisibility(View.VISIBLE);
+        } 
+        
+        mStateHolder.setIsRunningShowCommentsTask(false);
         
     }
     
@@ -291,7 +305,6 @@ public class RecommendDetailsActivity extends Activity {
                 
                 Group<Comment> comments = jianjian.commentlist(mActivity.mStateHolder.getRecommendMsg().getFragmentId());
 
-                //Log.i(TAG, "get Friends======");
                 return comments;
             } catch (Exception e) {
                 mReason = e;
@@ -325,6 +338,15 @@ public class RecommendDetailsActivity extends Activity {
         private Product mProduct;
         private ShowCommentsTask mTaskShowComments;
         private boolean mIsRunningShowCommentsTask;
+        private Group<Comment> mComments;
+        
+        public StateHolder() {
+            mIsRunningShowCommentsTask = false;
+            mRecommend = new RecommendMsg();
+            mRecUser = new User();
+            mProduct = new Product();
+            
+        }
 
         /**
          * @param recommendDetailsActivity
@@ -354,6 +376,17 @@ public class RecommendDetailsActivity extends Activity {
         public void setProduct(Product product) {
             mProduct = product;            
         }
+        
+        public Group<Comment> getComments() {
+            return mComments;            
+        }
+
+        /**
+         * @param product
+         */
+        public void setComments(Group<Comment> comments) {
+            mComments = comments;            
+        }
 
         /**
          * @return
@@ -379,6 +412,19 @@ public class RecommendDetailsActivity extends Activity {
             return mRecommend;            
         }
         
+        public boolean getIsRunningShowCommentsTask() {
+            return mIsRunningShowCommentsTask;
+        }
+        
+        public void setIsRunningShowCommentsTask(boolean isRunning) {
+            mIsRunningShowCommentsTask = isRunning;
+        }
+        public void cancelTasks() {
+            if (mTaskShowComments != null) {
+                mTaskShowComments.setActivity(null);
+                mTaskShowComments.cancel(true);
+            }
+        }
         
     }
 
