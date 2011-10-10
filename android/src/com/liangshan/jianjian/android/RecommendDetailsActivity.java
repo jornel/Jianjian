@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 
+import com.liangshan.jianjian.android.app.LoadableListActivity;
 import com.liangshan.jianjian.android.util.NotificationsUtil;
 import com.liangshan.jianjian.android.util.RemoteResourceManager;
 import com.liangshan.jianjian.android.util.StringFormatters;
@@ -18,6 +19,7 @@ import com.liangshan.jianjian.types.RecommendMsg;
 import com.liangshan.jianjian.types.User;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -38,7 +40,7 @@ import android.widget.TextView;
  * @author jornel
  *
  */
-public class RecommendDetailsActivity extends Activity {
+public class RecommendDetailsActivity extends ListActivity {
     private static final String TAG = "RecommendDetailsActivity";
 
     private static final boolean DEBUG = JianjianSettings.DEBUG;
@@ -269,7 +271,7 @@ public class RecommendDetailsActivity extends Activity {
         
         TextView tvEmptyComment = (TextView)findViewById(R.id.emptyComment);
         
-        if(comments != null){
+        if(comments != null&&!comments.isEmpty()){
             mStateHolder.setComments(comments);
             
             
