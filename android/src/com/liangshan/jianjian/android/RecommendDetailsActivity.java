@@ -11,6 +11,8 @@ import com.liangshan.jianjian.android.app.LoadableListActivity;
 import com.liangshan.jianjian.android.util.NotificationsUtil;
 import com.liangshan.jianjian.android.util.RemoteResourceManager;
 import com.liangshan.jianjian.android.util.StringFormatters;
+import com.liangshan.jianjian.android.widget.CommentsListAdapter;
+import com.liangshan.jianjian.android.widget.FriendsListAdapter;
 import com.liangshan.jianjian.general.Jianjian;
 import com.liangshan.jianjian.types.Comment;
 import com.liangshan.jianjian.types.Group;
@@ -34,6 +36,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 /**
@@ -52,6 +55,8 @@ public class RecommendDetailsActivity extends ListActivity {
     private RemoteResourceManager mRrm;
     private RemoteResourceManagerObserver mResourcesObserver;
     private Handler mHandler;
+    private CommentsListAdapter mListAdapter;
+    
     
     private BroadcastReceiver mLoggedOutReceiver = new BroadcastReceiver() {
         @Override
@@ -270,9 +275,22 @@ public class RecommendDetailsActivity extends ListActivity {
     public void onShowCommentsTaskComplete(Group<Comment> comments, Exception ex) {
         
         TextView tvEmptyComment = (TextView)findViewById(R.id.emptyComment);
+        if(mListAdapter != null){
+            mListAdapter.removeObserver();
+            mListAdapter.clear();
+        }
+
+        mListAdapter = new CommentsListAdapter(
+                this, ((Jianjianroid) getApplication()).getRemoteResourceManager());
         
         if(comments != null&&!comments.isEmpty()){
             mStateHolder.setComments(comments);
+            
+            mListAdapter.setGroup(mStateHolder.getComments());
+            
+            ListView listView = getListView();
+            listView.setAdapter(mListAdapter);
+            listView.setSmoothScrollbarEnabled(true);
             
             
         }else if(ex != null){
@@ -281,7 +299,7 @@ public class RecommendDetailsActivity extends ListActivity {
         }else if(comments == null|| comments.size()==0){
             tvEmptyComment.setVisibility(View.VISIBLE);
         } 
-        
+        getListView().setAdapter(mListAdapter);
         mStateHolder.setIsRunningShowCommentsTask(false);
         
     }
