@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.parsers.json.VenueParser"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.general.Jianjian.JLocation"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.JianjianSettings"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.widget.VenuePickerAdapter"/>
 <fullyQualifiedTypeName name="android.R"/>
@@ -58,6 +56,8 @@
 <fullyQualifiedTypeName name="com.liangshan.jianjian.types.Event"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.NotificationsUtil"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.types.User"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.types.Comment"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.parsers.json.CommentParser"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.app.LoadableListActivity"/>
+<fullyQualifiedTypeName name="android.app.ListActivity"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.types.Comment"/>
 </qualifiedTypeNameHistroy>

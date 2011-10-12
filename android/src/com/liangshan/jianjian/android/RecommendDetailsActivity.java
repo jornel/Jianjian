@@ -34,8 +34,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -135,6 +138,7 @@ public class RecommendDetailsActivity extends ListActivity {
         TextView tvPrice = (TextView)findViewById(R.id.recommendDetailsActivityPrice);
         TextView tvDate = (TextView)findViewById(R.id.recommendDetailsActivityDate);
         TextView tvDescription = (TextView)findViewById(R.id.recommendDetailsActivityDescription);
+        
         
         
         
@@ -275,6 +279,8 @@ public class RecommendDetailsActivity extends ListActivity {
     public void onShowCommentsTaskComplete(Group<Comment> comments, Exception ex) {
         
         TextView tvEmptyComment = (TextView)findViewById(R.id.emptyComment);
+        LinearLayout tvListview = (LinearLayout)findViewById(R.id.commentlist);
+        tvListview.setVisibility(View.VISIBLE);
         if(mListAdapter != null){
             mListAdapter.removeObserver();
             mListAdapter.clear();
@@ -290,7 +296,7 @@ public class RecommendDetailsActivity extends ListActivity {
             
             ListView listView = getListView();
             listView.setAdapter(mListAdapter);
-            listView.setSmoothScrollbarEnabled(true);
+            
             
             
         }else if(ex != null){
@@ -298,11 +304,33 @@ public class RecommendDetailsActivity extends ListActivity {
             NotificationsUtil.ToastReasonForFailure(this, ex);
         }else if(comments == null|| comments.size()==0){
             tvEmptyComment.setVisibility(View.VISIBLE);
-        } 
+        }
+        
         getListView().setAdapter(mListAdapter);
+        setListViewHeightBasedOnChildren(getListView());
+        
         mStateHolder.setIsRunningShowCommentsTask(false);
         
     }
+    
+    private void setListViewHeightBasedOnChildren(ListView listView) { 
+        ListAdapter listAdapter = listView.getAdapter();  
+        if (listAdapter == null) { 
+            // pre-condition 
+            return; 
+        } 
+
+        int totalHeight = 0; 
+        for (int i = 0; i < listAdapter.getCount(); i++) { 
+            View listItem = listAdapter.getView(i, null, listView); 
+            listItem.measure(0, 0); 
+            totalHeight += listItem.getMeasuredHeight(); 
+        } 
+
+        ViewGroup.LayoutParams params = listView.getLayoutParams(); 
+        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1)); 
+        listView.setLayoutParams(params); 
+    } 
     
     private static class ShowCommentsTask extends AsyncTask<String, Void, Group<Comment>> {
         

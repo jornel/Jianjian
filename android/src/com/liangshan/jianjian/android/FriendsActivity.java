@@ -1,6 +1,8 @@
 package com.liangshan.jianjian.android;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.Date;
 import java.util.LinkedHashMap;
@@ -330,9 +332,11 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         
         EventTimestampSort timestamps = new EventTimestampSort();
         
+        DateFormat format= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        
         for (RecommendMsg it: recommends){
             try { 
-                Date date = new Date(it.getCreateDate());
+                Date date = format.parse(it.getCreateDate());
                 if (date.after(timestamps.getBoundaryRecent())) {
                     recent.add(it);
                 } else if (date.after(timestamps.getBoundaryToday())) {
@@ -343,6 +347,7 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
                     older.add(it);
                 }
             } catch (Exception ex) {
+                Log.e(TAG, "exception during parsing date: " + ex.getMessage());
                 older.add(it);
             }
         }
