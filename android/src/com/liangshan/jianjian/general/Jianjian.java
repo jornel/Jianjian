@@ -189,6 +189,18 @@ public class Jianjian {
     }
     
     /**
+     * @param fragmentId
+     * @param mBody
+     * @return
+     */
+    @V1
+    public Comment sendComment(String id, String body) 
+            throws JianjianException, JianjianError, IOException{
+        
+        return mJianjianV1.sendComment(id,body);
+    }
+    
+    /**
      * @param mUserId
      * @return
      */
@@ -261,6 +273,8 @@ public class Jianjian {
     public @interface V1 {
 
     }
+
+
 
 
 

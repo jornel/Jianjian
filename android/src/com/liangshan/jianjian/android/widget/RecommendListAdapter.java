@@ -143,12 +143,15 @@ public class RecommendListAdapter extends BaseRecommendAdapter implements Observ
         }
         if (!TextUtils.isEmpty(checkinMsgLine3)) {
             holder.thirdLine.setVisibility(View.VISIBLE);
-            holder.thirdLine.setText(checkinMsgLine3);
-            
+            holder.thirdLine.setText(checkinMsgLine3);            
+        }else {
+            holder.thirdLine.setVisibility(View.INVISIBLE);
         }
         holder.timeTextView.setText(checkinMsgLine4);
         if(recommend.getNumComments()!=0){
-            holder.commentnumTextView.setText(recommend.getNumComments());
+            holder.commentnumTextView.setText(Integer.toString(recommend.getNumComments()));
+        } else {
+            holder.commentnumTextView.setText("0");
         }
         return convertView;
     }

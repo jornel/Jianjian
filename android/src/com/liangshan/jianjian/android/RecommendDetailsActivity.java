@@ -36,6 +36,9 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
@@ -139,7 +142,20 @@ public class RecommendDetailsActivity extends ListActivity {
         TextView tvDate = (TextView)findViewById(R.id.recommendDetailsActivityDate);
         TextView tvDescription = (TextView)findViewById(R.id.recommendDetailsActivityDescription);
         
+        Button btCommentConfirmButton = (Button)findViewById(R.id.commentConfirmButton);
         
+        btCommentConfirmButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText etCommentEdit = (EditText)findViewById(R.id.commentEditText);
+                String commentBody = etCommentEdit.getText().toString();
+                if(commentBody != null ||commentBody != ""){
+                    mStateHolder.startTaskSendComment(RecommendDetailsActivity.this, commentBody);
+                    mStateHolder.setIsRunningSendCommentTask(true);
+                }
+                
+            }
+        });
         
         
         User user = mStateHolder.getRecUser();
@@ -313,6 +329,15 @@ public class RecommendDetailsActivity extends ListActivity {
         
     }
     
+    /**
+     * @param comment
+     * @param mReason
+     */
+    public void onSendCommentsTaskComplete(Comment comment, Exception mReason) {
+        // TODO Auto-generated method stub
+        mStateHolder.setIsRunningSendCommentTask(false);
+    }
+    
     private void setListViewHeightBasedOnChildren(ListView listView) { 
         ListAdapter listAdapter = listView.getAdapter();  
         if (listAdapter == null) { 
@@ -380,16 +405,69 @@ public class RecommendDetailsActivity extends ListActivity {
         }
     }
     
+    private static class SendCommentTask extends AsyncTask<String, Void, Comment> {
+        
+        private RecommendDetailsActivity mActivity;
+        private Exception mReason;
+        private String mBody;
+
+        public SendCommentTask(RecommendDetailsActivity activity, String body) {
+            mActivity = activity;
+            mBody = body;
+        }
+        
+        @Override
+        protected void onPreExecute() {
+        }
+
+        @Override
+        protected Comment doInBackground(String... params) {
+            try {
+                Jianjianroid jianjianroid = (Jianjianroid) mActivity.getApplication();
+                Jianjian jianjian = jianjianroid.getJianjian();
+                
+                Comment comment = jianjian.sendComment(mActivity.mStateHolder.getRecommendMsg().getFragmentId(),mBody);
+
+                return null;
+            } catch (Exception e) {
+                mReason = e;
+            }
+            return null;
+        }
+
+
+        @Override
+        protected void onPostExecute(Comment comment) {
+            if (mActivity != null) {
+                mActivity.onSendCommentsTaskComplete(comment, mReason);
+            }
+        }
+
+        @Override
+        protected void onCancelled() {
+            if (mActivity != null) {
+                mActivity.onSendCommentsTaskComplete(null, mReason);
+            }
+        }
+        
+        public void setActivity(RecommendDetailsActivity activity) {
+            mActivity = activity;
+        }
+    }
+    
     private static class StateHolder {
         private RecommendMsg mRecommend;
         private User mRecUser;
         private Product mProduct;
         private ShowCommentsTask mTaskShowComments;
+        private SendCommentTask mTaskSendComment;
         private boolean mIsRunningShowCommentsTask;
+        private boolean mIsRunningSendCommentTask;
         private Group<Comment> mComments;
         
         public StateHolder() {
             mIsRunningShowCommentsTask = false;
+            mIsRunningSendCommentTask = false;
             mRecommend = new RecommendMsg();
             mRecUser = new User();
             mProduct = new Product();
@@ -403,6 +481,9 @@ public class RecommendDetailsActivity extends ListActivity {
             if (mTaskShowComments != null) {
                 mTaskShowComments.setActivity(recommendDetailsActivity);
             }
+            if (mTaskSendComment != null) {
+                mTaskSendComment.setActivity(recommendDetailsActivity);
+            }
             
         }
         
@@ -411,6 +492,13 @@ public class RecommendDetailsActivity extends ListActivity {
                 mIsRunningShowCommentsTask = true;
                 mTaskShowComments = new ShowCommentsTask(activity);
                 mTaskShowComments.execute();
+            }
+        }
+        public void startTaskSendComment(RecommendDetailsActivity activity,String body) {
+            if(mIsRunningSendCommentTask != true){
+                mIsRunningSendCommentTask = true;
+                mTaskSendComment = new SendCommentTask(activity,body);
+                mTaskSendComment.execute();
             }
         }
         
@@ -467,14 +555,28 @@ public class RecommendDetailsActivity extends ListActivity {
         public void setIsRunningShowCommentsTask(boolean isRunning) {
             mIsRunningShowCommentsTask = isRunning;
         }
+        
+        public boolean getIsRunningSendCommentTask() {
+            return mIsRunningSendCommentTask;
+        }
+        
+        public void setIsRunningSendCommentTask(boolean isRunning) {
+            mIsRunningSendCommentTask = isRunning;
+        }
         public void cancelTasks() {
             if (mTaskShowComments != null) {
                 mTaskShowComments.setActivity(null);
                 mTaskShowComments.cancel(true);
             }
+            if (mTaskSendComment != null) {
+                mTaskSendComment.setActivity(null);
+                mTaskSendComment.cancel(true);
+            }
         }
         
     }
+
+
 
 
 

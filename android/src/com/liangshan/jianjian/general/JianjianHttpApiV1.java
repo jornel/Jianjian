@@ -296,6 +296,26 @@ public class JianjianHttpApiV1 {
     }
     
     /**
+     * @param id
+     * @param body
+     * @return
+     */
+    @SuppressWarnings("unchecked")
+    public Comment sendComment(String id, String body) throws JianjianException,
+    JianjianError, IOException{
+        
+        HttpGet httpGet = mHttpApi.createHttpGet(fullUrl(URL_API_COMMENT_LIST), //
+                new BasicNameValuePair("source", "jianjian"), //
+                new BasicNameValuePair("lang", "CHS"), //
+                new BasicNameValuePair("id", id),
+                new BasicNameValuePair("body", body)//
+                );
+        
+        return (Comment) mHttpApi.doHttpRequest(httpGet,
+                new CommentParser());
+    }
+    
+    /**
      * @param geolat
      * @param geolong
      * @param productName
@@ -517,6 +537,8 @@ public class JianjianHttpApiV1 {
       }
          return output;
     }
+
+
 
 
 
