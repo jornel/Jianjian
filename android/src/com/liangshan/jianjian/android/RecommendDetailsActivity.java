@@ -43,6 +43,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -142,6 +143,9 @@ public class RecommendDetailsActivity extends ListActivity {
         TextView tvPrice = (TextView)findViewById(R.id.recommendDetailsActivityPrice);
         TextView tvDate = (TextView)findViewById(R.id.recommendDetailsActivityDate);
         TextView tvDescription = (TextView)findViewById(R.id.recommendDetailsActivityDescription);
+        RelativeLayout rlVenue = (RelativeLayout)findViewById(R.id.recommendDetailsActivityVenue);
+        
+        
         
         Button btCommentConfirmButton = (Button)findViewById(R.id.commentConfirmButton);
         
@@ -169,7 +173,26 @@ public class RecommendDetailsActivity extends ListActivity {
         }
         if(product.getVenue()!=null){
             tvVenue.setText(product.getVenue().getName());
+            rlVenue.setOnClickListener(new OnClickListener(){
+
+                @Override
+                public void onClick(View v) {
+                    // TODO Auto-generated method stub
+                    String lat = mStateHolder.getProduct().getVenue().getGeolat();
+                    String lon = mStateHolder.getProduct().getVenue().getGeolong();
+                    Intent i = new Intent( 
+                            Intent.ACTION_VIEW, 
+                            Uri.parse("http://ditu.google.cn/maps?hl=zh&mrt=loc&q="+lat+","+lon)); 
+                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK 
+                            & Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS); 
+                    i.setClassName("com.google.android.apps.maps", 
+                            "com.google.android.maps.MapsActivity"); 
+                    startActivity(i);
+                }
+                
+            });
         }else{
+            rlVenue.setVisibility(View.GONE);
             tvVenue.setVisibility(View.GONE);
         }
         String price = mStateHolder.getRecommendMsg().getPrice();
@@ -313,7 +336,7 @@ public class RecommendDetailsActivity extends ListActivity {
             
             ListView listView = getListView();
             listView.setAdapter(mListAdapter);
-            
+            tvEmptyComment.setVisibility(View.GONE);
             
             
         }else if(ex != null){
@@ -338,10 +361,10 @@ public class RecommendDetailsActivity extends ListActivity {
         // TODO Auto-generated method stub
         if(ex!=null){
             //NotificationsUtil.ToastReasonForFailure(this, ex);
-            Toast.makeText(this, "commit failed",  
+            Toast.makeText(this, getResources().getString(R.string.commit_failed),  
                     Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(this, "commit finished",  
+            Toast.makeText(this, getResources().getString(R.string.commit_finished),  
                     Toast.LENGTH_LONG).show();
             EditText etCommentEdit = (EditText)findViewById(R.id.commentEditText);
             etCommentEdit.setText("");

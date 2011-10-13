@@ -313,7 +313,7 @@ public class RecommendItActivity extends Activity {
         mStateHolder.setIsRunningTaskAddandRecommendIt(false);
         stopProgressBar();
         if(recommendmsg != null){
-            Toast.makeText(this, "recommend finished",  
+            Toast.makeText(this, getResources().getString(R.string.recommend_finished),  
                     Toast.LENGTH_LONG).show(); //NotificationsUtil.ToastReasonForFailure(this,new Exception("recommend finished"));
         }
         

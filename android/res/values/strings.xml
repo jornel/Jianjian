@@ -96,6 +96,11 @@
     <string name="comments">评论</string>
     <string name="empty_comment">还没有人评论</string>
     
+    <string name="commit_failed">发表评论失败</string>
+    <string name="commit_finished">评论发布成功</string>
+    
+    <string name="recommend_finished">推荐成功</string>
+    
      
     
     
