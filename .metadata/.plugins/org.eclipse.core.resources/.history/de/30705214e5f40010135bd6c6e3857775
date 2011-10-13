@@ -44,7 +44,6 @@ import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * @author jornel
@@ -337,16 +336,7 @@ public class RecommendDetailsActivity extends ListActivity {
     public void onSendCommentsTaskComplete(Comment comment, Exception ex) {
         // TODO Auto-generated method stub
         if(ex!=null){
-            //NotificationsUtil.ToastReasonForFailure(this, ex);
-            Toast.makeText(this, "commit failed",  
-                    Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, "commit finished",  
-                    Toast.LENGTH_LONG).show();
-            EditText etCommentEdit = (EditText)findViewById(R.id.commentEditText);
-            etCommentEdit.setText("");
-            
-            mStateHolder.startTaskShowComments(this);
+            NotificationsUtil.ToastReasonForFailure(this, ex);
         }
         mStateHolder.setIsRunningSendCommentTask(false);
     }

@@ -83,16 +83,12 @@ public class JianjianHttpApiV1 {
     private static final String URL_API_FRIEND_LIST = "/friends/list";
     
     private static final String URL_API_COMMENT_LIST = "/comments/list";
-    
-    private static final String URL_API_SEND_COMMENT = "/comments/add";
 
     private static final String EVENT_LIST_PAGE_COUNT = "20";
     
     private static final String HISTORY_LIST_PAGE_COUNT = "10";
 
     private static final String FRIEND_LIST_PAGE_COUNT = "20";
-
-
 
 
 
@@ -308,7 +304,7 @@ public class JianjianHttpApiV1 {
     public Comment sendComment(String id, String body) throws JianjianException,
     JianjianError, IOException{
         
-        HttpGet httpGet = mHttpApi.createHttpGet(fullUrl(URL_API_SEND_COMMENT), //
+        HttpGet httpGet = mHttpApi.createHttpGet(fullUrl(URL_API_COMMENT_LIST), //
                 new BasicNameValuePair("source", "jianjian"), //
                 new BasicNameValuePair("lang", "CHS"), //
                 new BasicNameValuePair("id", id),

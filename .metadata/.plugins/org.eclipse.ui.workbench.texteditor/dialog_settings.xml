@@ -13,16 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="GONE" key="selection"/>
+		<item value="startTaskShowComments" key="selection"/>
 		<list key="findhistory">
+			<item value="finish"/>
+			<item value="TextViewStyleRecommendListItemLineTimestamp"/>
+			<item value="log"/>
+			<item value="sortRecommendsRecent"/>
 			<item value="gone"/>
 			<item value="footerview"/>
 			<item value="FooterView"/>
 			<item value="setActivityForTask"/>
-			<item value="setActivity"/>
-			<item value="SeparatorTextViewStyle"/>
-			<item value="TextViewStyleHeaderDividerSeparatorTextViewStyle"/>
-			<item value="TextViewStyleHeaderDivider"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Friends"/>

@@ -343,10 +343,6 @@ public class RecommendDetailsActivity extends ListActivity {
         } else {
             Toast.makeText(this, "commit finished",  
                     Toast.LENGTH_LONG).show();
-            EditText etCommentEdit = (EditText)findViewById(R.id.commentEditText);
-            etCommentEdit.setText("");
-            
-            mStateHolder.startTaskShowComments(this);
         }
         mStateHolder.setIsRunningSendCommentTask(false);
     }
