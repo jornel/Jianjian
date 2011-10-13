@@ -7,12 +7,10 @@ import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 
-import com.liangshan.jianjian.android.app.LoadableListActivity;
 import com.liangshan.jianjian.android.util.NotificationsUtil;
 import com.liangshan.jianjian.android.util.RemoteResourceManager;
 import com.liangshan.jianjian.android.util.StringFormatters;
 import com.liangshan.jianjian.android.widget.CommentsListAdapter;
-import com.liangshan.jianjian.android.widget.FriendsListAdapter;
 import com.liangshan.jianjian.general.Jianjian;
 import com.liangshan.jianjian.types.Comment;
 import com.liangshan.jianjian.types.Group;
@@ -20,7 +18,6 @@ import com.liangshan.jianjian.types.Product;
 import com.liangshan.jianjian.types.RecommendMsg;
 import com.liangshan.jianjian.types.User;
 
-import android.app.Activity;
 import android.app.ListActivity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -43,6 +40,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -147,6 +145,7 @@ public class RecommendDetailsActivity extends ListActivity {
         
         
         
+        
         Button btCommentConfirmButton = (Button)findViewById(R.id.commentConfirmButton);
         
         btCommentConfirmButton.setOnClickListener(new OnClickListener() {
@@ -214,6 +213,11 @@ public class RecommendDetailsActivity extends ListActivity {
         }else{
             tvDescription.setVisibility(View.GONE);
         }
+        
+        LinearLayout llComment = (LinearLayout)findViewById(R.id.commentProgress);
+        
+        llComment.setVisibility(View.VISIBLE);
+        
         
         ensureUiPhoto();
        
@@ -317,6 +321,10 @@ public class RecommendDetailsActivity extends ListActivity {
      * @param mReason
      */
     public void onShowCommentsTaskComplete(Group<Comment> comments, Exception ex) {
+        
+        LinearLayout llComment = (LinearLayout)findViewById(R.id.commentProgress);
+        
+        llComment.setVisibility(View.GONE);
         
         TextView tvEmptyComment = (TextView)findViewById(R.id.emptyComment);
         LinearLayout tvListview = (LinearLayout)findViewById(R.id.commentlist);

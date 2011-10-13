@@ -178,6 +178,26 @@
         style="@style/SeparatorTextViewStyle"
         android:layout_marginBottom="1dip" />
         
+      <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:id="@+id/commentProgress"
+        android:gravity="center"
+        android:background="@drawable/listview_item_manual" >
+  
+        <ProgressBar
+          
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginRight="6dip" />
+    
+        <TextView
+          android:id="@+id/emptyText"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:text="" />
+        </LinearLayout>
 
         
     </LinearLayout>

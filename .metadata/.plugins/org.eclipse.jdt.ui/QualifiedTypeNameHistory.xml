@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="android.R"/>
 <fullyQualifiedTypeName name="android.R.layout"/>
 <fullyQualifiedTypeName name="android.content.Context"/>
 <fullyQualifiedTypeName name="android.os.Handler"/>
@@ -57,7 +56,8 @@
 <fullyQualifiedTypeName name="com.liangshan.jianjian.types.Comment"/>
 <fullyQualifiedTypeName name="android.widget.ListAdapter"/>
 <fullyQualifiedTypeName name="android.view.ViewGroup"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.id"/>
 <fullyQualifiedTypeName name="java.text.DateFormat"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.id"/>
+<fullyQualifiedTypeName name="android.widget.ProgressBar"/>
 </qualifiedTypeNameHistroy>
