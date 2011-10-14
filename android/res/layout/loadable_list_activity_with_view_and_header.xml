@@ -8,6 +8,41 @@
   android:layout_width="fill_parent"
   android:layout_height="fill_parent"
   android:background="@drawable/listview_item_manual" >
+  
+  <LinearLayout
+      android:id="@+id/functionLabel"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:background="@drawable/header_blue"
+      android:gravity="top">
+      <LinearLayout
+        android:id="@+id/refresh_area"
+        android:orientation="horizontal"
+        android:layout_width="40dip"
+        android:layout_height="40dip"
+        android:layout_alignParentLeft="true" >
+        <ImageView
+          android:id="@+id/list_refresh"        
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:scaleType="fitXY" 
+          android:src="@drawable/ic_menu_refresh" />
+        <ProgressBar
+          android:id="@+id/list_refresh_progress"           
+          android:layout_width="30dip"
+          android:layout_height="30dip"
+          android:visibility="gone" 
+          android:layout_margin="5dip"/>
+      </LinearLayout>
+      <ImageView
+        android:id="@+id/advheader"        
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:layout_weight="1" 
+        android:src="@drawable/titlebar_logo_unpressed">
+      </ImageView>
+  </LinearLayout>
 
   <LinearLayout
     android:id="@+id/header"

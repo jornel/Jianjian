@@ -38,8 +38,10 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.AdapterView.OnItemClickListener;
 
@@ -164,6 +166,22 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
      * 
      */
     private void ensureUi() {
+        
+        ImageView ivRefresh = (ImageView)findViewById(R.id.list_refresh); 
+        
+        ivRefresh.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ProgressBar pbRefresh = (ProgressBar)findViewById(R.id.list_refresh_progress);
+                pbRefresh.setVisibility(View.VISIBLE);
+                ImageView ivRefresh = (ImageView)findViewById(R.id.list_refresh);
+                ivRefresh.setVisibility(View.GONE);
+                mStateHolder.setCurrentPage(0);
+                mStateHolder.setCurrentListItem(0);
+                mStateHolder.setRecommends(new Group<RecommendMsg>());
+                mStateHolder.startTask(FriendsActivity.this);
+            }
+        });
         
         SegmentedButton buttons = getHeaderButton();
         buttons.clearButtons();
@@ -398,6 +416,11 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         mStateHolder.setIsRunningTask(false);
         mStateHolder.setCurrentPage(page);
         setProgressBarIndeterminateVisibility(false);
+        
+        ProgressBar pbRefresh = (ProgressBar)findViewById(R.id.list_refresh_progress);
+        pbRefresh.setVisibility(View.GONE);
+        ImageView ivRefresh = (ImageView)findViewById(R.id.list_refresh);
+        ivRefresh.setVisibility(View.VISIBLE);
         
         // Clear list for new batch.
         mListAdapter.removeObserver();

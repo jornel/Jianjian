@@ -177,7 +177,7 @@ public class JianjianHttpApiV1 {
         HttpGet httpGet = mHttpApi.createHttpGet(URL_API_USER_SHOW_TMP, //
                 new BasicNameValuePair("source", "jianjian"), //
                 new BasicNameValuePair("lang", "CHS"), //
-                new BasicNameValuePair("uid", uid), //
+                new BasicNameValuePair("id", uid), //
                 new BasicNameValuePair("geolat", geolat), //
                 new BasicNameValuePair("geolong", geolong), //
                 new BasicNameValuePair("geohacc", geohacc), //
