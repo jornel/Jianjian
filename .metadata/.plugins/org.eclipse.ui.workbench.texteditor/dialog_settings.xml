@@ -2,27 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="263" key="DIALOG_WIDTH"/>
-		<item value="71" key="DIALOG_Y_ORIGIN"/>
-		<item value="1003" key="DIALOG_X_ORIGIN"/>
+		<item value="218" key="DIALOG_Y_ORIGIN"/>
 		<item value="395" key="DIALOG_HEIGHT"/>
+		<item value="975" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="Progress" key="selection"/>
+		<item value="LOAD_TYPE_USER_PARTIAL" key="selection"/>
 		<list key="findhistory">
-			<item value="progress"/>
-			<item value="finish"/>
-			<item value="TextViewStyleRecommendListItemLineTimestamp"/>
-			<item value="log"/>
-			<item value="sortRecommendsRecent"/>
-			<item value="gone"/>
-			<item value="footerview"/>
-			<item value="FooterView"/>
+			<item value="EXTRA_SHOW_ADD_FRIEND_OPTIONS"/>
+			<item value="btnFriend"/>
+			<item value="FriendButton"/>
+			<item value="userDetailsActivityFriendButton"/>
+			<item value="viewAddFriends"/>
+			<item value="add"/>
+			<item value="startFriendDetailActivity"/>
+			<item value="StateHolder"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Friends"/>

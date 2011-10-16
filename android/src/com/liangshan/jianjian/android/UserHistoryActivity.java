@@ -25,6 +25,7 @@ import com.liangshan.jianjian.android.widget.HistoryListAdapter;
 import com.liangshan.jianjian.general.Jianjian;
 import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.RecommendMsg;
+import com.liangshan.jianjian.types.User;
 
 /**
  * @author jornel
@@ -38,6 +39,9 @@ public class UserHistoryActivity extends LoadableListActivity {
 
     public static final String EXTRA_USER_ID = Jianjianroid.PACKAGE_NAME
             + ".UserHistoryActivity.EXTRA_USER_ID";
+
+    public static final String EXTRA_USER = Jianjianroid.PACKAGE_NAME
+            + ".UserHistoryActivity.EXTRA_USER";
     
     private StateHolder mStateHolder;
     private HistoryListAdapter mListAdapter;
@@ -61,8 +65,9 @@ public class UserHistoryActivity extends LoadableListActivity {
             mStateHolder = (StateHolder) retained;
             mStateHolder.setActivityForTask(this);
         } else {
-            if (getIntent().hasExtra(EXTRA_USER_NAME)) {
-                mStateHolder = new StateHolder(getIntent().getStringExtra(EXTRA_USER_NAME),getIntent().getStringExtra(EXTRA_USER_ID));
+            if (getIntent().hasExtra(EXTRA_USER)) {
+                User user = getIntent().getExtras().getParcelable(EXTRA_USER);
+                mStateHolder = new StateHolder(user);
                 mStateHolder.startTaskHistory(this);
             } else {
                 Log.e(TAG, TAG + " requires username as intent extra.");
@@ -110,6 +115,8 @@ public class UserHistoryActivity extends LoadableListActivity {
                 if (obj != null) {
                     startRecommendMsgActivity((RecommendMsg)obj);
                 }
+                
+                
             }
         });
         
@@ -143,8 +150,12 @@ public class UserHistoryActivity extends LoadableListActivity {
     }
     
     private void startRecommendMsgActivity(RecommendMsg recommend) {
-        // TODO Auto-generated method stub
         
+        if (recommend != null) {
+            Intent intent = new Intent(UserHistoryActivity.this, RecommendDetailsActivity.class);
+            intent.putExtra(RecommendDetailsActivity.EXTRA_RecommendMsg_PARCEL, recommend);
+            startActivity(intent);
+        }
     }
 
 
@@ -250,7 +261,8 @@ public class UserHistoryActivity extends LoadableListActivity {
                 recommends.setHasMore(false);
             }
             for(RecommendMsg it:history){
-                if(it.getProduct()!= null){                  
+                if(it.getProduct()!= null){ 
+                    it.setFromUser(mActivity.mStateHolder.getUser());
                     recommends.add(it);                   
                 }
             }
@@ -286,15 +298,24 @@ public class UserHistoryActivity extends LoadableListActivity {
         private boolean mFetchedOnce;
         private int mCurrentListItem;
         private int mCurrentPage;
+        private User mUser;
         
-        public StateHolder(String username,String userid) {
-            mUsername = username;
-            mUserid = userid;
+        public StateHolder(User user) {
+            mUsername = user.getUsername();
+            mUserid = user.getUserid();
+            mUser = user;
             mIsRunningHistoryTask = false;
             mFetchedOnce = false;
             mHistory = new Group<RecommendMsg>();
             mCurrentListItem = 0;
             mCurrentPage = 0;
+        }
+        
+        public void setUser(User user){
+            mUser = user;
+        }
+        public User getUser(){
+            return mUser;
         }
         
         public void setCurrentListItem(int count) {

@@ -50,7 +50,7 @@ public class UserDetailsActivity extends Activity {
     
     public static final String EXTRA_USER_ID = Jianjianroid.PACKAGE_NAME 
     + ".UserDetailsActivity.EXTRA_USER_ID";
-    private static final String EXTRA_USER_PARCEL = Jianjianroid.PACKAGE_NAME
+    public static final String EXTRA_USER_PARCEL = Jianjianroid.PACKAGE_NAME
     + ".UserDetailsActivity.EXTRA_USER_PARCEL";
     private static final int LOAD_TYPE_USER_NONE    = 0;
     private static final int LOAD_TYPE_USER_ID      = 1;
@@ -492,6 +492,7 @@ public class UserDetailsActivity extends Activity {
         Intent intent = new Intent(UserDetailsActivity.this, UserHistoryActivity.class);
         intent.putExtra(UserHistoryActivity.EXTRA_USER_NAME, mStateHolder.getUser().getUsername());
         intent.putExtra(UserHistoryActivity.EXTRA_USER_ID, mStateHolder.getUser().getUserid());
+        intent.putExtra(UserHistoryActivity.EXTRA_USER, mStateHolder.getUser());
         startActivity(intent); 
     }
     

@@ -75,6 +75,7 @@ public class HistoryListAdapter extends BaseRecommendAdapter
             holder.secondLine = (TextView) convertView.findViewById(R.id.secondLine);
             holder.thirdLine = (TextView) convertView.findViewById(R.id.thirdLine);
             holder.timeTextView = (TextView) convertView.findViewById(R.id.timeTextView);
+            holder.commentnumTextView = (TextView) convertView.findViewById(R.id.commentnumText);
             
             convertView.setTag(holder);
         } else {
@@ -93,6 +94,12 @@ public class HistoryListAdapter extends BaseRecommendAdapter
         holder.thirdLine.setText(StringFormatters.getRecommendMessageLine3(recommend));
         holder.timeTextView.setText( 
                 StringFormatters.getRelativeTimeSpanString(recommend.getCreateDate()));
+        
+        if(recommend.getNumComments()!=0){
+            holder.commentnumTextView.setText(Integer.toString(recommend.getNumComments()));
+        } else {
+            holder.commentnumTextView.setText("0");
+        }
         
         Uri photoUri = null;
 
@@ -135,5 +142,6 @@ public class HistoryListAdapter extends BaseRecommendAdapter
         ImageView photo;
         TextView firstLine;
         TextView timeTextView;
+        TextView commentnumTextView;
     }
 }

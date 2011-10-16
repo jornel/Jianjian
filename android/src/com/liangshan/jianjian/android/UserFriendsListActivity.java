@@ -141,7 +141,10 @@ public class UserFriendsListActivity extends LoadableListActivity {
     }
     
     private void startFriendDetailActivity(User user) {
-        // TODO Auto-generated method stub
+        Intent intent = new Intent(UserFriendsListActivity.this, UserDetailsActivity.class);
+        intent.putExtra(UserDetailsActivity.EXTRA_USER_PARCEL, user);
+        //intent.putExtra(UserDetailsActivity.EXTRA_SHOW_ADD_FRIEND_OPTIONS, true);
+        startActivity(intent);
         
     }
 
