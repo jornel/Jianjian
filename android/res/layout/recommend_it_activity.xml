@@ -157,7 +157,8 @@
             android:layout_weight="1"
             android:layout_marginLeft="5dip"
             android:layout_marginRight="5dip"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            android:background = "#0000"/>
             
          </TableRow>
        </TableLayout>

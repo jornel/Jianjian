@@ -170,13 +170,15 @@ public class RecommendItActivity extends Activity {
         });
         
         mTakePhotoImgButton.setImageDrawable(getResources().getDrawable(R.drawable.addphoto_checkin));
+                //getResources().getDrawable(R.drawable.addphoto_checkin
         mTakePhotoImgButton.setEnabled(true);
         mTakePhotoImgButton.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 
-                mTakePhotoImgButton.setImageBitmap(null);
+                mTakePhotoImgButton.setImageDrawable(getResources().getDrawable(R.drawable.addphoto_checkin));
+                mStateHolder.setPhotoBitmap(null);
                 Intent intent = new Intent(RecommendItActivity.this, TakePhotoActivity.class);
                 startActivityForResult(intent,TAKE_PHOTO_WITH_DATA);
             }
