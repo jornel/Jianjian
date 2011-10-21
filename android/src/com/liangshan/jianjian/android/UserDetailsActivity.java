@@ -526,10 +526,10 @@ public class UserDetailsActivity extends Activity {
             switch (action) {
                 case StateHolder.TASK_FRIEND_ACCEPT:
                     userCurrent.setUsername(user.getUsername());
-                    userCurrent.setFriendstatus("friend");
+                    userCurrent.setFriendstatus("true");
                     break;
                 case StateHolder.TASK_FRIEND_ADD:
-                    userCurrent.setFriendstatus("pendingthem");
+                    userCurrent.setIinvited("true");
                     break;
             }
         } else {

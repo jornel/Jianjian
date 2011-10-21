@@ -205,9 +205,10 @@ public class Jianjian {
      * @return
      */
     @V1
-    public User friendApprove(String mUserId) {
-        // TODO Auto-generated method stub
-        return null;
+    public User friendApprove(String mUserId) 
+            throws JianjianException, JianjianError, IOException{
+         
+        return mJianjianV1.approveFriend(mUserId);
     }
 
     /**

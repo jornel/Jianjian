@@ -36,6 +36,12 @@ public class UserParser extends AbstractParser<User> {
         if (json.has("is_friend")) {
             user.setFriendstatus(json.getString("is_friend"));
         }
+        if (json.has("i_invited")) {
+            user.setIinvited(json.getString("i_invited"));
+        }
+        if (json.has("he_invited")) {
+            user.setHeinvited(json.getString("he_invited"));
+        }
         if (json.has("sex")) {
             user.setGender(json.getString("sex"));
         }

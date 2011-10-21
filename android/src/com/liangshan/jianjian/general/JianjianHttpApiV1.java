@@ -87,12 +87,16 @@ public class JianjianHttpApiV1 {
     private static final String URL_API_SEND_COMMENT = "/comments/add";
     
     private static final String URL_API_SEND_ADD_FRIEND = "/friends/add";
+    
+    private static final String URL_API_REPLY_FRIEND = "/friends/reply";
 
     private static final String EVENT_LIST_PAGE_COUNT = "20";
     
     private static final String HISTORY_LIST_PAGE_COUNT = "10";
 
     private static final String FRIEND_LIST_PAGE_COUNT = "20";
+
+    
 
     
 
@@ -344,6 +348,27 @@ public class JianjianHttpApiV1 {
     }
     
     /**
+     * @param mUserId
+     * @return
+     */
+    @SuppressWarnings("unchecked")
+    public User approveFriend(String id) throws JianjianException,
+    JianjianError, IOException{
+        
+        HttpGet httpGet = mHttpApi.createHttpGet(fullUrl(URL_API_REPLY_FRIEND), //
+                new BasicNameValuePair("source", "jianjian"), //
+                new BasicNameValuePair("lang", "CHS"),
+                new BasicNameValuePair("is_accepted", "1"),//
+                new BasicNameValuePair("id", id)//
+                );
+        
+        return (User) mHttpApi.doHttpRequest(httpGet,
+                new UserParser());
+
+    }
+    
+    
+    /**
      * @param geolat
      * @param geolong
      * @param productName
@@ -565,6 +590,8 @@ public class JianjianHttpApiV1 {
       }
          return output;
     }
+
+
 
 
 

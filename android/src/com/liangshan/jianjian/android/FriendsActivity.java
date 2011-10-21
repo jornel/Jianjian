@@ -457,6 +457,10 @@ public class FriendsActivity extends LoadableListActivityWithViewAndHeader {
         }
         
         getListView().setAdapter(mListAdapter);
+        
+        if(mStateHolder.getRecommends()!=null&&!mStateHolder.getRecommends().isHasMore()){
+            footerview.setVisibility(View.GONE);
+        }
         //-1 footerview
         getListView().setSelection(mStateHolder.getCurrentListItem()-2);
         //getListView().setSelection(3);

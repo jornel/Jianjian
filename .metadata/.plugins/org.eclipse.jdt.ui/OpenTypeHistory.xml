@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
 <typeInfo handle="=android/\/Users\/jornel\/develop\/android-sdk-mac_86\/platforms\/android-8\/android.jar&lt;android.app(Application.class[Application" modifiers="33" timestamp="1279987792000"/>
-<typeInfo handle="=android/src&lt;com.liangshan.jianjian.types{User.java[User" modifiers="1" timestamp="1317397363000"/>
+<typeInfo handle="=android/src&lt;com.liangshan.jianjian.types{User.java[User" modifiers="1" timestamp="1319040557000"/>
 <typeInfo handle="=android/src&lt;com.liangshan.jianjian.android{MainActivity.java[MainActivity" modifiers="1" timestamp="1317397363000"/>
-<typeInfo handle="=android/src&lt;com.liangshan.jianjian.parsers.json{UserParser.java[UserParser" modifiers="1" timestamp="1313822868000"/>
+<typeInfo handle="=android/src&lt;com.liangshan.jianjian.parsers.json{UserParser.java[UserParser" modifiers="1" timestamp="1319039041000"/>
 <typeInfo handle="=android/src&lt;com.liangshan.jianjian.android.preferences{JPreferences.java[JPreferences" modifiers="1" timestamp="1305447108000"/>
 <typeInfo handle="=android/src&lt;com.liangshan.jianjian.http{AbstractHttpApi.java[AbstractHttpApi" modifiers="1025" timestamp="1308930253000"/>
 <typeInfo handle="=foursquared1/src&lt;com.joelapenna.foursquared{AddVenueActivity.java[AddVenueActivity" modifiers="1" timestamp="1286631502000"/>

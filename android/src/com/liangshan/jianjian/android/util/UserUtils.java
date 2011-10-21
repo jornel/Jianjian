@@ -111,13 +111,13 @@ public class UserUtils {
     }
     
     public static boolean isFriendStatusPendingYou(User user) {
-        return user != null && user.getFriendstatus() != null &&
-            user.getFriendstatus().equals("pendingyou");
+        return user != null && user.getHeinvited() != null &&
+          user.getHeinvited();
     }
     
     public static boolean isFriendStatusPendingThem(User user) {
-        return user != null && user.getFriendstatus() != null &&
-        user.getFriendstatus().equals("pendingthem");
+        return user != null && user.getIinvited() != null &&
+          user.getIinvited();
     }
     
     public static boolean isFriendStatusFollowingThem(User user) {

@@ -28,6 +28,8 @@ public class User implements Parcelable, JianjianType {
     private String mNick;
     private String mCity;
     private Boolean mFriendstatus;
+    private Boolean mIinvited;
+    private Boolean mHeinvited;
     private RecommendMsg mLastRecMsg;
     private ArrayList<User> mFriendsInCommon;
 
@@ -53,6 +55,8 @@ public class User implements Parcelable, JianjianType {
         mNick = ParcelUtils.readStringFromParcel(in);
         mCity = ParcelUtils.readStringFromParcel(in);
         mFriendstatus = in.readInt() == 1;
+        mIinvited = in.readInt() == 1;
+        mHeinvited = in.readInt() == 1;
 
         
         if (in.readInt() == 1) {
@@ -103,6 +107,16 @@ public class User implements Parcelable, JianjianType {
         ParcelUtils.writeStringToParcel(out, mNick);
         ParcelUtils.writeStringToParcel(out, mCity);
         if(mFriendstatus!= null&&mFriendstatus == true){
+            out.writeInt(1);
+        } else {
+            out.writeInt(0);
+        }
+        if(mIinvited!= null&&mIinvited == true){
+            out.writeInt(1);
+        } else {
+            out.writeInt(0);
+        }
+        if(mHeinvited!= null&&mHeinvited == true){
             out.writeInt(1);
         } else {
             out.writeInt(0);
@@ -232,6 +246,30 @@ public class User implements Parcelable, JianjianType {
             mFriendstatus = false;
         }
         
+    }
+    
+    public Boolean getIinvited() {
+        return mIinvited;
+    }
+
+    public void setIinvited(String invited) {
+        if(invited.equalsIgnoreCase("true")){
+            mIinvited = true;
+        } else {
+            mIinvited = false;
+        }
+    }
+    
+    public Boolean getHeinvited() {
+        return mHeinvited;
+    }
+
+    public void setHeinvited(String invited) {
+        if(invited.equalsIgnoreCase("true")){
+            mHeinvited = true;
+        } else {
+            mHeinvited = false;
+        }
     }
     
     public RecommendMsg getLastRecMsg() {
