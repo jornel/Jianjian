@@ -33,8 +33,8 @@ public class UserParser extends AbstractParser<User> {
             //    new GroupParser(
             //        new UserParser()).parse(json.getJSONArray("friendsincommon")));
         }  
-        if (json.has("friendstatus")) {
-            user.setFriendstatus(json.getString("friendstatus"));
+        if (json.has("is_friend")) {
+            user.setFriendstatus(json.getString("is_friend"));
         }
         if (json.has("sex")) {
             user.setGender(json.getString("sex"));

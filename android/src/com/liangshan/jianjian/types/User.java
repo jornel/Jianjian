@@ -27,7 +27,7 @@ public class User implements Parcelable, JianjianType {
     private String mUsername;
     private String mNick;
     private String mCity;
-    private String mFriendstatus;
+    private Boolean mFriendstatus;
     private RecommendMsg mLastRecMsg;
     private ArrayList<User> mFriendsInCommon;
 
@@ -52,7 +52,7 @@ public class User implements Parcelable, JianjianType {
         mUsername = ParcelUtils.readStringFromParcel(in);
         mNick = ParcelUtils.readStringFromParcel(in);
         mCity = ParcelUtils.readStringFromParcel(in);
-        mFriendstatus = ParcelUtils.readStringFromParcel(in);
+        mFriendstatus = in.readInt() == 1;
 
         
         if (in.readInt() == 1) {
@@ -102,7 +102,11 @@ public class User implements Parcelable, JianjianType {
         ParcelUtils.writeStringToParcel(out, mUsername);
         ParcelUtils.writeStringToParcel(out, mNick);
         ParcelUtils.writeStringToParcel(out, mCity);
-        ParcelUtils.writeStringToParcel(out, mFriendstatus);
+        if(mFriendstatus!= null&&mFriendstatus == true){
+            out.writeInt(1);
+        } else {
+            out.writeInt(0);
+        }
         
         if (mLastRecMsg != null) {
             out.writeInt(1);
@@ -217,12 +221,17 @@ public class User implements Parcelable, JianjianType {
         mCity = city;
     }
     
-    public String getFriendstatus() {
+    public Boolean getFriendstatus() {
         return mFriendstatus;
     }
 
     public void setFriendstatus(String friendstatus) {
-        mFriendstatus = friendstatus;
+        if(friendstatus.equalsIgnoreCase("true")){
+            mFriendstatus = true;
+        } else {
+            mFriendstatus = false;
+        }
+        
     }
     
     public RecommendMsg getLastRecMsg() {

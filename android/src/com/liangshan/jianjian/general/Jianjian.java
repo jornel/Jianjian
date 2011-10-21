@@ -215,9 +215,10 @@ public class Jianjian {
      * @return
      */
     @V1
-    public User friendSendrequest(String mUserId) {
-        // TODO Auto-generated method stub
-        return null;
+    public User friendSendrequest(String mUserId) 
+            throws JianjianException, JianjianError, IOException{
+        
+        return mJianjianV1.sendAddFriendRequest(mUserId);
     }
 
     

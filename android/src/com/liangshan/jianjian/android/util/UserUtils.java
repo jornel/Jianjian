@@ -89,9 +89,9 @@ public class UserUtils {
     public static boolean isFriend(User user) {
         if (user == null) {
             return false;
-        } else if (TextUtils.isEmpty(user.getFriendstatus())) {
+        } else if (user.getFriendstatus()==null) {
             return false;
-        } else if (user.getFriendstatus().equals("friend")) {
+        } else if (user.getFriendstatus()) {
             return true;
         } else {
             return false;
@@ -101,7 +101,7 @@ public class UserUtils {
     public static boolean isFollower(User user) {
         if (user == null) {
             return false;
-        } else if (TextUtils.isEmpty(user.getFriendstatus())) {
+        } else if (user.getFriendstatus()== null) {
             return false;
         } else if (user.getFriendstatus().equals("pendingyou")) {
             return true;
