@@ -130,6 +130,10 @@ public class UserDetailsActivity extends Activity {
            !mStateHolder.getRanOnce()) 
         {           
             mStateHolder.startTaskUserDetails(this, mStateHolder.getUser().getUserid());
+            
+            if(!mStateHolder.getIsRunningFriendTask()&&mStateHolder.getIsLoggedInUser()){
+                mStateHolder.startTaskFriend(this, StateHolder.TASK_FRIEND_INVITATIONS);
+            }
         }
         
     }
@@ -639,6 +643,8 @@ public class UserDetailsActivity extends Activity {
                         return jianjian.friendApprove(mUserId);
                     case StateHolder.TASK_FRIEND_ADD:
                         return jianjian.friendSendrequest(mUserId);
+                    case StateHolder.TASK_FRIEND_INVITATIONS:
+                        return jianjian.getFriendInvitations(mUserId);    
                     default:
                         throw new JianjianException("Unknown action type supplied.");
                 }
@@ -671,6 +677,7 @@ public class UserDetailsActivity extends Activity {
     private static class StateHolder {
         public static final int TASK_FRIEND_ACCEPT = 0;
         public static final int TASK_FRIEND_ADD    = 1;
+        public static final int TASK_FRIEND_INVITATIONS = 2;
         private User mUser;
         private boolean mIsLoggedInUser;
         private UserDetailsTask mTaskUserDetails;

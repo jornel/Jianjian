@@ -12,8 +12,8 @@ import com.liangshan.jianjian.types.User;
 
 
 /**
- * @date July 13, 2010
- * @author Mark Wyszomierski (markww@gmail.com)
+ * @date Dec 26, 2011
+ * @author Joe Chen
  */
 public class UserParser extends AbstractParser<User> {
 

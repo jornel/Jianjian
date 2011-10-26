@@ -221,6 +221,18 @@ public class Jianjian {
         
         return mJianjianV1.sendAddFriendRequest(mUserId);
     }
+    
+    /**
+     * @param mUserId
+     * @return
+     */
+    @V1
+    public User getFriendInvitations(String mUserId) 
+            throws JianjianException, JianjianError, IOException{
+        
+        return mJianjianV1.getFriendInvitations(mUserId);
+    }
+
 
     
     
@@ -275,13 +287,6 @@ public class Jianjian {
     public @interface V1 {
 
     }
-
-
-
-
-
-
-
 
 
 

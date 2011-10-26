@@ -89,6 +89,8 @@ public class JianjianHttpApiV1 {
     private static final String URL_API_SEND_ADD_FRIEND = "/friends/add";
     
     private static final String URL_API_REPLY_FRIEND = "/friends/reply";
+    
+    private static final String URL_API_FRIEND_INVITATIONS = "/friends/invitations";
 
     private static final String EVENT_LIST_PAGE_COUNT = "20";
     
@@ -96,15 +98,7 @@ public class JianjianHttpApiV1 {
 
     private static final String FRIEND_LIST_PAGE_COUNT = "20";
 
-    
-
-    
-
-
-
-
-
-    
+        
 
     //private static final String DATATYPE = ".json";
     
@@ -367,6 +361,21 @@ public class JianjianHttpApiV1 {
 
     }
     
+    /**
+     * @param mUserId
+     * @return
+     */
+    public User getFriendInvitations(String id) throws JianjianException,
+    JianjianError, IOException{
+        HttpGet httpGet = mHttpApi.createHttpGet(fullUrl(URL_API_FRIEND_INVITATIONS), //
+                new BasicNameValuePair("source", "jianjian"), //
+                new BasicNameValuePair("lang", "CHS"), //
+                new BasicNameValuePair("id", id)//
+                );
+        
+        return (User) mHttpApi.doHttpRequest(httpGet,
+                new UserParser());
+    }
     
     /**
      * @param geolat
@@ -590,6 +599,8 @@ public class JianjianHttpApiV1 {
       }
          return output;
     }
+
+
 
 
 
