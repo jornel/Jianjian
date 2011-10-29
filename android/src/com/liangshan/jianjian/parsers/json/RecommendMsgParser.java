@@ -11,6 +11,7 @@ import org.json.JSONObject;
 import com.liangshan.jianjian.types.JianjianType;
 import com.liangshan.jianjian.types.Product;
 import com.liangshan.jianjian.types.RecommendMsg;
+import com.liangshan.jianjian.types.Venue;
 
 /**
  * @author jornel
@@ -79,7 +80,10 @@ public class RecommendMsgParser extends AbstractParser<RecommendMsg> {
                 }
                            
                 if (json.has("location")) {
-                    pro.setVenue(new VenueParser().parse(json.getJSONObject("location")));
+                    if(!json.isNull("location")){
+                        pro.setVenue(new VenueParser().parse(json.getJSONObject("location")));
+                    }
+                    
                 }
                 
                 message.setProduct(pro);

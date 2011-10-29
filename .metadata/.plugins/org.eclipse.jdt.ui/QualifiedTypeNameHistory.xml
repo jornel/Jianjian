@@ -31,7 +31,6 @@
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.app.LoadableListActivityWithViewAndHeader"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.Jianjianroid"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.widget.SegmentedButton.OnClickListenerSegmentedButton"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.types.Venue"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.types.JianjianType"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.util.UiUtil"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.util.StringFormatters"/>
@@ -40,7 +39,6 @@
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.widget.EventListAdapter"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.general.Jianjian"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.types.RecommendMsg"/>
-<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.string"/>
 <fullyQualifiedTypeName name="android.content.res.Resources"/>
 <fullyQualifiedTypeName name="android.text.format.DateFormat"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.drawable"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.id"/>
 <fullyQualifiedTypeName name="android.widget.ProgressBar"/>
 <fullyQualifiedTypeName name="com.liangshan.jianjian.types.User"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.types.Venue"/>
+<fullyQualifiedTypeName name="com.liangshan.jianjian.android.R.string"/>
 </qualifiedTypeNameHistroy>

@@ -19,6 +19,8 @@ public class Group<T extends JianjianType> extends ArrayList<T> implements Jianj
     
     public Group() {
         super();
+        hasMore = false;
+        
     }
     
     public Group(Collection<T> collection) {

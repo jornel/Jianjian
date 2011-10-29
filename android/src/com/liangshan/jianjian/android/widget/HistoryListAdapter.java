@@ -88,9 +88,10 @@ public class HistoryListAdapter extends BaseRecommendAdapter
         
         Resources res = convertView.getContext().getResources();
         String venueSymbol = res.getString(R.string.venueSymbol);
+        String currencySymbol = res.getString(R.string.hint_product_currency);
         
         holder.firstLine.setText(recommend.getProduct().getName());//product name
-        holder.secondLine.setText(StringFormatters.getRecommendMessageLine2(recommend, venueSymbol, true));//x 元，在某地
+        holder.secondLine.setText(StringFormatters.getRecommendMessageLine2(recommend, venueSymbol, currencySymbol, true));//x 元，在某地
         holder.thirdLine.setText(StringFormatters.getRecommendMessageLine3(recommend));
         holder.timeTextView.setText( 
                 StringFormatters.getRelativeTimeSpanString(recommend.getCreateDate()));

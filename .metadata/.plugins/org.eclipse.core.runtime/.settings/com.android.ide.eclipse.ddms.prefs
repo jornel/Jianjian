@@ -1,8 +1,8 @@
-#Sun Oct 09 00:09:10 CST 2011
+#Sat Oct 29 16:17:43 CST 2011
 threadPanel.stack.col0=119
 emulatorControl.waypoint.desc=98
 emulatorControl.track.first=128
-com.android.ide.eclipse.ddms.logcat.message=662
+com.android.ide.eclipse.ddms.logcat.message=782
 emulatorControl.waypoint.elevation=50
 com.android.ide.eclipse.ddms.explorer.permissions=71
 com.android.ide.eclipse.ddms.explorer.time=36
@@ -25,7 +25,7 @@ allocPanel.Col2=25
 com.android.ide.eclipse.ddms.explorer.size=46
 allocPanel.Col1=86
 allocPanel.Col0=25
-com.android.ide.eclipse.ddms.logcat.tag=205
+com.android.ide.eclipse.ddms.logcat.tag=118
 eclipse.preferences.version=1
 heapPanel.col6=72
 threadPanel.Col5=269

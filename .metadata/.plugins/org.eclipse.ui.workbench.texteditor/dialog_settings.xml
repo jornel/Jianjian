@@ -3,26 +3,26 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="263" key="DIALOG_WIDTH"/>
 		<item value="218" key="DIALOG_Y_ORIGIN"/>
-		<item value="975" key="DIALOG_X_ORIGIN"/>
 		<item value="395" key="DIALOG_HEIGHT"/>
+		<item value="975" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="btnFriend" key="selection"/>
+		<item value="            " key="selection"/>
 		<list key="findhistory">
+			<item value="            "/>
+			<item value="ensureUiListView"/>
+			<item value="ensureUi"/>
+			<item value="FooterView"/>
+			<item value="footerview"/>
 			<item value="btnFriend"/>
 			<item value="EXTRA_SHOW_ADD_FRIEND_OPTIONS"/>
 			<item value="FriendButton"/>
-			<item value="userDetailsActivityFriendButton"/>
-			<item value="viewAddFriends"/>
-			<item value="add"/>
-			<item value="startFriendDetailActivity"/>
-			<item value="StateHolder"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Friends"/>

@@ -84,15 +84,15 @@ public class StringFormatters {
         return sb.toString();
     }
     
-    public static String getRecommendMessageLine2(RecommendMsg recommend, String symbol, boolean displayAtVenue) {
+    public static String getRecommendMessageLine2(RecommendMsg recommend, String venueSymbol, String currencySymbol, boolean displayAtVenue) {
         
         StringBuilder sb = new StringBuilder();
-        if(!TextUtils.isEmpty(recommend.getPrice())){
+        if(!TextUtils.isEmpty(recommend.getPrice())&&!recommend.getPrice().equals(currencySymbol)){
             sb.append(recommend.getPrice());
         }
         if(recommend.getProduct().getVenue() != null && displayAtVenue){
-            if(!TextUtils.isEmpty(recommend.getPrice())){
-                sb.append(symbol);
+            if(!TextUtils.isEmpty(recommend.getPrice())&&!recommend.getPrice().equals(currencySymbol)){
+                sb.append(venueSymbol);
             }
             sb.append(recommend.getProduct().getVenue().getName());
         }
