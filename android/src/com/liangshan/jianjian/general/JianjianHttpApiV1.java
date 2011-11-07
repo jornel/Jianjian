@@ -49,6 +49,7 @@ import com.liangshan.jianjian.parsers.json.UserParser;
 import com.liangshan.jianjian.parsers.json.VenueParser;
 import com.liangshan.jianjian.types.Comment;
 import com.liangshan.jianjian.types.Event;
+import com.liangshan.jianjian.types.FriendInvitation;
 import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.RecommendMsg;
 import com.liangshan.jianjian.types.User;
@@ -306,7 +307,6 @@ public class JianjianHttpApiV1 {
      * @param body
      * @return
      */
-    @SuppressWarnings("unchecked")
     public Comment sendComment(String id, String body) throws JianjianException,
     JianjianError, IOException{
         
@@ -326,7 +326,6 @@ public class JianjianHttpApiV1 {
      * @param mUserId
      * @return
      */
-    @SuppressWarnings("unchecked")
     public User sendAddFriendRequest(String id) throws JianjianException,
     JianjianError, IOException{
         
@@ -345,7 +344,6 @@ public class JianjianHttpApiV1 {
      * @param mUserId
      * @return
      */
-    @SuppressWarnings("unchecked")
     public User approveFriend(String id) throws JianjianException,
     JianjianError, IOException{
         
@@ -365,7 +363,8 @@ public class JianjianHttpApiV1 {
      * @param mUserId
      * @return
      */
-    public User getFriendInvitations(String id) throws JianjianException,
+    @SuppressWarnings("unchecked")
+    public Group<FriendInvitation> getFriendInvitations(String id) throws JianjianException,
     JianjianError, IOException{
         HttpGet httpGet = mHttpApi.createHttpGet(fullUrl(URL_API_FRIEND_INVITATIONS), //
                 new BasicNameValuePair("source", "jianjian"), //
@@ -373,8 +372,8 @@ public class JianjianHttpApiV1 {
                 new BasicNameValuePair("id", id)//
                 );
         
-        return (User) mHttpApi.doHttpRequest(httpGet,
-                new UserParser());
+        return (Group<FriendInvitation>) mHttpApi.doHttpRequest(httpGet,
+                new GroupParser(new UserParser()));
     }
     
     /**

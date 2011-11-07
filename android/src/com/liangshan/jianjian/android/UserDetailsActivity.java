@@ -13,6 +13,8 @@ import com.liangshan.jianjian.android.util.NotificationsUtil;
 import com.liangshan.jianjian.android.util.RemoteResourceManager;
 import com.liangshan.jianjian.android.util.UserUtils;
 import com.liangshan.jianjian.general.Jianjian;
+import com.liangshan.jianjian.types.FriendInvitation;
+import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.User;
 
 import android.app.Activity;
@@ -131,8 +133,8 @@ public class UserDetailsActivity extends Activity {
         {           
             mStateHolder.startTaskUserDetails(this, mStateHolder.getUser().getUserid());
             
-            if(!mStateHolder.getIsRunningFriendTask()&&mStateHolder.getIsLoggedInUser()){
-                mStateHolder.startTaskFriend(this, StateHolder.TASK_FRIEND_INVITATIONS);
+            if(!mStateHolder.getIsRunningFriendInvitationTask()&&mStateHolder.getIsLoggedInUser()){
+                mStateHolder.startTaskFriendInvitation(this);
             }
         }
         
@@ -544,6 +546,15 @@ public class UserDetailsActivity extends Activity {
     }
     
     /**
+     * @param invs
+     * @param mReason
+     */
+    public void onFriendInvitationTaskComplete(Group<FriendInvitation> invs, Exception mReason) {
+        // TODO Auto-generated method stub
+        mStateHolder.setIsRunningFriendInvitationTask(false);
+    }
+    
+    /**
      * @param user
      * @param mReason
      */
@@ -642,9 +653,7 @@ public class UserDetailsActivity extends Activity {
                     case StateHolder.TASK_FRIEND_ACCEPT:
                         return jianjian.friendApprove(mUserId);
                     case StateHolder.TASK_FRIEND_ADD:
-                        return jianjian.friendSendrequest(mUserId);
-                    case StateHolder.TASK_FRIEND_INVITATIONS:
-                        return jianjian.getFriendInvitations(mUserId);    
+                        return jianjian.friendSendrequest(mUserId);  
                     default:
                         throw new JianjianException("Unknown action type supplied.");
                 }
@@ -672,12 +681,58 @@ public class UserDetailsActivity extends Activity {
             mActivity = activity;
         }
     }
+    
+    private static class FriendInvitationTask extends AsyncTask<Void, Void, Group<FriendInvitation>> {
+
+        private UserDetailsActivity mActivity;
+        private String mUserId;
+        private Exception mReason;
+
+        public FriendInvitationTask(UserDetailsActivity activity, String userId) {
+            mActivity = activity;
+            mUserId = userId;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            mActivity.ensureUi();
+        }
+
+        @Override
+        protected Group<FriendInvitation> doInBackground(Void... params) {
+            Jianjian jianjian = ((Jianjianroid) mActivity.getApplication()).getJianjian();
+            try {
+                return jianjian.getFriendInvitations(mUserId);    
+
+            } catch (Exception e) {
+                mReason = e;
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Group<FriendInvitation> invs) {
+            if (mActivity != null) {
+                mActivity.onFriendInvitationTaskComplete(invs, mReason);
+            }
+        }
+
+        @Override
+        protected void onCancelled() {
+            if (mActivity != null) {
+                mActivity.onFriendInvitationTaskComplete(null, mReason);
+            }
+        }
+
+        public void setActivity(UserDetailsActivity activity) {
+            mActivity = activity;
+        }
+    }
 
 
     private static class StateHolder {
         public static final int TASK_FRIEND_ACCEPT = 0;
         public static final int TASK_FRIEND_ADD    = 1;
-        public static final int TASK_FRIEND_INVITATIONS = 2;
         private User mUser;
         private boolean mIsLoggedInUser;
         private UserDetailsTask mTaskUserDetails;
@@ -687,6 +742,9 @@ public class UserDetailsActivity extends Activity {
         
         private FriendTask mTaskFriend;
         private boolean mIsRunningFriendTask;
+        
+        private FriendInvitationTask mTaskFriendInvitation;
+        private boolean mIsRunningFriendInvitationTask;
         
         public StateHolder() {
             mIsRunningUserDetailsTask = false;
@@ -744,6 +802,14 @@ public class UserDetailsActivity extends Activity {
             }
         }
         
+        public void startTaskFriendInvitation(UserDetailsActivity activity) {
+            if (!mIsRunningFriendInvitationTask) {
+                mIsRunningFriendInvitationTask = true;
+                mTaskFriendInvitation = new FriendInvitationTask(activity, mUser.getUserid());
+                mTaskFriendInvitation.execute();
+            }
+        }
+        
         public void setActivityForTasks(UserDetailsActivity activity) {
             if (mTaskUserDetails != null) {
                 mTaskUserDetails.setActivity(activity);
@@ -751,6 +817,10 @@ public class UserDetailsActivity extends Activity {
             if (mTaskFriend != null) {
                 mTaskFriend.setActivity(activity);
             }
+            if (mTaskFriendInvitation != null) {
+                mTaskFriendInvitation.setActivity(activity);
+            }
+            
         }
         
         public boolean getIsRunningUserDetailsTask() {
@@ -769,6 +839,14 @@ public class UserDetailsActivity extends Activity {
             mIsRunningFriendTask = isRunning;
         }
         
+        public boolean getIsRunningFriendInvitationTask() {
+            return mIsRunningFriendInvitationTask;
+        }
+        
+        public void setIsRunningFriendInvitationTask(boolean isRunning) {
+            mIsRunningFriendInvitationTask = isRunning;
+        }
+        
         public void cancelTasks() {
             if (mTaskUserDetails != null) {
                 mTaskUserDetails.setActivity(null);
@@ -779,10 +857,14 @@ public class UserDetailsActivity extends Activity {
                 mTaskFriend.setActivity(null);
                 mTaskFriend.cancel(true);
             }
+            if (mTaskFriendInvitation != null) {
+                mTaskFriendInvitation.setActivity(null);
+                mTaskFriendInvitation.cancel(true);
+            }
         }
         
         public boolean getIsTaskRunning() {
-            return mIsRunningUserDetailsTask|| mIsRunningFriendTask;
+            return mIsRunningUserDetailsTask|| mIsRunningFriendTask|| mIsRunningFriendInvitationTask;
         }
         
     }
@@ -800,6 +882,8 @@ public class UserDetailsActivity extends Activity {
             ensureUiPhoto(mStateHolder.getUser());
         }
     };
+
+
 
 
 }

@@ -249,7 +249,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int firstLine=0x7f080049;
         public static final int friendListItemName=0x7f080007;
         public static final int friendListItemPhoto=0x7f080006;
-        public static final int friend_button=0x7f08007c;
+        public static final int friend_button=0x7f08007f;
         public static final int friendsActivityEmptyBtnAddFriends=0x7f08000b;
         public static final int friendsActivityEmptyBtnFriendRequests=0x7f08000c;
         public static final int friendsActivityEmptyImageView=0x7f080009;
@@ -268,11 +268,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int list_header_title=0x7f080012;
         public static final int list_refresh=0x7f080018;
         public static final int list_refresh_progress=0x7f080019;
-        public static final int listview_item=0x7f08007d;
+        public static final int listview_item=0x7f080080;
         public static final int loadableListHolder=0x7f080015;
         public static final int loginbutton=0x7f08001e;
         public static final int main=0x7f080013;
-        public static final int myselector=0x7f08007b;
+        public static final int myselector=0x7f08007e;
         public static final int nameEditText=0x7f080039;
         public static final int newAccountTextView=0x7f08001f;
         public static final int passwordEditText=0x7f08001d;
@@ -322,6 +322,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int userDetailsActivityAddFriendsChevron=0x7f080070;
         public static final int userDetailsActivityAddFriendsText=0x7f08006f;
         public static final int userDetailsActivityFriendButton=0x7f08005c;
+        public static final int userDetailsActivityFriendRequest=0x7f080071;
+        public static final int userDetailsActivityFriendRequestChevron=0x7f080073;
+        public static final int userDetailsActivityFriendRequestText=0x7f080072;
         public static final int userDetailsActivityFriends=0x7f08006b;
         public static final int userDetailsActivityFriendsChevron=0x7f08006d;
         public static final int userDetailsActivityFriendsText=0x7f08006c;
@@ -342,16 +345,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int userDetailsActivityRecommendsText=0x7f080069;
         public static final int userDetailsActivityUsername=0x7f08005a;
         public static final int vacantText=0x7f080041;
-        public static final int venueMorePickerName=0x7f08007a;
-        public static final int venueMoreShow=0x7f080071;
-        public static final int venuePickerIcon=0x7f080073;
-        public static final int venuePickerListView=0x7f080078;
-        public static final int venuePickerName=0x7f080074;
-        public static final int venuePickerRefreshVenueButton=0x7f080075;
-        public static final int venuePickerViewFlipper=0x7f080072;
-        public static final int venueRefreshIcon=0x7f080076;
-        public static final int venueRefreshName=0x7f080077;
-        public static final int venueloadingMoreVenueButton=0x7f080079;
+        public static final int venueMorePickerName=0x7f08007d;
+        public static final int venueMoreShow=0x7f080074;
+        public static final int venuePickerIcon=0x7f080076;
+        public static final int venuePickerListView=0x7f08007b;
+        public static final int venuePickerName=0x7f080077;
+        public static final int venuePickerRefreshVenueButton=0x7f080078;
+        public static final int venuePickerViewFlipper=0x7f080075;
+        public static final int venueRefreshIcon=0x7f080079;
+        public static final int venueRefreshName=0x7f08007a;
+        public static final int venueloadingMoreVenueButton=0x7f08007c;
     }
     public static final class layout {
         public static final int comment_list_item=0x7f030000;

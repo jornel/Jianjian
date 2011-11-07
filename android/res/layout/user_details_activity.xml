@@ -78,7 +78,8 @@
   
   <ScrollView
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:layout_weight="1" >
       
     <LinearLayout
       android:layout_width="fill_parent"
@@ -288,5 +289,33 @@
       </RelativeLayout>
           
     </LinearLayout>
-  </ScrollView>  
+  </ScrollView>
+        <RelativeLayout android:id="@+id/userDetailsActivityFriendRequest"
+	      android:layout_width="fill_parent" 
+	      android:layout_height="wrap_content"
+	      android:padding="5dip"
+	      android:background="@color/color_bright_green">
+  
+        <TextView 
+            android:id="@+id/userDetailsActivityFriendRequestText"
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content"
+            android:text="18 Friends"
+            android:textAppearance="@style/TextViewStyleVenueActivityBold"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+    
+        <ImageView
+            android:id="@+id/userDetailsActivityFriendRequestChevron"
+            android:layout_width="9dip"
+            android:layout_height="13dip"
+            android:src="@drawable/arrow_grey"
+            android:scaleType="fitCenter"  
+            android:layout_marginLeft="3dip"
+            android:layout_marginRight="3dip"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"  />
+    
+      </RelativeLayout>  
+ 
 </LinearLayout>

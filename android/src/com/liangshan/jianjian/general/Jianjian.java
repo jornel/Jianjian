@@ -16,6 +16,7 @@ import com.liangshan.jianjian.android.error.JianjianException;
 import com.liangshan.jianjian.general.Jianjian.JLocation;
 import com.liangshan.jianjian.types.Comment;
 import com.liangshan.jianjian.types.Event;
+import com.liangshan.jianjian.types.FriendInvitation;
 import com.liangshan.jianjian.types.Group;
 import com.liangshan.jianjian.types.RecommendMsg;
 import com.liangshan.jianjian.types.User;
@@ -227,7 +228,7 @@ public class Jianjian {
      * @return
      */
     @V1
-    public User getFriendInvitations(String mUserId) 
+    public Group<FriendInvitation> getFriendInvitations(String mUserId) 
             throws JianjianException, JianjianError, IOException{
         
         return mJianjianV1.getFriendInvitations(mUserId);
