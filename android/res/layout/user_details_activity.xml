@@ -294,13 +294,13 @@
 	      android:layout_width="fill_parent" 
 	      android:layout_height="wrap_content"
 	      android:padding="5dip"
-	      android:background="@color/color_bright_green">
+	      android:background="@color/color_bright_green" android:visibility="gone">
   
         <TextView 
             android:id="@+id/userDetailsActivityFriendRequestText"
             android:layout_width="wrap_content" 
             android:layout_height="wrap_content"
-            android:text="18 Friends"
+            android:text="18 friend requests"
             android:textAppearance="@style/TextViewStyleVenueActivityBold"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true" />

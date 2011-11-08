@@ -38,6 +38,7 @@ import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -225,12 +226,15 @@ public class UserDetailsActivity extends Activity {
         View viewRecommends = findViewById(R.id.userDetailsActivityRecommends);
         TextView tvRecommends = (TextView)findViewById(R.id.userDetailsActivityRecommendsText);
         ImageView ivRecommendsChevron = (ImageView)findViewById(R.id.userDetailsActivityRecommendsChevron);
+        //RelativeLayout rlFriendRequests = (RelativeLayout)findViewById(R.id.userDetailsActivityFriendRequest);
+        //TextView tvFriendRequests = (TextView)findViewById(R.id.userDetailsActivityFriendRequestText);
         
         
         //set the initial value
         viewProgressBar.setVisibility(View.VISIBLE);
         tvUsername.setText("");
         tvLastSeen.setText("");
+        //tvFriendRequests.setText("");
         viewBadges.setFocusable(false);
         viewPoints.setFocusable(false);
         tvBadges.setText("0");
@@ -244,6 +248,7 @@ public class UserDetailsActivity extends Activity {
         viewAddFriends.setVisibility(View.GONE);
         viewFriends.setVisibility(View.GONE);
         viewRecommends.setVisibility(View.GONE);
+        //rlFriendRequests.setVisibility(View.GONE);
         ivFriends.setVisibility(View.INVISIBLE);
         ivRecommendsChevron.setVisibility(View.INVISIBLE);
         tvFriends.setText("");
@@ -549,9 +554,27 @@ public class UserDetailsActivity extends Activity {
      * @param invs
      * @param mReason
      */
-    public void onFriendInvitationTaskComplete(Group<FriendInvitation> invs, Exception mReason) {
+    public void onFriendInvitationTaskComplete(Group<FriendInvitation> invs, Exception ex) {
         // TODO Auto-generated method stub
         mStateHolder.setIsRunningFriendInvitationTask(false);
+        RelativeLayout rlFriendRequests = (RelativeLayout)findViewById(R.id.userDetailsActivityFriendRequest);
+        TextView tvFriendRequests = (TextView)findViewById(R.id.userDetailsActivityFriendRequestText);
+        if( invs != null){
+            if(invs.size()==0) {
+                rlFriendRequests.setVisibility(View.GONE);
+            } else {
+                rlFriendRequests.setVisibility(View.VISIBLE);
+                tvFriendRequests.setText("");
+                tvFriendRequests.setText(
+                        getResources().getString(
+                                R.string.user_details_activity_friend_requests_text,
+                                invs.size()));
+            }
+        } else if (ex != null) {
+            NotificationsUtil.ToastReasonForFailure(this, ex);
+        } else {
+            Toast.makeText(this, "A surprising new error for the friend requests has occurred!", Toast.LENGTH_SHORT).show();
+        }
     }
     
     /**
