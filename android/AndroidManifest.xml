@@ -135,6 +135,13 @@
                   android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        <activity
+                  android:name=".UserFriendsRequestActivity">
+            <intent-filter>
+                <action
+                  android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
                 <activity android:name=".HelloGoogleMaps">  
             <intent-filter>  
                 <action android:name="android.intent.action.MAIN" />  

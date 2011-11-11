@@ -294,7 +294,8 @@
 	      android:layout_width="fill_parent" 
 	      android:layout_height="wrap_content"
 	      android:padding="5dip"
-	      android:background="@color/color_bright_green" android:visibility="gone">
+	      android:background="@color/transparent_color_bright_green"
+	      android:visibility="gone">
   
         <TextView 
             android:id="@+id/userDetailsActivityFriendRequestText"

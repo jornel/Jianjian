@@ -160,9 +160,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int purple_end=0x7f050003;
         public static final int purple_start=0x7f050002;
         public static final int red_bright=0x7f050004;
-        public static final int tip_detail_actions_background=0x7f050016;
-        public static final int transparent=0x7f050018;
-        public static final int user_details_activity_general=0x7f050017;
+        public static final int tip_detail_actions_background=0x7f050017;
+        public static final int transparent=0x7f050019;
+        public static final int transparent_color_bright_green=0x7f050016;
+        public static final int user_details_activity_general=0x7f050018;
         public static final int vlgrey=0x7f050012;
         public static final int white=0x7f050000;
     }

@@ -526,6 +526,20 @@ public class UserDetailsActivity extends Activity {
         startActivity(intent); 
     }
     
+    private void startFriendsRequestActivity() {
+        Group<FriendInvitation> invs = mStateHolder.getFriendIvitations();
+        if(invs == null||invs.size()==0){
+            RelativeLayout rlFriendRequests = (RelativeLayout)findViewById(R.id.userDetailsActivityFriendRequest);
+            rlFriendRequests.setVisibility(View.GONE);
+            return;
+        }
+        
+        Intent intent = new Intent(UserDetailsActivity.this, UserFriendsRequestActivity.class);
+        intent.putExtra(UserFriendsRequestActivity.EXTRA_USER_ID, mStateHolder.getUser().getUserid());
+        intent.putExtra(UserFriendsRequestActivity.EXTRA_USER_NAME, mStateHolder.getUser().getUsername());       
+        startActivity(intent); 
+    }
+    
     private void onFriendTaskComplete(User user, int action, Exception ex) {
         mStateHolder.setIsRunningFriendTask(false);
         
@@ -555,15 +569,23 @@ public class UserDetailsActivity extends Activity {
      * @param mReason
      */
     public void onFriendInvitationTaskComplete(Group<FriendInvitation> invs, Exception ex) {
-        // TODO Auto-generated method stub
+        
         mStateHolder.setIsRunningFriendInvitationTask(false);
+        
         RelativeLayout rlFriendRequests = (RelativeLayout)findViewById(R.id.userDetailsActivityFriendRequest);
         TextView tvFriendRequests = (TextView)findViewById(R.id.userDetailsActivityFriendRequestText);
         if( invs != null){
             if(invs.size()==0) {
                 rlFriendRequests.setVisibility(View.GONE);
             } else {
+                mStateHolder.setFriendIvitations(invs);
                 rlFriendRequests.setVisibility(View.VISIBLE);
+                rlFriendRequests.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startFriendsRequestActivity();
+                    }
+                });
                 tvFriendRequests.setText("");
                 tvFriendRequests.setText(
                         getResources().getString(
@@ -762,6 +784,7 @@ public class UserDetailsActivity extends Activity {
         private boolean mIsRunningUserDetailsTask;
         private boolean mRanOnce;
         private int mLoadType;
+        private Group<FriendInvitation> mInvitations;
         
         private FriendTask mTaskFriend;
         private boolean mIsRunningFriendTask;
@@ -777,6 +800,17 @@ public class UserDetailsActivity extends Activity {
             mLoadType = LOAD_TYPE_USER_NONE;
         }
         
+        /**
+         * @param invs
+         */
+        public void setFriendIvitations(Group<FriendInvitation> invs) {
+            mInvitations = invs;
+        }
+        
+        public Group<FriendInvitation> getFriendIvitations() {
+            return mInvitations;
+        }
+
         public boolean getIsLoggedInUser() {
             return mIsLoggedInUser;
         }
