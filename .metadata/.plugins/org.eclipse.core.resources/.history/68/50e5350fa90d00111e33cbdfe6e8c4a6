@@ -97,7 +97,7 @@ public class UserFriendsRequestActivity extends LoadableListActivity {
     private void ensureUi() {
         mListAdapter = new FriendsListAdapter(
                 this, ((Jianjianroid) getApplication()).getRemoteResourceManager());
-        //mListAdapter.setGroup(mStateHolder.getFriendsRequest());
+        mListAdapter.setGroup(mStateHolder.getFriends());
         
         ListView listView = getListView();
         listView.setAdapter(mListAdapter);
@@ -133,7 +133,7 @@ public class UserFriendsRequestActivity extends LoadableListActivity {
         
         if (mStateHolder.getIsRunningFriendsTask()) {
             setLoadingView();
-        } else if (mStateHolder.getFetchedOnce() && mStateHolder.getFriendsRequest().size() == 0) {
+        } else if (mStateHolder.getFetchedOnce() && mStateHolder.getFriends().size() == 0) {
             setEmptyView();
         }
 
@@ -212,11 +212,10 @@ public class UserFriendsRequestActivity extends LoadableListActivity {
         mListAdapter.removeObserver();
         mListAdapter.clear();
         if(invs != null){
-            mStateHolder.setFriendsRequest(invs);
             
         } else {
-            mStateHolder.setFriendsRequest(new Group<FriendInvitation>());
-            //mListAdapter.setGroup(mStateHolder.getFriendsRequest());
+            mStateHolder.setFriendsRequest(new Group<User>());
+            mListAdapter.setGroup(mStateHolder.getFriends());
             NotificationsUtil.ToastReasonForFailure(this, ex);
         }
     }

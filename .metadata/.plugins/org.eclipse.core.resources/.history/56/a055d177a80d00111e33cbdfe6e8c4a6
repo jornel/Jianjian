@@ -97,7 +97,7 @@ public class UserFriendsRequestActivity extends LoadableListActivity {
     private void ensureUi() {
         mListAdapter = new FriendsListAdapter(
                 this, ((Jianjianroid) getApplication()).getRemoteResourceManager());
-        //mListAdapter.setGroup(mStateHolder.getFriendsRequest());
+        mListAdapter.setGroup(mStateHolder.getFriends());
         
         ListView listView = getListView();
         listView.setAdapter(mListAdapter);
@@ -133,7 +133,7 @@ public class UserFriendsRequestActivity extends LoadableListActivity {
         
         if (mStateHolder.getIsRunningFriendsTask()) {
             setLoadingView();
-        } else if (mStateHolder.getFetchedOnce() && mStateHolder.getFriendsRequest().size() == 0) {
+        } else if (mStateHolder.getFetchedOnce() && mStateHolder.getFriends().size() == 0) {
             setEmptyView();
         }
 
@@ -212,11 +212,6 @@ public class UserFriendsRequestActivity extends LoadableListActivity {
         mListAdapter.removeObserver();
         mListAdapter.clear();
         if(invs != null){
-            mStateHolder.setFriendsRequest(invs);
-            
-        } else {
-            mStateHolder.setFriendsRequest(new Group<FriendInvitation>());
-            //mListAdapter.setGroup(mStateHolder.getFriendsRequest());
             NotificationsUtil.ToastReasonForFailure(this, ex);
         }
     }
@@ -274,7 +269,7 @@ public class UserFriendsRequestActivity extends LoadableListActivity {
     private static class StateHolder {
         private String mUsername;
         private String mUserid;
-        private Group<FriendInvitation> mFriendsRequest;
+        private Group<User> mFriends;
         private FriendInvitationTask mTaskFriendsRequest;
         private boolean mIsRunningFriendsTask;
         private boolean mFetchedOnce;
@@ -286,7 +281,7 @@ public class UserFriendsRequestActivity extends LoadableListActivity {
             mUserid = userid;
             mIsRunningFriendsTask = false;
             mFetchedOnce = false;
-            mFriendsRequest = new Group<FriendInvitation>();
+            mFriends = new Group<User>();
             mCurrentListItem = 0;
             mCurrentPage = 0;
         }
@@ -314,13 +309,18 @@ public class UserFriendsRequestActivity extends LoadableListActivity {
             return mUserid;
         }
         
-        public Group<FriendInvitation> getFriendsRequest() {
-            return mFriendsRequest;
+        public Group<User> getFriends() {
+            return mFriends;
         }
-
+        public void addFriends(Group<User> friends2) {
+            
+            if(mFriends.addAll(friends2)){
+                mFriends.setHasMore(friends2.isHasMore());
+            }
+        }
         
-        public void setFriendsRequest(Group<FriendInvitation> invs) {
-            mFriendsRequest = invs;
+        public void setFriends(Group<User> Friends) {
+            mFriends = Friends;
         }
         
         public void startTaskFriendsRequest(UserFriendsRequestActivity activity) {
