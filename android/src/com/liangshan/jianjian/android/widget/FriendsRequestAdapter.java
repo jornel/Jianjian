@@ -13,6 +13,7 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,13 +26,14 @@ import java.util.Set;
 import com.liangshan.jianjian.android.R;
 import com.liangshan.jianjian.android.util.RemoteResourceManager;
 import com.liangshan.jianjian.general.Jianjian;
+import com.liangshan.jianjian.types.FriendInvitation;
 import com.liangshan.jianjian.types.User;
 
 /**
  * @date 
  * @author 
  */
-public class FriendsRequestAdapter extends BaseGroupAdapter<User> 
+public class FriendsRequestAdapter extends BaseGroupAdapter<FriendInvitation> 
     implements ObservableAdapter {
 
     private LayoutInflater mInflater;
@@ -61,13 +63,16 @@ public class FriendsRequestAdapter extends BaseGroupAdapter<User>
         final ViewHolder holder;
 
         if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.friend_list_item, null);
+            convertView = mInflater.inflate(R.layout.friends_request_item, null);
 
             // Creates a ViewHolder and store references to the two children
             // views we want to bind data to.
             holder = new ViewHolder();
-            holder.photo = (ImageView) convertView.findViewById(R.id.friendListItemPhoto);
-            holder.nick = (TextView) convertView.findViewById(R.id.friendListItemName);
+            holder.photo = (ImageView) convertView.findViewById(R.id.friendsRequestItemPhoto);
+            holder.nick = (TextView) convertView.findViewById(R.id.friendRequestItemName);
+            holder.confirmBn = (Button) convertView.findViewById(R.id.requestConfirmButton);
+            holder.ignoreBn = (Button) convertView.findViewById(R.id.requestIgnoreButton);
+            
             
             convertView.setTag(holder);
         } else {
@@ -76,7 +81,8 @@ public class FriendsRequestAdapter extends BaseGroupAdapter<User>
             holder = (ViewHolder) convertView.getTag();
         }
 
-        User friend = (User) getItem(position);
+        FriendInvitation friendRequest = (FriendInvitation) getItem(position);
+        User friend = friendRequest.getFromUser();
         
         holder.nick.setText(friend.getNick());
         Uri photoUri = Uri.parse(friend.getPhoto());
@@ -122,6 +128,8 @@ public class FriendsRequestAdapter extends BaseGroupAdapter<User>
     private static class ViewHolder {
         TextView nick;
         ImageView photo;
+        Button confirmBn;
+        Button ignoreBn;
 
     }
 }

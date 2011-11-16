@@ -10,16 +10,14 @@ import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.liangshan.jianjian.android.app.LoadableListActivity;
 import com.liangshan.jianjian.android.util.NotificationsUtil;
-import com.liangshan.jianjian.android.widget.FriendsListAdapter;
+import com.liangshan.jianjian.android.widget.FriendsRequestAdapter;
 import com.liangshan.jianjian.general.Jianjian;
 import com.liangshan.jianjian.types.FriendInvitation;
 import com.liangshan.jianjian.types.Group;
@@ -39,8 +37,8 @@ public class UserFriendsRequestActivity extends LoadableListActivity {
             + ".UserFriendsRequestActivity.EXTRA_USER_ID";
     
     private StateHolder mStateHolder;
-    private FriendsListAdapter mListAdapter;
-    private LinearLayout footerview;
+    private FriendsRequestAdapter mListAdapter;
+    //private LinearLayout footerview;
     
     private BroadcastReceiver mLoggedOutReceiver = new BroadcastReceiver() {
         @Override
@@ -95,9 +93,12 @@ public class UserFriendsRequestActivity extends LoadableListActivity {
      * 
      */
     private void ensureUi() {
-        mListAdapter = new FriendsListAdapter(
+        mListAdapter = new FriendsRequestAdapter(
                 this, ((Jianjianroid) getApplication()).getRemoteResourceManager());
-        //mListAdapter.setGroup(mStateHolder.getFriendsRequest());
+        if(mStateHolder.getFriendsRequest()!=null){
+            mListAdapter.setGroup(mStateHolder.getFriendsRequest()); 
+        }
+        
         
         ListView listView = getListView();
         listView.setAdapter(mListAdapter);
@@ -106,13 +107,15 @@ public class UserFriendsRequestActivity extends LoadableListActivity {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int position, long arg3) {
                 Object obj = (Object)mListAdapter.getItem(position);
+                FriendInvitation friendRequest = (FriendInvitation) obj;
+                User friend = friendRequest.getFromUser();
                 if (obj != null) {
-                    startFriendDetailActivity((User)obj);
+                    startFriendDetailActivity(friend);
                 }
             }
         });
         
-        //if(mStateHolder.getCurrentPage()<=1){
+        /*if(mStateHolder.getCurrentPage()<=1){
             footerview = (LinearLayout) LayoutInflater.from(
                     getListView().getContext()).inflate(R.layout.recommend_list_footer,null);
             footerview.setClickable(true);
@@ -129,7 +132,7 @@ public class UserFriendsRequestActivity extends LoadableListActivity {
             
             getListView().addFooterView(footerview);
             
-        //}
+        }*/
         
         if (mStateHolder.getIsRunningFriendsTask()) {
             setLoadingView();
@@ -137,7 +140,7 @@ public class UserFriendsRequestActivity extends LoadableListActivity {
             setEmptyView();
         }
 
-        setTitle(getString(R.string.user_friend_activity_title, mStateHolder.getUsername()));
+        setTitle(getString(R.string.user_friend_request_activity_title, mStateHolder.getUsername()));
         
     }
     
@@ -153,7 +156,7 @@ public class UserFriendsRequestActivity extends LoadableListActivity {
 
     @Override
     public int getNoSearchResultsStringId() {
-        return R.string.user_history_activity_no_info;
+        return R.string.user_friend_request_activity_no_info;
     }
     /*
     private void onFriendInvitationTaskComplete(Group<User> group, int page, Exception ex) {
@@ -208,17 +211,29 @@ public class UserFriendsRequestActivity extends LoadableListActivity {
      * @param mReason
      */
     public void onFriendInvitationTaskComplete(Group<FriendInvitation> invs, Exception ex) {
-        // TODO Auto-generated method stub
+       
         mListAdapter.removeObserver();
         mListAdapter.clear();
+        
+        mListAdapter = new FriendsRequestAdapter(
+                this, ((Jianjianroid) getApplication()).getRemoteResourceManager());
         if(invs != null){
             mStateHolder.setFriendsRequest(invs);
+            mListAdapter.setGroup(invs);
             
         } else {
             mStateHolder.setFriendsRequest(new Group<FriendInvitation>());
-            //mListAdapter.setGroup(mStateHolder.getFriendsRequest());
+            mListAdapter.setGroup(mStateHolder.getFriendsRequest());
             NotificationsUtil.ToastReasonForFailure(this, ex);
         }
+        
+        mStateHolder.setIsRunningFriendsTask(false);
+        mStateHolder.setFetchedOnce(true);
+        
+        if (mStateHolder.getFriendsRequest().size() == 0) {
+            setEmptyView();
+        }
+        getListView().setAdapter(mListAdapter);
     }
     
     
@@ -262,7 +277,7 @@ public class UserFriendsRequestActivity extends LoadableListActivity {
         @Override
         protected void onCancelled() {
             if (mActivity != null) {
-                //mActivity.onFriendInvitationTaskComplete(null, mReason);
+                mActivity.onFriendInvitationTaskComplete(null, mReason);
             }
         }
 
@@ -286,11 +301,11 @@ public class UserFriendsRequestActivity extends LoadableListActivity {
             mUserid = userid;
             mIsRunningFriendsTask = false;
             mFetchedOnce = false;
-            mFriendsRequest = new Group<FriendInvitation>();
+            
             mCurrentListItem = 0;
             mCurrentPage = 0;
         }
-        
+        /*
         public void setCurrentListItem(int count) {
             mCurrentListItem = count;
         }
@@ -305,6 +320,7 @@ public class UserFriendsRequestActivity extends LoadableListActivity {
         public void setCurrentPage(int page) {
             mCurrentPage = page;
         }
+        */
         
         public String getUsername() {
             return mUsername;
