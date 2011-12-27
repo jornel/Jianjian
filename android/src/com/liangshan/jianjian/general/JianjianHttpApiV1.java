@@ -43,6 +43,7 @@ import com.liangshan.jianjian.http.HttpApi;
 import com.liangshan.jianjian.http.HttpApiWithBasicAuth;
 import com.liangshan.jianjian.parsers.json.CommentParser;
 import com.liangshan.jianjian.parsers.json.EventParser;
+import com.liangshan.jianjian.parsers.json.FriendInvitationParser;
 import com.liangshan.jianjian.parsers.json.GroupParser;
 import com.liangshan.jianjian.parsers.json.RecommendMsgParser;
 import com.liangshan.jianjian.parsers.json.UserParser;
@@ -373,7 +374,7 @@ public class JianjianHttpApiV1 {
                 );
         
         return (Group<FriendInvitation>) mHttpApi.doHttpRequest(httpGet,
-                new GroupParser(new UserParser()));
+                new GroupParser(new FriendInvitationParser()));
     }
     
     /**
