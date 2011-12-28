@@ -211,6 +211,17 @@ public class Jianjian {
          
         return mJianjianV1.approveFriend(mUserId);
     }
+    
+    /**
+     * @param mUserId
+     * @return
+     */
+    @V1
+    public User friendIgnore(String mUserId) 
+            throws JianjianException, JianjianError, IOException{
+         
+        return mJianjianV1.ignoreFriend(mUserId);
+    }
 
     /**
      * @param mUserId

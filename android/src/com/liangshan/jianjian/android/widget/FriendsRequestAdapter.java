@@ -10,20 +10,27 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Set;
 
+import com.liangshan.jianjian.android.JianjianSettings;
+import com.liangshan.jianjian.android.Jianjianroid;
 import com.liangshan.jianjian.android.R;
+import com.liangshan.jianjian.android.error.JianjianError;
+import com.liangshan.jianjian.android.error.JianjianException;
 import com.liangshan.jianjian.android.util.RemoteResourceManager;
 import com.liangshan.jianjian.general.Jianjian;
 import com.liangshan.jianjian.types.FriendInvitation;
@@ -36,6 +43,8 @@ import com.liangshan.jianjian.types.User;
 public class FriendsRequestAdapter extends BaseGroupAdapter<FriendInvitation> 
     implements ObservableAdapter {
 
+    static final String TAG = "FriendsRequestAdapter";
+    static final boolean DEBUG = JianjianSettings.DEBUG;
     private LayoutInflater mInflater;
     private RemoteResourceManager mRrm;
     private Handler mHandler;
@@ -65,7 +74,7 @@ public class FriendsRequestAdapter extends BaseGroupAdapter<FriendInvitation>
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.friends_request_item, null);
 
-            // Creates a ViewHolder and store references to the two children
+            // Creates a ViewHolder and store references to the children
             // views we want to bind data to.
             holder = new ViewHolder();
             holder.photo = (ImageView) convertView.findViewById(R.id.friendsRequestItemPhoto);
@@ -83,6 +92,38 @@ public class FriendsRequestAdapter extends BaseGroupAdapter<FriendInvitation>
 
         FriendInvitation friendRequest = (FriendInvitation) getItem(position);
         User friend = friendRequest.getFromUser();
+        holder.friendId = friend.getUserid();
+        
+        holder.confirmBn.setOnClickListener(new OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Jianjian jianjian = ((Jianjianroid) mInflater.getContext().getApplicationContext()).getJianjian();
+
+                try {
+                    jianjian.friendApprove(holder.friendId);
+                } catch (Exception e) {
+                    if (DEBUG)
+                        Log.d(TAG, "Exception doing approve friends request.", e);
+                } 
+                holder.confirmBn.setVisibility(View.GONE);
+                holder.ignoreBn.setVisibility(View.GONE);
+            }
+        });
+        
+        holder.ignoreBn.setOnClickListener(new OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Jianjian jianjian = ((Jianjianroid) mInflater.getContext().getApplicationContext()).getJianjian();
+                try {
+                    jianjian.friendIgnore(holder.friendId);
+                } catch (Exception e) {
+                    if (DEBUG)
+                        Log.d(TAG, "Exception doing approve friends request.", e);
+                } 
+                holder.confirmBn.setVisibility(View.GONE);
+                holder.ignoreBn.setVisibility(View.GONE);
+            }
+        });
         
         holder.nick.setText(friend.getNick());
         Uri photoUri = Uri.parse(friend.getPhoto());
@@ -130,6 +171,7 @@ public class FriendsRequestAdapter extends BaseGroupAdapter<FriendInvitation>
         ImageView photo;
         Button confirmBn;
         Button ignoreBn;
+        String friendId;
 
     }
 }

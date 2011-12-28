@@ -364,6 +364,27 @@ public class JianjianHttpApiV1 {
      * @param mUserId
      * @return
      */
+    public User ignoreFriend(String id) throws JianjianException,
+    JianjianError, IOException{
+        
+        HttpGet httpGet = mHttpApi.createHttpGet(fullUrl(URL_API_REPLY_FRIEND), //
+                new BasicNameValuePair("source", "jianjian"), //
+                new BasicNameValuePair("lang", "CHS"),
+                new BasicNameValuePair("is_accepted", "-1"),//
+                new BasicNameValuePair("id", id)//
+                );
+        
+        return (User) mHttpApi.doHttpRequest(httpGet,
+                new UserParser());
+
+    }
+    
+    
+    
+    /**
+     * @param mUserId
+     * @return
+     */
     @SuppressWarnings("unchecked")
     public Group<FriendInvitation> getFriendInvitations(String id) throws JianjianException,
     JianjianError, IOException{
@@ -376,6 +397,8 @@ public class JianjianHttpApiV1 {
         return (Group<FriendInvitation>) mHttpApi.doHttpRequest(httpGet,
                 new GroupParser(new FriendInvitationParser()));
     }
+    
+    
     
     /**
      * @param geolat
